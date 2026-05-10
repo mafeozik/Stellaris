@@ -1,8 +1,0 @@
-##this is here to stop vanilla portraits
-
-# This species class should only be used for its ship set
-IMPERIAL = {
-    playable = { has_nemesis = yes }
-    randomized = { always = no }
-    graphical_culture = nemesis_01
-} 

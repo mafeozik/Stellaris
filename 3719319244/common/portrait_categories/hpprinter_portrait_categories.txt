@@ -1,7 +1,0 @@
-HPPrinter = {
-	name = HPPrinter
-
-	sets = {
-		HPPrinter
-	}
-}

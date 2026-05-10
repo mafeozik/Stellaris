@@ -1,1 +1,0 @@
-# portrait_sets not used — species_class.portraits references portrait_group directly (old system)
