@@ -1,6 +1,6 @@
-version="1.0"
+version="3.11.*"
 tags={
 	"Balance"
 }
 name="ApexBio"
-supported_version="v4.0.14"
+supported_version="3.11.*"

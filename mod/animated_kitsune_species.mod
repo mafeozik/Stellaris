@@ -1,5 +1,5 @@
-version="3.11.*"
 name="Animated Kitsune Species"
+path="mod/1796418794"
 tags={
 	"Species"
 }
