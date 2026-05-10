@@ -1,0 +1,6 @@
+portraits = {
+	fdk_01 = {
+		greeting_sound = "humanoid_portrait_f_female"
+		texturefile = "gfx/models/portraits/fd1.dds"
+	}
+}

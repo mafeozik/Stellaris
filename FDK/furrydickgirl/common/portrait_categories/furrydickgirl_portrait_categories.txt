@@ -1,6 +1,6 @@
-fdgirl_category = {
+furrydickgirl_category = {
 	name = furrydickgirl
 	sets = {
-		fdgirl_set
+		furrydickgirl_set
 	}
 }

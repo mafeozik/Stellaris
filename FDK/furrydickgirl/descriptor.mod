@@ -1,7 +1,5 @@
-version="1"
+name="furrydickgirl"
 tags={
 	"Graphics"
 }
-name="furrydickgirl"
-supported_version="v3.12.5"
-remote_file_id="3723443257"
+supported_version="3.*.*"
