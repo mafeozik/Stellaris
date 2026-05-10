@@ -1,0 +1,20 @@
+﻿l_english:
+
+### Species Stuff ###
+KEM:0 "Kemonomimi"
+KEM_desc:1 "Species Class has no effect on your Empire, but KEM-class Species may consider other KEM to be less alien than other Species Classes."
+KEM_plural:0 "Anthros"
+KEM_insult_01:0 "beast"
+KEM_insult_plural_01:0 "beasts"
+KEM_compliment_01:0 "majestic"
+KEM_compliment_plural_01:0 "majestic"
+KEM_spawn:0 "child"
+KEM_spawn_plural:0 "children"
+KEM_sound_01:0 "speaking"
+KEM_sound_02:0 "snorting"
+KEM_sound_03:0 "yelling"
+KEM_sound_04:0 "crying"
+KEM_sound_05:0 "neighing"
+KEM_organ:0 "stomach"
+KEM_mouth:0 "mouth"
+KEM_hand:0 "hand"

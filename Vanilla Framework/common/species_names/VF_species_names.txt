@@ -1,0 +1,258 @@
+KEM = {
+	Ulkol= {
+		name = Ulkol
+		plural = Ulkoli
+		home_planet = Terrvache
+		home_system = "Sotaureau"
+		name_list = "REP1"
+	}
+
+	Onih= {
+		name = Onih 
+		plural = Onihs
+		home_planet = Musant
+		home_system = "Vassaves"
+		name_list = "REP2"
+	}
+
+	Yikir= {
+		name = Yikir
+		plural = Yikri
+		home_planet = Utzal 
+		home_system = "Zucnan"
+		name_list = "REP3"
+	}
+
+	Umogo= {
+		name = Umogo
+		plural = Umogos
+		home_planet = Brugnot
+		home_system = "Ilphin"
+		name_list = "REP4"
+	}
+
+	Ulphall= {
+		name = Ulphall
+		plural = Ulphalli
+		home_planet = Domu
+		home_system = "Thruns"
+		name_list = "REP1"
+	}
+
+	Deldae= {
+		name = Deldae
+		plural = Deldae
+		home_planet = Ahlen
+		home_system = "Ondul"
+		name_list = "REP2"
+	}
+
+	Aukvon= {
+		name = Aukvon
+		plural = Aukvons
+		home_planet = Ica
+		home_system = "Catleon"
+		name_list = "REP3"
+	}
+
+	Vohnaet= {
+		name = Vohnaet
+		plural = Vohnaeti
+		home_planet = Hulvae
+		home_system = "Qhusqi"
+		name_list = "REP4"
+	}
+
+	Estever= {
+		name = Estever
+		plural = Esteveri
+		home_planet = "Eccer"
+		home_system = Rictario
+		name_list = "HUM1"
+	}
+
+	Pulifrici = {
+		name = Pulifrici  
+		plural = Pulifrici 
+		home_planet = "Onania"
+		home_system = Isquit
+		name_list = "HUM2"
+	}
+
+	Ceteret= {
+		name = Ceteret
+		plural = Ceterets
+		home_planet = "Otrutov"
+		home_system = Tatokal
+		name_list = "HUM3"
+	}
+
+	Silese= {
+		name = Silese
+		plural = Silese
+		home_planet = "Enkagua"
+		home_system = Esthan
+		name_list = "HUM4"
+	}
+
+	Arsuder= {
+		name = Arsuder
+		plural = Arsuders
+		home_planet = "Rinvao"
+		home_system = Rilata
+		name_list = "MAM1"
+	}
+
+	Hitroli= {
+		name = Hitroli
+		plural = Hitroli
+		home_planet = "Heiruta"
+		home_system = Iacilae
+		name_list = "MAM2"
+	}
+
+	Nalthon= {
+		name = Nalthon
+		plural = Nalthoni
+		home_planet = "Leestea"
+		home_system = Aphine
+		name_list = "MAM3"
+	}
+
+	Alten= {
+		name = Alten
+		plural = Altens
+		home_planet = "Futanari"
+		home_system = Dracnae
+		name_list = "MAM4"
+	}
+
+	Yuthor= {
+		name = Yuthor
+		plural = Yuthors
+		home_planet = "Zulyria"
+		home_system = Ognine
+		name_list = "REP1"
+	}
+
+	Pyti= {
+		name = Pyti
+		plural = Pyti
+		home_planet = "Oacury"
+		home_system = Gnuminit 
+		name_list = "REP2"
+	}
+
+	Zaynt= {
+		name = Zaynt
+		plural = Zaynts
+		home_planet = "Kanov"
+		home_system = Churonit
+		name_list = "REP3"
+	}
+
+	Ketthan= {
+		name = Ketthan
+		plural = Ketthans
+		home_planet = "Bukunov"
+		home_system = Wrartute
+		name_list = "REP4"
+	}
+
+	Ruhan= {
+		name = Ruhan
+		plural = Ruhans
+		home_planet = "Reclite"
+		home_system = Yogidae
+		name_list = "MAM1"
+	}
+
+	Yathan= {
+		name = Yathan
+		plural = Yathani
+		home_planet = "Paonope"
+		home_system = Herveron
+		name_list = "HUM1"
+	}
+
+	Espenur= {
+		name = Espenur
+		plural = Espenurs
+		home_planet = "Cranodeth"
+		home_system = Pothria
+		name_list = "MAM1"
+	}
+
+	Ibilass= {
+		name = Ibilass
+		plural = Ibilassi
+		home_planet = "Tallenoc"
+		home_system = Uchxyke
+		name_list = "MAM2"
+	}
+
+	Rothyr= {
+		name = Rothyr
+		plural = Rothyr
+		home_planet = "Vagalod"
+		home_system = Hixaros
+		name_list = "MAM3"
+	}
+
+	Llapard= {
+		name = Llapard
+		plural = Llapards
+		home_planet = "Ucroya"
+		home_system = Aiwora
+		name_list = "MAM4"
+	}
+
+	Besiphan= {
+		name = Besiphan
+		plural = Besiphans
+		home_planet = "Plaidron"
+		home_system = Kishuan
+		name_list = "HUM1"
+	}
+
+	Olkets= {
+		name = Olkets
+		plural = Olkets
+		home_planet = "Voliuyor"
+		home_system = Mocrun
+		name_list = "HUM2"
+	}
+
+	Oteonsian= {
+		name = Oteonsian
+		plural = Oteonsians
+		home_planet = "Iucokesh"
+		home_system = Unaulaes
+		name_list = "HUM3"
+	}
+
+	Koletzal= {
+		name = Koletzal
+		plural = Koletzals
+		home_planet = "Akrai"
+		home_system = "Aquila Palioxis"
+		name_list = "HUM4"
+	}
+
+	Asnean= {
+		name = Asnean
+		plural = Asneans
+		home_planet = "Agith"
+		home_system = Iaconoa
+		name_list = "REP1"
+	}
+
+	Duzavese= {
+		name = Duzavese
+		plural = Duzavese
+		home_planet = "Dreidrun"
+		home_system = Vikrend
+		name_list = "REP2"
+	}
+}
+

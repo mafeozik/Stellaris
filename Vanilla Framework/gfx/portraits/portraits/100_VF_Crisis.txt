@@ -1,0 +1,1389 @@
+portraits = {
+	######
+	#Swarm(Xenomorph)
+	SwarmF1 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmF1.dds" }
+	SwarmF2 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmF2.dds" }
+	SwarmF3 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmF3.dds" }
+	SwarmF4 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmF4.dds" }
+	SwarmF5 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmF5.dds" }
+	SwarmF6 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmF6.dds" }
+	SwarmF7 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmF7.dds" }
+	SwarmF8 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmF8.dds" }
+	SwarmF9 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmF9.dds" }
+	SwarmF10 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmF10.dds" }
+	SwarmF11 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmF11.dds" }
+	SwarmF12 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmF12.dds" }
+	SwarmF13 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmF13.dds" }
+	SwarmF14 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmF14.dds" }
+	SwarmF15 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmF15.dds" }
+	
+	SwarmH1 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmH1.dds" }
+	SwarmH2 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmH2.dds" }
+	SwarmH3 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmH3.dds" }
+	SwarmH4 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmH4.dds" }
+	SwarmH5 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmH5.dds" }
+	SwarmH6 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmH6.dds" }
+	SwarmH7 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmH7.dds" }
+	
+	SwarmM1 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmM1.dds" }
+	SwarmM2 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmM2.dds" }
+	SwarmM3 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmM3.dds" }
+	SwarmM4 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmM4.dds" }
+	SwarmM5 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmM5.dds" }
+	SwarmM6 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmM6.dds" }
+	SwarmM7 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmM7.dds" }
+	SwarmM8 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmM8.dds" }
+	SwarmM9 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmM9.dds" }
+	SwarmM10 = { greeting_sound = "reptilian_01_greetings" texturefile = "gfx/models/Swarm/SwarmM10.dds" }
+
+	######
+	#EXtradimensional
+	EXF1 = { greeting_sound = "mammalian_01_greetings" texturefile = "gfx/models/EXD/EXF1.dds" }
+	EXF2 = { greeting_sound = "mammalian_01_greetings" texturefile = "gfx/models/EXD/EXF2.dds" }
+	EXF3 = { greeting_sound = "mammalian_01_greetings" texturefile = "gfx/models/EXD/EXF3.dds" }
+	EXF4 = { greeting_sound = "mammalian_01_greetings" texturefile = "gfx/models/EXD/EXF4.dds" }
+	EXF5 = { greeting_sound = "mammalian_01_greetings" texturefile = "gfx/models/EXD/EXF5.dds" }
+	EXF6 = { greeting_sound = "mammalian_01_greetings" texturefile = "gfx/models/EXD/EXF6.dds" }
+	EXF7 = { greeting_sound = "mammalian_01_greetings" texturefile = "gfx/models/EXD/EXF7.dds" }
+	EXF8 = { greeting_sound = "mammalian_01_greetings" texturefile = "gfx/models/EXD/EXF8.dds" }
+	EXF9 = { greeting_sound = "mammalian_01_greetings" texturefile = "gfx/models/EXD/EXF9.dds" }
+	EXF10 = { greeting_sound = "mammalian_01_greetings" texturefile = "gfx/models/EXD/EXF10.dds" }
+	
+	EXH1 = { greeting_sound = "mammalian_01_greetings" texturefile = "gfx/models/EXD/EXH1.dds" }
+	
+	EXM1 = { greeting_sound = "mammalian_01_greetings" texturefile = "gfx/models/EXD/EXM1.dds" }
+	
+	######
+	#Shroud placeholder
+	
+	######
+	#AI
+	AI1 = { greeting_sound = "robot_human_greetings" texturefile = "gfx/models/AI/AI1.dds" }
+	AI2 = { greeting_sound = "robot_human_greetings" texturefile = "gfx/models/AI/AI2.dds" }
+	AI3 = { greeting_sound = "robot_human_greetings" texturefile = "gfx/models/AI/AI3.dds" }
+	AI4 = { greeting_sound = "robot_human_greetings" texturefile = "gfx/models/AI/AI4.dds" }
+	AI5 = { greeting_sound = "robot_human_greetings" texturefile = "gfx/models/AI/AI5.dds" }
+	
+	#####
+	#Shroudwalker
+	ShroudW1 = { greeting_sound = "ove_portrait_shroudwalker" texturefile = "gfx/models/Shroudwalker/ShroudW1.dds" }
+	ShroudW2 = { greeting_sound = "ove_portrait_shroudwalker" texturefile = "gfx/models/Shroudwalker/ShroudW2.dds" }
+	ShroudW3 = { greeting_sound = "ove_portrait_shroudwalker" texturefile = "gfx/models/Shroudwalker/ShroudW3.dds" }
+	ShroudW4 = { greeting_sound = "ove_portrait_shroudwalker" texturefile = "gfx/models/Shroudwalker/ShroudW4.dds" }
+	ShroudW5 = { greeting_sound = "ove_portrait_shroudwalker" texturefile = "gfx/models/Shroudwalker/ShroudW5.dds" }
+	ShroudW6 = { greeting_sound = "ove_portrait_shroudwalker" texturefile = "gfx/models/Shroudwalker/ShroudW6.dds" }
+	ShroudW7 = { greeting_sound = "ove_portrait_shroudwalker" texturefile = "gfx/models/Shroudwalker/ShroudW7.dds" }
+	ShroudW8 = { greeting_sound = "ove_portrait_shroudwalker" texturefile = "gfx/models/Shroudwalker/ShroudW8.dds" }
+	ShroudW9 = { greeting_sound = "ove_portrait_shroudwalker" texturefile = "gfx/models/Shroudwalker/ShroudW9.dds" }
+	ShroudW10 = { greeting_sound = "ove_portrait_shroudwalker" texturefile = "gfx/models/Shroudwalker/ShroudW10.dds" }
+	ShroudW11 = { greeting_sound = "ove_portrait_shroudwalker" texturefile = "gfx/models/Shroudwalker/ShroudW11.dds" }
+	ShroudW12 = { greeting_sound = "ove_portrait_shroudwalker" texturefile = "gfx/models/Shroudwalker/ShroudW12.dds" }
+	
+	#####
+	#Salvager
+	Salv1 = { greeting_sound = "ove_portrait_salvager" texturefile = "gfx/models/Salvager/Salv1.dds" }
+	Salv2 = { greeting_sound = "ove_portrait_salvager" texturefile = "gfx/models/Salvager/Salv2.dds" }
+	Salv3 = { greeting_sound = "ove_portrait_salvager" texturefile = "gfx/models/Salvager/Salv3.dds" }
+	Salv4 = { greeting_sound = "ove_portrait_salvager" texturefile = "gfx/models/Salvager/Salv4.dds" }
+	Salv5 = { greeting_sound = "ove_portrait_salvager" texturefile = "gfx/models/Salvager/Salv5.dds" }
+	Salv6 = { greeting_sound = "ove_portrait_salvager" texturefile = "gfx/models/Salvager/Salv6.dds" }
+	Salv7 = { greeting_sound = "ove_portrait_salvager" texturefile = "gfx/models/Salvager/Salv7.dds" }
+	Salv8 = { greeting_sound = "ove_portrait_salvager" texturefile = "gfx/models/Salvager/Salv8.dds" }
+	Salv9 = { greeting_sound = "ove_portrait_salvager" texturefile = "gfx/models/Salvager/Salv9.dds" }
+	
+}
+
+######
+#Swarm(Xenomorph)
+portrait_groups = {
+	VFswarm = {
+		default = SwarmF1
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+           	add = {
+                trigger = {
+                    ruler = {
+						NOR = { species = { has_trait = trait_lv_futanari }
+								gender = indeterminable}
+						gender = female
+					}
+                }
+                portraits = {
+                    SwarmF1 SwarmF2 SwarmF3 SwarmF4 SwarmF5
+					SwarmF6 SwarmF7 SwarmF8 SwarmF9 SwarmF10
+					SwarmF11 SwarmF12 SwarmF13 SwarmF14 SwarmF15
+                }
+            }
+            add = {
+                trigger = {
+                    ruler = {
+						NOR = { species = { has_trait = trait_lv_futanari } 
+								gender = indeterminable}
+						gender = male
+					}
+                }
+                portraits = {
+                    SwarmM1 SwarmM2 SwarmM3 SwarmM4 SwarmM5
+					SwarmM6 SwarmM7 SwarmM8 SwarmM9 SwarmM10
+                }
+            }
+			add = {
+				trigger = {
+					ruler = { 
+					OR = {	species = { has_trait = trait_lv_futanari } 
+							gender = indeterminable}
+					}
+				}
+                portraits = {
+                    SwarmH1 SwarmH2 SwarmH3 SwarmH4 SwarmH5
+					SwarmH6 SwarmH7
+				}
+			}
+			#set = {
+			#	trigger = { ... }
+			#	portraits = { ... }
+			#	#using "set =" instead of "add" will first clear any portraits already added
+			#}
+		}
+		
+		#species scope
+        species = { #generic portrait for a species
+            add = { #Female
+                trigger = {
+					exists = species
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_male
+							has_trait = trait_lv_all_female
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_malefuta }
+					}
+                }
+                portraits = {
+					SwarmF1 SwarmF2 SwarmF3 SwarmF4 SwarmF5
+					SwarmF6 SwarmF7 SwarmF8 SwarmF9 SwarmF10
+					SwarmF11 SwarmF12 SwarmF13 SwarmF14 SwarmF15
+                }
+            }
+			
+			add = { #All Female
+                trigger = {
+					exists = species
+					NOR = { has_trait = trait_lv_futanari	
+							has_trait = trait_lv_all_male
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+					}
+					OR = {	has_trait = trait_lv_all_female
+							species = { species_gender = female }
+						}
+                }
+                portraits = {
+                    SwarmF1 SwarmF2 SwarmF3 SwarmF4 SwarmF5
+					SwarmF6 SwarmF7 SwarmF8 SwarmF9 SwarmF10
+					SwarmF11 SwarmF12 SwarmF13 SwarmF14 SwarmF15
+                }
+            }
+
+            add = { #Male
+                trigger = {
+					exists = species
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_femalefuta }
+					}
+                }
+                portraits = {
+                    SwarmM1 SwarmM2 SwarmM3 SwarmM4 SwarmM5
+					SwarmM6 SwarmM7 SwarmM8 SwarmM9 SwarmM10
+                }
+            }
+			
+			add = { #All Male
+                trigger = {
+					exists = species
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_female
+							species = { species_gender = female }
+							species = { species_gender = indeterminable }
+					}
+					OR = {	has_trait = trait_lv_all_male
+							species = { species_gender = male }
+						}
+                }
+                portraits = {
+                    SwarmM1 SwarmM2 SwarmM3 SwarmM4 SwarmM5
+					SwarmM6 SwarmM7 SwarmM8 SwarmM9 SwarmM10
+                }
+            }
+
+            add = { #Futa
+                trigger = {
+					exists = species
+					NOR = {	has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+					}
+					OR = {	has_trait = trait_lv_futanari
+							owner = { has_policy_flag = vf_gender_all }
+							species = { species_gender = indeterminable }
+					}
+				}
+                portraits = {
+                    SwarmH1 SwarmH2 SwarmH3 SwarmH4 SwarmH5
+					SwarmH6 SwarmH7
+                }
+            }
+			
+			add = { #Male + Futa (sets females to futa)
+                trigger = {
+					exists = species
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_femalefuta }
+						}
+							owner = { has_policy_flag = vf_gender_malefuta }
+                }
+                portraits = {
+                    SwarmH1 SwarmH2 SwarmH3 SwarmH4 SwarmH5
+					SwarmH6 SwarmH7
+                }
+            }
+			
+			add = { #Female + Futa (sets males to futa)
+                trigger = {
+					exists = species
+					NOR = { has_trait = trait_lv_futanari 
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_malefuta }
+						}
+							owner = { has_policy_flag = vf_gender_femalefuta }
+                }
+                portraits = {
+                    SwarmH1 SwarmH2 SwarmH3 SwarmH4 SwarmH5
+					SwarmH6 SwarmH7
+                }
+            }
+        }
+		
+		#pop scope
+        pop = { #for a specific pop
+            add = { #Female
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_male
+							has_trait = trait_lv_all_female
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_malefuta }
+					}
+                }
+                portraits = {
+                    SwarmF1 SwarmF2 SwarmF3 SwarmF4 SwarmF5
+					SwarmF6 SwarmF7 SwarmF8 SwarmF9 SwarmF10
+					SwarmF11 SwarmF12 SwarmF13 SwarmF14 SwarmF15
+                }
+            }
+			
+			add = { #All Female
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari	
+							has_trait = trait_lv_all_male
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+					}
+					OR = {	has_trait = trait_lv_all_female
+							species = { species_gender = female }
+						}
+                }
+                portraits = {
+                    SwarmF1 SwarmF2 SwarmF3 SwarmF4 SwarmF5
+					SwarmF6 SwarmF7 SwarmF8 SwarmF9 SwarmF10
+					SwarmF11 SwarmF12 SwarmF13 SwarmF14 SwarmF15
+                }
+            }
+
+            add = { #Male
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_femalefuta }
+					}
+                }
+                portraits = {
+                    SwarmM1 SwarmM2 SwarmM3 SwarmM4 SwarmM5
+					SwarmM6 SwarmM7 SwarmM8 SwarmM9 SwarmM10
+                }
+            }
+			
+			add = { #All Male
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_female
+							species = { species_gender = female }
+							species = { species_gender = indeterminable }
+					}
+					OR = {	has_trait = trait_lv_all_male
+							species = { species_gender = male }
+						}
+                }
+                portraits = {
+                    SwarmM1 SwarmM2 SwarmM3 SwarmM4 SwarmM5
+					SwarmM6 SwarmM7 SwarmM8 SwarmM9 SwarmM10
+                }
+            }
+
+            add = { #Futa
+                trigger = {
+					NOR = {	has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+					}
+					OR = {	has_trait = trait_lv_futanari
+							owner = { has_policy_flag = vf_gender_all 
+							species = { species_gender = indeterminable } }
+					}
+				}
+                portraits = {
+                    SwarmH1 SwarmH2 SwarmH3 SwarmH4 SwarmH5
+					SwarmH6 SwarmH7
+                }
+            }
+			
+			add = { #Male + Futa (sets females to futa)
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_femalefuta }
+						}
+							owner = { has_policy_flag = vf_gender_malefuta }
+                }
+                portraits = {
+                    SwarmH1 SwarmH2 SwarmH3 SwarmH4 SwarmH5
+					SwarmH6 SwarmH7
+                }
+            }
+			
+			add = { #Female + Futa (sets males to futa)
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari 
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_malefuta }
+						}
+							owner = { has_policy_flag = vf_gender_femalefuta }
+                }
+                portraits = {
+                    SwarmH1 SwarmH2 SwarmH3 SwarmH4 SwarmH5
+					SwarmH6 SwarmH7
+                }
+            }
+        }
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = { #Female
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_male
+							has_trait = trait_lv_all_female
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_malefuta }
+					}
+                    gender = female
+                }
+                portraits = {
+                    SwarmF1 SwarmF2 SwarmF3 SwarmF4 SwarmF5
+					SwarmF6 SwarmF7 SwarmF8 SwarmF9 SwarmF10
+					SwarmF11 SwarmF12 SwarmF13 SwarmF14 SwarmF15
+                }
+            }
+			
+			add = { #All Female
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari	
+							has_trait = trait_lv_all_male
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+					}
+					OR = {	has_trait = trait_lv_all_female
+							species = { species_gender = female }
+						}
+                    gender = female
+                }
+                portraits = {
+                    SwarmF1 SwarmF2 SwarmF3 SwarmF4 SwarmF5
+					SwarmF6 SwarmF7 SwarmF8 SwarmF9 SwarmF10
+					SwarmF11 SwarmF12 SwarmF13 SwarmF14 SwarmF15
+                }
+            }
+			
+            add = { #Male
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_femalefuta }
+					}
+                    gender = male
+                }
+                portraits = {
+                    SwarmM1 SwarmM2 SwarmM3 SwarmM4 SwarmM5
+					SwarmM6 SwarmM7 SwarmM8 SwarmM9 SwarmM10
+                }
+            }
+			
+			add = { #All Male
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_female
+							species = { species_gender = female }
+							species = { species_gender = indeterminable }
+					}
+					OR = {	has_trait = trait_lv_all_male
+							species = { species_gender = male }
+						}
+                    gender = male
+                }
+                portraits = {
+                    SwarmM1 SwarmM2 SwarmM3 SwarmM4 SwarmM5
+					SwarmM6 SwarmM7 SwarmM8 SwarmM9 SwarmM10
+                }
+            }
+			
+           add = { #Futa
+                trigger = {
+					NOR = {	has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+					}
+					OR = {	has_trait = trait_lv_futanari
+							owner = { has_policy_flag = vf_gender_all }
+							gender = indeterminable 
+					}
+				}
+                portraits = {
+                    SwarmH1 SwarmH2 SwarmH3 SwarmH4 SwarmH5
+					SwarmH6 SwarmH7
+                }
+            }
+			
+			add = { #Male + Futa (sets females to futa)
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_femalefuta }
+						}
+							owner = { has_policy_flag = vf_gender_malefuta }
+                    gender = female
+                }
+                portraits = {
+                    SwarmH1 SwarmH2 SwarmH3 SwarmH4 SwarmH5
+					SwarmH6 SwarmH7
+                }
+            }
+			
+			add = { #Female + Futa (sets males to futa)
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari 
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_malefuta }
+						}
+							owner = { has_policy_flag = vf_gender_femalefuta }
+                    gender = male
+                }
+                portraits = {
+                    SwarmH1 SwarmH2 SwarmH3 SwarmH4 SwarmH5
+					SwarmH6 SwarmH7
+                }
+            }
+        }
+		
+		#leader scope 
+		ruler = {
+			add = { #Female
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_male
+							has_trait = trait_lv_all_female
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_malefuta }
+					}
+                    gender = female
+                }
+                portraits = {
+                    SwarmF1 SwarmF2 SwarmF3 SwarmF4 SwarmF5
+					SwarmF6 SwarmF7 SwarmF8 SwarmF9 SwarmF10
+					SwarmF11 SwarmF12 SwarmF13 SwarmF14 SwarmF15
+                }
+            }
+			
+			add = { #All Female
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari	
+							has_trait = trait_lv_all_male
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+					}
+					OR = {	has_trait = trait_lv_all_female
+							species = { species_gender = female }
+						}
+                    gender = female
+                }
+                portraits = {
+                    SwarmF1 SwarmF2 SwarmF3 SwarmF4 SwarmF5
+					SwarmF6 SwarmF7 SwarmF8 SwarmF9 SwarmF10
+					SwarmF11 SwarmF12 SwarmF13 SwarmF14 SwarmF15
+                }
+            }
+			
+            add = { #Male
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_femalefuta }
+					}
+                    gender = male
+                }
+                portraits = {
+                    SwarmM1 SwarmM2 SwarmM3 SwarmM4 SwarmM5
+					SwarmM6 SwarmM7 SwarmM8 SwarmM9 SwarmM10
+                }
+            }
+			
+			add = { #All Male
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_female
+							species = { species_gender = female }
+							species = { species_gender = indeterminable }
+					}
+					OR = {	has_trait = trait_lv_all_male
+							species = { species_gender = male }
+						}
+                    gender = male
+                }
+                portraits = {
+                    SwarmM1 SwarmM2 SwarmM3 SwarmM4 SwarmM5
+					SwarmM6 SwarmM7 SwarmM8 SwarmM9 SwarmM10
+                }
+            }
+			
+           add = { #Futa
+                trigger = {
+					NOR = {	has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+					}
+					OR = {	has_trait = trait_lv_futanari
+							owner = { has_policy_flag = vf_gender_all }
+							gender = indeterminable
+					}
+				}
+                portraits = {
+                    SwarmH1 SwarmH2 SwarmH3 SwarmH4 SwarmH5
+					SwarmH6 SwarmH7
+                }
+            }
+			
+			add = { #Male + Futa (sets females to futa)
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_femalefuta }
+						}
+					AND = {	owner = { has_policy_flag = vf_gender_malefuta }
+							gender = female
+						}
+                }
+                portraits = {
+                    SwarmH1 SwarmH2 SwarmH3 SwarmH4 SwarmH5
+					SwarmH6 SwarmH7
+                }
+            }
+			
+			add = { #Female + Futa (sets males to futa)
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari 
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_malefuta }
+						}
+					AND = {	owner = { has_policy_flag = vf_gender_femalefuta }
+							gender = male
+						}
+                }
+                portraits = {
+                    SwarmH1 SwarmH2 SwarmH3 SwarmH4 SwarmH5
+					SwarmH6 SwarmH7
+                }
+            }
+		}
+	}
+}
+
+######
+#EXtradimensional
+portrait_groups = {
+	EXD = {
+		default = EXF1
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+           	add = {
+                trigger = {
+                    ruler = {
+						NOR = { species = { has_trait = trait_lv_futanari }
+								gender = indeterminable}
+						gender = female
+					}
+                }
+                portraits = {
+                    EXF1 EXF2 EXF3 EXF4 EXF5
+					EXF6 EXF7 EXF8 EXF9 EXF10
+                }
+            }
+            add = {
+                trigger = {
+                    ruler = {
+						NOR = { species = { has_trait = trait_lv_futanari } 
+								gender = indeterminable}
+						gender = male
+					}
+                }
+                portraits = {
+                    EXM1
+                }
+            }
+			add = {
+				trigger = {
+					ruler = { 
+					OR = {	species = { has_trait = trait_lv_futanari } 
+							gender = indeterminable}
+					}
+				}
+                portraits = {
+                    EXH1
+				}
+			}
+			#set = {
+			#	trigger = { ... }
+			#	portraits = { ... }
+			#	#using "set =" instead of "add" will first clear any portraits already added
+			#}
+		}
+		
+		#species scope
+        species = { #generic portrait for a species
+            add = { #Female
+                trigger = {
+					exists = species
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_male
+							has_trait = trait_lv_all_female
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_malefuta }
+					}
+                }
+                portraits = {
+					EXF1 EXF2 EXF3 EXF4 EXF5
+					EXF6 EXF7 EXF8 EXF9 EXF10
+                }
+            }
+			
+			add = { #All Female
+                trigger = {
+					exists = species
+					NOR = { has_trait = trait_lv_futanari	
+							has_trait = trait_lv_all_male
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+					}
+					OR = {	has_trait = trait_lv_all_female
+							species = { species_gender = female }
+						}
+                }
+                portraits = {
+                    EXF1 EXF2 EXF3 EXF4 EXF5
+					EXF6 EXF7 EXF8 EXF9 EXF10
+                }
+            }
+
+            add = { #Male
+                trigger = {
+					exists = species
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_femalefuta }
+					}
+                }
+                portraits = {
+                    EXM1
+                }
+            }
+			
+			add = { #All Male
+                trigger = {
+					exists = species
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_female
+							species = { species_gender = female }
+							species = { species_gender = indeterminable }
+					}
+					OR = {	has_trait = trait_lv_all_male
+							species = { species_gender = male }
+						}
+                }
+                portraits = {
+                    EXM1
+                }
+            }
+
+            add = { #Futa
+                trigger = {
+					exists = species
+					NOR = {	has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+					}
+					OR = {	has_trait = trait_lv_futanari
+							owner = { has_policy_flag = vf_gender_all }
+							species = { species_gender = indeterminable }
+					}
+				}
+                portraits = {
+                    EXH1
+                }
+            }
+			
+			add = { #Male + Futa (sets females to futa)
+                trigger = {
+					exists = species
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_femalefuta }
+						}
+							owner = { has_policy_flag = vf_gender_malefuta }
+                }
+                portraits = {
+                    EXH1
+                }
+            }
+			
+			add = { #Female + Futa (sets males to futa)
+                trigger = {
+					exists = species
+					NOR = { has_trait = trait_lv_futanari 
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_malefuta }
+						}
+							owner = { has_policy_flag = vf_gender_femalefuta }
+                }
+                portraits = {
+                    EXH1
+                }
+            }
+        }
+		
+		#pop scope
+        pop = { #for a specific pop
+            add = { #Female
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_male
+							has_trait = trait_lv_all_female
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_malefuta }
+					}
+                }
+                portraits = {
+                    EXF1 EXF2 EXF3 EXF4 EXF5
+					EXF6 EXF7 EXF8 EXF9 EXF10
+                }
+            }
+			
+			add = { #All Female
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari	
+							has_trait = trait_lv_all_male
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+					}
+					OR = {	has_trait = trait_lv_all_female
+							species = { species_gender = female }
+						}
+                }
+                portraits = {
+                    EXF1 EXF2 EXF3 EXF4 EXF5
+					EXF6 EXF7 EXF8 EXF9 EXF10
+                }
+            }
+
+            add = { #Male
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_femalefuta }
+					}
+                }
+                portraits = {
+                    EXM1
+                }
+            }
+			
+			add = { #All Male
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_female
+							species = { species_gender = female }
+							species = { species_gender = indeterminable }
+					}
+					OR = {	has_trait = trait_lv_all_male
+							species = { species_gender = male }
+						}
+                }
+                portraits = {
+                    EXM1
+                }
+            }
+
+            add = { #Futa
+                trigger = {
+					NOR = {	has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+					}
+					OR = {	has_trait = trait_lv_futanari
+							owner = { has_policy_flag = vf_gender_all 
+							species = { species_gender = indeterminable } }
+					}
+				}
+                portraits = {
+                    EXH1
+                }
+            }
+			
+			add = { #Male + Futa (sets females to futa)
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_femalefuta }
+						}
+							owner = { has_policy_flag = vf_gender_malefuta }
+                }
+                portraits = {
+                    EXH1
+                }
+            }
+			
+			add = { #Female + Futa (sets males to futa)
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari 
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_malefuta }
+						}
+							owner = { has_policy_flag = vf_gender_femalefuta }
+                }
+                portraits = {
+                    EXH1
+                }
+            }
+        }
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = { #Female
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_male
+							has_trait = trait_lv_all_female
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_malefuta }
+					}
+                    gender = female
+                }
+                portraits = {
+                    EXF1 EXF2 EXF3 EXF4 EXF5
+					EXF6 EXF7 EXF8 EXF9 EXF10
+                }
+            }
+			
+			add = { #All Female
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari	
+							has_trait = trait_lv_all_male
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+					}
+					OR = {	has_trait = trait_lv_all_female
+							species = { species_gender = female }
+						}
+                    gender = female
+                }
+                portraits = {
+                    EXF1 EXF2 EXF3 EXF4 EXF5
+					EXF6 EXF7 EXF8 EXF9 EXF10
+                }
+            }
+			
+            add = { #Male
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_femalefuta }
+					}
+                    gender = male
+                }
+                portraits = {
+                    EXM1
+                }
+            }
+			
+			add = { #All Male
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_female
+							species = { species_gender = female }
+							species = { species_gender = indeterminable }
+					}
+					OR = {	has_trait = trait_lv_all_male
+							species = { species_gender = male }
+						}
+                    gender = male
+                }
+                portraits = {
+                    EXM1
+                }
+            }
+			
+           add = { #Futa
+                trigger = {
+					NOR = {	has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+					}
+					OR = {	has_trait = trait_lv_futanari
+							owner = { has_policy_flag = vf_gender_all }
+							gender = indeterminable 
+					}
+				}
+                portraits = {
+                    EXH1
+                }
+            }
+			
+			add = { #Male + Futa (sets females to futa)
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_femalefuta }
+						}
+							owner = { has_policy_flag = vf_gender_malefuta }
+                    gender = female
+                }
+                portraits = {
+                    EXH1
+                }
+            }
+			
+			add = { #Female + Futa (sets males to futa)
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari 
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_malefuta }
+						}
+							owner = { has_policy_flag = vf_gender_femalefuta }
+                    gender = male
+                }
+                portraits = {
+                    EXH1
+                }
+            }
+        }
+		
+		#leader scope 
+		ruler = {
+			add = { #Female
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_male
+							has_trait = trait_lv_all_female
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_malefuta }
+					}
+                    gender = female
+                }
+                portraits = {
+                    EXF1 EXF2 EXF3 EXF4 EXF5
+					EXF6 EXF7 EXF8 EXF9 EXF10
+                }
+            }
+			
+			add = { #All Female
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari	
+							has_trait = trait_lv_all_male
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+					}
+					OR = {	has_trait = trait_lv_all_female
+							species = { species_gender = female }
+						}
+                    gender = female
+                }
+                portraits = {
+                    EXF1 EXF2 EXF3 EXF4 EXF5
+					EXF6 EXF7 EXF8 EXF9 EXF10
+                }
+            }
+			
+            add = { #Male
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_femalefuta }
+					}
+                    gender = male
+                }
+                portraits = {
+                    EXM1
+                }
+            }
+			
+			add = { #All Male
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_female
+							species = { species_gender = female }
+							species = { species_gender = indeterminable }
+					}
+					OR = {	has_trait = trait_lv_all_male
+							species = { species_gender = male }
+						}
+                    gender = male
+                }
+                portraits = {
+                    EXM1
+                }
+            }
+			
+           add = { #Futa
+                trigger = {
+					NOR = {	has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+					}
+					OR = {	has_trait = trait_lv_futanari
+							owner = { has_policy_flag = vf_gender_all }
+							gender = indeterminable
+					}
+				}
+                portraits = {
+                    EXH1
+                }
+            }
+			
+			add = { #Male + Futa (sets females to futa)
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_femalefuta }
+						}
+					AND = {	owner = { has_policy_flag = vf_gender_malefuta }
+							gender = female
+						}
+                }
+                portraits = {
+                    EXH1
+                }
+            }
+			
+			add = { #Female + Futa (sets males to futa)
+                trigger = {
+					NOR = { has_trait = trait_lv_futanari 
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_all_male
+							species = { species_gender = female }
+							species = { species_gender = male }
+							species = { species_gender = indeterminable }
+							owner = { has_policy_flag = vf_gender_malefuta }
+						}
+					AND = {	owner = { has_policy_flag = vf_gender_femalefuta }
+							gender = male
+						}
+                }
+                portraits = {
+                    EXH1
+                }
+            }
+		}
+	}
+}
+
+######
+#Crisis AI
+portrait_groups = {	
+	VFAI = {
+		default = AI1
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					AI1 AI2 AI3 AI4 AI5
+			}
+		}
+
+		#leader scope 
+		ruler = {
+				add = {
+				portraits = {
+					AI1 AI2 AI3 AI4 AI5
+				}
+			}
+		
+		}
+	}
+}
+}
+
+######
+#Shroudwalker
+portrait_groups = {
+	VShroudwalker = {
+		default = ShroudW1
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+           	add = {
+
+                portraits = {
+                    ShroudW1 ShroudW2 ShroudW3 ShroudW4 ShroudW5
+					ShroudW6 ShroudW7 ShroudW8 ShroudW9 ShroudW10
+					ShroudW11 ShroudW12
+                }
+            }
+		}
+		
+		#species scope
+        species = { #generic portrait for a species
+            add = { 
+                trigger = {
+					exists = species
+                portraits = {
+					ShroudW1 ShroudW2 ShroudW3 ShroudW4 ShroudW5
+					ShroudW6 ShroudW7 ShroudW8 ShroudW9 ShroudW10
+					ShroudW11 ShroudW12
+                }
+            }
+        }
+		}
+		
+		#pop scope
+        pop = { #for a specific pop
+            add = { 
+                trigger = {
+					exists = species
+                portraits = {
+					ShroudW1 ShroudW2 ShroudW3 ShroudW4 ShroudW5
+					ShroudW6 ShroudW7 ShroudW8 ShroudW9 ShroudW10
+					ShroudW11 ShroudW12
+                }
+            }
+        }
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = { 
+
+                portraits = {
+                    ShroudW1 ShroudW2 ShroudW3 ShroudW4 ShroudW5
+					ShroudW6 ShroudW7 ShroudW8 ShroudW9 ShroudW10
+					ShroudW11 ShroudW12
+                }
+            }
+        }
+		
+		#leader scope 
+		ruler = {
+			add = { 
+
+                portraits = {
+                    ShroudW1 ShroudW2 ShroudW3 ShroudW4 ShroudW5
+					ShroudW6 ShroudW7 ShroudW8 ShroudW9 ShroudW10
+					ShroudW11 ShroudW12
+                }
+            }
+        }
+}
+}
+
+######
+#Salvager
+portrait_groups = {
+	VSalvager = {
+		default = Salv1
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+           	add = {
+
+                portraits = {
+                    Salv1 Salv2 Salv3 Salv4 Salv5
+					Salv6 Salv7 Salv8 Salv9
+                }
+            }
+		}
+		
+		#species scope
+        species = { #generic portrait for a species
+            add = { 
+                trigger = {
+					exists = species
+                portraits = {
+					Salv1 Salv2 Salv3 Salv4 Salv5
+					Salv6 Salv7 Salv8 Salv9
+                }
+            }
+        }
+		}
+		
+		#pop scope
+        pop = { #for a specific pop
+            add = { 
+                trigger = {
+					exists = species
+                portraits = {
+					Salv1 Salv2 Salv3 Salv4 Salv5
+					Salv6 Salv7 Salv8 Salv9
+                }
+            }
+        }
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = { 
+
+                portraits = {
+                    Salv1 Salv2 Salv3 Salv4 Salv5
+					Salv6 Salv7 Salv8 Salv9
+                }
+            }
+        }
+		
+		#leader scope 
+		ruler = {
+			add = { 
+
+                portraits = {
+                    Salv1 Salv2 Salv3 Salv4 Salv5
+					Salv6 Salv7 Salv8 Salv9
+                }
+            }
+        }
+}
+}

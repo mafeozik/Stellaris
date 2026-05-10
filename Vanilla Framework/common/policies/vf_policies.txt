@@ -1,0 +1,55 @@
+###########
+# Leaders #
+###########
+
+# VF Genders Policy
+vf_gender = {
+	potential = {
+		NOT = { owner = { has_authority = auth_machine_intelligence } }
+	}
+	
+	#Default option
+	option = {
+		name = "vf_gender_default"
+
+		policy_flags = {
+			vf_gender_default
+		}
+	}
+	
+	#Male + Futa option
+	option = {
+		name = "vf_gender_malefuta"
+
+		policy_flags = {
+			vf_gender_malefuta
+		}
+		AI_weight = {
+			factor = 0
+		}
+	}
+	
+	#Female + Futa option
+	option = {
+		name = "vf_gender_femalefuta"
+
+		policy_flags = {
+			vf_gender_femalefuta
+		}
+		AI_weight = {
+			factor = 0
+		}
+	}
+	
+	#Female + Futa + Male option
+	option = {
+		name = "vf_gender_all"
+
+		policy_flags = {
+			vf_gender_all
+		}
+		AI_weight = {
+			factor = 0
+		}
+	}
+}

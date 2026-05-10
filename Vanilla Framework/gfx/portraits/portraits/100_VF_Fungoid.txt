@@ -1,0 +1,1449 @@
+portraits = {
+	01FunM1 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunM1.dds" }
+	01FunM2 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunM2.dds" }
+	01FunM3 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunM3.dds" }
+	01FunM4 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunM4.dds" }
+	01FunM5 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunM5.dds" }
+	01FunM6 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunM6.dds" }
+	01FunM7 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunM7.dds" }
+	01FunM8 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunM8.dds" }
+	01FunM9 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunM9.dds" }
+	01FunM10 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunM10.dds" }
+	01FunM11 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunM11.dds" }
+	01FunM12 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunM12.dds" }
+	01FunM13 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunM13.dds" }
+	01FunM14 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunM14.dds" }
+
+	01FunF1 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF1.dds" }
+	01FunF2 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF2.dds" }
+	01FunF3 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF3.dds" }
+	01FunF4 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF4.dds" }
+	01FunF5 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF5.dds" }
+	01FunF6 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF6.dds" }
+	01FunF7 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF7.dds" }
+	01FunF8 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF8.dds" }
+	01FunF9 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF9.dds" }
+	01FunF10 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF10.dds" }
+	01FunF11 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF11.dds" }
+	01FunF12 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF12.dds" }
+	01FunF13 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF13.dds" }
+	01FunF14 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF14.dds" }
+	01FunF15 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF15.dds" }
+	01FunF16 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF16.dds" }
+	01FunF17 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF17.dds" }
+	01FunF18 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF18.dds" }
+	01FunF19 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF19.dds" }
+	01FunF20 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF20.dds" }
+	01FunF21 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF21.dds" }
+	01FunF22 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF22.dds" }
+	01FunF23 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF23.dds" }
+	01FunF24 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF24.dds" }
+	01FunF25 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF25.dds" }
+	01FunF26 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF26.dds" }
+	01FunF27 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF27.dds" }
+	01FunF28 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF28.dds" }
+	01FunF29 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF29.dds" }
+	01FunF30 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF30.dds" }
+	01FunF31 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF31.dds" }
+	01FunF32 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF32.dds" }
+	01FunF33 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF33.dds" }
+	01FunF34 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF34.dds" }
+	01FunF35 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF35.dds" }
+	01FunF36 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF36.dds" }
+	01FunF37 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF37.dds" }
+	01FunF38 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF38.dds" }
+	01FunF39 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunF39.dds" }
+
+	01FunH1 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunH1.dds" }
+	01FunH2 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunH2.dds" }
+	01FunH3 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunH3.dds" }
+	01FunH4 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunH4.dds" }
+	01FunH5 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunH5.dds" }
+	01FunH6 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunH6.dds" }
+	01FunH7 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunH7.dds" }
+	01FunH7 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunH7.dds" }
+	01FunH8 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunH8.dds" }
+	01FunH10 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunH10.dds" }
+	01FunH11 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunH11.dds" }
+	01FunH12 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunH12.dds" }
+	01FunH13 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun01/01FunH13.dds" }
+
+	02FunM1 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunM1.dds" }
+	02FunM2 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunM2.dds" }
+	02FunM3 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunM3.dds" }
+	02FunM4 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunM4.dds" }
+	02FunM5 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunM5.dds" }
+	02FunM6 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunM6.dds" }
+	02FunM7 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunM7.dds" }
+	02FunM8 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunM8.dds" }
+	02FunM9 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunM9.dds" }
+	02FunM10 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunM10.dds" }
+	02FunM11 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunM11.dds" }
+	02FunM12 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunM12.dds" }
+	02FunM13 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunM13.dds" }
+	02FunM14 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunM14.dds" }
+	02FunM15 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunM15.dds" }
+	02FunM16 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunM16.dds" }
+	02FunM17 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunM17.dds" }
+	02FunM18 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunM18.dds" }
+	02FunM19 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunM19.dds" }
+	02FunM20 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunM20.dds" }
+	02FunM21 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunM21.dds" }
+
+	02FunF1 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunF1.dds" }
+	02FunF2 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunF2.dds" }
+	02FunF3 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunF3.dds" }
+	02FunF4 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunF4.dds" }
+	02FunF5 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunF5.dds" }
+	02FunF6 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunF6.dds" }
+	02FunF7 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunF7.dds" }
+	02FunF8 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunF8.dds" }
+	02FunF9 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunF9.dds" }
+	02FunF10 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunF10.dds" }
+	02FunF11 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunF11.dds" }
+	02FunF12 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunF12.dds" }
+	02FunF13 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunF13.dds" }
+	02FunF14 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunF14.dds" }
+	02FunF15 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunF15.dds" }
+	02FunF16 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunF16.dds" }
+	02FunF17 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunF17.dds" }
+	02FunF18 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunF18.dds" }
+	02FunF19 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunF19.dds" }
+	02FunF20 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunF20.dds" }
+	02FunF21 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunF21.dds" }
+	02FunF22 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunF22.dds" }
+	02FunF23 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunF23.dds" }
+	02FunF24 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunF24.dds" }
+	02FunF25 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunF25.dds" }
+
+	02FunH1 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunH1.dds" }
+	02FunH2 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunH2.dds" }
+	02FunH3 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunH3.dds" }
+	02FunH4 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunH4.dds" }
+	02FunH5 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunH5.dds" }
+	02FunH6 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunH6.dds" }
+	02FunH7 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunH7.dds" }
+	02FunH7 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunH7.dds" }
+	02FunH8 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunH8.dds" }
+	02FunH10 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunH10.dds" }
+	02FunH11 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunH11.dds" }
+	02FunH12 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunH12.dds" }
+	02FunH13 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunH13.dds" }
+	02FunH14 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunH14.dds" }
+	02FunH15 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunH15.dds" }
+	02FunH16 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunH16.dds" }
+	02FunH17 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunH17.dds" }
+	02FunH18 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunH18.dds" }
+	02FunH19 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunH19.dds" }
+	02FunH20 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunH20.dds" }
+	02FunH21 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunH21.dds" }
+	02FunH22 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun02/02FunH22.dds" }
+
+	03FunM1 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun03/03FunM1.dds" }
+	03FunM2 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun03/03FunM2.dds" }
+	03FunM3 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun03/03FunM3.dds" }
+	03FunM4 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun03/03FunM4.dds" }
+	03FunM5 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun03/03FunM5.dds" }
+	03FunM6 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun03/03FunM6.dds" }
+	03FunM7 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun03/03FunM7.dds" }
+	03FunM8 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun03/03FunM8.dds" }
+	03FunM9 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun03/03FunM9.dds" }
+
+	03FunF1 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun03/03FunF1.dds" }
+	03FunF2 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun03/03FunF2.dds" }
+	03FunF3 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun03/03FunF3.dds" }
+	03FunF4 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun03/03FunF4.dds" }
+	03FunF5 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun03/03FunF5.dds" }
+	03FunF6 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun03/03FunF6.dds" }
+	03FunF7 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun03/03FunF7.dds" }
+	03FunF8 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun03/03FunF8.dds" }
+	03FunF9 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun03/03FunF9.dds" }
+	03FunF10 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun03/03FunF10.dds" }
+	03FunF11 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun03/03FunF11.dds" }
+	03FunF12 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun03/03FunF12.dds" }
+
+	03FunH1 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun03/03FunH1.dds" }
+	03FunH2 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun03/03FunH2.dds" }
+	03FunH3 = { greeting_sound = "humanoid_01_greetings" texturefile = "gfx/models/Fungoid/Fun03/03FunH3.dds" }
+
+}
+portrait_groups = {
+	Fun01 = {
+		default = 01FunF1
+		game_setup = {
+			add = {
+				trigger = { #trigger specifies under which conditions the portraits will be added.
+					ruler = {
+						NOR = { 
+							species = { has_trait = trait_lv_futanari }
+							gender = indeterminable
+							}
+						gender = female
+					}
+				}
+				portraits = {
+					01FunF1 01FunF2 01FunF3 01FunF4 01FunF5 01FunF6 01FunF7 01FunF8 
+					01FunF9 01FunF10 01FunF11 01FunF12 01FunF13 01FunF14 01FunF15 
+					01FunF16 01FunF17 01FunF18 01FunF19 01FunF20 01FunF21 01FunF22 
+					01FunF23 01FunF24 01FunF25 01FunF26 01FunF27 01FunF28 01FunF29 
+					01FunF30 01FunF31 01FunF32 01FunF33 01FunF34 01FunF35 01FunF36 
+					01FunF37 01FunF38 01FunF39 
+
+				}
+			}
+			add = {
+				trigger = {
+					ruler = {
+						NOR = { 
+							species = { has_trait = trait_lv_futanari }
+							gender = indeterminable
+							}
+						gender = male
+					}
+				}
+				portraits = {
+					01FunM1 01FunM2 01FunM3 01FunM4 01FunM5 01FunM6 01FunM7 01FunM8 
+					01FunM9 01FunM10 01FunM11 01FunM12 01FunM13 01FunM14 
+
+				}
+			}
+			add = {
+				trigger = {
+					ruler = {
+						OR = { 
+							species = { has_trait = trait_lv_futanari }
+							gender = indeterminable
+						}
+					}
+				}
+				portraits = {
+					01FunH1 01FunH2 01FunH3 01FunH4 01FunH5 01FunH6 01FunH7 01FunH7 
+					01FunH8 01FunH10 01FunH11 01FunH12 01FunH13 
+
+				}
+			}
+		}
+		#species scope
+		species = {
+			add = {
+				trigger = { #for females to be added, the species must not be all male/futa. If the species is all female, females will be added regardless of vf policy.
+					exists = species
+					NOR = { 
+						has_trait = trait_lv_futanari
+						has_trait = trait_lv_all_male
+					}
+				}
+				portraits = {
+					01FunF1 01FunF2 01FunF3 01FunF4 01FunF5 01FunF6 01FunF7 01FunF8 
+					01FunF9 01FunF10 01FunF11 01FunF12 01FunF13 01FunF14 01FunF15 
+					01FunF16 01FunF17 01FunF18 01FunF19 01FunF20 01FunF21 01FunF22 
+					01FunF23 01FunF24 01FunF25 01FunF26 01FunF27 01FunF28 01FunF29 
+					01FunF30 01FunF31 01FunF32 01FunF33 01FunF34 01FunF35 01FunF36 
+					01FunF37 01FunF38 01FunF39 
+	
+				}
+			}
+			add = {
+				trigger = { #for males to be added, the species must not be all female/futa. If the species is all male, males will be added regardless of vf policy.
+					exists = species
+					NOR = { 
+						has_trait = trait_lv_futanari
+						has_trait = trait_lv_all_female
+					}
+				}
+				portraits = {
+					01FunM1 01FunM2 01FunM3 01FunM4 01FunM5 01FunM6 01FunM7 01FunM8 
+					01FunM9 01FunM10 01FunM11 01FunM12 01FunM13 01FunM14 
+
+				}
+			}
+			add = {
+				trigger = { #futas will be added if the species has futanari trait. 
+					exists = species
+					has_trait = trait_lv_futanari
+					NOR = { 
+						has_trait = trait_lv_all_male
+						has_trait = trait_lv_all_female
+					}
+				}
+				portraits = {
+					01FunH1 01FunH2 01FunH3 01FunH4 01FunH5 01FunH6 01FunH7 01FunH7 
+					01FunH8 01FunH10 01FunH11 01FunH12 01FunH13 
+
+				}
+			}
+		}
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				trigger = { #for females to be added, the species must not be all male/futa. If the species is all female, females will be added regardless of vf policy.
+					exists = species
+					NOR = { 
+						has_trait = trait_lv_futanari
+						has_trait = trait_lv_all_male
+						species = { species_gender = male }
+						species = { species_gender = indeterminable }
+					}
+					OR = {
+						has_trait = trait_lv_all_female
+						species = { species_gender = female }
+						OR = {
+							owner = { has_policy_flag = vf_gender_femalefuta }
+							owner = { has_policy_flag = vf_gender_all }
+							owner = { has_policy_flag = vf_gender_default }
+						}
+					}
+				}
+				portraits = {
+					01FunF1 01FunF2 01FunF3 01FunF4 01FunF5 01FunF6 01FunF7 01FunF8 
+					01FunF9 01FunF10 01FunF11 01FunF12 01FunF13 01FunF14 01FunF15 
+					01FunF16 01FunF17 01FunF18 01FunF19 01FunF20 01FunF21 01FunF22 
+					01FunF23 01FunF24 01FunF25 01FunF26 01FunF27 01FunF28 01FunF29 
+					01FunF30 01FunF31 01FunF32 01FunF33 01FunF34 01FunF35 01FunF36 
+					01FunF37 01FunF38 01FunF39 
+	
+				}
+			}
+			add = {
+				trigger = { #for males to be added, the species must not be all female/futa. If the species is all male, males will be added regardless of vf policy.
+					exists = species
+					NOR = { 
+						has_trait = trait_lv_futanari
+						has_trait = trait_lv_all_female
+						species = { species_gender = female }
+						species = { species_gender = indeterminable }
+					}
+					OR = {
+						has_trait = trait_lv_all_male
+						species = { species_gender = male }
+						OR = {
+							owner = { has_policy_flag = vf_gender_malefuta }
+							owner = { has_policy_flag = vf_gender_all }
+							owner = { has_policy_flag = vf_gender_default }
+						}
+					}
+				}
+				portraits = {
+					01FunM1 01FunM2 01FunM3 01FunM4 01FunM5 01FunM6 01FunM7 01FunM8 
+					01FunM9 01FunM10 01FunM11 01FunM12 01FunM13 01FunM14 
+
+				}
+			}
+			add = {
+				trigger = {
+					exists = species
+					OR = { #futas will be added if the species has futanari trait, indeterminable gender, or if it is not all male/female and uses a vf policy. 
+						has_trait = trait_lv_futanari
+						species = { species_gender = indeterminable }
+						AND = {
+							NOR = { 
+								has_trait = trait_lv_all_male
+								has_trait = trait_lv_all_female
+								species = { species_gender = female }
+								species = { species_gender = male }
+							}
+							OR = {
+								owner = { has_policy_flag = vf_gender_malefuta }
+								owner = { has_policy_flag = vf_gender_femalefuta }
+								owner = { has_policy_flag = vf_gender_all }
+							}
+						}
+					}
+				}
+				portraits = {
+					01FunH1 01FunH2 01FunH3 01FunH4 01FunH5 01FunH6 01FunH7 01FunH7 
+					01FunH8 01FunH10 01FunH11 01FunH12 01FunH13 
+
+				}
+			}
+		}
+		#leader scope
+		#default: males and females as normal. malefuta: females replaced with futas. femalefuta: males replaced with futas. all: futas included as females. 
+		leader = {
+			add = { #only females will be added to the female gender for default or femalefuta policies, or if the species is all female. 
+				trigger = { 
+					OR = {
+						NOR = { 
+							species = { has_trait = trait_lv_futanari }
+							gender = indeterminable
+							owner = { has_policy_flag = vf_gender_malefuta }
+							owner = { has_policy_flag = vf_gender_all }
+						}
+						species = { has_trait = trait_lv_all_female }
+					}
+					gender = female
+				}
+				portraits = {
+					01FunF1 01FunF2 01FunF3 01FunF4 01FunF5 01FunF6 01FunF7 01FunF8 
+					01FunF9 01FunF10 01FunF11 01FunF12 01FunF13 01FunF14 01FunF15 
+					01FunF16 01FunF17 01FunF18 01FunF19 01FunF20 01FunF21 01FunF22 
+					01FunF23 01FunF24 01FunF25 01FunF26 01FunF27 01FunF28 01FunF29 
+					01FunF30 01FunF31 01FunF32 01FunF33 01FunF34 01FunF35 01FunF36 
+					01FunF37 01FunF38 01FunF39 
+	
+				}
+			}
+			add = { #females and futas will be added to the female gender the all policy and is not all female.
+				trigger = { 
+					NOR = { 
+						has_trait = trait_lv_all_female
+						species = { species_gender = female }
+						species = { has_trait = trait_lv_futanari }
+						gender = indeterminable
+						owner = { has_policy_flag = vf_gender_malefuta }
+						owner = { has_policy_flag = vf_gender_femalefuta }
+						owner = { has_policy_flag = vf_gender_default }
+					}
+					gender = female
+				}
+				portraits = {
+					01FunF1 01FunF2 01FunF3 01FunF4 01FunF5 01FunF6 01FunF7 01FunF8 
+					01FunF9 01FunF10 01FunF11 01FunF12 01FunF13 01FunF14 01FunF15 
+					01FunF16 01FunF17 01FunF18 01FunF19 01FunF20 01FunF21 01FunF22 
+					01FunF23 01FunF24 01FunF25 01FunF26 01FunF27 01FunF28 01FunF29 
+					01FunF30 01FunF31 01FunF32 01FunF33 01FunF34 01FunF35 01FunF36 
+					01FunF37 01FunF38 01FunF39 
+	
+					01FunH1 01FunH2 01FunH3 01FunH4 01FunH5 01FunH6 01FunH7 01FunH7 
+					01FunH8 01FunH10 01FunH11 01FunH12 01FunH13 
+
+				}
+			}
+			add = { #only males will be added to the male gender for default, malefuta, and all policies, or if the species is all male.
+				trigger = {
+					OR = {
+						NOR = { 
+							species = { has_trait = trait_lv_futanari }
+							gender = indeterminable
+							owner = { has_policy_flag = vf_gender_femalefuta }
+						}
+						has_trait = trait_lv_all_male
+						species = { species_gender = male }
+					}
+					gender = male
+				}
+				portraits = {
+					01FunM1 01FunM2 01FunM3 01FunM4 01FunM5 01FunM6 01FunM7 01FunM8 
+					01FunM9 01FunM10 01FunM11 01FunM12 01FunM13 01FunM14 
+
+				}
+			}
+			add = { #only futas will be added to the male gender for femalefuta policy, if the species is not all male.
+				trigger = {
+					NOR = { 
+						has_trait = trait_lv_all_male
+						species = { species_gender = male }
+						species = { has_trait = trait_lv_futanari }
+						gender = indeterminable
+						owner = { has_policy_flag = vf_gender_malefuta }
+						owner = { has_policy_flag = vf_gender_default }
+						owner = { has_policy_flag = vf_gender_all }
+						}
+					owner = { has_policy_flag = vf_gender_femalefuta }
+					gender = male
+				}
+				portraits = {
+					01FunH1 01FunH2 01FunH3 01FunH4 01FunH5 01FunH6 01FunH7 01FunH7 
+					01FunH8 01FunH10 01FunH11 01FunH12 01FunH13 
+
+				}
+			}
+			add = { #only futas will be added to the female gender for malefuta policy, if the species is not all female.
+				trigger = {
+					NOR = { 
+						has_trait = trait_lv_all_female
+						species = { species_gender = female }
+						species = { has_trait = trait_lv_futanari }
+						gender = indeterminable
+						owner = { has_policy_flag = vf_gender_femalefuta }
+						owner = { has_policy_flag = vf_gender_default }
+						owner = { has_policy_flag = vf_gender_all }
+						}
+					gender = female
+				}
+				portraits = {
+					01FunH1 01FunH2 01FunH3 01FunH4 01FunH5 01FunH6 01FunH7 01FunH7 
+					01FunH8 01FunH10 01FunH11 01FunH12 01FunH13 
+
+				}
+			}
+			add = { #only futa portraits will be used if the species gender is futa. 
+				trigger = {
+					OR = { 
+						species = { has_trait = trait_lv_futanari }
+						gender = indeterminable
+					}
+				}
+				portraits = {
+					01FunH1 01FunH2 01FunH3 01FunH4 01FunH5 01FunH6 01FunH7 01FunH7 
+					01FunH8 01FunH10 01FunH11 01FunH12 01FunH13 
+
+				}
+			}
+		}
+		#ruler scope
+		ruler = {
+			add = { #only females will be added to the female gender for default or femalefuta policies, or if the species is all female. 
+				trigger = { 
+					OR = {
+						NOR = { 
+							species = { has_trait = trait_lv_futanari }
+							gender = indeterminable
+							owner = { has_policy_flag = vf_gender_malefuta }
+							owner = { has_policy_flag = vf_gender_all }
+						}
+						species = { has_trait = trait_lv_all_female }
+					}
+					gender = female
+				}
+				portraits = {
+					01FunF1 01FunF2 01FunF3 01FunF4 01FunF5 01FunF6 01FunF7 01FunF8 
+					01FunF9 01FunF10 01FunF11 01FunF12 01FunF13 01FunF14 01FunF15 
+					01FunF16 01FunF17 01FunF18 01FunF19 01FunF20 01FunF21 01FunF22 
+					01FunF23 01FunF24 01FunF25 01FunF26 01FunF27 01FunF28 01FunF29 
+					01FunF30 01FunF31 01FunF32 01FunF33 01FunF34 01FunF35 01FunF36 
+					01FunF37 01FunF38 01FunF39 
+	
+				}
+			}
+			add = { #females and futas will be added to the female gender the all policy and is not all female.
+				trigger = { 
+					NOR = { 
+						has_trait = trait_lv_all_female
+						species = { species_gender = female }
+						species = { has_trait = trait_lv_futanari }
+						gender = indeterminable
+						owner = { has_policy_flag = vf_gender_malefuta }
+						owner = { has_policy_flag = vf_gender_femalefuta }
+						owner = { has_policy_flag = vf_gender_default }
+					}
+					gender = female
+				}
+				portraits = {
+					01FunF1 01FunF2 01FunF3 01FunF4 01FunF5 01FunF6 01FunF7 01FunF8 
+					01FunF9 01FunF10 01FunF11 01FunF12 01FunF13 01FunF14 01FunF15 
+					01FunF16 01FunF17 01FunF18 01FunF19 01FunF20 01FunF21 01FunF22 
+					01FunF23 01FunF24 01FunF25 01FunF26 01FunF27 01FunF28 01FunF29 
+					01FunF30 01FunF31 01FunF32 01FunF33 01FunF34 01FunF35 01FunF36 
+					01FunF37 01FunF38 01FunF39 
+	
+					01FunH1 01FunH2 01FunH3 01FunH4 01FunH5 01FunH6 01FunH7 01FunH7 
+					01FunH8 01FunH10 01FunH11 01FunH12 01FunH13 
+
+				}
+			}
+			add = { #only males will be added to the male gender for default, malefuta, and all policies, or if the species is all male.
+				trigger = {
+					OR = {
+						NOR = { 
+							species = { has_trait = trait_lv_futanari }
+							gender = indeterminable
+							owner = { has_policy_flag = vf_gender_femalefuta }
+						}
+						has_trait = trait_lv_all_male
+						species = { species_gender = male }
+					}
+					gender = male
+				}
+				portraits = {
+					01FunM1 01FunM2 01FunM3 01FunM4 01FunM5 01FunM6 01FunM7 01FunM8 
+					01FunM9 01FunM10 01FunM11 01FunM12 01FunM13 01FunM14 
+
+				}
+			}
+			add = { #only futas will be added to the male gender for femalefuta policy, if the species is not all male.
+				trigger = {
+					NOR = { 
+						has_trait = trait_lv_all_male
+						species = { species_gender = male }
+						species = { has_trait = trait_lv_futanari }
+						gender = indeterminable
+						owner = { has_policy_flag = vf_gender_malefuta }
+						owner = { has_policy_flag = vf_gender_default }
+						owner = { has_policy_flag = vf_gender_all }
+						}
+					owner = { has_policy_flag = vf_gender_femalefuta }
+					gender = male
+				}
+				portraits = {
+					01FunH1 01FunH2 01FunH3 01FunH4 01FunH5 01FunH6 01FunH7 01FunH7 
+					01FunH8 01FunH10 01FunH11 01FunH12 01FunH13 
+
+				}
+			}
+			add = { #only futas will be added to the female gender for malefuta policy, if the species is not all female.
+				trigger = {
+					NOR = { 
+						has_trait = trait_lv_all_female
+						species = { species_gender = female }
+						species = { has_trait = trait_lv_futanari }
+						gender = indeterminable
+						owner = { has_policy_flag = vf_gender_femalefuta }
+						owner = { has_policy_flag = vf_gender_default }
+						owner = { has_policy_flag = vf_gender_all }
+						}
+					gender = female
+				}
+				portraits = {
+					01FunH1 01FunH2 01FunH3 01FunH4 01FunH5 01FunH6 01FunH7 01FunH7 
+					01FunH8 01FunH10 01FunH11 01FunH12 01FunH13 
+
+				}
+			}
+			add = { #only futa portraits will be used if the species gender is futa. 
+				trigger = {
+					OR = { 
+						species = { has_trait = trait_lv_futanari }
+						gender = indeterminable
+					}
+				}
+				portraits = {
+					01FunH1 01FunH2 01FunH3 01FunH4 01FunH5 01FunH6 01FunH7 01FunH7 
+					01FunH8 01FunH10 01FunH11 01FunH12 01FunH13 
+
+				}
+			}
+		}
+	}
+}
+portrait_groups = {
+	Fun02 = {
+		default = 02FunF1
+		game_setup = {
+			add = {
+				trigger = { #trigger specifies under which conditions the portraits will be added.
+					ruler = {
+						NOR = { 
+							species = { has_trait = trait_lv_futanari }
+							gender = indeterminable
+							}
+						gender = female
+					}
+				}
+				portraits = {
+					02FunF1 02FunF2 02FunF3 02FunF4 02FunF5 02FunF6 02FunF7 02FunF8 
+					02FunF9 02FunF10 02FunF11 02FunF12 02FunF13 02FunF14 02FunF15 
+					02FunF16 02FunF17 02FunF18 02FunF19 02FunF20 02FunF21 02FunF22 
+					02FunF23 02FunF24 02FunF25 
+
+				}
+			}
+			add = {
+				trigger = {
+					ruler = {
+						NOR = { 
+							species = { has_trait = trait_lv_futanari }
+							gender = indeterminable
+							}
+						gender = male
+					}
+				}
+				portraits = {
+					02FunM1 02FunM2 02FunM3 02FunM4 02FunM5 02FunM6 02FunM7 02FunM8 
+					02FunM9 02FunM10 02FunM11 02FunM12 02FunM13 02FunM14 02FunM15 
+					02FunM16 02FunM17 02FunM18 02FunM19 02FunM20 02FunM21 
+
+				}
+			}
+			add = {
+				trigger = {
+					ruler = {
+						OR = { 
+							species = { has_trait = trait_lv_futanari }
+							gender = indeterminable
+						}
+					}
+				}
+				portraits = {
+					02FunH1 02FunH2 02FunH3 02FunH4 02FunH5 02FunH6 02FunH7 02FunH7 
+					02FunH8 02FunH10 02FunH11 02FunH12 02FunH13 02FunH14 02FunH15 
+					02FunH16 02FunH17 02FunH18 02FunH19 02FunH20 02FunH21 02FunH22 
+
+				}
+			}
+		}
+		#species scope
+		species = {
+			add = {
+				trigger = { #for females to be added, the species must not be all male/futa. If the species is all female, females will be added regardless of vf policy.
+					exists = species
+					NOR = { 
+						has_trait = trait_lv_futanari
+						has_trait = trait_lv_all_male
+					}
+				}
+				portraits = {
+					02FunF1 02FunF2 02FunF3 02FunF4 02FunF5 02FunF6 02FunF7 02FunF8 
+					02FunF9 02FunF10 02FunF11 02FunF12 02FunF13 02FunF14 02FunF15 
+					02FunF16 02FunF17 02FunF18 02FunF19 02FunF20 02FunF21 02FunF22 
+					02FunF23 02FunF24 02FunF25 
+	
+				}
+			}
+			add = {
+				trigger = { #for males to be added, the species must not be all female/futa. If the species is all male, males will be added regardless of vf policy.
+					exists = species
+					NOR = { 
+						has_trait = trait_lv_futanari
+						has_trait = trait_lv_all_female
+					}
+				}
+				portraits = {
+					02FunM1 02FunM2 02FunM3 02FunM4 02FunM5 02FunM6 02FunM7 02FunM8 
+					02FunM9 02FunM10 02FunM11 02FunM12 02FunM13 02FunM14 02FunM15 
+					02FunM16 02FunM17 02FunM18 02FunM19 02FunM20 02FunM21 
+
+				}
+			}
+			add = {
+				trigger = { #futas will be added if the species has futanari trait. 
+					exists = species
+					has_trait = trait_lv_futanari
+					NOR = { 
+						has_trait = trait_lv_all_male
+						has_trait = trait_lv_all_female
+					}
+				}
+				portraits = {
+					02FunH1 02FunH2 02FunH3 02FunH4 02FunH5 02FunH6 02FunH7 02FunH7 
+					02FunH8 02FunH10 02FunH11 02FunH12 02FunH13 02FunH14 02FunH15 
+					02FunH16 02FunH17 02FunH18 02FunH19 02FunH20 02FunH21 02FunH22 
+
+				}
+			}
+		}
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				trigger = { #for females to be added, the species must not be all male/futa. If the species is all female, females will be added regardless of vf policy.
+					exists = species
+					NOR = { 
+						has_trait = trait_lv_futanari
+						has_trait = trait_lv_all_male
+						species = { species_gender = male }
+						species = { species_gender = indeterminable }
+					}
+					OR = {
+						has_trait = trait_lv_all_female
+						species = { species_gender = female }
+						OR = {
+							owner = { has_policy_flag = vf_gender_femalefuta }
+							owner = { has_policy_flag = vf_gender_all }
+							owner = { has_policy_flag = vf_gender_default }
+						}
+					}
+				}
+				portraits = {
+					02FunF1 02FunF2 02FunF3 02FunF4 02FunF5 02FunF6 02FunF7 02FunF8 
+					02FunF9 02FunF10 02FunF11 02FunF12 02FunF13 02FunF14 02FunF15 
+					02FunF16 02FunF17 02FunF18 02FunF19 02FunF20 02FunF21 02FunF22 
+					02FunF23 02FunF24 02FunF25 
+	
+				}
+			}
+			add = {
+				trigger = { #for males to be added, the species must not be all female/futa. If the species is all male, males will be added regardless of vf policy.
+					exists = species
+					NOR = { 
+						has_trait = trait_lv_futanari
+						has_trait = trait_lv_all_female
+						species = { species_gender = female }
+						species = { species_gender = indeterminable }
+					}
+					OR = {
+						has_trait = trait_lv_all_male
+						species = { species_gender = male }
+						OR = {
+							owner = { has_policy_flag = vf_gender_malefuta }
+							owner = { has_policy_flag = vf_gender_all }
+							owner = { has_policy_flag = vf_gender_default }
+						}
+					}
+				}
+				portraits = {
+					02FunM1 02FunM2 02FunM3 02FunM4 02FunM5 02FunM6 02FunM7 02FunM8 
+					02FunM9 02FunM10 02FunM11 02FunM12 02FunM13 02FunM14 02FunM15 
+					02FunM16 02FunM17 02FunM18 02FunM19 02FunM20 02FunM21 
+
+				}
+			}
+			add = {
+				trigger = {
+					exists = species
+					OR = { #futas will be added if the species has futanari trait, indeterminable gender, or if it is not all male/female and uses a vf policy. 
+						has_trait = trait_lv_futanari
+						species = { species_gender = indeterminable }
+						AND = {
+							NOR = { 
+								has_trait = trait_lv_all_male
+								has_trait = trait_lv_all_female
+								species = { species_gender = female }
+								species = { species_gender = male }
+							}
+							OR = {
+								owner = { has_policy_flag = vf_gender_malefuta }
+								owner = { has_policy_flag = vf_gender_femalefuta }
+								owner = { has_policy_flag = vf_gender_all }
+							}
+						}
+					}
+				}
+				portraits = {
+					02FunH1 02FunH2 02FunH3 02FunH4 02FunH5 02FunH6 02FunH7 02FunH7 
+					02FunH8 02FunH10 02FunH11 02FunH12 02FunH13 02FunH14 02FunH15 
+					02FunH16 02FunH17 02FunH18 02FunH19 02FunH20 02FunH21 02FunH22 
+
+				}
+			}
+		}
+		#leader scope
+		#default: males and females as normal. malefuta: females replaced with futas. femalefuta: males replaced with futas. all: futas included as females. 
+		leader = {
+			add = { #only females will be added to the female gender for default or femalefuta policies, or if the species is all female. 
+				trigger = { 
+					OR = {
+						NOR = { 
+							species = { has_trait = trait_lv_futanari }
+							gender = indeterminable
+							owner = { has_policy_flag = vf_gender_malefuta }
+							owner = { has_policy_flag = vf_gender_all }
+						}
+						species = { has_trait = trait_lv_all_female }
+					}
+					gender = female
+				}
+				portraits = {
+					02FunF1 02FunF2 02FunF3 02FunF4 02FunF5 02FunF6 02FunF7 02FunF8 
+					02FunF9 02FunF10 02FunF11 02FunF12 02FunF13 02FunF14 02FunF15 
+					02FunF16 02FunF17 02FunF18 02FunF19 02FunF20 02FunF21 02FunF22 
+					02FunF23 02FunF24 02FunF25 
+	
+				}
+			}
+			add = { #females and futas will be added to the female gender the all policy and is not all female.
+				trigger = { 
+					NOR = { 
+						has_trait = trait_lv_all_female
+						species = { species_gender = female }
+						species = { has_trait = trait_lv_futanari }
+						gender = indeterminable
+						owner = { has_policy_flag = vf_gender_malefuta }
+						owner = { has_policy_flag = vf_gender_femalefuta }
+						owner = { has_policy_flag = vf_gender_default }
+					}
+					gender = female
+				}
+				portraits = {
+					02FunF1 02FunF2 02FunF3 02FunF4 02FunF5 02FunF6 02FunF7 02FunF8 
+					02FunF9 02FunF10 02FunF11 02FunF12 02FunF13 02FunF14 02FunF15 
+					02FunF16 02FunF17 02FunF18 02FunF19 02FunF20 02FunF21 02FunF22 
+					02FunF23 02FunF24 02FunF25 
+	
+					02FunH1 02FunH2 02FunH3 02FunH4 02FunH5 02FunH6 02FunH7 02FunH7 
+					02FunH8 02FunH10 02FunH11 02FunH12 02FunH13 02FunH14 02FunH15 
+					02FunH16 02FunH17 02FunH18 02FunH19 02FunH20 02FunH21 02FunH22 
+
+				}
+			}
+			add = { #only males will be added to the male gender for default, malefuta, and all policies, or if the species is all male.
+				trigger = {
+					OR = {
+						NOR = { 
+							species = { has_trait = trait_lv_futanari }
+							gender = indeterminable
+							owner = { has_policy_flag = vf_gender_femalefuta }
+						}
+						has_trait = trait_lv_all_male
+						species = { species_gender = male }
+					}
+					gender = male
+				}
+				portraits = {
+					02FunM1 02FunM2 02FunM3 02FunM4 02FunM5 02FunM6 02FunM7 02FunM8 
+					02FunM9 02FunM10 02FunM11 02FunM12 02FunM13 02FunM14 02FunM15 
+					02FunM16 02FunM17 02FunM18 02FunM19 02FunM20 02FunM21 
+
+				}
+			}
+			add = { #only futas will be added to the male gender for femalefuta policy, if the species is not all male.
+				trigger = {
+					NOR = { 
+						has_trait = trait_lv_all_male
+						species = { species_gender = male }
+						species = { has_trait = trait_lv_futanari }
+						gender = indeterminable
+						owner = { has_policy_flag = vf_gender_malefuta }
+						owner = { has_policy_flag = vf_gender_default }
+						owner = { has_policy_flag = vf_gender_all }
+						}
+					owner = { has_policy_flag = vf_gender_femalefuta }
+					gender = male
+				}
+				portraits = {
+					02FunH1 02FunH2 02FunH3 02FunH4 02FunH5 02FunH6 02FunH7 02FunH7 
+					02FunH8 02FunH10 02FunH11 02FunH12 02FunH13 02FunH14 02FunH15 
+					02FunH16 02FunH17 02FunH18 02FunH19 02FunH20 02FunH21 02FunH22 
+
+				}
+			}
+			add = { #only futas will be added to the female gender for malefuta policy, if the species is not all female.
+				trigger = {
+					NOR = { 
+						has_trait = trait_lv_all_female
+						species = { species_gender = female }
+						species = { has_trait = trait_lv_futanari }
+						gender = indeterminable
+						owner = { has_policy_flag = vf_gender_femalefuta }
+						owner = { has_policy_flag = vf_gender_default }
+						owner = { has_policy_flag = vf_gender_all }
+						}
+					gender = female
+				}
+				portraits = {
+					02FunH1 02FunH2 02FunH3 02FunH4 02FunH5 02FunH6 02FunH7 02FunH7 
+					02FunH8 02FunH10 02FunH11 02FunH12 02FunH13 02FunH14 02FunH15 
+					02FunH16 02FunH17 02FunH18 02FunH19 02FunH20 02FunH21 02FunH22 
+
+				}
+			}
+			add = { #only futa portraits will be used if the species gender is futa. 
+				trigger = {
+					OR = { 
+						species = { has_trait = trait_lv_futanari }
+						gender = indeterminable
+					}
+				}
+				portraits = {
+					02FunH1 02FunH2 02FunH3 02FunH4 02FunH5 02FunH6 02FunH7 02FunH7 
+					02FunH8 02FunH10 02FunH11 02FunH12 02FunH13 02FunH14 02FunH15 
+					02FunH16 02FunH17 02FunH18 02FunH19 02FunH20 02FunH21 02FunH22 
+
+				}
+			}
+		}
+		#ruler scope
+		ruler = {
+			add = { #only females will be added to the female gender for default or femalefuta policies, or if the species is all female. 
+				trigger = { 
+					OR = {
+						NOR = { 
+							species = { has_trait = trait_lv_futanari }
+							gender = indeterminable
+							owner = { has_policy_flag = vf_gender_malefuta }
+							owner = { has_policy_flag = vf_gender_all }
+						}
+						species = { has_trait = trait_lv_all_female }
+					}
+					gender = female
+				}
+				portraits = {
+					02FunF1 02FunF2 02FunF3 02FunF4 02FunF5 02FunF6 02FunF7 02FunF8 
+					02FunF9 02FunF10 02FunF11 02FunF12 02FunF13 02FunF14 02FunF15 
+					02FunF16 02FunF17 02FunF18 02FunF19 02FunF20 02FunF21 02FunF22 
+					02FunF23 02FunF24 02FunF25 
+	
+				}
+			}
+			add = { #females and futas will be added to the female gender the all policy and is not all female.
+				trigger = { 
+					NOR = { 
+						has_trait = trait_lv_all_female
+						species = { species_gender = female }
+						species = { has_trait = trait_lv_futanari }
+						gender = indeterminable
+						owner = { has_policy_flag = vf_gender_malefuta }
+						owner = { has_policy_flag = vf_gender_femalefuta }
+						owner = { has_policy_flag = vf_gender_default }
+					}
+					gender = female
+				}
+				portraits = {
+					02FunF1 02FunF2 02FunF3 02FunF4 02FunF5 02FunF6 02FunF7 02FunF8 
+					02FunF9 02FunF10 02FunF11 02FunF12 02FunF13 02FunF14 02FunF15 
+					02FunF16 02FunF17 02FunF18 02FunF19 02FunF20 02FunF21 02FunF22 
+					02FunF23 02FunF24 02FunF25 
+	
+					02FunH1 02FunH2 02FunH3 02FunH4 02FunH5 02FunH6 02FunH7 02FunH7 
+					02FunH8 02FunH10 02FunH11 02FunH12 02FunH13 02FunH14 02FunH15 
+					02FunH16 02FunH17 02FunH18 02FunH19 02FunH20 02FunH21 02FunH22 
+
+				}
+			}
+			add = { #only males will be added to the male gender for default, malefuta, and all policies, or if the species is all male.
+				trigger = {
+					OR = {
+						NOR = { 
+							species = { has_trait = trait_lv_futanari }
+							gender = indeterminable
+							owner = { has_policy_flag = vf_gender_femalefuta }
+						}
+						has_trait = trait_lv_all_male
+						species = { species_gender = male }
+					}
+					gender = male
+				}
+				portraits = {
+					02FunM1 02FunM2 02FunM3 02FunM4 02FunM5 02FunM6 02FunM7 02FunM8 
+					02FunM9 02FunM10 02FunM11 02FunM12 02FunM13 02FunM14 02FunM15 
+					02FunM16 02FunM17 02FunM18 02FunM19 02FunM20 02FunM21 
+
+				}
+			}
+			add = { #only futas will be added to the male gender for femalefuta policy, if the species is not all male.
+				trigger = {
+					NOR = { 
+						has_trait = trait_lv_all_male
+						species = { species_gender = male }
+						species = { has_trait = trait_lv_futanari }
+						gender = indeterminable
+						owner = { has_policy_flag = vf_gender_malefuta }
+						owner = { has_policy_flag = vf_gender_default }
+						owner = { has_policy_flag = vf_gender_all }
+						}
+					owner = { has_policy_flag = vf_gender_femalefuta }
+					gender = male
+				}
+				portraits = {
+					02FunH1 02FunH2 02FunH3 02FunH4 02FunH5 02FunH6 02FunH7 02FunH7 
+					02FunH8 02FunH10 02FunH11 02FunH12 02FunH13 02FunH14 02FunH15 
+					02FunH16 02FunH17 02FunH18 02FunH19 02FunH20 02FunH21 02FunH22 
+
+				}
+			}
+			add = { #only futas will be added to the female gender for malefuta policy, if the species is not all female.
+				trigger = {
+					NOR = { 
+						has_trait = trait_lv_all_female
+						species = { species_gender = female }
+						species = { has_trait = trait_lv_futanari }
+						gender = indeterminable
+						owner = { has_policy_flag = vf_gender_femalefuta }
+						owner = { has_policy_flag = vf_gender_default }
+						owner = { has_policy_flag = vf_gender_all }
+						}
+					gender = female
+				}
+				portraits = {
+					02FunH1 02FunH2 02FunH3 02FunH4 02FunH5 02FunH6 02FunH7 02FunH7 
+					02FunH8 02FunH10 02FunH11 02FunH12 02FunH13 02FunH14 02FunH15 
+					02FunH16 02FunH17 02FunH18 02FunH19 02FunH20 02FunH21 02FunH22 
+
+				}
+			}
+			add = { #only futa portraits will be used if the species gender is futa. 
+				trigger = {
+					OR = { 
+						species = { has_trait = trait_lv_futanari }
+						gender = indeterminable
+					}
+				}
+				portraits = {
+					02FunH1 02FunH2 02FunH3 02FunH4 02FunH5 02FunH6 02FunH7 02FunH7 
+					02FunH8 02FunH10 02FunH11 02FunH12 02FunH13 02FunH14 02FunH15 
+					02FunH16 02FunH17 02FunH18 02FunH19 02FunH20 02FunH21 02FunH22 
+
+				}
+			}
+		}
+	}
+}
+portrait_groups = {
+	Fun03 = {
+		default = 03FunF1
+		game_setup = {
+			add = {
+				trigger = { #trigger specifies under which conditions the portraits will be added.
+					ruler = {
+						NOR = { 
+							species = { has_trait = trait_lv_futanari }
+							gender = indeterminable
+							}
+						gender = female
+					}
+				}
+				portraits = {
+					03FunF1 03FunF2 03FunF3 03FunF4 03FunF5 03FunF6 03FunF7 03FunF8 
+					03FunF9 03FunF10 03FunF11 03FunF12 
+
+				}
+			}
+			add = {
+				trigger = {
+					ruler = {
+						NOR = { 
+							species = { has_trait = trait_lv_futanari }
+							gender = indeterminable
+							}
+						gender = male
+					}
+				}
+				portraits = {
+					03FunM1 03FunM2 03FunM3 03FunM4 03FunM5 03FunM6 03FunM7 03FunM8 
+					03FunM9 
+
+				}
+			}
+			add = {
+				trigger = {
+					ruler = {
+						OR = { 
+							species = { has_trait = trait_lv_futanari }
+							gender = indeterminable
+						}
+					}
+				}
+				portraits = {
+					03FunH1 03FunH2 03FunH3 
+
+				}
+			}
+		}
+		#species scope
+		species = {
+			add = {
+				trigger = { #for females to be added, the species must not be all male/futa. If the species is all female, females will be added regardless of vf policy.
+					exists = species
+					NOR = { 
+						has_trait = trait_lv_futanari
+						has_trait = trait_lv_all_male
+					}
+				}
+				portraits = {
+					03FunF1 03FunF2 03FunF3 03FunF4 03FunF5 03FunF6 03FunF7 03FunF8 
+					03FunF9 03FunF10 03FunF11 03FunF12 
+	
+				}
+			}
+			add = {
+				trigger = { #for males to be added, the species must not be all female/futa. If the species is all male, males will be added regardless of vf policy.
+					exists = species
+					NOR = { 
+						has_trait = trait_lv_futanari
+						has_trait = trait_lv_all_female
+					}
+				}
+				portraits = {
+					03FunM1 03FunM2 03FunM3 03FunM4 03FunM5 03FunM6 03FunM7 03FunM8 
+					03FunM9 
+
+				}
+			}
+			add = {
+				trigger = { #futas will be added if the species has futanari trait. 
+					exists = species
+					has_trait = trait_lv_futanari
+					NOR = { 
+						has_trait = trait_lv_all_male
+						has_trait = trait_lv_all_female
+					}
+				}
+				portraits = {
+					03FunH1 03FunH2 03FunH3 
+
+				}
+			}
+		}
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				trigger = { #for females to be added, the species must not be all male/futa. If the species is all female, females will be added regardless of vf policy.
+					exists = species
+					NOR = { 
+						has_trait = trait_lv_futanari
+						has_trait = trait_lv_all_male
+						species = { species_gender = male }
+						species = { species_gender = indeterminable }
+					}
+					OR = {
+						has_trait = trait_lv_all_female
+						species = { species_gender = female }
+						OR = {
+							owner = { has_policy_flag = vf_gender_femalefuta }
+							owner = { has_policy_flag = vf_gender_all }
+							owner = { has_policy_flag = vf_gender_default }
+						}
+					}
+				}
+				portraits = {
+					03FunF1 03FunF2 03FunF3 03FunF4 03FunF5 03FunF6 03FunF7 03FunF8 
+					03FunF9 03FunF10 03FunF11 03FunF12 
+	
+				}
+			}
+			add = {
+				trigger = { #for males to be added, the species must not be all female/futa. If the species is all male, males will be added regardless of vf policy.
+					exists = species
+					NOR = { 
+						has_trait = trait_lv_futanari
+						has_trait = trait_lv_all_female
+						species = { species_gender = female }
+						species = { species_gender = indeterminable }
+					}
+					OR = {
+						has_trait = trait_lv_all_male
+						species = { species_gender = male }
+						OR = {
+							owner = { has_policy_flag = vf_gender_malefuta }
+							owner = { has_policy_flag = vf_gender_all }
+							owner = { has_policy_flag = vf_gender_default }
+						}
+					}
+				}
+				portraits = {
+					03FunM1 03FunM2 03FunM3 03FunM4 03FunM5 03FunM6 03FunM7 03FunM8 
+					03FunM9 
+
+				}
+			}
+			add = {
+				trigger = {
+					exists = species
+					OR = { #futas will be added if the species has futanari trait, indeterminable gender, or if it is not all male/female and uses a vf policy. 
+						has_trait = trait_lv_futanari
+						species = { species_gender = indeterminable }
+						AND = {
+							NOR = { 
+								has_trait = trait_lv_all_male
+								has_trait = trait_lv_all_female
+								species = { species_gender = female }
+								species = { species_gender = male }
+							}
+							OR = {
+								owner = { has_policy_flag = vf_gender_malefuta }
+								owner = { has_policy_flag = vf_gender_femalefuta }
+								owner = { has_policy_flag = vf_gender_all }
+							}
+						}
+					}
+				}
+				portraits = {
+					03FunH1 03FunH2 03FunH3 
+
+				}
+			}
+		}
+		#leader scope
+		#default: males and females as normal. malefuta: females replaced with futas. femalefuta: males replaced with futas. all: futas included as females. 
+		leader = {
+			add = { #only females will be added to the female gender for default or femalefuta policies, or if the species is all female. 
+				trigger = { 
+					OR = {
+						NOR = { 
+							species = { has_trait = trait_lv_futanari }
+							gender = indeterminable
+							owner = { has_policy_flag = vf_gender_malefuta }
+							owner = { has_policy_flag = vf_gender_all }
+						}
+						species = { has_trait = trait_lv_all_female }
+					}
+					gender = female
+				}
+				portraits = {
+					03FunF1 03FunF2 03FunF3 03FunF4 03FunF5 03FunF6 03FunF7 03FunF8 
+					03FunF9 03FunF10 03FunF11 03FunF12 
+	
+				}
+			}
+			add = { #females and futas will be added to the female gender the all policy and is not all female.
+				trigger = { 
+					NOR = { 
+						has_trait = trait_lv_all_female
+						species = { species_gender = female }
+						species = { has_trait = trait_lv_futanari }
+						gender = indeterminable
+						owner = { has_policy_flag = vf_gender_malefuta }
+						owner = { has_policy_flag = vf_gender_femalefuta }
+						owner = { has_policy_flag = vf_gender_default }
+					}
+					gender = female
+				}
+				portraits = {
+					03FunF1 03FunF2 03FunF3 03FunF4 03FunF5 03FunF6 03FunF7 03FunF8 
+					03FunF9 03FunF10 03FunF11 03FunF12 
+	
+					03FunH1 03FunH2 03FunH3 
+
+				}
+			}
+			add = { #only males will be added to the male gender for default, malefuta, and all policies, or if the species is all male.
+				trigger = {
+					OR = {
+						NOR = { 
+							species = { has_trait = trait_lv_futanari }
+							gender = indeterminable
+							owner = { has_policy_flag = vf_gender_femalefuta }
+						}
+						has_trait = trait_lv_all_male
+						species = { species_gender = male }
+					}
+					gender = male
+				}
+				portraits = {
+					03FunM1 03FunM2 03FunM3 03FunM4 03FunM5 03FunM6 03FunM7 03FunM8 
+					03FunM9 
+
+				}
+			}
+			add = { #only futas will be added to the male gender for femalefuta policy, if the species is not all male.
+				trigger = {
+					NOR = { 
+						has_trait = trait_lv_all_male
+						species = { species_gender = male }
+						species = { has_trait = trait_lv_futanari }
+						gender = indeterminable
+						owner = { has_policy_flag = vf_gender_malefuta }
+						owner = { has_policy_flag = vf_gender_default }
+						owner = { has_policy_flag = vf_gender_all }
+						}
+					owner = { has_policy_flag = vf_gender_femalefuta }
+					gender = male
+				}
+				portraits = {
+					03FunH1 03FunH2 03FunH3 
+
+				}
+			}
+			add = { #only futas will be added to the female gender for malefuta policy, if the species is not all female.
+				trigger = {
+					NOR = { 
+						has_trait = trait_lv_all_female
+						species = { species_gender = female }
+						species = { has_trait = trait_lv_futanari }
+						gender = indeterminable
+						owner = { has_policy_flag = vf_gender_femalefuta }
+						owner = { has_policy_flag = vf_gender_default }
+						owner = { has_policy_flag = vf_gender_all }
+						}
+					gender = female
+				}
+				portraits = {
+					03FunH1 03FunH2 03FunH3 
+
+				}
+			}
+			add = { #only futa portraits will be used if the species gender is futa. 
+				trigger = {
+					OR = { 
+						species = { has_trait = trait_lv_futanari }
+						gender = indeterminable
+					}
+				}
+				portraits = {
+					03FunH1 03FunH2 03FunH3 
+
+				}
+			}
+		}
+		#ruler scope
+		ruler = {
+			add = { #only females will be added to the female gender for default or femalefuta policies, or if the species is all female. 
+				trigger = { 
+					OR = {
+						NOR = { 
+							species = { has_trait = trait_lv_futanari }
+							gender = indeterminable
+							owner = { has_policy_flag = vf_gender_malefuta }
+							owner = { has_policy_flag = vf_gender_all }
+						}
+						species = { has_trait = trait_lv_all_female }
+					}
+					gender = female
+				}
+				portraits = {
+					03FunF1 03FunF2 03FunF3 03FunF4 03FunF5 03FunF6 03FunF7 03FunF8 
+					03FunF9 03FunF10 03FunF11 03FunF12 
+	
+				}
+			}
+			add = { #females and futas will be added to the female gender the all policy and is not all female.
+				trigger = { 
+					NOR = { 
+						has_trait = trait_lv_all_female
+						species = { species_gender = female }
+						species = { has_trait = trait_lv_futanari }
+						gender = indeterminable
+						owner = { has_policy_flag = vf_gender_malefuta }
+						owner = { has_policy_flag = vf_gender_femalefuta }
+						owner = { has_policy_flag = vf_gender_default }
+					}
+					gender = female
+				}
+				portraits = {
+					03FunF1 03FunF2 03FunF3 03FunF4 03FunF5 03FunF6 03FunF7 03FunF8 
+					03FunF9 03FunF10 03FunF11 03FunF12 
+	
+					03FunH1 03FunH2 03FunH3 
+
+				}
+			}
+			add = { #only males will be added to the male gender for default, malefuta, and all policies, or if the species is all male.
+				trigger = {
+					OR = {
+						NOR = { 
+							species = { has_trait = trait_lv_futanari }
+							gender = indeterminable
+							owner = { has_policy_flag = vf_gender_femalefuta }
+						}
+						has_trait = trait_lv_all_male
+						species = { species_gender = male }
+					}
+					gender = male
+				}
+				portraits = {
+					03FunM1 03FunM2 03FunM3 03FunM4 03FunM5 03FunM6 03FunM7 03FunM8 
+					03FunM9 
+
+				}
+			}
+			add = { #only futas will be added to the male gender for femalefuta policy, if the species is not all male.
+				trigger = {
+					NOR = { 
+						has_trait = trait_lv_all_male
+						species = { species_gender = male }
+						species = { has_trait = trait_lv_futanari }
+						gender = indeterminable
+						owner = { has_policy_flag = vf_gender_malefuta }
+						owner = { has_policy_flag = vf_gender_default }
+						owner = { has_policy_flag = vf_gender_all }
+						}
+					owner = { has_policy_flag = vf_gender_femalefuta }
+					gender = male
+				}
+				portraits = {
+					03FunH1 03FunH2 03FunH3 
+
+				}
+			}
+			add = { #only futas will be added to the female gender for malefuta policy, if the species is not all female.
+				trigger = {
+					NOR = { 
+						has_trait = trait_lv_all_female
+						species = { species_gender = female }
+						species = { has_trait = trait_lv_futanari }
+						gender = indeterminable
+						owner = { has_policy_flag = vf_gender_femalefuta }
+						owner = { has_policy_flag = vf_gender_default }
+						owner = { has_policy_flag = vf_gender_all }
+						}
+					gender = female
+				}
+				portraits = {
+					03FunH1 03FunH2 03FunH3 
+
+				}
+			}
+			add = { #only futa portraits will be used if the species gender is futa. 
+				trigger = {
+					OR = { 
+						species = { has_trait = trait_lv_futanari }
+						gender = indeterminable
+					}
+				}
+				portraits = {
+					03FunH1 03FunH2 03FunH3 
+
+				}
+			}
+		}
+	}
+}

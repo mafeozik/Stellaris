@@ -1,0 +1,47 @@
+SWARM = {
+	archetype = OTHER
+
+	playable = { always = no }
+	randomized = no
+
+	gender = no
+
+	portraits = {
+		"VFswarm"
+	}
+
+	graphical_culture = swarm_01
+	move_pop_sound_effect = "moving_pop_confirmation"
+}
+
+EXD = {
+	archetype = OTHER
+
+	playable = { always = no }
+	randomized = no
+
+	gender = no
+
+	portraits = {
+		"EXD"
+	}
+
+	graphical_culture = extra_dimensional_01
+	move_pop_sound_effect = "moving_pop_confirmation"
+}
+
+AI = {
+	playable = { always = no }
+	randomized = no
+
+	gender = no
+
+	portraits = {
+		"VFAI"
+	}
+
+	graphical_culture = ai_01
+	move_pop_sound_effect = "moving_pop_confirmation"
+
+	resources = {}
+}

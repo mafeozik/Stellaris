@@ -1,0 +1,221 @@
+portraits = {
+	01BaolF1 = { greeting_sound = "plantoid_01_greetings" texturefile = "gfx/models/Plantoid/Baol01/01BaolF1.dds" }
+	01BaolF2 = { greeting_sound = "plantoid_01_greetings" texturefile = "gfx/models/Plantoid/Baol01/01BaolF2.dds" }
+}
+
+portrait_groups = {
+	pla16_baol = {
+		default = 01BaolF1 
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+           	add = {
+                trigger = {
+                    ruler = {
+						NOR = { species = { has_trait = trait_lv_futanari }
+								species = { has_trait = trait_lv_all_male } 
+								}
+						#gender = female
+					}
+                }
+                portraits = {
+                    01BaolF1 01BaolF2
+                }
+            }
+            add = {
+                trigger = {
+                    ruler = {
+						NOR = { species = { has_trait = trait_lv_futanari }
+								species = { has_trait = trait_lv_all_female } 
+								}
+						#gender = male
+					}
+                }
+                portraits = {
+                    01BaolF1 01BaolF2
+                }
+            }
+			add = {
+				trigger = {
+					ruler = { species = { has_trait = trait_lv_futanari } }
+				}
+                portraits = {
+					01BaolF1 01BaolF2
+				}
+			}
+			#set = {
+			#	trigger = { ... }
+			#	portraits = { ... }
+			#	#using "set =" instead of "add" will first clear any portraits already added
+			#}
+		}
+		
+		#species scope
+        species = { #generic portrait for a species
+            add = {
+                trigger = {
+					exists = species
+                    NOR = {
+                        has_trait = trait_lv_all_female
+                        has_trait = trait_lv_all_male
+                        has_trait = trait_lv_futanari
+                    }
+                }
+                portraits = {
+                    01BaolF1 01BaolF2
+                }
+            }
+
+            add = {
+                trigger = { 
+                    NOR = {
+                        has_trait = trait_lv_all_male
+                        has_trait = trait_lv_futanari
+                    }
+                    has_trait = trait_lv_all_female
+                }
+                portraits = {
+                    01BaolF1 01BaolF2
+                }
+            }
+
+            add = {
+                trigger = {
+                    NOR = {
+                        has_trait = trait_lv_all_female
+                        has_trait = trait_lv_futanari
+                    }
+                    has_trait = trait_lv_all_male
+                }
+                portraits = {
+                    01BaolF1 01BaolF2
+                }
+            }
+
+            add = {
+                trigger = {
+                    NOR = {
+                        has_trait = trait_lv_all_female
+                        has_trait = trait_lv_all_male
+                    }
+                    has_trait = trait_lv_futanari
+                }
+                portraits = {
+                    01BaolF1 01BaolF2
+                } 
+            }
+        }
+		
+		#pop scope
+        pop = { #for a specific pop
+            add = {
+                trigger = {
+                    NOR = {
+                        has_trait = trait_lv_all_female
+                        has_trait = trait_lv_all_male
+                        has_trait = trait_lv_futanari
+                    }
+                }
+                portraits = {
+                    01BaolF1 01BaolF2
+                }
+            }
+
+            add = {
+                trigger = { 
+                    NOR = {
+                        has_trait = trait_lv_all_male
+                        has_trait = trait_lv_futanari
+                    }
+                    has_trait = trait_lv_all_female
+                }
+                portraits = {
+                    01BaolF1 01BaolF2
+                }
+            }
+
+            add = {
+                trigger = {
+                    NOR = {
+                        has_trait = trait_lv_all_female
+                        has_trait = trait_lv_futanari
+                    }
+                    has_trait = trait_lv_all_male
+                }
+                portraits = {
+                    01BaolF1 01BaolF2
+                }
+            }
+
+            add = {
+                trigger = {
+                    NOR = {
+                        has_trait = trait_lv_all_female
+                        has_trait = trait_lv_all_male
+                    }
+                    has_trait = trait_lv_futanari
+                }
+                portraits = {
+                    01BaolF1 01BaolF2
+                }
+            }
+        }
+		
+		leader = { #scientists, generals, admirals, governor
+			add = {
+                trigger = {
+					NOT = { species = { has_trait = trait_lv_futanari } }
+                    gender = female
+                }
+                portraits = {
+                    01BaolF1 01BaolF2
+                }
+            }
+            add = {
+                trigger = {
+					NOT = { species = { has_trait = trait_lv_futanari } }
+                    gender = male
+                }
+                portraits = {
+                    01BaolF1 01BaolF2
+                }
+            }
+            add = {
+                trigger = {
+                    species = { has_trait = trait_lv_futanari }
+                }
+                portraits = {
+                    01BaolF1 01BaolF2
+                }
+            }
+        }
+		
+		#leader scope 
+		ruler = {
+			add = {
+                trigger = {
+					NOT = { species = { has_trait = trait_lv_futanari } }
+                    gender = female
+                }
+                portraits = {
+                    01BaolF1 01BaolF2
+                }
+            }
+            add = {
+                trigger = {
+					NOT = { species = { has_trait = trait_lv_futanari } }
+                    gender = male
+                }
+                portraits = {
+                    01BaolF1 01BaolF2
+                }
+            }
+            add = {
+                trigger = {
+                    species = { has_trait = trait_lv_futanari }
+                }
+                portraits = {
+                    01BaolF1 01BaolF2
+                }
+            }
+		}
+	}
+}
