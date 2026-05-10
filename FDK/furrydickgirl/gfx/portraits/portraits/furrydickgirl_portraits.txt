@@ -102,7 +102,7 @@ portraits = {
 }
 
 portrait_groups = {
-	furrydickgirl = {
+	fdg_portraits = {
 		default = fdk_01
 		game_setup = {
 			add = {

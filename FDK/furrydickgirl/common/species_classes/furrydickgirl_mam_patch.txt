@@ -34,7 +34,7 @@ MAM = {
 		"Mam11"
 		"Mam12"
 		"Mam13"
-		"furrydickgirl"
+		"fdg_portraits"
 	}
 
 	custom_portraits = {#add additional portraits when customizing species
