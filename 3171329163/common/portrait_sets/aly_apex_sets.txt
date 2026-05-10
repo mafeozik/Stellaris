@@ -1,7 +1,0 @@
-aly_apex_set = {
-	species_class = Aly_Apex_Lizardmen
-
-	portraits = {
-		"aly_apex"
-	}
-}

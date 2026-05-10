@@ -1,7 +1,0 @@
-reptilians = { #Portrait name for simplicity
-	name = REP	#Species Class Name here ( For No Loc changes needed)
-
-	sets = {
-	furdrake #Portrait name for simplicity
-	}
-}
