@@ -15,5 +15,5 @@ fd_empire = {
     civics = { civic_environmentalist civic_meritocracy }
     origin = "origin_prosperous_unification"
     ethics = { ethic_xenophile ethic_egalitarian ethic_pacifist }
-    flag = { ... }
+    flag = {}
 }
