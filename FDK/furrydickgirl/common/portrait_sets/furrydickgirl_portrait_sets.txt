@@ -1,6 +1,15 @@
 furrydickgirl_set = {
 	species_class = furrydickgirl
 	portraits = {
-		fdk_01
+		fdk_01 fdk_02 fdk_03 fdk_04 fdk_05 fdk_06 fdk_07 fdk_08 fdk_09 fdk_10
+		fdk_11 fdk_12 fdk_13 fdk_14 fdk_15 fdk_16 fdk_17 fdk_18 fdk_19 fdk_20
+		fdk_21 fdk_22 fdk_23 fdk_24 fdk_25 fdk_26 fdk_27 fdk_28 fdk_29 fdk_30
+		fdk_31 fdk_32 fdk_33 fdk_34 fdk_35 fdk_36 fdk_37 fdk_38 fdk_39 fdk_40
+		fdk_41 fdk_42 fdk_43 fdk_44 fdk_45 fdk_46 fdk_47 fdk_48 fdk_49 fdk_50
+		fdk_51 fdk_52 fdk_53 fdk_54 fdk_55 fdk_56 fdk_57 fdk_58 fdk_59 fdk_60
+		fdk_61 fdk_62 fdk_63 fdk_64 fdk_65 fdk_66 fdk_67 fdk_68 fdk_69 fdk_70
+		fdk_71 fdk_72 fdk_73 fdk_74 fdk_75 fdk_76 fdk_77 fdk_78 fdk_79 fdk_80
+		fdk_81 fdk_82 fdk_83 fdk_84 fdk_85 fdk_86 fdk_87 fdk_88 fdk_89 fdk_90
+		fdk_91 fdk_92 fdk_93 fdk_94 fdk_95 fdk_96 fdk_97 fdk_98 fdk_99 fdk_100
 	}
 }
