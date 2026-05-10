@@ -1,0 +1,252 @@
+﻿###########################
+###     Smexy Names     ###
+###########################
+#
+# Just a name list I made for my self, but someone else might also like them! (inspired by tentacle dreams)
+#
+###
+
+LV1 = {
+	alias = "Smexy"
+
+	ship_names = {
+		generic = {
+			Giggles "Peachy Pie" Pookums Hon Snoogypuss Starlight Kitten "Cherry Pie" "Sugar Buns" Sugar Muffin "Baby Boo"
+			Steambuns Gumdrop "Funny Bunny" Peanut Marshmallow Sweetness Dreambuns "Sugar Bear" Dumpling Schmooky "Cuppy Cake"
+			Nugget "Cuddle Bear" Cuddlebug "Honey Bunny" Fluffkin "Jelly Bean" Sparkles "Baby Cakes" Snookie Buttons "Honey Pot"
+			Snuggles Pussycat "Cutie Pie" Sprinkles Bunny Pancake "Sugar Lips" Silly
+		}
+		
+		corvette = {
+		}
+		
+		constructor = {
+		}
+		
+		colonizer = {
+		}
+		
+		science = {
+		}
+		
+		destroyer = {
+		}
+		
+		cruiser = {
+		}
+		
+		battleship = {
+		}
+		
+		mining_station = { }
+		research_station = { }
+		observation_station = { }
+		
+		transport = {
+		}
+
+		military_station_small = {}
+		military_station_medium = {}
+		military_station_large = {
+		"Haven Spire"
+		}
+	}
+	
+	ship_class_names = {
+		generic = {
+			Giggles "Peachy Pie" Pookums Hon Snoogypuss Starlight Kitten "Cherry Pie" "Sugar Buns" Sugar Muffin "Baby Boo"
+			Steambuns Gumdrop "Funny Bunny" Peanut Marshmallow Sweetness Dreambuns "Sugar Bear" Dumpling Schmooky "Cuppy Cake"
+			Nugget "Cuddle Bear" Cuddlebug "Honey Bunny" Fluffkin "Jelly Bean" Sparkles "Baby Cakes" Snookie Buttons "Honey Pot"
+			Snuggles Pussycat "Cutie Pie" Sprinkles Bunny Pancake "Sugar Lips" Silly
+		}
+	}
+
+	fleet_names = {
+		random_names = {
+			"The Sticky Starfleet" "The Wet Starfleet" "The Milky Starfleet" "The Hand-holding Starfleet" "The Slutty Starfleet" 
+			"The Squishy Starfleet" "The Lusty Starfleet" "The Horny Starfleet" "The Moaning Starfleet"
+			"The Bouncy Starfleet" "The Thicc Starfleet" "The Sucky Starfleet"
+		}
+		sequential_name = LV1_STARFLEET
+	}
+	
+	army_names = {
+	
+		defense_army = {
+			sequential_name = LV1_GUARDIAN_GARRISON
+		}
+
+		assault_army = {
+			sequential_name = LV1_BOOP
+		}
+		
+		slave_army = {
+			sequential_name = HUMAN1_INDENTUREDRIFLES
+		}
+
+		clone_army = {
+			sequential_name = HUMAN1_CLONEARMY
+		}
+		
+		undead_army = {
+			sequential_name = HUMAN1_DREADCOMMANDO
+		}
+
+		robotic_army = {
+			sequential_name = HUMAN1_HUNTERKILLERGROUP
+		}
+
+		robotic_defense_army = {
+			sequential_name = HUMAN1_GROUNDDEFENSEMATRIX
+		}
+		
+		psionic_army = { 
+			sequential_name = LV1_SUCCUBUS
+		}
+		
+		xenomorph_army = {
+			sequential_name = LV1_BREEDING_SWARM
+		}
+		
+		gene_warrior_army = {
+			random_names = {
+				HUMAN1_ARMY_SARC-AGladiators HUMAN1_ARMY_SARC-BWidowmakers HUMAN1_ARMY_SARC-CImmortals HUMAN1_ARMY_SARC-DBerserkers HUMAN1_ARMY_SARC-EAssassins
+				HUMAN1_ARMY_SARC-FReapers HUMAN1_ARMY_SARC-GNighthawks HUMAN1_ARMY_SARC-HDesperados HUMAN1_ARMY_SARC-IGreyKnights HUMAN1_ARMY_SARC-JRoughnecks
+			}
+			sequential_name = HUMAN1_BIOENGINEEREDSQUADRON
+		}
+	}
+
+	planet_names = {
+
+		generic = {
+			names = {
+				Alicia Alyssa Aimée Amber Amélie Amoretta Amorosa Amuse Anastasia Annalisse Annalita Anne Annette Angel 
+				Angeline Aradia Aria Ariane Arissa Aura Aurelia Aurora Ava Babydoll Bambi Beauty Bella Belladonna Boudoire 
+				Brandi Brittany Busty Caitlyn Camilla Candice Candy Capricia Carcosa Cara Caresse Carina Cassilda Carmelita 
+				Carmen Catherine Celeste Chanelle Chanté Chantilly Charmaine Charissa Cheri Cherise Cherish Cheryl Chloe 
+				Claire Clarissa Coco Cocotte Comfort Coralie Corinne Cosette Crème Crystal Cummi Cumslut Cynthia Danica Dawn 
+				Depravity Désirée Devotion Dominique Donna Eden Élise Elle Emma Emi Enchanté Envy Erika Erotique Esmé Estella 
+				Eugénie Eva Evie Evangeline Evelyn Faith Fertility Fleur Foxy Fucktoy Gigi Giselle Honey Hyacinthe Illusion 
+				Ilona Inanna Ingrid Iris Ivoire Ivy Jade Jasmine Jessica Jewel Juliette Justine Kissy Kitty Lace Lacté 
+				Lactitia Lactette Laetitia Lalita Lascivia Lavania Layla Leisure Lenore Lilaya Lila Lilette Lilianne Lithia 
+				Lorraine Lilith Lilli Lily Lina Lola Lolita Lolli Lorelei Love Lovely Lucina Lucretia Lucrèce Lust Lustella 
+				Lustelle Lusterise Lustitia Lusty Luxanne Luxure Luxurella Luxury Lyssa Maeve Mamette Mami Mana Mara Marcelle 
+				Marina Marissa Melissa Mercedes Michelle Milky Mimi Mirabelle Missy Mona Monica Moxi Nadia Niki Noctiluca Noire 
+				November Noxxi Nyarla Nymphe Nymphette Nymphi Obedience Odalisque Odette Orphne Ovidie Pandora Panty Paris 
+				Perdita Phoebe Plaything Pleasure Poppy Promiscuity Pussy Rachel Ravelisse Raven Ravenne Rita Rosalia Rose 
+				Roxi Roxanne Rubi Sabrina Salome Samantha Scarlett Scylla Selene Sexy Silky Siren Soraya Sunny Stacy Stella 
+				Stephanie Submissa Subservia Temptation Tiffany Titty Trixi Twilight Valcuria Valerie Valentina Vanessa Vania 
+				Venus Verity Viola Violette Vivi Vivianne Vixen Vixenne Vixi Yuna Zealia Zone
+			}
+		}
+		
+		pc_desert = {
+			names = {
+				
+			}
+		}
+		
+		pc_arid = {
+			names = {
+				
+			}
+		}
+		
+		pc_tropical = {
+			names = {
+				
+			}
+		}
+		
+		pc_continental = {
+			names = {
+		
+			}
+		}
+		
+		pc_gaia = {
+			names = {
+			}
+		}
+		
+		pc_ocean = {
+			names = {
+			}
+		}
+		
+		pc_tundra = {
+			names = {
+			}
+		}
+		
+		pc_arctic = {
+			names = {
+			}
+		}
+	}
+
+
+	### CHARACTERS
+
+	character_names = {
+		default = {
+			# A complete name
+			full_names_male = {
+				Abaddon Abholos Abhoth Abzu Aku Ammutseba Amon-Gorloth Anaximanes Aphoom-Zah Apocalothoth Apophis Arioch 
+				Asmodeus Astaroth Atlach-Nacha Azorra-Tha Azuvidexus Baal Bane "Baoht Z'uqqa-Mogg" Basatan Behemoth Belial 
+				Belphegor B'gnu-Thun Bokrug Bugg-Shash Byagoona Cerberus Cetus Chaos Char-Rai "Chaugnar Faugn" Chthon Chzo 
+				Colossus Coinchenn Croesus Cthaat Cthoggha Cthugha Cxaxukluth Cyäegha C'thun Daoloth Dominicus Dominus 
+				Demogorgon Dhumin Draconis Dygra Dythalla Eldanoth Geryon Ghadamon Ghatanothoa Ghisguth Ghol-Goroth Ghroth 
+				Glabrezu Gleeth Golothess Graz'zt Gtuhanai Gurathnaka Gur'la-ya Gwarloth Harbinger Hastur H'chtelegoth Hydra 
+				Hziulquoigmnzhah Ialdabaoloth Ialdagorth Inpesca Ishmagon Ithaqua Janai'ngo Juiblex Juk-Shabb Kaajh'Kaalbh 
+				Kauzunoth Khal'kru Khepri K'nar'st Kraken Kthanid Kthaw'keth Kyrios Leviathan Lexur'iga-serr'roth Lu-Kthu 
+				Magog Mammon Maou Mh'ithrha Mlandoth M'Nagalah Mnomquah Moloch Mordiggian "Mril Thorion" Nergal Nihilus 
+				Ngirrth'lu Ngyr-Korath Northot Nostromo Nssu-Ghahnb Nyaghoggua Nyarlathotep Nycrama Nyctelios Nyogtha 
+				Ny-Rakath N'zoth Obliviones Ob'mbu Obox-ob Olkoth Orcus Orthrus Othuum Othuyeg Pazuzu Pharol Porphyrion 
+				Rhagorthua Rhan-Tegoth Rhogog "Rlim Shaikorth" Sanguinoth Scourge Shabbith-Ka Shaklatal Shaurash-Ho Sheb-Teth 
+				Shlithneth Sho-Gath Shterot "Shudde M'ell" Silenus Spawn Sothoth Sthanee T'ith Tiamat Thasaidon Thoth Th'rygh 
+				Tsathoggua Tulushuggua Tulzscha Typhon Ubbo-Sathla Ugoreth Ulamog Ultraliss Uvhash Veshvoriak Vhuzompha 
+				Volgna-Gath Volophon Vulthoom Xcthol Xexanoth Xinlurgash Xirdneth Xoxiigghua Yaldabaoth Yamath Yog-Sapha 
+				Yomagn'tho Ythogtha Zoth-Ommog Z'toggua Zushakon Zvilpogghua
+			}
+			full_names_female = {
+				Alicia Alyssa Aimée Amber Amélie Amoretta Amorosa Amuse Anastasia Annalisse Annalita Anne Annette Angel 
+				Angeline Aradia Aria Ariane Arissa Aura Aurelia Aurora Ava Babydoll Bambi Beauty Bella Belladonna Boudoire 
+				Brandi Brittany Busty Caitlyn Camilla Candice Candy Capricia Carcosa Cara Caresse Carina Cassilda Carmelita 
+				Carmen Catherine Celeste Chanelle Chanté Chantilly Charmaine Charissa Cheri Cherise Cherish Cheryl Chloe 
+				Claire Clarissa Coco Cocotte Comfort Coralie Corinne Cosette Crème Crystal Cummi Cumslut Cynthia Danica Dawn 
+				Depravity Désirée Devotion Dominique Donna Eden Élise Elle Emma Emi Enchanté Envy Erika Erotique Esmé Estella 
+				Eugénie Eva Evie Evangeline Evelyn Faith Fertility Fleur Foxy Fucktoy Gigi Giselle Honey Hyacinthe Illusion 
+				Ilona Inanna Ingrid Iris Ivoire Ivy Jade Jasmine Jessica Jewel Juliette Justine Kissy Kitty Lace Lacté 
+				Lactitia Lactette Laetitia Lalita Lascivia Lavania Layla Leisure Lenore Lilaya Lila Lilette Lilianne Lithia 
+				Lilith Lilli Lily Lina Lola Lolita Lolli Lorelei Love Lovely Lucina Lucretia Lucrèce Lust Lustella Lustelle 
+				Lusterise Lustitia Lusty Luxanne Luxure Luxurella Luxury Lyssa Maeve Mamette Mami Mana Mara Marcelle Marina 
+				Marissa Melissa Mercedes Michelle Milky Mimi Mirabelle Missy Mona Monica Moxi Nadia Niki Noctiluca Noire 
+				November Noxxi Nyarla Nymphe Nymphette Nymphi Obedience Odalisque Odette Orphne Ovidie Pandora Panty Paris 
+				Perdita Phoebe Plaything Pleasure Poppy Promiscuity Pussy Rachel Ravelisse Raven Ravenne Rita Rosalia Rose 
+				Roxi Roxanne Rubi Sabrina Salome Samantha Scarlett Scylla Selene Sexy Silky Siren Soraya Sunny Stacy Stella 
+				Stephanie Submissa Subservia Temptation Tiffany Titty Trixi Twilight Valcuria Valerie Valentina Vanessa Vania 
+				Venus Verity Viola Violette Vivi Vivianne Vixen Vixenne Vixi Yuna Zealia Zone
+			}
+			
+			# Always combined with a second name
+			first_names = {
+			}
+			
+			# Always combined with a first name
+			second_names = {
+			}
+			
+			regnal_first_names_male = {
+			}
+			regnal_first_names_female = {
+			}
+			regnal_second_names = {
+				
+			}	
+		}
+	}
+}
+
+###

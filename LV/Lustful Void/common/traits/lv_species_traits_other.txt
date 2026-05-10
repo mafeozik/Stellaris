@@ -1,0 +1,34 @@
+####################################
+###     Other Species Traits     ###
+####################################
+#
+# Note: All traits were made with the intention of adding events/other things relating to them
+# eventually, even if not stated on the traits themselves. Also, all traits can and probably
+# will change again! These are not final effects or values at all.
+#
+# The potential_crossbreeding_chance modifier is used for base game crossbreeding compatibility 
+# only.
+#
+# The following categories are more for organizational purposes than anything else:
+# Psychological  - Mentality or mind altering effects.
+# Physical       - Body parts or other physical attributes.
+#
+###
+
+# Cheat Trait
+trait_lv_cheat_trait = {
+	cost = -99
+	randomized = no
+	allowed_archetypes = { BIOLOGICAL LITHOID ROBOT MACHINE }
+	species_potential_add = {
+		always = no
+	}
+	
+	modifier = {}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+###

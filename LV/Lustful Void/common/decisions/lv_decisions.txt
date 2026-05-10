@@ -1,0 +1,1343 @@
+#########################
+###     Decisions     ###
+#########################
+
+# Regular #
+
+decision_planet_lv_breeding_planet = {		# Breeding Focus - Long Term
+	owned_planets_only = yes
+	sound = event_swarm_started
+	icon = decision_lv_breeding_planet
+	
+	resources = {
+		category = decisions
+		cost = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_lithoid_empire = no
+				}
+			}
+			food = 1000
+			consumer_goods = 250
+		}
+        cost = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_lithoid_empire = yes
+				}
+			}
+			minerals = 500
+			consumer_goods = 250
+		}
+	}
+	
+	potential = {
+		exists = owner
+		owner ={
+			has_tradition = tr_lv_breeding_finish
+			is_gestalt = no
+			is_ai = no
+		}
+	}
+	
+	allow = {
+		NOR = {
+			has_modifier = lv_breeding_planet
+			has_modifier = lv_breeding_frenzy
+			has_modifier = lv_fuck_fest
+		}
+	}	
+	
+	effect = {
+		add_modifier = { modifier = "lv_breeding_planet" days = 4320 }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_planet_lv_breeding_frenzy = {		# Breeding Focus
+	owned_planets_only = yes
+	sound = event_swarm_started
+	icon = decision_lv_breeding_frenzy
+	
+	resources = {
+		category = decisions
+		cost = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_lithoid_empire = no
+				}
+			}
+			food = 2000
+			consumer_goods = 500
+		}
+        cost = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_lithoid_empire = yes
+				}
+			}
+			minerals = 1000
+			consumer_goods = 500
+		}
+	}
+	
+	potential = {
+		exists = owner
+		owner ={
+			has_tradition = tr_lv_breeding_finish
+			is_gestalt = no
+			is_ai = no
+		}
+	}
+	
+	allow = {
+		NOR = {
+			has_modifier = lv_breeding_planet
+			has_modifier = lv_breeding_frenzy
+			has_modifier = lv_fuck_fest
+		}
+	}	
+	
+	effect = {
+		add_modifier = { modifier = "lv_breeding_frenzy" days = 2160 }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_planet_lv_fuck_fest = {		# Breeding Frenzy
+	owned_planets_only = yes
+	sound = event_swarm_started
+	icon = decision_lv_fuck_fest
+	
+	resources = {
+		category = decisions
+		cost = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_lithoid_empire = no
+				}
+			}
+			food = 3000
+			consumer_goods = 750
+		}
+        cost = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_lithoid_empire = yes
+				}
+			}
+			minerals = 2000
+			consumer_goods = 750
+		}
+	}
+	
+	potential = {
+		exists = owner
+		owner ={
+			has_tradition = tr_lv_breeding_finish
+			is_gestalt = no
+			is_ai = no
+		}
+	}
+	
+	allow = {
+		NOR = {
+			has_modifier = lv_breeding_planet
+			has_modifier = lv_breeding_frenzy
+			has_modifier = lv_fuck_fest
+		}
+	}	
+	
+	effect = {
+		add_modifier = { modifier = "lv_fuck_fest" days = 1080 }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# Gestalt #
+
+decision_planet_lv_breeding_planet_hive = {		# Breeding Focus - Long Term
+	owned_planets_only = yes
+	sound = event_swarm_started
+	icon = decision_lv_breeding_planet_hive
+	
+	resources = {
+		category = decisions
+		cost = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_lithoid_empire = no
+				}
+			}
+			food = 2000
+		}
+        cost = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_lithoid_empire = yes
+				}
+			}
+			minerals = 1000
+		}
+	}
+	
+	potential = {
+		exists = owner
+		owner ={
+			has_tradition = tr_lv_breeding_finish
+			is_gestalt = yes
+			is_ai = no
+		}
+	}
+	
+	allow = {
+		NOR = {
+			has_modifier = lv_breeding_planet_hive
+			has_modifier = lv_breeding_frenzy_hive
+			has_modifier = lv_fuck_fest_hive
+		}
+	}	
+	
+	effect = {
+		add_modifier = { modifier = "lv_breeding_planet_hive" days = 4320 }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_planet_lv_breeding_frenzy_hive = {		# Breeding Focus
+	owned_planets_only = yes
+	sound = event_swarm_started
+	icon = decision_lv_breeding_frenzy_hive
+	
+	resources = {
+		category = decisions
+		cost = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_lithoid_empire = no
+				}
+			}
+			food = 4000
+		}
+        cost = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_lithoid_empire = yes
+				}
+			}
+			minerals = 2000
+		}
+	}
+	
+	potential = {
+		exists = owner
+		owner ={
+			has_tradition = tr_lv_breeding_finish
+			is_gestalt = yes
+			is_ai = no
+		}
+	}
+	
+	allow = {
+		NOR = {
+			has_modifier = lv_breeding_planet_hive
+			has_modifier = lv_breeding_frenzy_hive
+			has_modifier = lv_fuck_fest_hive
+		}
+	}	
+	
+	effect = {
+		add_modifier = { modifier = "lv_breeding_frenzy_hive" days = 2160 }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_planet_lv_fuck_fest_hive = {		# Breeding Frenzy
+	owned_planets_only = yes
+	sound = event_swarm_started
+	icon = decision_lv_fuck_fest_hive
+	
+	resources = {
+		category = decisions
+		cost = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_lithoid_empire = no
+				}
+			}
+			food = 6000
+		}
+        cost = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_lithoid_empire = yes
+				}
+			}
+			minerals = 4000
+		}
+	}
+	
+	potential = {
+		exists = owner
+		owner ={
+			has_tradition = tr_lv_breeding_finish
+			is_gestalt = yes
+			is_ai = no
+		}
+	}
+	
+	allow = {
+		NOR = {
+			has_modifier = lv_breeding_planet_hive
+			has_modifier = lv_breeding_frenzy_hive
+			has_modifier = lv_fuck_fest_hive
+		}
+	}	
+	
+	effect = {
+		add_modifier = { modifier = "lv_fuck_fest_hive" days = 1080 }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# Other #
+
+decision_planet_lv_public_exhibitionism = {		# Public Exhibitionism
+	owned_planets_only = yes
+	sound = event_swarm_started
+	icon = decision_lv_public_exhibitionism
+	
+	resources = {
+		category = decisions
+		cost = {
+			unity = 1250
+		}
+	}
+	
+	potential = {
+		exists = owner
+		owner ={
+			OR = {
+				has_trait = trait_lv_exhibitionist
+				has_trait = trait_lv_perfect_hybrid
+			}
+			is_ai = no
+		}
+	}
+	
+	allow = {
+		NOT = { has_modifier = lv_public_exhibitionism }
+	}	
+	
+	effect = {
+		add_modifier = { modifier = "lv_public_exhibitionism" days = 1800 }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_planet_lv_tentacles_festival = {		# Tentacles Festival
+	owned_planets_only = yes
+	sound = event_swarm_started
+	icon = decision_lv_tentacles_festival
+	
+	resources = {
+		category = decisions
+		cost = {
+			food = 1000
+		}
+	}
+	
+	potential = {
+		is_planet_class = pc_lv_stentacle
+		exists = owner
+		owner ={
+			has_origin = origin_lv_stentacle
+			is_ai = no
+		}
+	}
+	
+	allow = {
+#		NOT = { has_modifier = lv_tentacles_festival_cooldown }
+		always = yes
+	}
+	
+	effect = {
+		custom_tooltip = decision_planet_lv_tentacles_festival_custom
+		hidden_effect = {
+			planet_event = { id = lv_colony_events_1.5 }
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_planet_lv_mono_gender_conversion = {		# Mono Gender Conversion
+	owned_planets_only = yes
+	sound = event_swarm_started
+	icon = decision_lv_mono_gender_conversion
+	
+	prerequisites = {
+		"tech_lv_transformation_candy_orange"		
+	}
+	
+	resources = {
+		category = decisions
+		cost = {
+			trigger = {
+				num_pops < 10
+			}
+			exotic_gases = 20
+		}
+		cost = {
+			trigger = {
+				num_pops >= 10
+				num_pops < 20
+			}
+			exotic_gases = 40
+		}
+		cost = {
+			trigger = {
+				num_pops >= 20
+				num_pops < 30
+			}
+			exotic_gases = 60
+		}	
+		cost = {
+			trigger = {
+				num_pops >= 30
+				num_pops < 40
+			}
+			exotic_gases = 80
+		}	
+		cost = {
+			trigger = {
+				num_pops >= 40
+				num_pops < 50
+			}
+			exotic_gases = 100
+		}			
+		cost = {
+			trigger = {
+				num_pops >= 50
+				num_pops < 60
+			}
+			exotic_gases = 120
+		}
+		cost = {
+			trigger = {
+				num_pops >= 60
+				num_pops < 70
+			}
+			exotic_gases = 140
+		}			
+		cost = {
+			trigger = {
+				num_pops >= 70
+				num_pops < 85
+			}
+			exotic_gases = 160
+		}
+		cost = {
+			trigger = {
+				num_pops >= 85
+				num_pops < 100
+			}
+			exotic_gases = 180
+		}
+		cost = {
+			trigger = {
+				num_pops >= 100
+			}
+			exotic_gases = 200
+		}				
+	}
+	
+	potential = {
+		exists = owner
+		owner = {
+			is_ai = no
+		}
+	}
+	
+	allow = {
+		NOR = {
+			has_modifier = lv_mono_gender_conversion_fsm_ca
+			has_modifier = lv_mono_gender_conversion_fsm_cxo
+			has_modifier = lv_mono_gender_conversion_msm_ca
+			has_modifier = lv_mono_gender_conversion_msm_cxo
+			has_modifier = lv_mono_gender_conversion_fusm_ca
+			has_modifier = lv_mono_gender_conversion_fusm_cxo
+		}
+	}
+	
+	effect = {
+		custom_tooltip = decision_mono_gender_conversion_custom
+		hidden_effect = {
+			planet_event = { id = lv_decision_events.1 }
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_planet_lv_milking_world = {		# Milking World
+	owned_planets_only = yes
+	icon = decision_lv_milking_world
+	
+	resources = {
+		category = decisions
+		cost = {
+			influence = 25
+		}
+	}
+	
+	potential = {
+		NOT = { has_planet_flag = lv_milking_world }
+		exists = owner
+		owner ={ has_tradition = tr_lv_milking_5_milking_worlds }
+	}
+	
+	allow = {
+		NOR = {
+			has_modifier = lv_breeding_world
+			has_modifier = lv_milking_world
+		}
+	}	
+	
+	effect = {
+		add_modifier = { modifier = lv_milking_world }
+		hidden_effect = {
+			remove_planet_flag = lv_no_milking_world
+			set_planet_flag = lv_milking_world
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_planet_lv_no_milking_world = {		# Remove Milking World
+	owned_planets_only = yes
+	icon = decision_lv_no_milking_world
+	
+	resources = {
+		category = decisions
+		cost = {
+			unity = 50
+		}
+	}
+	
+	potential = {
+		NOT = { has_planet_flag = lv_no_milking_world }
+		exists = owner
+		planet = {
+			has_modifier = lv_milking_world
+		}
+	}
+	
+	allow = {
+		has_modifier = lv_milking_world
+	}	
+	
+	effect = {
+		remove_modifier = lv_milking_world
+		hidden_effect = {
+			set_planet_flag = lv_no_milking_world
+			remove_planet_flag = lv_milking_world
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_planet_lv_breeding_world = {		# Breeding World
+	owned_planets_only = yes
+	icon = decision_lv_breeding_world
+	
+	enactment_time = 180
+	resources = {
+		category = decisions
+		cost = {
+			unity = 250
+			energy = 1000
+			minerals = 1000
+			food = 500
+		}
+	}
+	
+	potential = {
+		exists = owner
+		owner ={ has_ascension_perk = ap_lv_breeding }
+	}
+	
+	allow = {
+		NOR = {
+			has_modifier = lv_breeding_world
+			has_modifier = lv_milking_world
+		}
+	}	
+	
+	effect = {
+		add_modifier = { modifier = lv_breeding_world }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_planet_lv_no_breeding_world = {		# Remove Breeding World
+	owned_planets_only = yes
+	icon = decision_lv_no_breeding_world
+	
+	enactment_time = 180
+	resources = {
+		category = decisions
+		cost = {
+			unity = 50
+			energy = -500
+			minerals = -500
+			food = -500
+		}
+	}
+	
+	potential = {
+		exists = owner
+		planet = {
+			has_modifier = lv_breeding_world
+		}
+	}
+	
+	allow = {
+		has_modifier = lv_breeding_world
+	}	
+	
+	effect = {
+		remove_modifier = lv_breeding_world
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#############
+# Sexopolis #
+#############
+
+decision_planet_lv_sex_supply = {
+	owned_planets_only = yes
+	icon = decision_lv_sex_supply
+	enactment_time = 369
+	resources = {
+		category = decisions
+		cost = {
+			alloys = 1000
+			volatile_motes = 50
+			exotic_gases = 50
+			rare_crystals = 50
+		}
+	}
+	potential = {
+		OR = {
+			is_planet_class = pc_lv_sworld
+			is_planet_class = pc_lv_sringworld
+		}
+		exists = owner
+		owner = { has_technology =  tech_lv_sex_supply }
+		NOT = { has_planet_flag = lv_sex_supply_added }
+	}
+	effect = {
+		custom_tooltip = decision_planet_lv_sex_supply_effects
+		hidden_effect = {
+			set_planet_flag = lv_sex_supply_added
+			add_deposit = d_lv_sex_supply
+		}
+	}
+}
+
+# Sexopolis Project #
+
+decision_planet_lv_sworld_project = {
+	owned_planets_only = yes
+	icon = decision_arcology_project
+	enactment_time = 1800
+	resources = {
+		category = decisions
+		cost = {
+			influence = 100
+			minerals = 10000
+		}
+	}
+	potential = {
+		NOR = {
+			is_planet_class = pc_city
+			is_planet_class = pc_hive
+			is_planet_class = pc_machine
+			is_planet_class = pc_habitat
+			is_planet_class = pc_ringworld_habitable
+			is_planet_class = pc_lv_sworld
+			is_planet_class = pc_lv_sringworld
+		}
+		habitable_structure = no
+		lv_is_sexopolis_structure = no
+		exists = owner
+		owner = { has_ascension_perk = ap_lv_sworld_project }
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = decision_planet_lv_sworld_project_requirements
+			free_district_slots < 1
+			num_districts = { type = district_farming value < 1 }
+			num_districts = { type = district_mining value < 1 }
+			num_districts = { type = district_generator value < 1 }
+		}
+		num_uncleared_blockers < 1
+	}
+	effect = {
+		# Make Sexopolis
+		custom_tooltip = decision_planet_lv_sworld_project_effects
+		hidden_effect = {
+			clear_deposits = yes
+			change_pc = pc_lv_sworld
+			set_planet_entity = {
+				entity = "lv_sworld"
+				graphical_culture = owner
+			}
+			remove_all_districts = yes
+			add_district = district_lv_sworld_city
+			add_district = district_lv_sworld_city
+			add_district = district_lv_sworld_city
+			add_district = district_lv_sworld_city
+			add_district = district_lv_sworld_city
+			add_district = district_lv_sworld_city
+			add_district = district_lv_sworld_city
+			add_district = district_lv_sworld_city
+			add_district = district_lv_sworld_city
+			add_district = district_lv_sworld_city
+			owner = {
+				country_event = { id = distar.201 } # port for living planet distar.197, triggers in event
+			}
+			planet_event = { id = lv_sworld_creation.1 }
+			if = {
+				limit = {
+					OR = {
+						is_active_resolution = "resolution_ecology_environmental_control_board"
+						is_active_resolution = "resolution_ecology_paradise_initiative"
+					}
+				}
+				owner = {
+					set_timed_country_flag = { flag = resolution_breached_terraformed days = 3600 }
+				}
+			}
+		}
+	}
+	ai_weight = {
+		weight = 1
+	}
+}
+
+# Restore Sexopolis Project #
+
+decision_planet_lv_sworld_project_srelic = {
+	owned_planets_only = yes
+	icon = decision_arcology_project
+	enactment_time = 1800
+	resources = {
+		category = decisions
+		cost = {
+			influence = 100
+			minerals = 10000
+		}
+	}
+	potential = {
+		is_planet_class = pc_lv_srelic
+		habitable_structure = no
+		lv_is_sexopolis_structure = no
+		exists = owner
+		owner = { has_ascension_perk = ap_lv_sworld_project }
+	}
+	allow = {
+		num_uncleared_blockers < 1
+	}
+	effect = {
+		# Make Sexopolis
+		custom_tooltip = decision_lv_sworld_project_effects
+		hidden_effect = {
+			clear_deposits = yes
+			add_deposit = d_lv_former_srelic_world
+			change_pc = pc_lv_sworld
+			set_planet_entity = {
+				entity = "lv_sworld"
+				graphical_culture = owner
+			}
+			remove_all_districts = yes
+			add_district = district_lv_sworld_city
+			add_district = district_lv_sworld_city
+			add_district = district_lv_sworld_city
+			add_district = district_lv_sworld_city
+			add_district = district_lv_sworld_city
+			planet_event = { id = lv_sworld_creation.1 }
+			if = {
+				limit = {
+					OR = {
+						is_active_resolution = "resolution_ecology_environmental_control_board"
+						is_active_resolution = "resolution_ecology_paradise_initiative"
+					}
+				}
+				owner = {
+					set_timed_country_flag = { flag = resolution_breached_terraformed days = 3600 }
+				}
+			}
+		}
+	}
+	ai_weight = {
+		weight = 1
+	}
+}
+
+decision_planet_lv_stent = {		# Seed Tentacled Lifeforms
+	owned_planets_only = yes
+	icon = decision_lv_stent
+	enactment_time = 369
+	resources = {
+		category = decisions
+		cost = {
+			food = 5000
+		}
+	}
+	potential = {
+		exists = owner
+		owner = { has_technology =  tech_lv_tentacle_symbiosis }
+		NOR = {
+			has_deposit = d_lv_tentacles_blocker
+			has_deposit = d_lv_tentacle_symbiosis
+		}
+	}
+	effect = {
+		custom_tooltip = decision_planet_lv_stent_effects
+		hidden_effect = {
+			add_deposit = d_lv_tentacle_symbiosis
+		}
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_planet_lv_ptent = {		# Purge Tentacled Lifeforms
+	owned_planets_only = yes
+	icon = decision_lv_ptent
+	enactment_time = 369
+	resources = {
+		category = decisions
+		cost = {
+			energy = 1000
+		}
+	}
+	potential = {
+		exists = owner
+		owner = { has_technology =  tech_lv_tentacle_purge }
+		OR = {
+			has_deposit = d_lv_tentacles_blocker
+			has_deposit = d_lv_tentacle_symbiosis
+		}
+	}
+	effect = {
+		custom_tooltip = decision_planet_lv_ptent_effects
+		hidden_effect = {
+			remove_deposit = d_lv_tentacles_blocker
+			remove_deposit = d_lv_tentacle_symbiosis
+			random_list = {
+				10 = {
+					add_deposit = d_lv_cum_blocker_1
+				}
+				10 = {
+					add_deposit = d_lv_cum_blocker_2
+				}
+				10 = {
+					add_deposit = d_lv_cum_blocker_3
+				}
+				10 = {
+					add_deposit = d_lv_cum_blocker_4
+				}
+				10 = {
+					add_deposit = d_lv_cum_blocker_5
+				}
+				50 = {}
+			}
+			random_list = {
+				40 = {
+					random_owned_pop = { kill_pop = yes }
+				}
+				20 = {
+					random_owned_pop = { kill_pop = yes }
+					random_owned_pop = { kill_pop = yes }
+				}
+				10 = {
+					random_owned_pop = { kill_pop = yes }
+					random_owned_pop = { kill_pop = yes }
+					random_owned_pop = { kill_pop = yes }
+				}
+				30 = {}
+			}
+			add_planet_devastation = 20
+		}
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_planet_lv_suit_law = {		# Forced Pleasure Suits
+	owned_planets_only = yes
+	sound = event_airlock
+	icon = decision_lv_suit_law
+
+	resources = {
+		category = decisions
+		cost = {
+			unity = 100
+		}
+	}
+	
+	potential = {
+		exists = owner
+		owner = {
+			is_regular_empire = yes
+			has_technology = tech_lv_mechanized_pleasure_suits
+		}
+		NOT = { owner = { has_policy_flag = lv_pleasure_suits_banned } }
+		NOT = { has_modifier = lv_suit_planet }
+		planet_crime >= 10
+	}
+	
+	allow = {
+		exists = owner
+		owner = { has_technology = tech_lv_mechanized_pleasure_suits }
+	}
+	
+	effect = {
+		remove_modifier = lv_ex_suit_planet
+		add_modifier = { modifier = lv_suit_planet days = -1 }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_planet_lv_end_suit_law = {		# End Forced Pleasure Suits
+	owned_planets_only = yes
+	sound = event_airlock
+	icon = decision_lv_end_suit_law
+
+	resources = {
+		category = decisions
+		cost = {
+			unity = 100
+		}
+	}
+	
+	potential = {
+		has_modifier = lv_suit_planet
+	}
+	
+	allow = {
+		exists = owner
+		owner = { has_technology = tech_lv_mechanized_pleasure_suits }
+	}
+	
+	effect = {
+		remove_modifier = lv_suit_planet
+		add_modifier = { modifier = lv_ex_suit_planet days = 720 }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# Pleasure Habitat Fix #
+
+decision_planet_lv_shabitat_fix = {
+	owned_planets_only = yes
+	sound = event_swarm_started
+	icon = decision_lv_shabitat_fix
+	
+	resources = {
+		category = decisions
+		cost = {
+			influence = 50
+		}
+	}
+	
+	potential = {
+		is_planet_class = pc_habitat
+		NOT = { has_planet_flag = lv_pleasure_habitat }
+		exists = owner
+		owner = { is_ai = no }
+	}
+	
+	allow = {
+		exists = owner
+		owner = {
+			has_ascension_perk = ap_lv_sworld_project
+			has_technology = tech_habitat_1
+		}
+	}
+	
+	effect = {
+		custom_tooltip = decision_planet_lv_shabitat_fix_effects
+		hidden_effect = {
+			set_planet_flag = lv_pleasure_habitat
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# Gem Incubator Processing #
+
+decision_planet_lv_gem_incubator_processing_balanced = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_lv_gem_incubator_processing_balanced
+	
+	potential = {
+		NOT = { has_planet_flag = lv_gem_incubator_processing_balanced }
+		exists = owner
+		owner = { has_technology = tech_lv_gem_incubation_insight }
+	}
+	
+	allow = {
+		exists = owner
+		owner = { has_technology = tech_lv_gem_incubation_insight }
+	}
+	
+	effect = {
+		custom_tooltip = decision_planet_lv_gem_incubator_processing_balanced_effects
+		hidden_effect = {
+			set_planet_flag = lv_gem_incubator_processing_balanced
+			remove_planet_flag = lv_gem_incubator_processing_alloys
+			remove_planet_flag = lv_gem_incubator_processing_minerals
+		}
+	}
+	
+	ai_weight = {
+		weight = 1
+	}
+}
+
+decision_planet_lv_gem_incubator_processing_alloys = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_lv_gem_incubator_processing_alloys
+	
+	potential = {
+		NOT = { has_planet_flag = lv_gem_incubator_processing_alloys }
+		exists = owner
+		owner = {
+			is_ai = no
+			has_technology = tech_lv_gem_incubation_insight
+		}
+	}
+	
+	allow = {
+		exists = owner
+		owner = { has_technology = tech_lv_gem_incubation_insight }
+	}
+	
+	effect = {
+		custom_tooltip = decision_planet_lv_gem_incubator_processing_alloys_effects
+		hidden_effect = {
+			set_planet_flag = lv_gem_incubator_processing_alloys
+			remove_planet_flag = lv_gem_incubator_processing_balanced
+			remove_planet_flag = lv_gem_incubator_processing_minerals
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_planet_lv_gem_incubator_processing_minerals = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_lv_gem_incubator_processing_minerals
+	
+	potential = {
+		NOT = { has_planet_flag = lv_gem_incubator_processing_minerals }
+		exists = owner
+		owner = {
+			is_ai = no
+			has_technology = tech_lv_gem_incubation_insight
+		}
+	}
+	
+	allow = {
+		exists = owner
+		owner = { has_technology = tech_lv_gem_incubation_insight }
+	}
+	
+	effect = {
+		custom_tooltip = decision_planet_lv_gem_incubator_processing_minerals_effects
+		hidden_effect = {
+			set_planet_flag = lv_gem_incubator_processing_minerals
+			remove_planet_flag = lv_gem_incubator_processing_balanced
+			remove_planet_flag = lv_gem_incubator_processing_alloys
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# Sexology Focus #
+
+decision_planet_lv_sexology_focus_balanced = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_lv_sexology_focus_balanced
+	
+	potential = {
+		NOT = { has_planet_flag = lv_sexology_focus_balanced }
+		exists = owner
+		owner = { has_technology = tech_lv_generalized_sexology_studies }
+	}
+	
+	allow = {
+		exists = owner
+		owner = { has_technology = tech_lv_generalized_sexology_studies }
+	}
+	
+	effect = {
+		custom_tooltip = decision_planet_lv_sexology_focus_balanced_effects
+		hidden_effect = {
+			set_planet_flag = lv_sexology_focus_balanced
+			remove_planet_flag = lv_sexology_focus_research
+			remove_planet_flag = lv_sexology_focus_consumer_goods
+		}
+	}
+	
+	ai_weight = {
+		weight = 1
+	}
+}
+
+decision_planet_lv_sexology_focus_research = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_lv_sexology_focus_research
+	
+	potential = {
+		NOT = { has_planet_flag = lv_sexology_focus_research }
+		exists = owner
+		owner = {
+			is_ai = no
+			has_technology = tech_lv_generalized_sexology_studies
+		}
+	}
+	
+	allow = {
+		exists = owner
+		owner = { has_technology = tech_lv_generalized_sexology_studies }
+	}
+	
+	effect = {
+		custom_tooltip = decision_planet_lv_sexology_focus_research_effects
+		hidden_effect = {
+			set_planet_flag = lv_sexology_focus_research
+			remove_planet_flag = lv_sexology_focus_balanced
+			remove_planet_flag = lv_sexology_focus_consumer_goods
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_planet_lv_sexology_focus_consumer_goods = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_lv_sexology_focus_consumer_goods
+	
+	potential = {
+		NOT = { has_planet_flag = lv_sexology_focus_consumer_goods }
+		exists = owner
+		owner = {
+			is_ai = no
+			has_technology = tech_lv_generalized_sexology_studies
+		}
+	}
+	
+	allow = {
+		exists = owner
+		owner = { has_technology = tech_lv_generalized_sexology_studies }
+	}
+	
+	effect = {
+		custom_tooltip = decision_planet_lv_sexology_focus_consumer_goods_effects
+		hidden_effect = {
+			set_planet_flag = lv_sexology_focus_consumer_goods
+			remove_planet_flag = lv_sexology_focus_balanced
+			remove_planet_flag = lv_sexology_focus_research
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# Tentacular Awakening #
+
+decision_planet_lv_tentacular_awakening = {
+	owned_planets_only = yes
+	sound = event_swarm_started
+	icon = decision_lv_tentacular_awakening
+	
+	potential = {
+		NOT = { has_planet_flag = lv_tentacular_awakening_activated }
+		exists = owner
+		owner = { has_technology = tech_lv_tentacular_awakening }
+		OR = {
+			has_deposit = d_lv_tentacles_blocker
+			has_deposit = d_lv_tentacle_symbiosis
+		}
+	}
+	
+	allow = {
+		exists = owner
+		owner = { has_technology = tech_lv_tentacular_awakening }
+	}
+	
+	effect = {
+		custom_tooltip = decision_planet_lv_tentacular_awakening_effects
+		hidden_effect = {
+			set_planet_flag = lv_tentacular_awakening_activated
+			planet_event = { id = lv_pop_events.201 }
+		}
+	}
+	
+	ai_weight = {
+		weight = 1
+	}
+}
+
+# Integrate Tentacle Breeding Pits #
+
+decision_planet_lv_integrate_tentacle_breeding_pits = {
+	owned_planets_only = yes
+	sound = event_swarm_started
+	icon = decision_lv_integrate_tentacle_breeding_pits
+	
+	potential = {
+		NOT = { has_planet_flag = lv_integrate_tentacle_breeding_pits_activated }
+		exists = owner
+		owner = { has_ascension_perk = ap_lv_tentacle_breeding_pit_integration }
+	}
+	
+	allow = {
+		has_planet_flag = lv_tentacular_awakening_activated
+		has_modifier = mastery_of_nature
+	}
+	
+	effect = {
+		custom_tooltip = decision_planet_lv_tentacular_awakening_effects
+		set_planet_flag = lv_integrate_tentacle_breeding_pits_activated
+		add_modifier = {
+			modifier = lv_integrated_tentacle_breeding_pits
+			days = -1
+		}
+	}
+	
+	ai_weight = {
+		weight = 1
+	}
+}
+
+##########
+# Relics #
+##########
+
+# Golden Rod #
+
+decision_planet_lv_golden_rod = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_planet_lv_golden_rod
+
+	potential = {
+		exists = owner
+		owner = { has_country_flag = relic_lv_golden_rod_activated }
+	}
+
+	allow = { }
+
+	effect = {
+		custom_tooltip = decision_planet_lv_golden_rod_effects
+		hidden_effect = {
+			owner = { remove_country_flag = relic_lv_golden_rod_activated }
+			planet_event = { 
+				id = lv_relic_events.24
+				days = 360
+			}
+			add_modifier = {
+				modifier = lv_golden_rod_transform
+				days = 360
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+###

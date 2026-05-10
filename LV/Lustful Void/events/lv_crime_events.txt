@@ -1,0 +1,198 @@
+namespace = lv_crime_events
+
+############################
+###     Crime Events     ###
+############################
+
+###
+
+# Trafficking #
+
+planet_event = {
+	id = lv_crime_events.1
+	title = lv_crime_events.1.name
+	desc =  lv_crime_events.1.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_criminal_activity
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_crime_trafficking_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	pre_triggers = {
+		has_owner = yes
+	}
+	
+	trigger = {
+		has_modifier = criminal_underworld
+	}
+	
+	immediate = {
+		set_timed_planet_flag = {
+			flag = lv_crime_trafficking
+			days = 1800
+		}
+	}
+	
+	option = {
+		name = lv_crime_events.1.a
+		add_modifier = { modifier = lv_crime_trafficking days = 1800 }
+	}
+}
+
+# Enforcers Attacked! #
+
+planet_event = {
+	id = lv_crime_events.2
+	title = lv_crime_events.2.name
+	desc =  lv_crime_events.2.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_criminal_activity
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_crime_attacked_enforcers_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	pre_triggers = {
+		has_owner = yes
+	}
+	
+	trigger = {
+		has_modifier = criminal_underworld
+		has_planet_flag = lv_crime_trafficking
+	}
+	
+	immediate = {
+		set_timed_planet_flag = {
+			flag = planet_crime_flag
+			days = 360
+		}
+		set_timed_planet_flag = {
+			flag = lv_crime_attacked_enforcers
+			days = 1800
+		}
+	}
+	
+	option = {
+		name = lv_crime_events.2.a
+		add_modifier = { modifier = lv_crime_attacked_enforcers days = 1800 }
+	}
+}
+
+# Enforcer Patrol Raped! #
+
+planet_event = {
+	id = lv_crime_events.3
+	title = lv_crime_events.3.name
+	desc =  lv_crime_events.3.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_criminal_activity
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_crime_raped_enforcers_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	pre_triggers = {
+		has_owner = yes
+	}
+	
+	trigger = {
+		has_modifier = criminal_underworld
+		has_planet_flag = lv_crime_attacked_enforcers
+	}
+	
+	immediate = {
+		set_timed_planet_flag = {
+			flag = lv_crime_raped_enforcers
+			days = 1800
+		}
+	}
+	
+	option = {
+		name = lv_crime_events.3.a
+		add_modifier = { modifier = lv_crime_raped_enforcers days = 1800 }
+	}
+}
+
+# Enforcer Headquarters Raided! #
+
+planet_event = {
+	id = lv_crime_events.4
+	title = lv_crime_events.4.name
+	desc =  lv_crime_events.4.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_criminal_activity
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_crime_headquarters_raided_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	pre_triggers = {
+		has_owner = yes
+	}
+	
+	trigger = {
+		has_modifier = criminal_underworld
+		has_planet_flag = lv_crime_raped_enforcers
+	}
+	
+	immediate = {
+		planet_event = { id = lv_crime_events.5 days = 30 random = 30 }
+	}
+	
+	option = {
+		name = lv_crime_events.4.a
+		add_modifier = { modifier = lv_crime_headquarters_raided days = 1800 }
+	}
+}
+
+# Kidnapped Enforcers reappear, enforcing the gangs will! #
+
+planet_event = {
+	id = lv_crime_events.5
+	title = lv_crime_events.5.name
+	desc =  lv_crime_events.5.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_criminal_activity
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_crime_slave_enforcers_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lv_crime_events.5.a
+		add_modifier = { modifier = lv_crime_slave_enforcers days = 1800 }
+	}
+}
+
+###

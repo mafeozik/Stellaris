@@ -1,0 +1,108 @@
+###################################
+###     Habitability Traits     ###
+###################################
+#
+# Note: All traits were made with the intention of adding events/other things relating to them
+# eventually, even if not stated on the traits themselves. Also, all traits can and probably
+# will change again! These are not final effects or values at all.
+#
+###
+
+@primary = 0.80
+@secondary = 0.60
+@tertiary = 0.20
+
+###########
+# Planets #
+###########
+
+# Sexopolis Relic World Preference
+trait_pc_lv_srelic_preference = {
+	icon = "gfx/interface/icons/traits/trait_pc_ai_preference.dds"
+	species_potential_add = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = yes
+	}
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	sorting_priority = 30
+	
+	modifier = {
+		pc_lv_srelic_habitability = 1.0
+		pc_relic_habitability = @primary
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# Sexopolis Preference
+trait_pc_lv_sworld_preference = {
+	species_potential_add = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = yes
+	}
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	sorting_priority = 30
+	
+	modifier = {
+		pc_lv_sworld_habitability = 1.0
+		pc_city_habitability = @primary
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# Tentacle World Preference
+trait_pc_lv_stentacle_preference = {
+	species_potential_add = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = yes
+	}
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	sorting_priority = 30
+	
+	modifier = {
+		pc_lv_stentacle_habitability = 1.0
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+##################
+# Megastructures #
+##################
+
+# Pleasure Ringworld Preference
+trait_pc_lv_sringworld_preference = {
+	icon = "gfx/interface/icons/traits/trait_pc_ring_preference.dds"
+	species_potential_add = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = yes
+	}
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	sorting_priority = 30
+	
+	modifier = {
+		pc_lv_sringworld_habitability = 1.0
+		pc_ringworld_habitable_habitability = @primary
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+###

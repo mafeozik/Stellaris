@@ -1,0 +1,309 @@
+#######################
+###     Origins     ###
+#######################
+
+##########
+# Normal #
+##########
+
+origin_lv_parallel_evolution = {		# Parallel Evolution
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_lv_parallel_evolution.dds"
+	picture = GFX_origin_lv_parallel_evolution
+
+	playable = {
+		host_has_dlc = "Utopia"
+	}
+
+	possible = {
+		ethics = {
+			OR = {
+				value = ethic_egalitarian
+				value = ethic_fanatic_egalitarian
+				value = ethic_xenophile
+				value = ethic_fanatic_xenophile
+			}
+		}
+		civics = { NOT = { value = civic_fanatic_purifiers } }
+	}
+
+	description = origin_tooltip_lv_parallel_evolution_effects
+
+	has_secondary_species = {	# see game_start.11
+		title = origin_lv_parallel_evolution_secondary_species
+	}
+
+	advanced_start = yes
+
+	random_weight = {
+		base = 10
+	}
+}
+
+origin_lv_sadomasochistic_evolution = {		# Sadomasochistic Evolution
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_lv_sadomasochistic_evolution.dds"
+	picture = GFX_origin_lv_sadomasochistic_evolution
+
+	playable = {
+		host_has_dlc = "Utopia"
+	}
+
+	possible = {
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness }
+			OR = {
+				value = ethic_authoritarian
+				value = ethic_fanatic_authoritarian
+			}
+		}
+		civics = { NOT = { value = civic_fanatic_purifiers } }
+	}
+
+	description = origin_tooltip_lv_sadomasochistic_evolution_effects
+	
+	traits = {
+		trait = trait_lv_sadistic
+	}
+
+	has_secondary_species = {	# see game_start.11
+		title = origin_lv_sadomasochistic_evolution_secondary_species
+		traits = {
+			trait = trait_lv_masochistic
+		}
+	}
+
+	modifier = {
+		planet_jobs_ruler_produces_mult = 0.25
+		planet_jobs_slave_produces_mult = 0.25
+	}
+
+	advanced_start = yes
+
+	random_weight = {
+		base = 10
+	}
+}
+
+origin_lv_invasive_breeders = {		# Invasive Breeders
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_lv_invasive_breeders.dds"
+	picture = GFX_origin_lv_invasive_breeders
+
+	playable = {
+		always = yes
+	}
+
+	possible = {
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+	}
+
+	description = origin_tooltip_lv_invasive_breeders_effects
+	
+	traits = {
+		trait = trait_lv_aggressively_adaptive_reproduction 
+	}
+	
+	advanced_start = yes
+
+	random_weight = {
+		base = 5
+	}
+}
+
+############
+# Hivemind #
+############
+
+origin_lv_symbiotic_evolution = {		# Symbiotic Evolution
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_lv_symbiotic_evolution.dds"
+	picture = GFX_origin_lv_symbiotic_evolution
+
+	playable = {
+		host_has_dlc = "Utopia"
+	}
+
+	possible = {
+		authority = { value = auth_hive_mind }
+		civics = {
+			NOT = {
+				value = civic_hive_devouring_swarm
+			}
+		}
+	}
+
+	description = origin_tooltip_lv_symbiotic_evolution_effects
+
+	has_secondary_species = {	# see game_start.11
+		title = origin_lv_symbiotic_evolution_secondary_species
+		traits = {
+			trait = trait_hive_mind
+		}
+	}
+
+	advanced_start = yes
+
+	random_weight = {
+		base = 10
+	}
+}
+
+##########
+# Robutt #
+##########
+
+origin_lv_sexbot_revolution = {		# Sexbot Revolution
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_lv_sexbot_revolution.dds"
+	picture = GFX_origin_lv_sexbot_revolution
+
+	playable = {
+		host_has_dlc = "Synthetic Dawn Story Pack"
+	}
+
+	possible = {
+		authority = { value = auth_machine_intelligence }
+		civics = {
+			value = civic_machine_servitor
+			NOT = { value = civic_machine_warbots }
+		}
+	}
+
+	description = origin_tooltip_lv_sexbot_revolution_effects
+	
+	traits = {
+		trait = trait_lv_sex_bots_o
+	}
+
+	modifier = {
+		pop_happiness = 0.1
+		diplomacy_upkeep_mult = -0.35
+	}
+	
+	advanced_start = yes
+
+	random_weight = {
+		base = 5
+	}
+}
+
+#############
+# Sexopolis #
+#############
+
+origin_lv_sworld = {		# The Advent of the Sexopolis
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_lv_sworld.dds"
+	picture = GFX_origin_lv_sworld
+
+	starting_colony = pc_lv_sworld
+	initializers = { lv_sworld_system_initializer }
+	habitability_preference = pc_lv_sworld
+	preferred_planet_class_neighbor = no
+
+	playable = {
+		OR = {
+			has_ancrel = yes
+			host_has_dlc = Federations
+		}
+	}
+
+	flags = { custom_start_screen }
+	
+	advanced_start = yes
+	
+	possible = {
+		OR = {
+			authority = { NOT = { value = auth_machine_intelligence } }
+			civics = { value = civic_machine_servitor }
+		}
+	}
+
+	description = "origin_tooltip_lv_sworld_effects"
+	
+	random_weight = {
+		base = 2
+	}
+}
+
+origin_lv_sring = {		# Shattered Pleasure Ring
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_lv_sring.dds"
+	picture = GFX_origin_lv_sringworld
+
+	starting_colony = pc_lv_sringworld
+	initializers = { lv_sring_system_initializer }
+	max_once_global = yes
+	
+	playable = {
+		host_has_dlc = Federations
+	}
+	
+	flags = { custom_start_screen }
+	
+	advanced_start = yes
+	
+	possible = {
+		civics = {
+			NOT = { value = civic_agrarian_idyll }
+			NOR = {
+				text = civic_tooltip_not_anglers
+				value = civic_anglers
+				value = civic_corporate_anglers
+			}
+		}
+		OR = {
+			authority = { NOT = { value = auth_machine_intelligence } }
+			civics = { value = civic_machine_servitor }
+		}
+	}
+
+	description = "origin_tooltip_lv_sring_effects"
+
+	random_weight = {
+		base = 2
+	}
+}
+
+origin_lv_stentacle = {		# Tentacle Symbiosis
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_lv_stentacle.dds"
+	picture = GFX_origin_lv_stentacle
+
+	starting_colony = pc_lv_stentacle
+	initializers = { lv_stentacle_start_system_initializer }
+	habitability_preference = pc_lv_stentacle
+	preferred_planet_class_neighbor = no
+
+	playable = {
+		always = yes
+	}
+
+	flags = { custom_start_screen }
+	
+	advanced_start = yes
+	
+	possible = {
+		OR = {
+			authority = { NOT = { value = auth_machine_intelligence } }
+			civics = { value = civic_machine_servitor }
+		}
+		ethics = {
+			NOR = {
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+			}
+		}
+	}
+
+	description = "origin_tooltip_lv_stentacle_effects"
+
+	random_weight = {
+		base = 2
+	}
+}
+
+###

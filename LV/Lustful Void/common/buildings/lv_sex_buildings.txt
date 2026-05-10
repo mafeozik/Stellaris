@@ -1,0 +1,756 @@
+#############################
+###     Sex Buildings     ###
+#############################
+
+################
+# Prostitution #
+################
+
+###########
+# Regular #
+###########
+
+building_lv_brothel = {		# Brothel
+	base_buildtime = 360
+	
+	category = trade
+	
+	potential = {
+		exists = owner
+		owner = {
+			is_regular_empire = yes
+			OR = {
+				NOT = { has_policy_flag = lv_prostitution_prohibited }
+				has_valid_civic = civic_lv_divine_coupling
+			}
+		}
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			OR = {
+				is_regular_empire = no
+				AND = {
+					has_policy_flag = lv_prostitution_prohibited
+					NOT = { has_valid_civic = civic_lv_divine_coupling }
+				}
+			}
+		}
+	}
+	
+	resources = {
+        category = planet_buildings
+        cost = {
+			minerals = 400
+		}
+        upkeep = {
+			energy = 2
+		}
+	}
+	
+	upgrades = {
+		building_lv_bordello
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+            exists = owner
+            owner = {
+				NOR = {
+					has_valid_civic = civic_lv_divine_coupling
+					has_ascension_perk = ap_mind_over_matter
+					has_ascension_perk = ap_the_flesh_is_weak
+				}
+			}
+		}
+		modifier = {
+			job_lv_whore_add = 2
+			job_lv_escort_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+            exists = owner
+            owner = {
+				NOT = { has_valid_civic = civic_lv_divine_coupling }
+				has_ascension_perk = ap_mind_over_matter
+			}
+		}
+		modifier = {
+			job_lv_whore_add = 1
+			job_lv_psi_whore_add = 1
+			job_lv_escort_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+            exists = owner
+            owner = {
+				NOT = { has_valid_civic = civic_lv_divine_coupling }
+				has_ascension_perk = ap_the_flesh_is_weak
+			}
+		}
+		modifier = {
+			job_lv_whore_add = 1
+			job_lv_sexbot_add = 1
+			job_lv_escort_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_valid_civic = civic_lv_divine_coupling }
+				has_active_tradition = tr_mercantile_commercial_enterprise
+			}
+		}
+		modifier = {
+			job_lv_escort_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+            exists = owner
+            owner = { has_valid_civic = civic_lv_divine_coupling }
+		}
+		modifier = {
+			job_lv_concubine_add = 4
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_lv_divine_coupling
+				has_active_tradition = tr_mercantile_commercial_enterprise
+			}
+		}
+		modifier = {
+			job_lv_concubine_add = 2
+		}
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { NOT = { has_valid_civic = civic_lv_divine_coupling } }
+        }
+        text = job_lv_whore_effect_desc
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { has_ascension_perk = ap_mind_over_matter }
+        }
+        text = job_lv_psi_whore_effect_desc
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { has_ascension_perk = ap_the_flesh_is_weak }
+        }
+        text = job_lv_sexbot_effect_desc
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { NOT = { has_valid_civic = civic_lv_divine_coupling } }
+        }
+        text = job_lv_escort_effect_desc
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { has_valid_civic = civic_lv_divine_coupling }
+        }
+        text = job_lv_concubine_effect_desc
+	}
+}
+
+building_lv_bordello = {		# Bordello (upgrades from Brothel)
+	base_buildtime = 480
+	can_build = no
+	
+	category = trade
+	
+	potential = {
+		exists = owner
+		owner = {
+			is_regular_empire = yes
+			OR = {
+				NOT = { has_policy_flag = lv_prostitution_prohibited }
+				has_valid_civic = civic_lv_divine_coupling
+			}
+		}
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			OR = {
+				is_regular_empire = no
+				AND = {
+					has_policy_flag = lv_prostitution_prohibited
+					NOT = { has_valid_civic = civic_lv_divine_coupling }
+				}
+			}
+		}
+	}
+	
+	resources = {
+        category = planet_buildings
+        cost = {
+			minerals = 600
+			rare_crystals = 50
+		}
+        upkeep = {
+			energy = 5
+			rare_crystals = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+            exists = owner
+            owner = {
+				NOR = {
+					has_valid_civic = civic_lv_divine_coupling
+					has_ascension_perk = ap_mind_over_matter
+					has_ascension_perk = ap_the_flesh_is_weak
+				}
+			}
+		}
+		modifier = {
+			job_lv_whore_add = 4
+			job_lv_whore_per_pop = 0.04
+			job_lv_escort_add = 2
+			job_lv_escort_per_pop = 0.02
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+            exists = owner
+             owner = {
+				NOT = { has_valid_civic = civic_lv_divine_coupling }
+				has_ascension_perk = ap_mind_over_matter
+			}
+		}
+		modifier = {
+			job_lv_whore_add = 2
+			job_lv_whore_per_pop = 0.02
+			job_lv_psi_whore_add = 2
+			job_lv_psi_whore_per_pop = 0.02
+			job_lv_escort_add = 2
+			job_lv_escort_per_pop = 0.02
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+            exists = owner
+             owner = {
+				NOT = { has_valid_civic = civic_lv_divine_coupling }
+				has_ascension_perk = ap_the_flesh_is_weak
+			}
+		}
+		modifier = {
+			job_lv_whore_add = 2
+			job_lv_whore_per_pop = 0.02
+			job_lv_sexbot_add = 2
+			job_lv_sexbot_per_pop = 0.02
+			job_lv_escort_add = 2
+			job_lv_escort_per_pop = 0.02
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_valid_civic = civic_lv_divine_coupling }
+				has_active_tradition = tr_mercantile_commercial_enterprise
+			}
+		}
+		modifier = {
+			job_lv_escort_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+            exists = owner
+            owner = { has_valid_civic = civic_lv_divine_coupling }
+		}
+		modifier = {
+			job_lv_concubine_add = 8
+			job_lv_concubine_per_pop = 0.08
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_lv_divine_coupling
+				has_active_tradition = tr_mercantile_commercial_enterprise
+			}
+		}
+		modifier = {
+			job_lv_concubine_add = 2
+		}
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { NOT = { has_valid_civic = civic_lv_divine_coupling } }
+        }
+        text = job_lv_whore_effect_desc
+	}
+		
+	triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { has_ascension_perk = ap_mind_over_matter }
+        }
+        text = job_lv_psi_whore_effect_desc
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { has_ascension_perk = ap_the_flesh_is_weak }
+        }
+        text = job_lv_sexbot_effect_desc
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { NOT = { has_valid_civic = civic_lv_divine_coupling } }
+        }
+        text = job_lv_escort_effect_desc
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { has_valid_civic = civic_lv_divine_coupling }
+        }
+        text = job_lv_concubine_effect_desc
+	}
+}
+
+###########
+# Gestalt #
+###########
+
+building_lv_masturbation_node = {		# Masturbation Node
+	base_buildtime = 360
+	
+	category = trade
+	
+	potential = {
+		exists = owner
+		owner = {
+			is_regular_empire = no
+			OR = {
+				NOT = { has_authority = auth_machine_intelligence }
+				has_civic = civic_machine_assimilator
+				has_civic = civic_machine_servitor				
+			}
+		}
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			OR = {
+				AND = {
+					has_authority = auth_machine_intelligence
+					NOR = {
+						has_civic = civic_machine_assimilator
+						has_civic = civic_machine_servitor	
+					}
+				}
+				is_regular_empire = yes
+			}
+		}
+	}
+	
+	resources = {
+        category = planet_buildings
+        cost = {
+			minerals = 400
+		}
+        upkeep = {
+			energy = 2
+		}
+	}
+	
+	upgrades = {
+		building_lv_masturbation_network
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+				NOT = { has_ascension_perk = ap_mind_over_matter }
+			}
+		}
+		modifier = {
+			job_lv_pleasure_drone_add = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+				has_ascension_perk = ap_mind_over_matter
+			}
+		}
+		modifier = {
+			job_lv_pleasure_drone_add = 1
+			job_lv_psi_pleasure_drone_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_lv_sexbot_drone_add = 2
+		}
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+			owner = {
+				is_hive_empire = yes
+				NOT = { has_ascension_perk = ap_mind_over_matter }
+			}
+        }
+        text = job_lv_pleasure_drone_effect_desc
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+			owner = {
+				is_hive_empire = yes
+				has_ascension_perk = ap_mind_over_matter
+			}
+        }
+        text = job_lv_psi_pleasure_drone_effect_desc
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+			owner = { is_machine_empire = yes }
+        }
+        text = job_lv_sexbot_drone_effect_desc
+	}
+}
+
+building_lv_masturbation_network = {		# Masturbation Network (upgrades from Masturbation Node)
+	base_buildtime = 480
+	can_build = no
+	
+	category = trade
+	
+	potential = {
+		exists = owner
+		owner = {
+			is_regular_empire = no
+			OR = {
+				NOT = { has_authority = auth_machine_intelligence }
+				has_civic = civic_machine_assimilator
+				has_civic = civic_machine_servitor				
+			}
+		}
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			OR = {
+				AND = {
+					has_authority = auth_machine_intelligence
+					NOR = {
+						has_civic = civic_machine_assimilator
+						has_civic = civic_machine_servitor	
+					}
+				}
+				is_regular_empire = yes
+			}
+		}
+	}
+	
+	resources = {
+        category = planet_buildings
+        cost = {
+			minerals = 600
+			rare_crystals = 50
+		}
+        upkeep = {
+			energy = 5
+			rare_crystals = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+				NOT = { has_ascension_perk = ap_mind_over_matter }
+			}
+		}
+		modifier = {
+			job_lv_pleasure_drone_add = 3
+			job_lv_pleasure_drone_per_pop = 0.03
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+				has_ascension_perk = ap_mind_over_matter
+			}
+		}
+		modifier = {
+			job_lv_pleasure_drone_add = 2
+			job_lv_pleasure_drone_per_pop = 0.02
+			job_lv_psi_pleasure_drone_add = 1
+			job_lv_psi_pleasure_drone_per_pop = 0.01
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_lv_sexbot_drone_add = 3
+			job_lv_sexbot_drone_per_pop = 0.03
+		}
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+			owner = {
+				is_hive_empire = yes
+				NOT = { has_ascension_perk = ap_mind_over_matter }
+			}
+        }
+        text = job_lv_pleasure_drone_effect_desc
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+			owner = {
+				is_hive_empire = yes
+				has_ascension_perk = ap_mind_over_matter
+			}
+        }
+        text = job_lv_psi_pleasure_drone_effect_desc
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+			owner = { is_machine_empire = yes }
+        }
+        text = job_lv_sexbot_drone_effect_desc
+	}
+}
+
+############
+# Breeding #
+############
+
+building_lv_impregnation_facility = {		# Impregnation Facility
+	base_buildtime = 180
+	position_priority = 100
+	
+	category = pop_assembly
+	
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				has_country_flag = tr_lv_breeding_building_unlock
+				has_tradition = tr_lv_breeding_4_breeding_culture
+			}
+			is_ai = no
+		}
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			OR = {
+				NOR = {
+					has_country_flag = tr_lv_breeding_building_unlock
+					has_tradition = tr_lv_breeding_4_breeding_culture
+				}
+				is_ai = yes
+			}
+		}
+	}
+	
+	resources = {
+        category = planet_buildings
+        cost = {
+			minerals = 600
+		}
+	}
+	
+	upgrades = {
+		building_lv_impregnation_complex
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_lv_breeder_drone_add = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_lv_breeder_add = 2
+		}
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+			owner = { is_gestalt = yes }
+        }
+        text = job_lv_breeder_drone_effect_desc
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+			owner = { is_regular_empire = yes }
+        }
+        text = job_lv_breeder_effect_desc
+	}
+}
+
+building_lv_impregnation_complex = {		# Impregnation Complex
+	base_buildtime = 360
+	position_priority = 100
+	can_build = no
+	
+	category = pop_assembly
+	
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				has_country_flag = tr_lv_breeding_building_upgrade
+				has_tradition = tr_lv_breeding_5_mandatory_breeding
+			}
+			is_ai = no
+		}
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			OR = {
+				NOR = {
+					has_country_flag = tr_lv_breeding_building_upgrade
+					has_tradition = tr_lv_breeding_5_mandatory_breeding
+				}
+				is_ai = yes
+			}
+		}
+	}
+	
+	allow = {
+		exists = owner
+		owner = { has_tradition = tr_lv_breeding_5_mandatory_breeding }
+	}
+	
+	resources = {
+        category = planet_buildings
+        cost = {
+			minerals = 800
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_lv_breeder_drone_add = 4
+			job_lv_breeder_drone_per_pop = 0.04
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_lv_breeder_add = 4
+			job_lv_breeder_per_pop = 0.04
+		}
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+			owner = { is_gestalt = yes }
+        }
+        text = job_lv_breeder_drone_effect_desc
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+			owner = { is_regular_empire = yes }
+        }
+        text = job_lv_breeder_effect_desc
+	}
+}
+
+###

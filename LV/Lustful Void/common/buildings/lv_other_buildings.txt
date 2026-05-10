@@ -1,0 +1,321 @@
+###############################
+###     Other Buildings     ###
+###############################
+
+
+# Any #
+
+# Slime Vats
+building_lv_slime_vats = {
+	base_buildtime = @b3_time
+	base_cap_amount = 1
+	position_priority = 100
+	can_be_ruined = no
+	category = army
+	
+	allow = {
+		has_upgraded_capital = yes
+		hidden_trigger = { owner = { is_ai = no } }
+	}
+	
+	potential = {
+		exists = owner
+		owner = {
+			AND = {
+				OR = {
+					NOT = { has_authority = auth_machine_intelligence }
+					has_civic = civic_machine_assimilator
+					has_civic = civic_machine_servitor				
+				}
+				has_country_flag = lv_slimes_active
+			}
+		}
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			OR = {
+				AND = {
+					has_authority = auth_machine_intelligence
+					NOR = {
+						has_civic = civic_machine_assimilator
+						has_civic = civic_machine_servitor	
+					}
+				}
+				is_ai = yes
+			}
+		}
+	}
+	
+	army_modifier = {
+		army_starting_experience_add = 50
+	}
+	
+	planet_modifier = {
+		planet_orbital_bombardment_damage = -0.5
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+		}
+		produces = {
+            society_research = 4
+        }
+		upkeep = {
+			food = @b2_upkeep
+		}
+	}
+	
+	show_tech_unlock_if = {
+		AND = {
+			OR = {
+				NOT = { has_authority = auth_machine_intelligence }
+				has_civic = civic_machine_assimilator
+				has_civic = civic_machine_servitor				
+			}
+			has_country_flag = lv_slimes_active
+		}
+	}
+}
+
+
+# Slime Labs
+building_lv_slime_labs = {
+	base_buildtime = @b2_time
+	base_cap_amount = 1
+	
+	category = research
+	
+	allow = {
+		has_upgraded_capital = yes
+		hidden_trigger = { owner = { is_ai = no } }
+	}
+	
+	potential = {
+		exists = owner
+		owner = {
+			AND = {
+				OR = {
+					NOT = { has_authority = auth_machine_intelligence }
+					has_civic = civic_machine_assimilator
+					has_civic = civic_machine_servitor				
+				}
+				has_country_flag = lv_slimes_active
+			}
+		}
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			OR = {
+				AND = {
+					has_authority = auth_machine_intelligence
+					NOR = {
+						has_civic = civic_machine_assimilator
+						has_civic = civic_machine_servitor	
+					}
+				}
+				is_ai = yes
+			}
+		}
+	}
+	
+	planet_modifier = {
+		pop_growth_speed = 0.25
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+		}
+		produces = {
+			minerals = 12
+			society_research = 24
+		}
+		upkeep = {
+			energy = @b2_upkeep
+			food = @b2_upkeep
+		}
+	}
+	
+	show_tech_unlock_if = {
+		AND = {
+			OR = {
+				NOT = { has_authority = auth_machine_intelligence }
+				has_civic = civic_machine_assimilator
+				has_civic = civic_machine_servitor				
+			}
+			has_country_flag = lv_slimes_active
+		}
+	}
+}
+
+
+# Xeno Preservation Center
+building_lv_xeno_preservation_center = {
+	base_buildtime = @b2_time
+	base_cap_amount = 1
+	
+	category = research
+	
+	potential = {
+		exists = owner
+		owner = {
+			is_regular_empire = yes
+			is_ai = no
+		}
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			OR = {
+				is_regular_empire = no
+				is_ai = yes
+			}
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+		}
+		upkeep = {
+			energy = @b2_upkeep
+		}
+	}
+	
+	planet_modifier = {
+		job_xeno_zoo_keeper_add = 2
+		job_lv_breeder_add = 2
+		job_lv_breeder_per_pop = 0.02
+		pop_ethic_xenophile_attraction_mult = 0.1
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				any_owned_pop = {
+					is_livestock = yes
+				}
+			}
+			exists = owner
+			owner = {
+				NOT = { has_valid_civic = civic_warrior_culture }
+			}
+		}
+		modifier = {
+			job_livestock_zoo_animal_add = 6
+		}
+	}
+	
+	prerequisites = {
+		"tech_alien_life_studies"
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+			owner = { is_regular_empire = yes }
+        }
+        text = job_lv_breeder_effect_desc
+	}
+	
+	triggered_desc = {
+		text = job_xeno_zoo_keeper_effect_desc
+	}
+	
+	triggered_desc = {
+		trigger = {
+			planet = {
+				any_owned_pop = {
+					is_sapient = no
+				}
+			}
+		}
+		text = job_xeno_zoo_animal_effect_desc
+	}
+	
+	triggered_desc = {
+		trigger = {
+			planet = {
+				any_owned_pop = {
+					is_livestock = yes
+				}
+			}
+		}
+		text = job_livestock_zoo_animal_effect_desc
+	}
+}
+
+
+# Brainwashing Centre
+building_lv_brainwashing_centre = {
+	base_buildtime = @b2_time
+	position_priority = 100
+	base_cap_amount = 1
+	can_be_ruined = no
+	category = army
+	exempt_from_ai_planet_specialization = no
+	
+	allow = {
+		has_upgraded_capital = yes
+		hidden_trigger = { owner = { is_ai = no } }
+	}
+	
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_lv_advanced_pleasure_training }
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		owner = { is_ai = yes }
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+		}			
+		upkeep = {
+			energy = @b2_upkeep
+		}
+	}
+	
+	army_modifier = {
+		army_starting_experience_add = 200
+		armies_cost_mult = -0.2
+		army_defense_morale_mult = 0.2
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_soldier_per_pop = 0.1
+		}
+	}
+	
+	prerequisites = {
+		"tech_lv_advanced_pleasure_training"
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_soldier_effect_desc
+	}
+}
+
+###

@@ -1,0 +1,113 @@
+spriteTypes = {
+
+	#############################
+	###     Leader Traits     ###
+	#############################
+	
+	# Positive #
+	
+	# Psychological #
+
+	spriteType = {
+		name = "GFX_leader_trait_lv_seductive"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/leader_trait_lv_seductive.dds"
+	}
+	spriteType = {
+		name = "GFX_leader_trait_lv_family_oriented"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/leader_trait_lv_family_oriented.dds"
+	}
+	spriteType = {
+		name = "GFX_leader_trait_lv_sensible"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/leader_trait_lv_sensible.dds"
+	}
+	spriteType = {
+		name = "GFX_leader_trait_lv_pain_slut"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/leader_trait_lv_pain_slut.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_leader_trait_lv_highly_submissive"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/leader_trait_lv_highly_submissive.dds"
+	}
+	spriteType = {
+		name = "GFX_leader_trait_lv_highly_dominant"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/leader_trait_lv_highly_dominant.dds"
+	}
+	spriteType = {
+		name = "GFX_leader_trait_lv_family_planner"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/leader_trait_lv_family_planner.dds"
+	}
+	spriteType = {
+		name = "GFX_leader_trait_lv_tinkerer"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/leader_trait_lv_tinkerer.dds"
+	}
+	spriteType = {
+		name = "GFX_leader_trait_lv_rancher"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/leader_trait_lv_rancher.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_leader_trait_lv_sexologist"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/leader_trait_lv_sexologist.dds"
+	}
+	spriteType = {
+		name = "GFX_leader_trait_lv_zoophile"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/leader_trait_lv_zoophile.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_leader_trait_lv_masochistic"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/leader_trait_lv_masochistic.dds"
+	}
+	
+	# Physical #
+	
+	spriteType = {
+		name = "GFX_leader_trait_lv_adorable"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/leader_trait_lv_adorable.dds"
+	}
+	spriteType = {
+		name = "GFX_leader_trait_lv_lustful_body"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/leader_trait_lv_lustful_body.dds"
+	}
+	spriteType = {
+		name = "GFX_leader_trait_lv_equine_penis"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/leader_trait_lv_equine_penis.dds"
+	}
+	spriteType = {
+		name = "GFX_leader_trait_lv_synth_sexbot_assistant"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/leader_trait_lv_synth_sexbot_assistant.dds"
+	}
+	spriteType = {
+		name = "GFX_leader_trait_lv_tentacle_symbiote"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/leader_trait_lv_tentacle_symbiote.dds"
+	}
+	spriteType = {
+		name = "GFX_leader_trait_lv_pleasure_suit_addict"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/leader_trait_lv_pleasure_suit_addict.dds"
+	}
+	
+	# Negative #
+	
+	# Psychological #
+	
+	spriteType = {
+		name = "GFX_leader_trait_lv_shocking_fetish"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/leader_trait_lv_shocking_fetish.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_leader_trait_lv_tormentor"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/leader_trait_lv_tormentor.dds"
+	}
+	
+	# Physical #
+	
+	spriteType = {
+		name = "GFX_leader_trait_lv_monstrous"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/leader_trait_lv_monstrous.dds"
+	}
+	
+}
+
+###

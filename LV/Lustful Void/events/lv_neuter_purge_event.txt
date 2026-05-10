@@ -1,0 +1,341 @@
+namespace = lv_neuter_purge_event
+
+###################################
+###     Neuter Purge Events     ###
+###################################
+
+# Pop willingly reproduces with citizen pop #
+
+planet_event = {
+	id = lv_neuter_purge_event.1
+	title = lv_neuter_purge_event.1.name
+	desc = lv_neuter_purge_event.1.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = root
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_purge_cosensual_1_room
+	}
+	
+	pre_triggers = {
+		has_owner = yes
+		is_ai = no
+		has_ground_combat = no
+	}
+	
+	trigger = {
+		NOR = {
+			has_global_flag = lv_all_disabled
+			has_global_flag = lv_rape_disabled
+			has_global_flag = lv_events_hidden
+			has_global_flag = lv_neuter_purge_disabled
+			has_planet_flag = lv_recent_neuter_purge_event
+		}
+		AND = {
+			count_owned_pop = {
+				limit = {
+					has_citizenship_rights = yes
+					is_being_purged = no
+					is_robot_pop = no
+				}
+				count > 0
+			}
+			count_owned_pop = {
+				limit = {
+					is_being_purged = yes
+					is_robot_pop = no
+				}
+				count > 0
+			}
+		}
+		owner = { has_technology = tech_lv_hybridization_mastery }
+	}
+	
+	mean_time_to_happen = {
+		months = 18
+	}
+	
+	immediate = {
+		set_timed_planet_flag = {
+			flag = lv_recent_neuter_purge_event
+			days = 740
+		}
+		random_owned_pop = {
+			limit = {
+				has_citizenship_rights = yes
+				is_being_purged = no
+				is_robot_pop = no
+			}
+			save_event_target_as = lv_sexing_pop
+		}
+	}
+	
+	option = {
+		name = lv_neuter_purge_event.1.a
+		random_owned_pop = {
+			limit = {
+				is_being_purged = yes
+				is_robot_pop = no
+			}
+			kill_pop = yes
+		}
+		create_pop = {
+			species = event_target:lv_sexing_pop.species
+		}
+	}
+}
+
+planet_event = {
+	id = lv_neuter_purge_event.2
+	title = lv_neuter_purge_event.2.name
+	desc = lv_neuter_purge_event.2.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = root
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_purge_rape_1_room
+	}
+	
+	pre_triggers = {
+		has_owner = yes
+		is_ai = no
+		has_ground_combat = no
+	}
+	
+	trigger = {
+		NOR = {
+			has_global_flag = lv_all_disabled
+			has_global_flag = lv_rape_disabled
+			has_global_flag = lv_events_hidden
+			has_global_flag = lv_neuter_purge_disabled
+			has_planet_flag = lv_recent_neuter_purge_event
+		}
+		AND = {
+			count_owned_pop = {
+				limit = {
+					has_citizenship_rights = yes
+					is_being_purged = no
+					is_robot_pop = no
+				}
+				count > 0
+			}
+			count_owned_pop = {
+				limit = {
+					is_being_purged = yes
+					is_robot_pop = no
+				}
+				count > 0
+			}
+		}
+		owner = { has_technology = tech_lv_hybridization_mastery }
+	}
+	
+	mean_time_to_happen = {
+		months = 18
+	}
+	
+	immediate = {
+		set_timed_planet_flag = {
+			flag = lv_recent_neuter_purge_event
+			days = 740
+		}
+		random_owned_pop = {
+			limit = {
+				has_citizenship_rights = yes
+				is_being_purged = no
+				is_robot_pop = no
+			}
+			save_event_target_as = lv_sexing_pop
+		}
+	}
+	
+	option = {
+		name = lv_neuter_purge_event.2.a
+		random_owned_pop = {
+			limit = {
+				is_being_purged = yes
+				is_robot_pop = no
+			}
+			kill_pop = yes
+		}
+		create_pop = {
+			species = event_target:lv_sexing_pop.species
+		}
+	}
+}
+
+planet_event = {
+	id = lv_neuter_purge_event.3
+	title = lv_neuter_purge_event.2.name
+	desc = lv_neuter_purge_event.2.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = root
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_purge_baby_oven_1_room
+	}
+	
+	pre_triggers = {
+		has_owner = yes
+		is_ai = no
+		has_ground_combat = no
+	}
+	
+	trigger = {
+		NOR = {
+			has_global_flag = lv_all_disabled
+			has_global_flag = lv_rape_disabled
+			has_global_flag = lv_events_hidden
+			has_global_flag = lv_neuter_purge_disabled
+			has_planet_flag = lv_recent_neuter_purge_event
+		}
+		AND = {
+			count_owned_pop = {
+				limit = {
+					has_citizenship_rights = yes
+					is_being_purged = no
+					is_robot_pop = no
+				}
+				count > 0
+			}
+			count_owned_pop = {
+				limit = {
+					is_being_purged = yes
+					is_robot_pop = no
+				}
+				count > 0
+			}
+		}
+		owner = { has_technology = tech_lv_hybridization_mastery }
+	}
+	
+	mean_time_to_happen = {
+		months = 18
+	}
+	
+	immediate = {
+		set_timed_planet_flag = {
+			flag = lv_recent_neuter_purge_event
+			days = 740
+		}
+		random_owned_pop = {
+			limit = {
+				has_citizenship_rights = yes
+				is_being_purged = no
+				is_robot_pop = no
+			}
+			save_event_target_as = lv_sexing_pop
+		}
+	}
+	
+	option = {
+		name = lv_neuter_purge_event.2.a
+		random_owned_pop = {
+			limit = {
+				is_being_purged = yes
+				is_robot_pop = no
+			}
+			kill_pop = yes
+		}
+		create_pop = {
+			species = event_target:lv_sexing_pop.species
+		}
+	}
+}
+
+planet_event = {
+	id = lv_neuter_purge_event.4
+	title = lv_neuter_purge_event.2.name
+	desc = lv_neuter_purge_event.2.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = root
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_purge_incubator_1_room
+	}
+	
+	pre_triggers = {
+		has_owner = yes
+		is_ai = no
+		has_ground_combat = no
+	}
+	
+	trigger = {
+		NOR = {
+			has_global_flag = lv_all_disabled
+			has_global_flag = lv_rape_disabled
+			has_global_flag = lv_events_hidden
+			has_global_flag = lv_neuter_purge_disabled
+			has_planet_flag = lv_recent_neuter_purge_event
+		}
+		AND = {
+			count_owned_pop = {
+				limit = {
+					has_citizenship_rights = yes
+					is_being_purged = no
+					is_robot_pop = no
+				}
+				count > 0
+			}
+			count_owned_pop = {
+				limit = {
+					is_being_purged = yes
+					is_robot_pop = no
+				}
+				count > 0
+			}
+		}
+		owner = { has_technology = tech_lv_hybridization_mastery }
+	}
+	
+	mean_time_to_happen = {
+		months = 18
+	}
+	
+	immediate = {
+		set_timed_planet_flag = {
+			flag = lv_recent_neuter_purge_event
+			days = 740
+		}
+		random_owned_pop = {
+			limit = {
+				has_citizenship_rights = yes
+				is_being_purged = no
+				is_robot_pop = no
+			}
+			save_event_target_as = lv_sexing_pop
+		}
+	}
+	
+	option = {
+		name = lv_neuter_purge_event.2.a
+		random_owned_pop = {
+			limit = {
+				is_being_purged = yes
+				is_robot_pop = no
+			}
+			kill_pop = yes
+		}
+		create_pop = {
+			species = event_target:lv_sexing_pop.species
+		}
+	}
+}
+
+###

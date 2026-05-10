@@ -1,0 +1,347 @@
+##################################
+###     Resource Buildings     ###
+##################################
+
+
+# Regular #
+
+# Sapient Dairy Ranch (Basic)
+building_lv_sapient_dairy_ranch = {
+	base_buildtime = @b1_time
+	
+	category = resource
+	
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				is_machine_empire = no
+				has_civic = civic_machine_assimilator
+				has_civic = civic_machine_servitor
+			}
+			has_technology = tech_lv_lactation_drugs
+		}
+		OR = {
+			owner = {
+				is_ai = no
+			}
+			has_any_farming_district_or_buildings = yes
+		}
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			AND = {
+				is_machine_empire = yes
+				NOT = { has_civic = civic_machine_assimilator }
+				NOT = { has_civic = civic_machine_servitor }
+			}
+		}
+		OR = {
+			owner = {
+				is_ai = yes
+				country_uses_food = no
+			}
+			AND = {
+				owner = {
+					is_ai = yes
+				}
+				has_any_farming_district_or_buildings = no
+			}
+		}
+	}
+	
+	resources = {
+        category = planet_buildings
+        cost = {
+			minerals = @b1_minerals
+		}
+        upkeep = {
+			energy = 2
+		}
+	}
+	
+	upgrades = {
+		building_lv_sapient_dairy_estates
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_lv_milk_drone_add = 1
+			planet_housing_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_lv_milk_cow_add = 1
+			planet_housing_add = 1
+		}
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+			owner = { is_gestalt = yes }
+        }
+        text = job_lv_milk_drone_effect_desc
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+			owner = { is_gestalt = no }
+        }
+        text = job_lv_milk_cow_effect_desc
+	}
+	
+	prerequisites = {
+		"tech_lv_lactation_drugs"
+	}
+}
+
+# Sapient Dairy Estates (upgrades from Sapient Dairy Ranch)
+building_lv_sapient_dairy_estates = {
+	base_buildtime = @b2_time
+	can_build = no
+	
+	category = resource
+	
+	allow = {
+		exists = owner
+		has_upgraded_capital = yes
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			AND = {
+				is_machine_empire = yes
+				NOT = { has_civic = civic_machine_assimilator }
+				NOT = { has_civic = civic_machine_servitor }
+			}
+		}
+		OR = {
+			owner = {
+				is_ai = yes
+				country_uses_food = no
+			}
+			AND = {
+				owner = {
+					is_ai = yes
+				}
+				has_any_farming_district_or_buildings = no
+			}
+		}
+	}
+	
+	planet_modifier = {
+		planet_lv_milk_cow_food_produces_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_ringworld_output_boost = yes
+		}
+		modifier = {
+			planet_lv_milk_cow_food_produces_add = 2
+		}
+	}
+	
+	resources = {
+        category = planet_buildings
+        cost = {
+			trigger = {
+				has_ringworld_output_boost = no
+			}
+			minerals = @b2_minerals
+			volatile_motes = @b2_rare_cost
+		}
+		cost = {
+			trigger = {
+				has_ringworld_output_boost = yes
+			}
+			minerals = 900
+			volatile_motes = 200
+		}
+		upkeep = {
+			trigger = {
+				has_ringworld_output_boost = no
+			}
+			energy = 2
+			volatile_motes = @b2_rare_upkeep
+		}
+		upkeep = {
+			trigger = {
+				has_ringworld_output_boost = yes
+			}
+			energy = 5
+			volatile_motes = 3
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_lv_milk_drone_add = 2
+			job_lv_milk_drone_per_pop = 0.02
+			planet_housing_add = 2
+			planet_housing_mult = 0.05
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_lv_milk_cow_add = 2
+			job_lv_milk_cow_per_pop = 0.02
+			planet_housing_add = 2
+			planet_housing_mult = 0.05
+		}
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+			owner = { is_gestalt = yes }
+        }
+        text = job_lv_milk_drone_effect_desc
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+			owner = { is_gestalt = no }
+        }
+        text = job_lv_milk_cow_effect_desc
+	}
+}
+
+# Specialized Creamery
+building_lv_specialized_creamery = {
+	base_buildtime = @b3_time
+	base_cap_amount = 1
+	
+	category = resource
+	
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				is_machine_empire = no
+				has_civic = civic_machine_assimilator
+				has_civic = civic_machine_servitor
+			}
+			has_technology = tech_lv_lactation_drugs
+		}
+		OR = {
+			owner = {
+				is_ai = no
+			}
+			has_any_farming_district_or_buildings = yes
+		}
+	}
+	
+	allow = {
+		exists = owner
+		has_upgraded_capital = yes
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			OR = {
+				is_machine_empire = yes
+				NOT = { has_civic = civic_machine_assimilator }
+				NOT = { has_civic = civic_machine_servitor }
+			}
+		}
+		OR = {
+			owner = {
+				is_ai = yes
+				country_uses_food = no
+			}
+			AND = {
+				owner = {
+					is_ai = yes
+				}
+				has_any_farming_district_or_buildings = no
+			}
+		}
+	}
+	
+	resources = {
+        category = planet_buildings
+        cost = {
+			minerals = @b3_minerals
+			exotic_gases = @b3_rare_cost
+		}
+        upkeep = {
+			energy = @b3_upkeep
+			exotic_gases = @b3_rare_upkeep
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			planet_jobs_unity_produces_mult = 0.05
+			planet_lv_milk_cow_produces_mult = 0.30
+			job_lv_milk_drone_per_pop = 0.1
+			planet_housing_mult = 0.1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			pop_happiness = 0.1
+			planet_lv_milk_cow_produces_mult = 0.30
+			job_lv_milk_cow_per_pop = 0.1
+			planet_housing_mult = 0.1
+		}
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+			owner = { is_gestalt = yes }
+        }
+        text = job_lv_milk_drone_effect_desc
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+			owner = { is_gestalt = no }
+        }
+        text = job_lv_milk_cow_effect_desc
+	}
+	
+	prerequisites = {
+		"tech_food_processing_2"
+	}
+}
+
+###

@@ -1,0 +1,1386 @@
+namespace = lv_pop_events
+
+##########################
+###     Pop Events     ###
+##########################
+
+# Invasive Breeding Hidden Event
+planet_event = {
+	id = lv_pop_events.9999
+	hide_window = yes
+	
+	pre_triggers = {
+		has_owner = yes
+		is_ai = no
+	}
+	
+	trigger = {
+		NOR = {
+			has_global_flag = lv_all_disabled
+			has_global_flag = lv_no_more_aggressively_smexing_please
+			owner = { has_policy_flag = lv_aggressively_adaptive_reproduction_stopped }
+		}
+		
+		any_owned_pop = {
+			pop_has_trait = trait_lv_aggressively_adaptive_reproduction
+			is_enslaved = no
+			lv_can_pop_procreate = yes
+		}
+		
+		any_owned_pop = {
+			NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+			lv_can_pop_procreate = yes
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_owned_pop = {
+			limit = {
+				pop_has_trait = trait_lv_aggressively_adaptive_reproduction
+				is_enslaved = no
+				lv_can_pop_procreate = yes
+			}
+			save_event_target_as = lv_aggressively_sexing_pop
+			remove_global_flag = lv_inv_bred_breeding_parasite_event
+			if = {
+				limit = { pop_has_trait = trait_lv_brood_parasite }
+				set_global_flag = lv_inv_bred_breeding_parasite_event
+			}
+		}
+		
+		random_owned_pop = {
+			limit = {
+				NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				lv_can_pop_procreate = yes
+			}
+			save_event_target_as = lv_aggressively_sexed_pop
+		}
+		
+		if = {
+			limit = { NOT = { has_global_flag = lv_no_more_aggressively_smexing_spam } }
+			planet_event = { id = lv_pop_events.100 }
+		}
+		else = {
+			planet_event = { id = lv_pop_events.2 }
+		}
+	}
+}
+
+# Gatekeeper
+planet_event = {
+	id = lv_pop_events.100
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = { event_target:lv_aggressively_sexed_pop.species = { has_species_flag = lv_inv_bred_main_sp_flag } }
+			if = {
+				limit = {
+					count_owned_pop = {
+						limit = { NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction } }
+						count = 1
+					}
+				}
+				planet_event = { id = lv_pop_events.10 }
+			}
+			else = {
+				planet_event = { id = lv_pop_events.9 }
+			}
+		}
+		else = {
+			if = {
+				limit = { owner = { has_policy_flag = lv_aggressively_adaptive_reproduction_consentual } }
+				if = {
+					limit = { has_global_flag = lv_inv_bred_breeding_parasite_event }	
+					planet_event = { id = lv_pop_events.7 }
+				}
+				else = {
+					planet_event = { id = lv_pop_events.8 }
+				}
+			}
+			else = {
+				if = {
+					limit = { has_global_flag = lv_inv_bred_breeding_parasite_event }
+					
+					if = {
+						limit = {
+							count_owned_pop = {
+								limit = { NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction } }
+								count = 1
+							}
+						}
+						planet_event = { id = lv_pop_events.5 }
+					}
+					else = {
+						planet_event = { id = lv_pop_events.3 }
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							count_owned_pop = {
+								limit = { NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction } }
+								count = 1
+							}
+						}
+						planet_event = { id = lv_pop_events.6 }
+					}
+					else = {
+						planet_event = { id = lv_pop_events.1 }
+					}
+				}
+			}
+		}
+	}
+}
+
+# Invasive Breeding
+planet_event = {
+	id = lv_pop_events.1
+	title = "lv_pop_events.1.name"
+	desc = "lv_pop_events.1.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_invasive_breeding_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lv_pop_events.1.a
+		
+		trigger = { owner = { has_origin = origin_lv_invasive_breeders } }
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 10 } }
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		if = {
+			limit = { owner = {has_policy_flag = lv_aggressively_adaptive_reproduction_rape } }
+			random_owned_pop = {
+				limit = {
+					NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+					lv_can_pop_procreate = yes
+				}
+				save_event_target_as = lv_aggressively_sexed_pop
+			}
+			event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		}
+	}
+	
+	option = {
+		name = lv_pop_events.1.b
+		
+		trigger = { owner = { NOT = { has_origin = origin_lv_invasive_breeders } } }
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 10 } }
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		if = {
+			limit = { owner = {has_policy_flag = lv_aggressively_adaptive_reproduction_rape } }
+			random_owned_pop = {
+				limit = {
+					NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+					lv_can_pop_procreate = yes
+				}
+				save_event_target_as = lv_aggressively_sexed_pop
+			}
+			event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		}
+	}
+	
+	option = {
+		name = lv_pop_events.1.c
+		
+		trigger = {
+			count_owned_pop = {
+				limit = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				count >= 15
+			}
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 20 } }
+		}
+		random_owned_pop = {
+			limit = {
+				NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				lv_can_pop_procreate = yes
+			}
+			save_event_target_as = lv_aggressively_sexed_pop
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		if = {
+			limit = { owner = {has_policy_flag = lv_aggressively_adaptive_reproduction_rape } }
+			random_owned_pop = {
+				limit = {
+					NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+					lv_can_pop_procreate = yes
+				}
+				save_event_target_as = lv_aggressively_sexed_pop
+			}
+			event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		}
+	}
+	
+	option = {
+		name = lv_pop_events.1.d
+		
+		trigger = {
+			count_owned_pop = {
+				limit = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				count >= 30
+			}
+		}
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 30 } }
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		random_owned_pop = {
+			limit = {
+				NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				lv_can_pop_procreate = yes
+			}
+			save_event_target_as = lv_aggressively_sexed_pop
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		random_owned_pop = {
+			limit = {
+				NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				lv_can_pop_procreate = yes
+			}
+			save_event_target_as = lv_aggressively_sexed_pop
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		if = {
+			limit = { owner = {has_policy_flag = lv_aggressively_adaptive_reproduction_rape } }
+			random_owned_pop = {
+				limit = {
+					NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+					lv_can_pop_procreate = yes
+				}
+				save_event_target_as = lv_aggressively_sexed_pop
+			}
+			event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		}
+	}
+	
+	option = {
+		name = lv_pop_events.1.e
+		if = {
+			limit = {
+				host_has_dlc = "Utopia"
+				owner = { has_origin = origin_lv_invasive_breeders }
+			}
+			owner = { add_resource = { unity = -5 } }
+		}
+	}
+	
+	option = {
+		name = lv_pop_events.1.f
+		
+		trigger = {
+			count_owned_pop = {
+				limit = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				count >= 45
+			}
+			owner = {has_policy_flag = lv_aggressively_adaptive_reproduction_rape }
+		}
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 40 } }
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		random_owned_pop = {
+			limit = {
+				NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				lv_can_pop_procreate = yes
+			}
+			save_event_target_as = lv_aggressively_sexed_pop
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		random_owned_pop = {
+			limit = {
+				NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				lv_can_pop_procreate = yes
+			}
+			save_event_target_as = lv_aggressively_sexed_pop
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		random_owned_pop = {
+			limit = {
+				NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				lv_can_pop_procreate = yes
+			}
+			save_event_target_as = lv_aggressively_sexed_pop
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		random_owned_pop = {
+			limit = {
+				NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				lv_can_pop_procreate = yes
+			}
+			save_event_target_as = lv_aggressively_sexed_pop
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+	}
+}
+
+# Hidden Auto Breeding
+planet_event = {
+	id = lv_pop_events.2
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		
+		if = {
+			limit = {
+				host_has_dlc = "Utopia"
+				owner = { has_origin = origin_lv_invasive_breeders }
+			}
+			owner = { add_resource = { unity = 10 } }
+		}
+	}
+}
+
+# Parasitic Breeding
+planet_event = {
+	id = lv_pop_events.3
+	title = "lv_pop_events.3.name"
+	desc = "lv_pop_events.3.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_invasive_breeding_3_room
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lv_pop_events.3.a
+		
+		trigger = { owner = { has_origin = origin_lv_invasive_breeders } }
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 10 } }
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		if = {
+			limit = { owner = {has_policy_flag = lv_aggressively_adaptive_reproduction_rape } }
+			random_owned_pop = {
+				limit = {
+					NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+					lv_can_pop_procreate = yes
+				}
+				save_event_target_as = lv_aggressively_sexed_pop
+			}
+			event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		}
+	}
+	
+	option = {
+		name = lv_pop_events.3.b
+		
+		trigger = { owner = { NOT = { has_origin = origin_lv_invasive_breeders } } }
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 10 } }
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		if = {
+			limit = { owner = {has_policy_flag = lv_aggressively_adaptive_reproduction_rape } }
+			random_owned_pop = {
+				limit = {
+					NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+					lv_can_pop_procreate = yes
+				}
+				save_event_target_as = lv_aggressively_sexed_pop
+			}
+			event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		}
+	}
+	
+	option = {
+		name = lv_pop_events.3.c
+		
+		trigger = {
+			count_owned_pop = {
+				limit = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				count >= 15
+			}
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 20 } }
+		}
+		random_owned_pop = {
+			limit = {
+				NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				lv_can_pop_procreate = yes
+			}
+			save_event_target_as = lv_aggressively_sexed_pop
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		if = {
+			limit = { owner = {has_policy_flag = lv_aggressively_adaptive_reproduction_rape } }
+			random_owned_pop = {
+				limit = {
+					NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+					lv_can_pop_procreate = yes
+				}
+				save_event_target_as = lv_aggressively_sexed_pop
+			}
+			event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		}
+	}
+	
+	option = {
+		name = lv_pop_events.3.d
+		
+		trigger = {
+			count_owned_pop = {
+				limit = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				count >= 30
+			}
+		}
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 30 } }
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		random_owned_pop = {
+			limit = {
+				NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				lv_can_pop_procreate = yes
+			}
+			save_event_target_as = lv_aggressively_sexed_pop
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		random_owned_pop = {
+			limit = {
+				NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				lv_can_pop_procreate = yes
+			}
+			save_event_target_as = lv_aggressively_sexed_pop
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		if = {
+			limit = { owner = {has_policy_flag = lv_aggressively_adaptive_reproduction_rape } }
+			random_owned_pop = {
+				limit = {
+					NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+					lv_can_pop_procreate = yes
+				}
+				save_event_target_as = lv_aggressively_sexed_pop
+			}
+			event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		}
+	}
+	
+	option = {
+		name = lv_pop_events.3.e
+		
+		if = {
+			limit = {
+				host_has_dlc = "Utopia"
+				owner = { has_origin = origin_lv_invasive_breeders }
+			}
+			owner = { add_resource = { unity = -5 } }
+		}
+	}
+	
+	option = {
+		name = lv_pop_events.3.f
+		
+		trigger = {
+			count_owned_pop = {
+				limit = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				count >= 45
+			}
+			owner = { has_policy_flag = lv_aggressively_adaptive_reproduction_rape }
+		}
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 40 }  }
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		random_owned_pop = {
+			limit = {
+				NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				lv_can_pop_procreate = yes
+			}
+			save_event_target_as = lv_aggressively_sexed_pop
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		random_owned_pop = {
+			limit = {
+				NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				lv_can_pop_procreate = yes
+			}
+			save_event_target_as = lv_aggressively_sexed_pop
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		random_owned_pop = {
+			limit = {
+				NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				lv_can_pop_procreate = yes
+			}
+			save_event_target_as = lv_aggressively_sexed_pop
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		random_owned_pop = {
+			limit = {
+				NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				lv_can_pop_procreate = yes
+			}
+			save_event_target_as = lv_aggressively_sexed_pop
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+	}
+}
+
+# Sexual Conquest (parasite)
+planet_event = {
+	id = lv_pop_events.5
+	title = "lv_pop_events.5.name"
+	desc = "lv_pop_events.5.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_invasive_breeding_5_room
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lv_pop_events.5.a
+		
+		trigger = { owner = { has_origin = origin_lv_invasive_breeders } }
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 10 } }
+		}
+	}
+	
+	option = {
+		name = lv_pop_events.5.b
+		
+		trigger = { owner = { NOT = { has_origin = origin_lv_invasive_breeders } } }
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 10 } }
+		}
+	}
+	
+	option = {
+		name = lv_pop_events.5.c
+		
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+				}
+			}
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 10 } }
+		}
+	}
+	
+	option = {
+		name = lv_pop_events.5.d
+		
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 10 } }
+		}
+	}
+	
+	option = {
+		name = lv_pop_events.5.e
+		
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 10 } }
+		}
+	}
+	
+	option = {
+		name = lv_pop_events.5.f
+		
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+				}
+			}
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 10 } }
+		}
+	}
+	
+	option = {
+		name = lv_pop_events.5.g
+		
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = -5 } }
+		}
+	}
+}
+
+# Sexual Conquest
+planet_event = {
+	id = lv_pop_events.6
+	title = "lv_pop_events.6.name"
+	desc = "lv_pop_events.6.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_invasive_breeding_6_room
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lv_pop_events.5.a
+		
+		trigger = { owner = { has_origin = origin_lv_invasive_breeders } }
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 10 } }
+		}
+	}
+	
+	option = {
+		name = lv_pop_events.5.b
+		
+		trigger = { owner = { NOT = { has_origin = origin_lv_invasive_breeders } } }
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 10 } }
+		}
+	}
+	
+	option = {
+		name = lv_pop_events.5.c
+		
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+				}
+			}
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 10 } }
+		}
+	}
+	
+	option = {
+		name = lv_pop_events.5.d
+		
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 10 } }
+		}
+	}
+	
+	option = {
+		name = lv_pop_events.5.e
+		
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 10 } }
+		}
+	}
+	
+	option = {
+		name = lv_pop_events.5.f
+		
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+				}
+			}
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 10 } }
+		}
+	}
+	
+	option = {
+		name = lv_pop_events.5.g
+		
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = -5 } }
+		}
+	}
+}
+
+# Controlled Parasitic Breeding
+planet_event = {
+	id = lv_pop_events.7
+	title = "lv_pop_events.7.name"
+	desc = "lv_pop_events.7.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+		
+	picture_event_data = {
+		room = evt_lv_invasive_breeding_7_room
+	}
+		
+	is_triggered_only = yes
+		
+	option = {
+		name = lv_pop_events.7.a
+		
+		trigger = { owner = { has_origin = origin_lv_invasive_breeders } }
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 10 } }
+		}
+		random_list = {
+			67 = { }
+			33 = { event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species } }
+		}
+	}
+		
+	option = {
+		name = lv_pop_events.7.b
+		
+		trigger = { owner = { NOT = { has_origin = origin_lv_invasive_breeders } } }
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 10 } }
+		}
+		random_list = {
+			67 = { }
+			33 = { event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species } }
+		}
+	}
+		
+	option = {
+		name = lv_pop_events.7.c
+		
+		trigger = {
+			count_owned_pop = {
+				limit = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				count >= 15
+			}
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 20 } }
+		}
+		random_list = {
+			33 = { }
+			67 = { event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species } }
+		}
+	}
+		
+	option = {
+		name = lv_pop_events.7.d
+		
+		trigger = {
+			count_owned_pop = {
+				limit = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				count >= 30
+			}
+		}
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 30 } }
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+	}
+		
+	option = {
+		name = lv_pop_events.7.e
+		
+		if = {
+			limit = {
+				host_has_dlc = "Utopia"
+				owner = { has_origin = origin_lv_invasive_breeders }
+			}
+			owner = { add_resource = { unity = -5 } }
+		}
+	}
+}
+
+# Controlled Invasive Breeding
+planet_event = {
+	id = lv_pop_events.8
+	title = "lv_pop_events.8.name"
+	desc = "lv_pop_events.8.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+		
+	picture_event_data = {
+		room = evt_lv_invasive_breeding_8_room
+	}
+		
+	is_triggered_only = yes
+		
+	option = {
+		name = lv_pop_events.8.a
+		
+		trigger = { owner = { has_origin = origin_lv_invasive_breeders } }
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 10 } }
+		}
+		random_list = {
+			67 = { }
+			33 = { event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species } }
+		}
+	}
+		
+	option = {
+		name = lv_pop_events.8.b
+		
+		trigger = { owner = { NOT = { has_origin = origin_lv_invasive_breeders } } }
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 10 } }
+		}
+		random_list = {
+			67 = { }
+			33 = { event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species } }
+		}
+	}
+		
+	option = {
+		name = lv_pop_events.8.c
+		
+		trigger = {
+			count_owned_pop = {
+				limit = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				count >= 15
+			}
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 20 } }
+		}
+		random_list = {
+			33 = { }
+			67 = { event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species } }
+		}
+	}
+		
+	option = {
+		name = lv_pop_events.8.d
+		
+		trigger = {
+			count_owned_pop = {
+				limit = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				count >= 30
+			}
+		}
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { unity = 30 } }
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+	}
+		
+	option = {
+		name = lv_pop_events.8.e
+		
+		if = {
+			limit = {
+				host_has_dlc = "Utopia"
+				owner = { has_origin = origin_lv_invasive_breeders }
+			}
+			owner = { add_resource = { unity = -5 } }
+		}
+	}
+}
+
+# Our Citizens Violated
+planet_event = {
+	id = lv_pop_events.9
+	title = "lv_pop_events.9.name"
+	desc = "lv_pop_events.9.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+		
+	picture_event_data = {
+		room = evt_lv_invasive_breeding_9_room
+	}
+		
+	is_triggered_only = yes
+		
+	option = {
+		name = lv_pop_events.9.a
+			
+		if = {
+			limit = {
+				host_has_dlc = "Utopia"
+				count_owned_pop = {
+					limit = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+					count >= 30
+				}
+			}
+			owner = { add_resource = { influence = -20 } }
+		}
+		else_if = {
+			limit = {
+				host_has_dlc = "Utopia"
+				count_owned_pop = {
+					limit = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+					count >= 15
+				}
+			}
+			owner = { add_resource = { influence = -10 } }
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+	}
+		
+	option = {
+		name = lv_pop_events.9.b
+		
+		trigger = {
+			count_owned_pop = {
+				limit = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				count >= 15
+			}
+		}
+		if = {
+			limit = {
+				host_has_dlc = "Utopia"
+				count_owned_pop = {
+					limit = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+					count >= 30
+				}
+			}
+			owner = { add_resource = { influence = -10 } }
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		random_owned_pop = {
+			limit = {
+				NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				lv_can_pop_procreate = yes
+			}
+			save_event_target_as = lv_aggressively_sexed_pop
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+	}
+		
+	option = {
+		name = lv_pop_events.9.c
+		
+		trigger = {
+			count_owned_pop = {
+				limit = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				count >= 30
+			}
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		random_owned_pop = {
+			limit = {
+				NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				lv_can_pop_procreate = yes
+			}
+			save_event_target_as = lv_aggressively_sexed_pop
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+		random_owned_pop = {
+			limit = {
+				NOT = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+				lv_can_pop_procreate = yes
+			}
+			save_event_target_as = lv_aggressively_sexed_pop
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+	}
+		
+	option = {
+		name = lv_pop_events.9.d
+			
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			if = {
+				limit = {
+					count_owned_pop = {
+						limit = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+						count >= 30
+					}
+				}
+				owner = { add_resource = { influence = -30 } }
+			}
+			else_if = {
+				limit = {
+					count_owned_pop = {
+						limit = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+						count >= 15
+					}
+				}
+				owner = { add_resource = { influence = -20 } }
+			}
+			else_if = {
+				limit = {
+					count_owned_pop = {
+						limit = { pop_has_trait = trait_lv_aggressively_adaptive_reproduction }
+						count < 15
+					}
+				}
+				owner = { add_resource = { influence = -10 } }
+			}
+		}
+	}
+}
+
+# Sexual Conquest
+planet_event = {
+	id = lv_pop_events.10
+	title = "lv_pop_events.10.name"
+	desc = "lv_pop_events.10.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+		
+	picture_event_data = {
+		room = evt_lv_invasive_breeding_10_room
+	}
+		
+	is_triggered_only = yes
+		
+	option = {
+		name = lv_pop_events.10.a
+		
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+	}
+		
+	option = {
+		name = lv_pop_events.10.b
+			
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+	}
+		
+	option = {
+		name = lv_pop_events.10.c
+			
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+		event_target:lv_aggressively_sexed_pop = { change_species = event_target:lv_aggressively_sexing_pop.species }
+	}
+		
+	option = {
+		name = lv_pop_events.10.d
+			
+		if = {
+			limit = { host_has_dlc = "Utopia" }
+			owner = { add_resource = { influence = -30 } }
+		}
+	}
+}
+
+# Invasive Breeding Flavour #
+
+# Need for Breeding
+country_event = {
+	id = lv_pop_events.11
+	title = lv_pop_events.11.name
+	desc = lv_pop_events.11.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	
+	picture_event_data = {
+		room = evt_lv_invasive_breeding_11_room
+	}
+	
+	is_triggered_only = yes
+
+	immediate = {
+	}
+	
+	option = {
+		name = lv_pop_events.11.a
+		
+		trigger = { NOR = { has_ethic = ethic_fanatic_xenophobe has_ethic = ethic_xenophobe } }
+	}
+	
+	option = {
+		name = lv_pop_events.11.b
+		
+		trigger = { OR = { has_ethic = ethic_fanatic_xenophobe has_ethic = ethic_xenophobe } }
+	}
+}
+
+##################
+# Transformation #
+##################
+
+# Feminization
+event = {
+	id = lv_pop_events.101
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_playable_country = {
+			limit = {
+				has_technology = tech_lv_advanced_feminization
+				NOT = { has_policy_flag = lv_feminization_range_none }
+			}
+			every_owned_pop = {
+				if = {
+					limit = { 
+						NOR = {
+							pop_has_trait = trait_lv_all_female
+							pop_has_trait = trait_lv_futanari
+							pop_has_trait = trait_lv_all_male
+							#pop_has_trait = trait_lvex_amazon
+							pop_has_trait = trait_lv_femboy01
+							pop_has_trait = trait_lv_femboy02
+							pop_has_trait = trait_lv_femboy03
+							pop_has_trait = trait_lv_femboy04
+							pop_has_trait = trait_lv_femboy05
+						}
+						is_robot_pop = no
+					}
+					random_list = {
+						50 = {  
+							modify_species = {
+								add_trait = trait_lv_all_female
+							}
+						}
+						50 = {
+							modify_species = {
+								add_trait = trait_lv_all_male
+							}
+						}
+						10 = {
+							modify_species = {
+								add_trait = trait_lv_futanari
+							}
+						}
+					}
+				}
+			}
+			every_owned_pop = {
+				if = {
+					limit = { 
+						owner = { has_policy_flag = lv_feminization_range_all }
+						is_robot_pop = no
+						OR = {
+							pop_has_trait = trait_lv_all_male
+							pop_has_trait = trait_lv_all_female
+							pop_has_trait = trait_lv_futanari
+							pop_has_trait = trait_lv_femboy01
+							pop_has_trait = trait_lv_femboy02
+							pop_has_trait = trait_lv_femboy03
+							pop_has_trait = trait_lv_femboy04
+							pop_has_trait = trait_lv_femboy05
+						}
+					}
+					lv_feminization_effect = yes
+				}
+				else_if = {
+					limit = {
+						owner = { has_policy_flag = lv_feminization_range_livestock }
+						is_robot_pop = no
+						OR = {
+							pop_has_trait = trait_lv_all_male
+							pop_has_trait = trait_lv_all_female
+							pop_has_trait = trait_lv_futanari
+							pop_has_trait = trait_lv_femboy01
+							pop_has_trait = trait_lv_femboy02
+							pop_has_trait = trait_lv_femboy03
+							pop_has_trait = trait_lv_femboy04
+							pop_has_trait = trait_lv_femboy05
+						}
+						has_slavery_type = {
+							type = slavery_livestock
+						}
+					}
+					lv_feminization_effect = yes
+				}
+				else_if = {
+					limit = {
+						owner = { has_policy_flag = lv_feminization_range_slaves }
+						is_robot_pop = no
+						OR = {
+							pop_has_trait = trait_lv_all_male
+							pop_has_trait = trait_lv_all_female
+							pop_has_trait = trait_lv_futanari
+							pop_has_trait = trait_lv_femboy01
+							pop_has_trait = trait_lv_femboy02
+							pop_has_trait = trait_lv_femboy03
+							pop_has_trait = trait_lv_femboy04
+							pop_has_trait = trait_lv_femboy05
+						}
+						is_enslaved = yes
+					}
+					lv_feminization_effect = yes
+				}
+			}
+		}
+	}
+}
+
+########################
+# Tentacular Awakening #
+########################
+
+planet_event = {
+	id = lv_pop_events.201
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		create_species = {
+			name = "Tentacle Lifeform"
+			plural = "Tentacle Lifeforms"
+			class = LVTENTACLE
+			portrait = "lv_tentacle_01"
+			namelist = "LVTENTACLE"
+			traits = {
+				trait = "trait_lv_targeted_pheromones"
+				trait = "trait_lv_huge_penis"
+				trait = "trait_lv_multiple_penises"
+				trait = "trait_lv_high_volume_ejaculations"
+				trait = "trait_lv_addictive_cum"
+				trait = "trait_lv_dominant"
+				trait = "trait_lv_sex_crazed"
+				trait = "trait_extremely_adaptive"
+				trait = "trait_quick_learners"
+				trait = "trait_decadent"
+				trait = "trait_delicious"
+				trait = "trait_erudite"
+				trait = "trait_lv_nudist"
+			}
+			effect = {
+				save_event_target_as = lv_tentacles_species_decision
+			}
+		}
+		while = {
+			count = 2
+			create_pop = {
+				species = event_target:lv_tentacles_species_decision
+			}
+		}
+	}
+}
+
+###

@@ -1,0 +1,81 @@
+##############################################################
+###	PORTRAITS SETTINGS
+###
+### Which portraits are used is set in 
+### common\species_classes\00_species_classes.txt
+###
+###	This file configures how portraits and planet backgrounds are built.
+###	Default position orientation is lower left.
+##############################################################
+
+portraits = {
+	# Equine Futa
+	lv_equine_futa_0 = { greeting_sound = "human_female_greetings_05" texturefile = "gfx/models/portraits/equine_futa/lv_equine_futa_0.dds" }
+	lv_equine_futa_1 = { greeting_sound = "human_female_greetings_05" texturefile = "gfx/models/portraits/equine_futa/lv_equine_futa_1.dds" }
+	lv_equine_futa_2 = { greeting_sound = "human_female_greetings_05" texturefile = "gfx/models/portraits/equine_futa/lv_equine_futa_2.dds" }
+	lv_equine_futa_3 = { greeting_sound = "human_female_greetings_05" texturefile = "gfx/models/portraits/equine_futa/lv_equine_futa_3.dds" }
+	lv_equine_futa_4 = { greeting_sound = "human_female_greetings_05" texturefile = "gfx/models/portraits/equine_futa/lv_equine_futa_4.dds" }
+}
+
+portrait_groups = {
+	lv_equine_futa = {
+		default = lv_equine_futa_0
+		game_setup = {
+			add = {
+				portraits = {
+					lv_equine_futa_0
+					lv_equine_futa_1
+					lv_equine_futa_2
+					lv_equine_futa_3
+					lv_equine_futa_4
+				}
+			}
+		}
+		species = {
+			add = {
+				portraits = {
+					lv_equine_futa_0
+					lv_equine_futa_1
+					lv_equine_futa_2
+					lv_equine_futa_3
+					lv_equine_futa_4
+				}
+			}
+		}
+		pop = {
+			add = {
+				portraits = {
+					lv_equine_futa_0
+					lv_equine_futa_1
+					lv_equine_futa_2
+					lv_equine_futa_3
+					lv_equine_futa_4
+				}
+			}
+		}
+		leader = {
+			add = {
+				portraits = {
+					lv_equine_futa_0
+					lv_equine_futa_1
+					lv_equine_futa_2
+					lv_equine_futa_3
+					lv_equine_futa_4
+				}
+			}
+		}
+		ruler = {
+			add = {
+				portraits = {
+					lv_equine_futa_0
+					lv_equine_futa_1
+					lv_equine_futa_2
+					lv_equine_futa_3
+					lv_equine_futa_4
+				}
+			}
+		}
+	}
+}
+
+###

@@ -1,0 +1,1442 @@
+namespace = lv_hybrids
+
+#######################
+###     Hybrids     ###
+#######################
+
+#####################
+# Mono-gender Bonus #
+#####################
+
+country_event = {
+	id = lv_hybrids.1
+	hide_window = yes
+	
+	fire_only_once = yes
+	
+	pre_triggers = {
+		is_ai = no
+	}
+	
+	trigger = {
+		owner.species = {
+			OR = {
+				has_trait = trait_lv_all_female
+				has_trait = trait_lv_all_male
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	immediate = {
+		owner = {
+			add_research_option = tech_lv_hybridization_mastery
+			add_tech_progress = {
+				tech = tech_lv_hybridization_mastery
+				progress = 0.5
+			}
+		}
+	}
+}
+
+#########################
+# All Female Conversion #
+#########################
+
+country_event = {
+	id = lv_hybrids.2
+	hide_window = yes
+	
+	trigger = {
+		has_policy_flag = lv_no_intervention_sperm
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				any_owned_pop = {
+					has_trait = trait_lv_intercompatible_sperm
+				}
+			}
+			random_owned_planet = {
+				limit = {
+					AND = {
+						any_owned_pop = {
+							pop_has_trait = trait_lv_intercompatible_sperm
+						}
+						any_owned_pop = {
+							NOT = { pop_has_trait = trait_lv_intercompatible_womb }
+							NOT = { pop_has_trait = trait_lv_intercompatible_sperm }
+							AND = {
+								NOT = { pop_has_trait = trait_lv_all_female }
+								NOT = { pop_has_trait = trait_lv_all_male }
+								NOT = { pop_has_trait = trait_lv_futanari }
+								NOT = { is_robot_pop = yes }
+							}
+						}
+					}
+				}
+				set_timed_planet_flag = {
+					flag = lv_females_only_now
+					days = 5
+				}
+				planet_event = { id = lv_hybrids.3 days = 3 }
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = lv_hybrids.3
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+		every_owned_pop = {
+			limit = {
+				planet = {
+					has_planet_flag = lv_females_only_now
+					NOT = { has_planet_flag = lv_males_only_now }
+				}
+			}
+			if = {
+				limit= {
+					NOT = { pop_has_trait = trait_lv_all_female }
+					NOT = { pop_has_trait = trait_lv_all_male }
+					NOT = { pop_has_trait = trait_lv_futanari }
+					NOT = { pop_has_trait = trait_lv_intercompatible_womb }
+					NOT = { pop_has_trait = trait_lv_intercompatible_sperm }
+					NOT = { is_robot_pop = yes }
+				}
+				modify_species = {
+					species = this
+					add_trait = trait_lv_all_female
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOR = {
+					has_global_flag = lv_events_hidden
+					has_global_flag = lv_all_disabled
+				}
+			}
+			planet_event = { id = lv_hybrids.4 }
+		}
+	}
+}
+
+planet_event = {
+	id = lv_hybrids.4
+	title = "All Female"
+	desc = lv_all_female_inform.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	
+	picture_event_data = {
+		room = evt_lv_all_female_inform_1_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = lv_all_female.name.1
+		custom_tooltip = lv_all_female.name.1.tooltip
+	}
+}
+
+#######################
+# All Male Conversion #
+#######################
+
+country_event = {
+	id = lv_hybrids.5
+	hide_window = yes
+	
+	trigger = {
+		has_policy_flag = lv_no_intervention_womb
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				any_owned_pop = {
+					has_trait = trait_lv_intercompatible_womb
+				}
+			}
+			random_owned_planet = {
+				limit = {
+					AND = {
+						any_owned_pop = {
+							pop_has_trait = trait_lv_intercompatible_womb
+						}
+						any_owned_pop = {
+							NOT = { pop_has_trait = trait_lv_intercompatible_womb }
+							NOT = { pop_has_trait = trait_lv_intercompatible_sperm }
+							AND = {
+								NOT = { pop_has_trait = trait_lv_all_female }
+								NOT = { pop_has_trait = trait_lv_all_male }
+								NOT = { pop_has_trait = trait_lv_futanari }
+								NOT = { is_robot_pop = yes }
+							}
+						}
+					}
+				}
+				set_timed_planet_flag = {
+					flag = lv_males_only_now
+					days = 5
+				}
+				planet_event = { id = lv_hybrids.6 days = 3 }
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = lv_hybrids.6
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+		every_owned_pop = {
+			limit = {
+				planet = {
+					has_planet_flag = lv_males_only_now
+					NOT = { has_planet_flag = lv_females_only_now }
+				}
+			}
+			if = {
+				limit= {
+					NOT = { pop_has_trait = trait_lv_all_female }
+					NOT = { pop_has_trait = trait_lv_all_male }
+					NOT = { pop_has_trait = trait_lv_futanari }
+					NOT = { pop_has_trait = trait_lv_intercompatible_womb }
+					NOT = { pop_has_trait = trait_lv_intercompatible_sperm }
+					NOT = { is_robot_pop = yes }
+				}
+				modify_species = {
+					species = this
+					add_trait = trait_lv_all_male
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOR = {
+					has_global_flag = lv_events_hidden
+					has_global_flag = lv_all_disabled
+				}
+			}
+			planet_event = { id = lv_hybrids.7 }
+		}
+	}
+}
+
+planet_event = {
+	id = lv_hybrids.7
+	title = "All Male"
+	desc = lv_all_male_inform.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	
+	picture_event_data = {
+		room = evt_lv_all_male_inform_1_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = lv_all_male.name.1
+		custom_tooltip = lv_all_male.name.1.tooltip
+	}
+}
+
+############
+# Bio Pops #
+############
+
+planet_event = {
+	id = lv_hybrids.8
+	hide_window = yes
+	
+	pre_triggers = {
+		has_owner = yes
+		has_ground_combat = no
+		is_ai = no
+	}
+	
+	trigger = {
+		NOR = {
+			has_global_flag = lv_all_disabled
+			has_global_flag = lv_bio_hybrids_disabled
+		}
+		NOT = { has_planet_flag = lv_bio_hybrids_recent }
+		num_unique_species < 12
+	}
+	
+	mean_time_to_happen = {
+		months = 18
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						any_owned_pop = {
+							pop_has_trait = trait_lv_intercompatible_womb
+						}
+						any_owned_pop = {
+							NOT = { pop_has_trait = trait_lv_intercompatible_womb }
+							OR = {
+								is_robot_pop = no
+								pop_has_trait = trait_lv_lushtech_synthetic_womb
+								pop_has_trait = trait_lv_sex_bots
+								pop_has_trait = trait_lv_sex_bots_o
+							}
+						}
+					}
+					AND = {
+						any_owned_pop = {
+							pop_has_trait = trait_lv_intercompatible_sperm
+						}
+						any_owned_pop = {
+							NOT = { pop_has_trait = trait_lv_intercompatible_sperm }
+							OR = {
+								is_robot_pop = no
+								pop_has_trait = trait_lv_lushtech_synthetic_womb
+								pop_has_trait = trait_lv_sex_bots
+								pop_has_trait = trait_lv_sex_bots_o
+							}
+						}
+					}
+				}
+			}
+			set_timed_planet_flag = {
+				flag = lv_bio_hybrids_recent
+				days = 740
+			}
+			random_owned_pop = {
+				limit = {
+					OR = {
+						pop_has_trait = trait_lv_intercompatible_womb
+						pop_has_trait = trait_lv_intercompatible_sperm
+					}
+				}
+				save_event_target_as = lv_intercompatible_pop
+			}
+			random_owned_pop = {
+				limit = {
+					NOT = { is_same_species = event_target:lv_intercompatible_pop.species }
+					OR = {
+						is_robot_pop = no
+						pop_has_trait = trait_lv_lushtech_synthetic_womb
+						pop_has_trait = trait_lv_sex_bots
+						pop_has_trait = trait_lv_sex_bots_o
+					}
+				}
+				save_event_target_as = lv_breeder_pop
+			}
+			random_list = {
+				80 = {
+					event_target:lv_intercompatible_pop = {
+						create_species = {
+							name = random
+							class = this
+							portrait = this
+							traits = random
+							homeworld = PREV
+						}
+					}
+				}
+				19 = {
+					event_target:lv_intercompatible_pop = {
+						create_species = {
+							name = random
+							class = this
+							portrait = random
+							extra_trait_points = 2
+							traits = random
+							homeworld = PREV
+						}
+					}
+				}
+				1 = {
+					event_target:lv_intercompatible_pop = {
+						create_species = {
+							name = random
+							class = this
+							portrait = random
+							extra_trait_points = 6
+							traits = {
+								trait = trait_psionic
+								trait = trait_lv_perfect_hybrid
+								trait = random_traits
+							}
+							allow_negative_traits = no
+							homeworld = PREV
+						}
+					}
+					set_planet_flag = lv_perfect_bio_hybrid_recent
+				}
+			}
+			last_created_species = {
+				set_species_identity = event_target:lv_intercompatible_pop.species
+			}
+			random_list = {
+				50 = {
+					last_created_species = {
+						modify_species = {
+							species = this
+							ideal_planet_class = event_target:lv_intercompatible_pop
+							change_scoped_species = no
+						}
+					}
+				}
+				50 = {
+					last_created_species = {
+						modify_species = {
+							species = this
+							ideal_planet_class = event_target:lv_breeder_pop
+							change_scoped_species = no
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_lv_intercompatible_womb
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_lv_intercompatible_womb
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_lv_intercompatible_sperm
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_lv_intercompatible_sperm
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_lv_all_male
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_lv_all_male
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_lv_all_female
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_lv_all_female
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_lv_futanari
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_lv_futanari
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_lv_brood_parasite
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_lv_brood_parasite
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_lv_titanic_evolution
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_lv_titanic_evolution
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_lv_perfect_hybrid
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_lv_perfect_hybrid
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_hive_mind
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_hive_mind
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_lithoid
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_lithoid
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_necrophage
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_necrophage
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_survivor
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_survivor
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_nivlac
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_nivlac
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_bioadaptability
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_bioadaptability
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_social_pheromones
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_social_pheromones
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_limited_regeneration
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_limited_regeneration
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_cybernetic
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_cybernetic
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_latent_psionic
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_latent_psionic
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_psionic
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_psionic
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_enigmatic_intelligence_poor
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_enigmatic_intelligence_poor
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_enigmatic_intelligence_failed
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_enigmatic_intelligence_failed
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_enigmatic_intelligence
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_enigmatic_intelligence
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_nuumismatic_administration
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_nuumismatic_administration
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_presapient_starborn
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_presapient_starborn
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_presapient_earthbound
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_presapient_earthbound
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_presapient_natural_intellectuals
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_presapient_natural_intellectuals
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_presapient_proles
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_presapient_proles
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_presapient_conservative
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_presapient_conservative
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_presapient_irradiated
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_presapient_irradiated
+						change_scoped_species = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:lv_intercompatible_pop = {
+						has_trait = trait_presapient_docile_livestock
+					}
+				}
+				last_created_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_presapient_docile_livestock
+						change_scoped_species = no
+					}
+				}
+			}
+			create_pop = { species = last_created_species }
+			if = {
+				limit = {
+					AND = {
+						has_planet_flag = lv_perfect_bio_hybrid_recent
+						NOT = { has_global_flag = lv_events_hidden }
+					}
+				}
+				planet_event = { id = lv_hybrids.10 }
+			}
+		}
+	}
+}
+
+##########
+# Robots #
+##########
+
+planet_event = {
+	id = lv_hybrids.9
+	hide_window = yes
+	
+	pre_triggers = {
+		has_owner = yes
+		has_ground_combat = no
+		is_ai = no
+	}
+	
+	trigger = {
+		NOR = {
+			has_global_flag = lv_all_disabled
+			has_global_flag = lv_bio_hybrids_disabled
+		}
+		NOT = { has_planet_flag = lv_mech_hybrids_recent }
+		num_unique_species < 12
+	}
+	
+	mean_time_to_happen = {
+		months = 18
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				AND = {
+					any_owned_pop = {
+						pop_has_trait = trait_lv_nano_forge_womb
+					}
+					any_owned_pop = {
+						pop_has_trait = trait_lv_lushtech_omni_seed_fabrication_modules
+					}
+				}
+			}
+			set_timed_planet_flag = {
+				flag = lv_mech_hybrids_recent
+				days = 740
+			}
+			random_owned_pop = {
+				limit = {
+					pop_has_trait = trait_lv_lushtech_omni_seed_fabrication_modules
+				}
+				save_event_target_as = lv_robot_smexer_pop
+			}
+			random_owned_pop = {
+				limit = {
+					pop_has_trait = trait_lv_nano_forge_womb
+				}
+				save_event_target_as = lv_bio_breeder_pop
+			}
+			random_list = {
+				5 = {
+					event_target:lv_robot_smexer_pop = {
+						create_species = {
+							name = random
+							class = this
+							portrait = random
+							extra_trait_points = 4
+							traits = {
+								trait = trait_mechanical
+								trait = trait_lv_sex_bots
+								trait = trait_lv_lushtech_omni_seed_fabrication_modules
+								trait = random_traits
+							}
+							allow_negative_traits = no
+							homeworld = PREV
+						}
+						last_created_species = {
+							set_species_identity = event_target:lv_robot_smexer_pop.species
+						}
+					}
+				}
+				25 = {
+					event_target:lv_bio_breeder_pop = {
+						create_species = {
+							name = this
+							class = this
+							portrait = this
+							extra_trait_points = 2
+							traits = this
+							homeworld = PREV
+						}
+						last_created_species = {
+							set_species_identity = event_target:lv_bio_breeder_pop.species
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_lv_all_male
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_lv_all_male
+								change_scoped_species = no
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_lv_all_female
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_lv_all_female
+								change_scoped_species = no
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_lv_futanari
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_lv_futanari
+								change_scoped_species = no
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_lv_brood_parasite
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_lv_brood_parasite
+								change_scoped_species = no
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_lv_titanic_evolution
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_lv_titanic_evolution
+								change_scoped_species = no
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_lv_perfect_hybrid
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_lv_perfect_hybrid
+								change_scoped_species = no
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_hive_mind
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_hive_mind
+								change_scoped_species = no
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_lithoid
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_lithoid
+								change_scoped_species = no
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_necrophage
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_necrophage
+								change_scoped_species = no
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_survivor
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_survivor
+								change_scoped_species = no
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_nivlac
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_nivlac
+								change_scoped_species = no
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_bioadaptability
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_bioadaptability
+								change_scoped_species = no
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_social_pheromones
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_social_pheromones
+								change_scoped_species = no
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_limited_regeneration
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_limited_regeneration
+								change_scoped_species = no
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_cybernetic
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_cybernetic
+								change_scoped_species = no
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_latent_psionic
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_latent_psionic
+								change_scoped_species = no
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_psionic
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_psionic
+								change_scoped_species = no
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_enigmatic_intelligence_poor
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_enigmatic_intelligence_poor
+								change_scoped_species = no
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_enigmatic_intelligence_failed
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_enigmatic_intelligence_failed
+								change_scoped_species = no
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_enigmatic_intelligence
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_enigmatic_intelligence
+								change_scoped_species = no
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_nuumismatic_administration
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_nuumismatic_administration
+								change_scoped_species = no
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_presapient_starborn
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_presapient_starborn
+								change_scoped_species = no
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_presapient_earthbound
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_presapient_earthbound
+								change_scoped_species = no
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_presapient_natural_intellectuals
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_presapient_natural_intellectuals
+								change_scoped_species = no
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_presapient_proles
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_presapient_proles
+								change_scoped_species = no
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_presapient_conservative
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_presapient_conservative
+								change_scoped_species = no
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_presapient_irradiated
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_presapient_irradiated
+								change_scoped_species = no
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:lv_bio_breeder_pop = {
+								has_trait = trait_presapient_docile_livestock
+							}
+						}
+						last_created_species = {
+							modify_species = {
+								species = this
+								add_trait = trait_presapient_docile_livestock
+								change_scoped_species = no
+							}
+						}
+					}
+				}
+				70 = {
+					event_target:lv_robot_smexer_pop = {
+						create_species = {
+							name = random
+							class = this
+							portrait = random
+							extra_trait_points = 2
+							traits = {
+								trait = trait_mechanical
+								trait = random_traits
+							}
+							homeworld = PREV
+						}
+						last_created_species = {
+							set_species_identity = event_target:lv_robot_smexer_pop.species
+						}
+					}
+				}
+			}
+			create_pop = { species = last_created_species }
+		}
+	}
+}
+
+##########
+# Pop-up #
+##########
+
+planet_event = {
+	id = lv_hybrids.10
+	title = "Perfect Hybrid"
+	desc = lv_perfect_bio_hybrid.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = lv_event_psionic_03
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_perfect_bio_hybrid_1_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = lv_perfect_bio_hybrid.name.1
+		custom_tooltip = lv_perfect_bio_hybrid.name.1.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+				} 
+			}
+		}
+		owner = {
+			add_resource = { influence = -25 }
+		}
+		hidden_effect = {
+			remove_planet_flag = lv_perfect_bio_hybrid_recent
+		}
+	}
+	option = {
+		name = lv_perfect_bio_hybrid.name.2
+		custom_tooltip = lv_perfect_bio_hybrid.name.2.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+				} 
+			}
+		}
+		owner = {
+			add_resource = { influence = 50 }
+		}
+		hidden_effect = {
+			remove_planet_flag = lv_perfect_bio_hybrid_recent
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+				}
+			}
+		}
+		hidden_effect = {
+			remove_planet_flag = lv_perfect_bio_hybrid_recent
+		}
+	}
+}
+
+###

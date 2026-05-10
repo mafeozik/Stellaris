@@ -1,0 +1,3185 @@
+###############################
+###     Terraform Links     ###
+###############################
+
+#Ringworld -> sex
+
+terraform_link = {
+	from = "pc_ringworld_habitable"
+	to = "pc_lv_sringworld"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 10000
+		}
+	}
+	
+	duration = 1800
+	
+	potential = {
+		has_technology = tech_climate_restoration
+		has_ascension_perk = ap_lv_sworld_project
+	}
+	
+	effect = {
+		from = {
+			set_timed_planet_flag = {
+				flag = lv_recent_terraform
+				days = 3600
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			from = { has_planet_flag = lv_recent_terraform }
+		}
+		modifier = {
+			factor = 0
+			resource_stockpile_compare = { resource = energy value < 20000 }
+		}
+	}
+}
+
+#sex -> Ringworld
+
+terraform_link = {
+	from = "pc_lv_sringworld"
+	to = "pc_ringworld_habitable"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 10000
+		}
+	}
+	
+	duration = 1800
+	
+	potential = {
+		has_technology = tech_climate_restoration
+	}
+
+	effect = {
+		from = {
+			set_timed_planet_flag = {
+				flag = lv_recent_terraform
+				days = 3600
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			from = { has_planet_flag = lv_recent_terraform }
+		}
+		modifier = {
+			factor = 0
+			resource_stockpile_compare = { resource = energy value < 20000 }
+		}
+	}
+}
+
+#Tentacle conversions
+
+terraform_link = {
+	from = "pc_barren"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 20000
+		}
+	}
+	
+	duration = 3600
+	
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_climate_restoration
+    }
+	
+	effect = {
+		from = {
+			remove_modifier = terraforming_candidate
+			set_timed_planet_flag = {
+				flag = lv_recent_terraform
+				days = 3600
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			from = { has_planet_flag = lv_recent_terraform }
+		}
+		modifier = {
+			factor = 0
+			resource_stockpile_compare = { resource = energy value < 40000 }
+		}
+	}
+}
+
+terraform_link = {
+	from = "pc_barren_cold"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 20000
+		}
+	}
+	
+	duration = 3600
+	
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_climate_restoration
+    }
+	
+	effect = {
+		from = {
+			remove_modifier = terraforming_candidate
+			set_timed_planet_flag = {
+				flag = lv_recent_terraform
+				days = 3600
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			from = { has_planet_flag = lv_recent_terraform }
+		}
+		modifier = {
+			factor = 0
+			resource_stockpile_compare = { resource = energy value < 40000 }
+		}
+	}
+}
+
+terraform_link = {
+	from = "pc_nuked"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 20000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_climate_restoration
+    }
+	
+	effect = {
+		from = {
+			remove_modifier = terraforming_candidate
+			set_timed_planet_flag = {
+				flag = lv_recent_terraform
+				days = 3600
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			from = { has_planet_flag = lv_recent_terraform }
+		}
+		modifier = {
+			factor = 0
+			resource_stockpile_compare = { resource = energy value < 40000 }
+		}
+	}
+}
+
+terraform_link = {
+	from = "pc_gaia"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 2500
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_climate_restoration
+		from = {
+			OR = {
+				is_owned_by = root
+				NOT = { has_modifier = "holy_planet" }
+			}
+		}
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_machine"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 30000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_climate_restoration
+    }
+	
+	effect = {
+		from = {
+			remove_modifier = terraforming_candidate
+			set_timed_planet_flag = {
+				flag = lv_recent_terraform
+				days = 3600
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			from = { has_planet_flag = lv_recent_terraform }
+		}
+		modifier = {
+			factor = 0
+			resource_stockpile_compare = { resource = energy value < 60000 }
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				is_mechanical_empire = yes
+				has_authority = auth_machine_intelligence
+			}
+		}
+	}
+}
+
+terraform_link = {
+	from = "pc_desert"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_alpine"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_arctic"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_arid"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_hadesert"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_prairie"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_veld"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_semiarid"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_med"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_desertislands"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_retinal"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_forest"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lake"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_tepid"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_swamp"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_mud"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_boreal"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_cascadian"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_continental"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_subarctic"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_sandsea"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_frozen_desert"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_glacial"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_mangrove"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_wetswamp"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_mesa"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_outback"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_mushroom"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_antarctic"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_aeolian"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_snow"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_highland"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_duneforest"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_oasis"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_ocean"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_savannah"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_steppe"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_hajungle"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_tropical"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_tundra"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_tidallylocked"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	effect = { from = { remove_modifier = tidal_locked2 } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_supercon"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	effect = { from = { remove_modifier = tidal_locked2 } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_superhabitable"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	effect = { from = { remove_modifier = superhabitable } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_geothermal"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	effect = { from = { remove_modifier = geothermal } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_primal"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	effect = { from = { remove_modifier = primal } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_salt"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	effect = { from = { remove_modifier = pdsalt } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_coral"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	effect = { from = { remove_modifier = pdcoral } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_storm"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	effect = { from = { remove_modifier = pdstorm } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_rogue"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	effect = { from = { remove_modifier = pdstorm } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_eyeball"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	effect = { from = { remove_modifier = pdstorm } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_glacio"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	effect = { from = { remove_modifier = pdstorm } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lanthanide"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	effect = { from = { remove_modifier = pdstorm } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_megaflora"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	effect = { from = { remove_modifier = pdmegaflora } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_biolumen"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	effect = { from = { remove_modifier = biolumen } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_aquatic"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	effect = { from = { remove_modifier = aquatic } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_desert"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_alpine"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_arctic"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_arid"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_hadesert"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_desertislands"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_retinal"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_forest"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_lake"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_tepid"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_swamp"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_mud"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_boreal"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_cascadian"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_continental"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_subarctic"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_sandsea"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_frozen_desert"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_glacial"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_mangrove"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_wetswamp"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_mesa"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_outback"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_mushroom"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_oasis"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_ocean"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_savannah"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_steppe"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_hajungle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_tropical"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_tundra"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_prairie"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_veld"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_semiarid"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_med"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_antarctic"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_aeolian"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_snow"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_highland"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_duneforest"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = pc_lv_stentacle
+	to = pc_geothermal
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	effect = { from = { add_modifier = { modifier = "geothermal" days = -1 } } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = pc_lv_stentacle
+	to = pc_superhabitable
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_terrestrial_sculpting
+    }
+	
+	effect = { from = { add_modifier = { modifier = "superhabitable" days = -1 } } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = pc_lv_stentacle
+	to = pc_tidallylocked
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = { 
+		has_ascension_perk = ap_world_shaper 
+		from = { is_moon = no }
+	}
+	
+	effect = { from = { add_modifier = { modifier = "tidal_locked2" days = -1 } } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = pc_lv_stentacle
+	to = pc_supercon
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = { 
+		has_ascension_perk = ap_world_shaper 
+		from = { is_moon = no }
+	}
+	
+	effect = { from = { add_modifier = { modifier = "tidal_locked2" days = -1 } } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = pc_lv_stentacle
+	to = pc_biolumen
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = { 
+		has_ascension_perk = ap_world_shaper 
+	}
+	
+	effect = { from = { add_modifier = { modifier = "biolumen" days = -1 } } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = pc_lv_stentacle
+	to = pc_karst
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = { 
+		has_ascension_perk = ap_world_shaper 
+	}
+	
+	effect = { from = { add_modifier = { modifier = "karst" days = -1 } } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = pc_lv_stentacle
+	to = pc_primal
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = { 
+		has_ascension_perk = ap_world_shaper 
+	}
+	
+	effect = { from = { add_modifier = { modifier = "primal" days = -1 } } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = pc_lv_stentacle
+	to = pc_salt
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = { 
+		has_ascension_perk = ap_world_shaper 
+	}
+	
+	effect = { from = { add_modifier = { modifier = "pdsalt" days = -1 } } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = pc_lv_stentacle
+	to = pc_coral
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = { 
+		has_ascension_perk = ap_world_shaper 
+	}
+	
+	effect = { from = { add_modifier = { modifier = "pdcoral" days = -1 } } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = pc_lv_stentacle
+	to = pc_storm
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = { 
+		has_ascension_perk = ap_world_shaper 
+	}
+	
+	effect = { from = { add_modifier = { modifier = "pdstorm" days = -1 } } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = pc_lv_stentacle
+	to = pc_rogue
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = { 
+		has_ascension_perk = ap_world_shaper 
+	}
+	
+	effect = { from = { add_modifier = { modifier = "pdstorm" days = -1 } } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = pc_lv_stentacle
+	to = pc_eyeball
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = { 
+		has_ascension_perk = ap_world_shaper 
+		from = { is_moon = no }
+	}
+	
+	effect = { from = { add_modifier = { modifier = "pdstorm" days = -1 } } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = pc_lv_stentacle
+	to = pc_glacio
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = { 
+		has_ascension_perk = ap_world_shaper 
+	}
+	
+	effect = { from = { add_modifier = { modifier = "pdstorm" days = -1 } } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = pc_lv_stentacle
+	to = pc_lanthanide
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = { 
+		has_ascension_perk = ap_world_shaper 
+	}
+	
+	effect = { from = { add_modifier = { modifier = "pdstorm" days = -1 } } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = pc_lv_stentacle
+	to = pc_megaflora
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = { 
+		has_ascension_perk = ap_world_shaper 
+	}
+	
+	effect = { from = { add_modifier = { modifier = "pdmegaflora" days = -1 } } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_aquatic"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = { 
+		has_ascension_perk = ap_world_shaper 
+	}
+	
+	effect = { from = { add_modifier = { modifier = "aquatic" days = -1 } } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_ash"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+
+	effect = { from = { remove_modifier = ash } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_ash"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+       has_technology = tech_terrestrial_sculpting
+    }
+
+	effect = { from = { add_modifier = { modifier = ash days = -1 } } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_irradiated"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	effect = { from = { remove_modifier = radiotrophic } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_irradiated"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+	
+	duration = 3600
+	
+	condition = {
+       has_technology = tech_terrestrial_sculpting
+    }
+	
+	effect = { from = { add_modifier = { modifier = radiotrophic days = -1 } } }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_pdhive2"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 2000
+		}
+	}
+	
+	duration = 1800
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_hive"
+	to = "pc_lv_stentacle"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 2000
+		}
+	}
+	
+	duration = 1800
+	
+	condition = {
+        has_technology = tech_lv_stentacle_world
+		has_technology = tech_terrestrial_sculpting
+    }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_lv_stentacle"
+	to = "pc_machine"
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 30000
+		}
+	}
+	
+	duration = 7000
+	
+	effect = {
+		from = {
+			set_timed_planet_flag = {
+				flag = lv_recent_terraform
+				days = 3600
+			}
+		}
+	}
+	
+	potential = {
+		has_ascension_perk = ap_machine_worlds
+	}
+	
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			from = { has_planet_flag = lv_recent_terraform }
+		}
+		modifier = {
+			factor = 0
+			resource_stockpile_compare = { resource = energy value < 60000 }
+		}
+		modifier = {
+			factor = 0
+			from = {
+				any_owned_pop = {
+					NOR = {
+						has_trait = trait_machine_unit
+						has_trait = trait_mechanical
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			from = {
+				is_colony = no
+			}
+		}
+	}
+}
+
+###

@@ -1,0 +1,56 @@
+###############################
+###     Origin Pictures     ###
+###############################
+
+spriteTypes = {	
+
+	# Normal #
+	spriteType = {
+		name = "GFX_origin_lv_parallel_evolution"
+		texturefile = "gfx/event_pictures/origins/origin_lv_parallel_evolution.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_origin_lv_sadomasochistic_evolution"
+		texturefile = "gfx/event_pictures/origins/origin_lv_sadomasochistic_evolution.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_origin_lv_invasive_breeders"
+		texturefile = "gfx/event_pictures/origins/origin_lv_invasive_breeders.dds"
+		alwaystransparent = yes
+	}
+	
+	# Hivemind #
+	spriteType = {
+		name = "GFX_origin_lv_symbiotic_evolution"
+		texturefile = "gfx/event_pictures/origins/origin_lv_symbiotic_evolution.dds"
+		alwaystransparent = yes
+	}
+	
+	# Robutt #
+	spriteType = {
+		name = "GFX_origin_lv_sexbot_revolution"
+		texturefile = "gfx/event_pictures/origins/origin_lv_sexbot_revolution.dds"
+		alwaystransparent = yes
+	}
+	
+	# Sexopolis #
+	spriteType = {
+		name = "GFX_origin_lv_sworld"
+		texturefile = "gfx/event_pictures/origins/origin_lv_sworld.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_origin_lv_sringworld"
+		texturefile = "gfx/event_pictures/origins/origin_lv_sringworld.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_origin_lv_stentacle"
+		texturefile = "gfx/event_pictures/origins/origin_lv_stentacle.dds"
+		alwaystransparent = yes
+	}
+}
+
+###

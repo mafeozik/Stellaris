@@ -1,0 +1,262 @@
+#################################
+###     Dairy Worker Jobs     ###
+#################################
+
+lv_milk_cow = {			# Milk Cow
+	category = worker
+	condition_string = WORKER_JOB_TRIGGER
+	building_icon = building_lv_sapient_dairy_ranch
+	clothes_texture_index = 2
+	
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+	
+	possible_precalc = lv_can_fill_dairy_worker_job
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = { is_gestalt = no }
+	}
+	
+	resources = {
+        category = planet_lv_milk_cow
+		
+		# Organic (or robutts with proper parts)
+        produces = {
+			trigger = { is_lithoid = no }
+            food = 6
+		}
+		produces = {
+			trigger = {
+				is_lithoid = no
+				exists = owner
+				owner = { has_policy_flag = lv_milk_cows_policy_max_milk }
+			}
+			food = 3
+		}
+		produces = {
+			trigger = {
+				is_lithoid = no
+				exists = owner
+				owner = { has_tradition = tr_lv_milking_3_orgasmic_lactation }
+				planet = {
+					OR = {
+						any_owned_pop = { pop_has_trait = trait_lv_equine_penis }
+						lv_beasties_on_planet = yes
+					}
+				}
+			}
+			food = 3
+		}
+		produces = {
+			trigger = {
+				is_lithoid = no
+				exists = owner
+				owner = { has_tradition = tr_lv_milking_3_orgasmic_lactation }
+				planet = {
+					NOT = { any_owned_pop = { pop_has_trait = trait_lv_equine_penis } }
+					lv_beasties_on_planet = no
+				}
+			}
+			food = 1
+		}
+		
+		# Lithoids
+		produces = {
+			trigger = { is_lithoid = yes }
+			minerals = 6
+		}
+		produces = {
+			trigger = { 
+				is_lithoid = yes
+				exists = owner
+				owner = { has_policy_flag = lv_milk_cows_policy_max_milk }
+			}
+			minerals = 3
+		}
+		produces = {
+			trigger = {
+				is_lithoid = yes
+				exists = owner
+				owner = { has_tradition = tr_lv_milking_3_orgasmic_lactation }
+				planet = {
+					OR = {
+						any_owned_pop = { pop_has_trait = trait_lv_equine_penis }
+						lv_beasties_on_planet = yes
+					}
+				}
+			}
+			minerals = 3
+		}
+		produces = {
+			trigger = {
+				is_lithoid = yes
+				exists = owner
+				owner = { has_tradition = tr_lv_milking_3_orgasmic_lactation }
+				planet = {
+					NOT = { any_owned_pop = { pop_has_trait = trait_lv_equine_penis } }
+					lv_beasties_on_planet = no
+				}
+			}
+			minerals = 1
+		}
+		
+		# Any
+		produces = {
+			trigger = {
+				exists = owner
+				owner = { has_policy_flag = lv_milk_cows_policy_default }
+			}
+			unity = 2
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = { has_policy_flag = lv_milk_cows_policy_free_use }
+			}
+			consumer_goods = 4
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = { has_policy_flag = lv_milk_cows_policy_breeders }
+			}
+			consumer_goods = 2
+		}
+		
+		# Overlord
+		produces = {
+			trigger = {
+				is_lithoid = no
+				planet = { has_planet_flag = has_produce_requisitorium }
+			}
+			food = @requisitorium_food_reduction
+		}
+		produces = {
+			trigger = {
+				is_lithoid = yes
+				planet = { has_planet_flag = has_produce_requisitorium }
+			}
+			minerals = @requisitorium_minerals_reduction
+		}
+	}
+	
+	# Any
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_policy_flag = lv_milk_cows_policy_paid_use }
+		}
+		trade_value_add = 4
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|
+	}
+	triggered_planet_modifier = {
+        potential = {
+			exists = owner
+			owner = { has_policy_flag = lv_milk_cows_policy_breeders }
+		}
+        modifier = {
+			pop_growth_speed = 0.1
+		}
+    }
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+		}
+		planet_amenities_add = 3
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_lv_milking_2_nourishing_milk }
+		}
+		planet_lv_sexologist_produces_mult = 0.01
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_lv_milking_4_rich_calcium }
+		}
+		planet_jobs_worker_produces_mult = 0.01
+	}
+	
+	# Overlord
+	overlord_resources = {
+		category = planet_requisitioned_food
+		produces = {
+			trigger = {
+				is_lithoid = no
+				planet = {
+					has_planet_flag = has_produce_requisitorium
+				}
+			}
+			food = @requisitorium_food_overlord
+		}
+	}
+	overlord_resources = {
+		category = planet_requisitioned_minerals
+		produces = {
+			trigger = {
+				is_lithoid = yes
+				planet = {
+					has_planet_flag = has_material_requisitorium
+				}
+			}
+			minerals = @requisitorium_minerals_overlord
+		}
+	}
+	
+	weight = {
+        weight = @worker_job_weight
+		mult = value:job_weights_modifier|JOB|lv_milk_cow|RESOURCE|food|
+		# factors
+		modifier = {
+			factor = 1.2
+			has_job = lv_milk_cow
+		}
+		modifier = {
+			factor = 10
+			is_enslaved = yes
+			can_take_servant_job = no
+		}
+		
+		# low income modifier
+		modifier = {
+			factor = 1.2
+			exists = planet
+			planet = { has_available_jobs = lv_milk_cow }
+			exists = owner
+			owner = {
+				is_ai = yes
+				has_monthly_income = {
+					resource = food
+					value < 10
+				}
+			}
+		}
+		
+		# dairy traits
+		modifier = {
+			add = 0.05
+			lv_dairy_weight_low = yes
+		}
+		modifier = {
+			add = 0.1
+			lv_dairy_weight_med = yes
+		}
+		modifier = {
+			add = 0.2
+			lv_dairy_weight_high = yes
+		}
+		modifier = {
+			add = -0.2
+			lv_dairy_weight_neg = yes
+		}
+	}
+}
+
+###

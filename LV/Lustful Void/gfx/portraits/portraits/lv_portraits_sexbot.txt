@@ -1,0 +1,108 @@
+##############################################################
+###	PORTRAITS SETTINGS
+###
+### Which portraits are used is set in 
+### common\species_classes\00_species_classes.txt
+###
+###	This file configures how portraits and planet backgrounds are built.
+###	Default position orientation is lower left.
+##############################################################
+
+portraits = {	
+	# Humanoid Sexbot
+	lv_sexbot_humanoid_01 = { 
+		entity = "portrait_human_female_04_entity"
+		clothes_selector = "no_texture"
+		attachment_selector = "lv_humanoid_sexbot_hair_pink"
+		greeting_sound = "robot_human_greetings" 
+		character_textures = {
+			"gfx/models/portraits/sexbot/lv_humanoid_sexbot_body_pink.dds"
+		}
+		custom_attachment_label = "HAIR_STYLE"
+	}
+	lv_sexbot_humanoid_02 = { 
+		entity = "portrait_human_female_04_entity"
+		clothes_selector = "no_texture"
+		attachment_selector = "lv_humanoid_sexbot_hair_blue"
+		greeting_sound = "robot_human_greetings" 
+		character_textures = {
+			"gfx/models/portraits/sexbot/lv_humanoid_sexbot_body_blue.dds"
+		}
+		custom_attachment_label = "HAIR_STYLE"
+	}
+	lv_sexbot_humanoid_03 = { 
+		entity = "portrait_human_female_04_entity"
+		clothes_selector = "no_texture"
+		attachment_selector = "lv_humanoid_sexbot_hair_green"
+		greeting_sound = "robot_human_greetings" 
+		character_textures = {
+			"gfx/models/portraits/sexbot/lv_humanoid_sexbot_body_green.dds"
+		}
+		custom_attachment_label = "HAIR_STYLE"
+	}
+}
+
+portrait_groups = {
+	lv_sexbot_humanoid = {
+		default = lv_sexbot_humanoid_01
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					lv_sexbot_humanoid_01
+					lv_sexbot_humanoid_02
+					lv_sexbot_humanoid_03
+				}
+			}
+			#set = {
+			#	trigger = { ... }
+			#	portraits = { ... }
+			#	#using "set =" instead of "add" will first clear any portraits already added
+			#}
+		}
+
+		#species scope
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					lv_sexbot_humanoid_01
+					lv_sexbot_humanoid_02
+					lv_sexbot_humanoid_03
+				}
+			}
+		}
+
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					lv_sexbot_humanoid_01
+					lv_sexbot_humanoid_02
+					lv_sexbot_humanoid_03
+				}
+			}
+		}
+
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = {
+				portraits = {
+					lv_sexbot_humanoid_01
+					lv_sexbot_humanoid_02
+					lv_sexbot_humanoid_03
+				}
+			}
+		}
+
+
+		#leader scope
+		ruler = {
+			add = {
+				portraits = {
+					lv_sexbot_humanoid_01
+					lv_sexbot_humanoid_02
+					lv_sexbot_humanoid_03
+				}
+			}
+		}
+	}
+}

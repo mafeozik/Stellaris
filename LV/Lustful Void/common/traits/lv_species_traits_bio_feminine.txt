@@ -1,0 +1,1343 @@
+##########################################
+###     Biological/Feminine Traits     ###
+##########################################
+#
+# Note: All traits were made with the intention of adding events/other things relating to them
+# eventually, even if not stated on the traits themselves. Also, all traits can and probably
+# will change again! These are not final effects or values at all.
+#
+# The potential_crossbreeding_chance modifier is used for base game crossbreeding compatibility 
+# only.
+#
+# The following categories are more for organizational purposes than anything else:
+# Psychological  - Mentality or mind altering effects.
+# Physical       - Body parts or other physical attributes.
+#
+###
+
+############
+# Positive #
+############
+
+# Psychological #
+
+# Aphrodisiac Milk (advanced trait)
+trait_lv_aphrodisiac_milk = {
+	cost = {
+		base = 7
+		modifier = {
+			add = -7
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	initial = no
+	potential_crossbreeding_chance = 0.5
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_aphrodisiac_milk_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_all_male
+		trait_lv_sexually_inept
+		trait_lv_sexually_repressed
+	}
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				AND = {
+					has_technology = tech_colonization_3
+					has_technology = tech_lv_transformation_candy_strawberry
+				}
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	modifier = {
+		# Natural aphrodisiac
+		pop_happiness = 0.05
+		pop_growth_speed = 0.05
+		pop_growth_from_immigration = 0.1
+		# Cuddle culture
+		planet_jobs_unity_produces_mult = 0.1
+		pop_housing_usage_mult = -0.1
+		species_empire_size_mult = -0.1
+		# Dairy Jobs Output +5% (zro)
+		planet_lv_dairy_jobs_produces_mult = 0.05
+		planet_lv_dairy_jobs_sr_zro_produces_add = 0.05
+		# Sex Jobs Output +10% (zro)
+		pop_job_amenities_mult = 0.1
+		pop_job_trade_mult = 0.1
+		planet_lv_sex_jobs_produces_mult = 0.1
+		planet_lv_sex_jobs_sr_zro_produces_add = 0.05
+		# Adds 10 opinion with other empires (opinion_modifiers)
+	}
+	
+	slave_cost = {
+		energy = 350
+	}
+}
+
+# Physical #
+
+# Excess Estrogen
+trait_lv_excess_estrogen = {
+	cost = {
+		base = 1
+		modifier = {
+			add = -1
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_excess_estrogen_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_excess_testosterone
+	}
+	
+	modifier = {
+		# Very feminine
+		army_damage_mult = -0.15
+		planet_jobs_minerals_produces_mult = -0.1
+		planet_jobs_food_produces_mult = 0.1
+		planet_jobs_unity_produces_mult = 0.1
+		# Dairy Jobs Output +10% (milk)
+		planet_lv_dairy_jobs_produces_mult = 0.1
+	}
+	
+	slave_cost = {
+		energy = 100
+	}
+}
+
+# Litters
+trait_lv_litters = {
+	cost = {
+		base = 4
+		modifier = {
+			add = -4
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_litters_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_all_male
+		trait_lv_titanic_evolution
+	}
+	
+	modifier = {
+		# Lots of babies
+		pop_growth_speed = 0.35
+		pop_housing_usage_mult = 0.1
+		species_empire_size_mult = 0.1
+		#++++ sex jobs (breeding only)
+	}
+	
+	slave_cost = {
+		energy = 200
+	}
+}
+
+# Large Breasts
+trait_lv_large_breasts = {
+	cost = {
+		base = 3
+		modifier = {
+			add = -3
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_large_breasts_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_huge_breasts
+		trait_lv_small_breasts
+		trait_lv_all_male
+		trait_lv_sexually_inept
+		trait_lv_titanic_evolution
+	}
+	
+	modifier = {
+		# Distracting
+		army_morale_damage_mult = 0.05
+		pop_growth_from_immigration = 0.05
+		# Increased milk production
+		planet_livestock_food_produces_add = 0.25
+		# Cows need more food
+		planet_lv_milk_cow_upkeep_mult = 0.25
+		# Dairy Jobs Output +10%
+		planet_lv_dairy_jobs_produces_mult = 0.1
+		# Sex Jobs Output +5%
+		pop_job_amenities_mult = 0.05
+		pop_job_trade_mult = 0.05
+		planet_lv_sex_jobs_produces_mult = 0.05
+		# Adds 5 opinion with other empires (opinion_modifiers)
+	}
+	
+	slave_cost = {
+		energy = 150
+	}
+}
+
+# Huge Breasts
+trait_lv_huge_breasts = {
+	cost = {
+		base = 5
+		modifier = {
+			add = -5
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_huge_breasts_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_large_breasts
+		trait_lv_excess_testosterone
+		trait_lv_small_breasts
+		trait_lv_all_male
+		trait_lv_sexually_inept
+		trait_lv_titanic_evolution
+	}
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				AND = {
+					has_technology = tech_glandular_acclimation
+					has_technology = tech_lv_transformation_candy_strawberry
+				}
+			}
+		}
+	}
+	
+	modifier = {
+		# Very distracting
+		pop_happiness = 0.05
+		army_morale_damage_mult = 0.15
+		pop_growth_from_immigration = 0.15
+		planet_jobs_produces_mult = -0.05
+		# Increased milk production
+		planet_livestock_food_produces_add = 1
+		# Cows need more food
+		planet_lv_milk_cow_upkeep_mult = 0.5
+		# Dairy Jobs Output +20%
+		planet_lv_dairy_jobs_produces_mult = 0.2
+		# Sex Jobs Output +10%
+		pop_job_amenities_mult = 0.1
+		pop_job_trade_mult = 0.1
+		planet_lv_sex_jobs_produces_mult = 0.1
+		# Adds 15 opinion with other empires (opinion_modifiers)
+	}
+	
+	slave_cost = {
+		energy = 250
+	}
+}
+
+# Multiple Breasts
+trait_lv_multiple_breasts = {
+	cost = {
+		base = 4
+		modifier = {
+			add = -4
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_multiple_breasts_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_all_male
+		trait_lv_sexually_inept
+	}
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				AND = {
+					has_technology = tech_gene_expressions
+					has_technology = tech_lv_transformation_candy_strawberry
+				}
+			}
+		}
+	}
+	
+	modifier = {
+		# Can be distracting
+		army_morale_damage_mult = 0.05
+		pop_growth_from_immigration = 0.05
+		# Increased milk production
+		planet_livestock_food_produces_add = 1.5
+		# Cows need more food
+		planet_lv_milk_cow_upkeep_mult = 0.75
+		# Dairy Jobs Output +10%
+		planet_lv_dairy_jobs_produces_mult = 0.1
+		# Sex Jobs Output +10%
+		pop_job_amenities_mult = 0.1
+		pop_job_trade_mult = 0.1
+		planet_lv_sex_jobs_produces_mult = 0.1
+		# Adds 5 opinion with other empires (opinion_modifiers)
+	}
+	
+	slave_cost = {
+		energy = 200
+	}
+}
+
+# Fuckable Nipples
+trait_lv_fuckable_nipples = {
+	cost = {
+		base = 3
+		modifier = {
+			add = -3
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_fuckable_nipples_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_all_male
+		trait_lv_sexually_inept
+	}
+	
+	modifier = {
+		# Erogenous breasts
+		pop_happiness = 0.05
+		pop_growth_speed = -0.2
+		# Superior milk capacity
+		planet_livestock_food_produces_add = 3
+		# Cows need more food
+		planet_lv_milk_cow_upkeep_mult = 1.5
+		# Dairy Jobs Output +40%
+		planet_lv_dairy_jobs_produces_mult = 0.4
+		# Sex Jobs Output +20%
+		pop_job_amenities_mult = 0.2
+		pop_job_trade_mult = 0.2
+		planet_lv_sex_jobs_produces_mult = 0.2
+		# Adds 10 opinion with other empires (opinion_modifiers)
+	}
+	
+	slave_cost = {
+		energy = 150
+	}
+}
+
+# High Volume Lactation
+trait_lv_high_volume_lactation = {
+	cost = {
+		base = 3
+		modifier = {
+			add = -3
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_high_volume_lactation_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_all_male
+	}
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				AND = {
+					has_technology = tech_glandular_acclimation
+					has_technology = tech_lv_transformation_candy_strawberry
+				}
+			}
+		}
+	}
+	
+	modifier = {
+		# High food conversion rate
+		planet_lv_milk_cow_upkeep_mult = -0.5
+		# Always lactating
+		planet_livestock_food_produces_add = 1
+		planet_pops_consumer_goods_upkeep_mult = 0.1
+		# Dairy Jobs Output +20%
+		planet_lv_dairy_jobs_produces_mult = 0.2
+		# Sex Jobs Output +5%
+		pop_job_amenities_mult = 0.05
+		pop_job_trade_mult = 0.05
+		planet_lv_sex_jobs_produces_mult = 0.05
+	}
+	
+	slave_cost = {
+		energy = 150
+	}
+}
+
+# Highly Nutritious Milk
+trait_lv_highly_nutritious_milk = {
+	cost = {
+		base = 5
+		modifier = {
+			add = -5
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_highly_nutritious_milk_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_all_male
+		trait_lv_watery_milk
+		trait_lv_titanic_evolution
+	}
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				AND = {
+					has_technology = tech_glandular_acclimation
+					has_technology = tech_lv_transformation_candy_strawberry
+				}
+			}
+		}
+	}
+	
+	modifier = {
+		# Healthy and nutritious
+		pop_happiness = 0.05
+		pop_growth_speed = 0.05
+		pop_environment_tolerance = 0.05
+		leader_lifespan_add = 10
+		# Dairy Jobs Output +20%
+		planet_lv_dairy_jobs_produces_mult = 0.2
+	}
+	
+	slave_cost = {
+		energy = 250
+	}
+}
+
+# Fizzy Milk (advanced trait)
+trait_lv_fizzy_milk = {
+	cost = {
+		base = 6
+		modifier = {
+			add = -6
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	initial = no
+	potential_crossbreeding_chance = 0.5
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_fizzy_milk_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_all_male
+		trait_lv_watery_milk
+	}
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				AND = {
+					has_technology = tech_subdermal_stimulation
+					has_technology = tech_lv_transformation_candy_strawberry
+				}
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	modifier = {
+		# Tingly and sensitive breasts
+		pop_happiness = 0.05
+		leader_lifespan_add = 10
+		# Distracting
+		planet_jobs_produces_mult = -0.05
+		# Dairy Jobs Output +20% (exotic_gases)
+		planet_lv_dairy_jobs_produces_mult = 0.25
+		planet_lv_dairy_jobs_exotic_gases_produces_add = 0.1
+		# Sex Jobs Output +10% (exotic_gases)
+		pop_job_amenities_mult = 0.1
+		pop_job_trade_mult = 0.1
+		planet_lv_sex_jobs_produces_mult = 0.15
+		planet_lv_sex_jobs_exotic_gases_produces_add = 0.05
+	}
+	
+	slave_cost = {
+		energy = 300
+	}
+}
+
+# Drooling Vagina
+trait_lv_drooling_vagina = {
+	cost = {
+		base = 3
+		modifier = {
+			add = -3
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_drooling_vagina_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_all_male
+		trait_lv_sexually_inept
+	}
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				AND = {
+					has_technology = tech_glandular_acclimation
+					has_technology = tech_lv_transformation_candy_strawberry
+				}
+			}
+		}
+	}
+	
+	modifier = {
+		# Easy births
+		pop_happiness = 0.05
+		pop_growth_speed = 0.05
+		# Requires specialised clothing
+		planet_pops_consumer_goods_upkeep_mult = 0.2
+		# Dairy Jobs Output +5%
+		planet_lv_dairy_jobs_produces_mult = 0.05
+		# Sex Jobs Output +15%
+		pop_job_amenities_mult = 0.15
+		pop_job_trade_mult = 0.15
+		planet_lv_sex_jobs_produces_mult = 0.15
+	}
+	
+	slave_cost = {
+		energy = 150
+	}
+}
+
+# Shapely Ass
+trait_lv_shapely_ass = {
+	cost = {
+		base = 3
+		modifier = {
+			add = -3
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_shapely_ass_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_all_male
+		trait_lv_breeder_hips
+		trait_lv_titanic_evolution
+	}
+	
+	modifier = {
+		# Bubble butts!
+		pop_happiness = 0.05
+		pop_growth_speed = 0.05
+		pop_growth_from_immigration = 0.1
+		pop_environment_tolerance = 0.05
+		# Sex Jobs Output +10%
+		pop_job_amenities_mult = 0.1
+		pop_job_trade_mult = 0.1
+		planet_lv_sex_jobs_produces_mult = 0.1
+		# Adds 5 opinion with other empires (opinion_modifiers)
+	}
+	
+	slave_cost = {
+		energy = 150
+	}
+}
+
+# Breeder Hips
+trait_lv_breeder_hips = {
+	cost = {
+		base = 5
+		modifier = {
+			add = -5
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_breeder_hips_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_all_male
+		trait_lv_shapely_ass
+		trait_lv_titanic_evolution
+	}
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				AND = {
+					has_technology = tech_glandular_acclimation
+					has_technology = tech_lv_transformation_candy_strawberry
+				}
+			}
+		}
+	}
+	
+	modifier = {
+		# Luscious cheeks
+		pop_happiness = 0.05
+		pop_growth_speed = 0.1
+		pop_growth_from_immigration = 0.2
+		pop_environment_tolerance = 0.1
+		# Sex Jobs Output +20%
+		pop_job_amenities_mult = 0.2
+		pop_job_trade_mult = 0.2
+		planet_lv_sex_jobs_produces_mult = 0.2
+		# Adds 10 opinion with other empires (opinion_modifiers)
+	}
+	
+	slave_cost = {
+		energy = 250
+	}
+}
+
+############
+# Negative #
+############
+
+# Physical #
+
+# Small Breasts
+trait_lv_small_breasts = {
+	cost = {
+		base = -3
+		modifier = {
+			add = 3
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_small_breasts_effect
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				can_do_advanced_gene_modding = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	opposites = {
+		trait_lv_large_breasts
+		trait_lv_huge_breasts
+		trait_lv_excess_estrogen
+		trait_lv_all_male
+		trait_lv_titanic_evolution
+	}
+	
+	modifier = {
+		# Less distracting
+		planet_jobs_produces_mult = 0.05
+		# Decreased milk production
+		planet_livestock_food_produces_add = -1
+		# Cows need less food
+		planet_lv_milk_cow_upkeep_mult = -0.5
+		# Dairy Jobs Output -20%
+		planet_lv_dairy_jobs_produces_mult = -0.25
+	}
+	
+	slave_cost = {
+		energy = -150
+	}
+}
+
+# Watery Milk
+trait_lv_watery_milk = {
+	cost = {
+		base = -6
+		modifier = {
+			add = 6
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_watery_milk_effect
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				can_do_advanced_gene_modding = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	opposites = {
+		trait_lv_fizzy_milk
+		trait_lv_highly_nutritious_milk
+		trait_lv_all_male
+		trait_lv_titanic_evolution
+	}
+	
+	modifier = {
+		# Inefficient mammary glands
+		pop_happiness = -0.05
+		pop_growth_speed = -0.1
+		pop_environment_tolerance = -0.05
+		leader_lifespan_add = -10
+		# Dairy Jobs Output -15%
+		planet_lv_dairy_jobs_produces_mult = -0.15
+	}
+	
+	slave_cost = {
+		energy = -300
+	}
+}
+
+###########
+# Special #
+###########
+
+# Physical #
+
+# All Female
+trait_lv_all_female = {
+	cost = 0
+	sorting_priority = 15
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_all_female_effect
+	
+	leader_age_min = 16
+	
+	opposites = {
+		trait_lv_all_male
+		trait_lv_futanari
+		trait_lv_androgynous
+		trait_lv_large_penis
+		trait_lv_huge_penis
+		trait_lv_multiple_penises
+		trait_lv_high_volume_ejaculations
+		trait_lv_aphrodisiac_cum
+		trait_lv_addictive_cum
+		trait_lv_small_penis
+	}
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				has_technology = tech_lv_transformation_candy_orange
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				has_global_flag = lv_allow_special_trait_removal
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	modifier = {
+		# Always looking for alternatives
+		pop_growth_speed = -0.15
+		# Female only
+		army_damage_mult = -0.1
+		leader_lifespan_add = 20
+	}
+	
+	ai_weight = {
+		weight = 0.2
+	}
+}
+
+# Femboy transformation
+trait_lv_femboy01 = {		
+	cost = 0
+	potential_crossbreeding_chance = 0
+	initial = no
+	randomized = no
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip_with_modifiers = trait_lv_femboy01_effect
+	
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	
+	opposites = {
+		trait_lv_all_female
+		trait_lv_futanari
+	}
+
+	modifier = {
+		pop_growth_speed = -0.25
+		pop_happiness = -0.1
+	}
+	
+	slave_cost = {
+		energy = 200
+	}
+}
+
+trait_lv_femboy02 = {		
+	cost = 0
+	potential_crossbreeding_chance = 0
+	initial = no
+	randomized = no
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip_with_modifiers = trait_lv_femboy02_effect
+	
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	
+	opposites = {
+		trait_lv_all_female
+		trait_lv_futanari
+	}
+
+	modifier = {
+		pop_growth_speed = -0.5
+		pop_happiness = -0.2
+	}
+	
+	slave_cost = {
+		energy = 250
+	}
+}
+
+trait_lv_femboy03 = {		
+	cost = 0
+	potential_crossbreeding_chance = 0
+	initial = no
+	randomized = no
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip_with_modifiers = trait_lv_femboy03_effect
+	
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	infertile = yes
+	
+	opposites = {
+		trait_lv_all_female
+		trait_lv_futanari
+	}
+
+	modifier = {
+		planet_lv_sex_jobs_produces_mult = 0.05
+	}
+	
+	slave_cost = {
+		energy = 300
+	}
+}
+
+trait_lv_femboy04 = {		
+	cost = 0
+	potential_crossbreeding_chance = 0
+	initial = no
+	randomized = no
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip_with_modifiers = trait_lv_femboy04_effect
+	
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	infertile = yes
+	
+	opposites = {
+		trait_lv_all_female
+		trait_lv_futanari
+	}
+
+	modifier = {
+		pop_happiness = 0.05
+		planet_lv_sex_jobs_produces_mult = 0.1
+	}
+	
+	slave_cost = {
+		energy = 350
+	}
+}
+
+trait_lv_femboy05 = {		
+	cost = 0
+	potential_crossbreeding_chance = 0
+	initial = no
+	randomized = no
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip_with_modifiers = trait_lv_femboy05_effect
+	
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+	species_possible_merge_remove = {
+		always = no
+	}
+	
+	opposites = {
+		trait_lv_all_female
+		trait_lv_futanari
+	}
+
+	modifier = {
+		pop_happiness = 0.1
+		planet_lv_sex_jobs_produces_mult = 0.2
+		planet_jobs_unity_produces_mult = 0.05
+	}
+	
+	slave_cost = {
+		energy = 400
+	}
+}
+
+# Brood Parasite
+trait_lv_brood_parasite = {
+	cost = 0
+	sorting_priority = 15
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_brood_parasite_effect
+	
+	opposites = {
+		trait_lv_oviposition
+		trait_lv_sexually_repressed
+	}
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				has_technology = tech_lv_transformation_candy_orange
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				has_global_flag = lv_allow_special_trait_removal
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	modifier = {
+		# Always laying eggs
+		pop_growth_speed = 0.1
+		pop_amenities_usage_mult = 0.1
+		# Sex Jobs Output +10%
+		pop_job_amenities_mult = 0.1
+		pop_job_trade_mult = 0.1
+		planet_lv_sex_jobs_produces_mult = 0.1
+	}
+	
+	ai_weight = {
+		weight = 0.1
+	}
+}
+
+# Intercompatible Womb
+trait_lv_intercompatible_womb = {
+	cost = 0
+	sorting_priority = 15
+#	initial = no
+	randomized = no
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_intercompatible_womb_effect
+	
+	opposites = {
+		trait_lv_intercompatible_sperm
+		trait_lv_all_male
+		trait_lv_aggressively_adaptive_reproduction
+	}
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				has_technology = tech_lv_hybridization_mastery
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				has_global_flag = lv_allow_special_trait_removal
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	modifier = {
+		# Hard not to get pregnant
+		pop_growth_speed = 0.2
+	}
+}
+
+# Nano Forge Womb (advanced trait)
+trait_lv_nano_forge_womb = {
+	cost = 0
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_nano_forge_womb_effect
+	
+	opposites = {
+		trait_lv_all_male
+	}
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				AND = {
+					has_technology = tech_colonization_3
+					has_technology = tech_lv_transformation_candy_orange
+				}
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				has_global_flag = lv_allow_special_trait_removal
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	modifier = {
+		# Can't have normal babies
+		pop_happiness = -0.15
+		pop_growth_speed = -0.25
+		planet_jobs_unity_produces_mult = -0.1
+		# Needs lots of 'fuel'
+		planet_pops_organics_food_upkeep_mult = 0.5
+		# Sex Jobs Output +5% (living metal)
+		pop_job_amenities_mult = 0.05
+		pop_job_trade_mult = 0.05
+		planet_lv_sex_jobs_produces_mult = 0.05
+		planet_lv_sex_jobs_sr_living_metal_produces_add = 0.05
+	}
+	
+	ai_weight = {
+		weight = 0.1
+	}
+}
+
+#########
+# Combo #
+#########
+
+# Titanic Evolution
+trait_lv_titanic_evolution = {
+	cost = 0
+	sorting_priority = 18
+	initial = no
+	randomized = no
+#	modification = no
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+	custom_tooltip = trait_lv_titanic_evolution_effect
+	advanced_trait = yes
+	
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_elastic_orifices
+		trait_lv_huge_breasts
+		trait_lv_highly_nutritious_milk
+		trait_lv_breeder_hips
+		trait_lv_litters
+		trait_lv_sex_crazed
+		trait_lv_sexually_inept
+		trait_lv_large_breasts
+		trait_lv_excess_testosterone
+		trait_lv_small_breasts
+		trait_lv_all_male
+		trait_lv_watery_milk
+		trait_lv_shapely_ass
+		trait_lv_sexually_repressed
+		trait_lv_lewd_mind
+		trait_conformists
+		trait_sedentary
+		trait_decadent
+	}
+	
+	modifier = {
+		army_morale_damage_mult = 0.15
+		pop_happiness = 0.2
+		pop_growth_speed = 1.15
+		pop_growth_from_immigration = 0.45
+		pop_housing_usage_mult = 0.1
+		species_empire_size_mult = 0.1
+		pop_environment_tolerance = 0.15
+		planet_jobs_produces_mult = -0.55
+		leader_lifespan_add = 10
+		pop_government_ethic_attraction = -0.5
+		# Increased milk production
+		planet_livestock_food_produces_add = 1
+		# Cows need more food
+		planet_lv_milk_cow_upkeep_mult = 0.5
+		# Dairy Jobs Output +40%
+		planet_lv_dairy_jobs_produces_mult = 0.95
+		# Sex Jobs Output +90%
+		pop_job_amenities_mult = 0.9
+		pop_job_trade_mult = 0.9
+		planet_lv_sex_jobs_produces_mult = 1.45
+		# Adds 45 opinion with other empires (opinion_modifiers)
+	}
+	
+	slave_cost = {
+		energy = 850
+	}
+}
+
+###

@@ -1,0 +1,276 @@
+################################
+###     Commander Traits     ###
+################################
+#
+# Note: All traits were made with the intention of adding events/other things relating to them
+# eventually, even if not stated on the traits themselves. Also, all traits can and probably
+# will change again! These are not final effects or values at all.
+#
+# The following categories are more for organizational purposes than anything else:
+# Psychological  - Mentality or mind altering effects.
+# Physical       - Body parts or other physical attributes.
+#
+###
+
+############
+# Positive #
+############
+
+# Physical #
+
+# Masochistic 1
+leader_trait_commander_lv_masochistic = {
+	inline_script = {
+		script = trait/icon
+		CLASS = commander
+		ICON = "GFX_leader_trait_lv_masochistic"
+		RARITY = common
+		COUNCIL = no
+		TIER = 1
+	}
+	
+	self_modifier = {
+		# Likes it 'rough'
+		leaders_upkeep_mult = -0.15
+	}
+
+	army_modifier = {
+		#Likes it a little too much
+		army_health  = 0.05
+		army_disengage_chance_mult = -0.2
+	}
+	
+	leader_potential_add = {
+		OR = {
+			owner = { is_machine_empire = no }
+			species = { lv_is_a_smexy_robutt = yes }
+		}
+	}
+	
+	leader_class = { commander }
+	opposites = {
+		
+		# LV
+		leader_trait_lv_tormentor
+		leader_trait_lv_tormentor_2
+		leader_trait_commander_lv_rapist
+		leader_trait_commander_lv_rapist_2
+	}
+	selectable_weight = @class_trait_weight
+}
+
+# Masochistic 2
+leader_trait_commander_lv_masochistic_2 = {
+	replace_traits = { "leader_trait_commander_lv_masochistic" }
+	inline_script = {
+		script = trait/icon
+		CLASS = commander
+		ICON = "GFX_leader_trait_lv_masochistic"
+		RARITY = common
+		COUNCIL = no
+		TIER = 2
+	}
+	
+	self_modifier = {
+		# Likes it 'rough'
+		leaders_upkeep_mult = -0.15
+	}
+
+	army_modifier = {
+		#Likes it a little too much
+		army_health  = 0.05
+		army_disengage_chance_mult = -0.2
+	}
+	
+	leader_class = { commander }
+	opposites = {
+		
+		# LV
+		leader_trait_lv_tormentor
+		leader_trait_lv_tormentor_2
+		leader_trait_commander_lv_rapist
+		leader_trait_commander_lv_rapist_2
+	}
+}
+
+# Masochistic 3
+leader_trait_commander_lv_masochistic_3 = {
+	replace_traits = { "leader_trait_commander_lv_masochistic_2" }
+	inline_script = {
+		script = trait/icon
+		CLASS = commander
+		ICON = "GFX_leader_trait_lv_masochistic"
+		RARITY = common
+		COUNCIL = no
+		TIER = 3
+	}
+	
+	self_modifier = {
+		# Likes it 'rough'
+		leaders_upkeep_mult = -0.15
+	}
+
+	army_modifier = {
+		#Likes it a little too much
+		army_health  = 0.05
+		army_disengage_chance_mult = -0.2
+	}
+	
+	leader_class = { commander }
+	opposites = {
+		
+		# LV
+		leader_trait_lv_tormentor
+		leader_trait_lv_tormentor_2
+		leader_trait_commander_lv_rapist
+		leader_trait_commander_lv_rapist_2
+	}
+}
+
+# Throbbing Equine Penis
+leader_trait_commander_lv_equine_penis = {
+	inline_script = {
+		script = trait/icon
+		CLASS = commander
+		ICON = "GFX_leader_trait_lv_equine_penis"
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	
+	fleet_modifier = {
+		# No opening too tight!
+		ship_weapon_damage = 0.15
+		ship_weapon_range_mult = 0.25
+	}
+	army_modifier = {
+		# This will be you next time...
+		army_morale = 0.25
+		army_morale_damage_mult = 0.5
+	}
+	
+	leader_potential_add = {
+		OR = {
+			owner = { is_machine_empire = no }
+			species = { lv_is_a_smexy_robutt = yes }
+		}
+		species = { has_trait = trait_lv_equine_penis }
+	}
+	
+	leader_class = { commander }
+	opposites = {
+	
+		# LV
+		leader_trait_official_lv_equine_penis
+		leader_trait_scientist_lv_equine_penis
+	}
+	selectable_weight = 0
+}
+
+############
+# Negative #
+############
+
+# Psychological #
+
+# Rapist 1
+leader_trait_commander_lv_rapist = {
+	negative = yes
+	inline_script = {
+		script = trait/icon_negative
+		ICON = "GFX_leader_trait_lv_rapist"
+		COUNCIL = no
+		TIER = 1
+	}
+	
+	# Needs more toys
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = consumer_goods
+		AMOUNT = 5
+	}
+	
+	fleet_modifier = {
+		# Predator
+		ship_speed_mult = 0.05
+		ship_weapon_damage = 0.025
+		ship_weapon_range_mult = 0.1
+		# Always on the lookout
+		ship_sensor_range_add = 1
+		ship_hyperlane_range_add = 1
+	}
+	army_modifier = {
+		# Predator
+		army_morale = 0.05
+		army_damage_mult = 0.025
+		army_morale_damage_mult = 0.1
+		# Always on the lookout
+		army_collateral_damage_mult = 0.1
+		army_disengage_chance_mult = 0.1
+	}
+	
+	leader_potential_add = {
+		OR = {
+			owner = { is_machine_empire = no }
+			species = { lv_is_a_smexy_robutt = yes }
+		}
+	}
+	
+	leader_class = { commander }
+	opposites = {
+	
+		# LV
+		leader_trait_lv_tormentor
+		leader_trait_lv_tormentor_2
+	}
+	selectable_weight = @class_negative_trait_weight
+}
+
+# Rapist 2
+leader_trait_commander_lv_rapist_2 = {
+	negative = yes
+	replace_traits = { "leader_trait_commander_lv_rapist" }
+	inline_script = {
+		script = trait/icon_negative
+		ICON = "GFX_leader_trait_lv_rapist"
+		COUNCIL = no
+		TIER = 2
+	}
+	
+	# Needs more toys
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = consumer_goods
+		AMOUNT = 15
+	}
+	
+	fleet_modifier = {
+		# Predator
+		ship_speed_mult = 0.1
+		ship_weapon_damage = 0.05
+		ship_weapon_range_mult = 0.2
+		# Always on the lookout
+		ship_sensor_range_add = 2
+		ship_hyperlane_range_add = 2
+	}
+	army_modifier = {
+		# Predator
+		army_morale = 0.1
+		army_damage_mult = 0.05
+		army_morale_damage_mult = 0.2
+		# Always on the lookout
+		army_collateral_damage_mult = 0.2
+		army_disengage_chance_mult = 0.2
+	}
+	
+	leader_class = { commander }
+	opposites = {
+	
+		# LV
+		leader_trait_lv_tormentor
+		leader_trait_lv_tormentor_2
+	}
+	selectable_weight = @tier2_negative_trait_weight
+}
+
+###

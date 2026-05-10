@@ -1,0 +1,33 @@
+###############################
+###     Origin Concepts     ###
+###############################
+
+concept_lv_masochistic_trait = {
+	icon = "gfx/interface/icons/traits/trait_lv_masochistic.dds"
+}
+
+concept_lv_aggressively_adaptive_reproduction_trait = {
+	icon = "gfx/interface/icons/traits/trait_lv_aggressively_adaptive_reproduction.dds"
+}
+
+concept_lv_hybridization_mastery = {
+	icon = "gfx/interface/icons/technologies/tech_lv_hybridization_mastery.dds"
+}
+
+concept_lv_sex_bots_trait = {
+	icon = "gfx/interface/icons/traits/trait_lv_sex_bots.dds"
+}
+
+concept_pc_lv_sworld = {
+	icon = "gfx/interface/icons/concepts/planet_classes/pc_lv_sworld.dds"
+}
+
+concept_pc_lv_sringworld = {
+	icon = "gfx/interface/icons/concepts/planet_classes/pc_lv_sringworld.dds"
+}
+
+concept_pc_lv_stentacle = {
+	icon = "gfx/interface/icons/concepts/planet_classes/pc_lv_stentacle.dds"
+}
+
+###

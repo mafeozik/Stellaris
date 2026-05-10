@@ -1,0 +1,260 @@
+namespace = lv_game_start
+
+##########################
+###     Game Start     ###
+##########################
+
+country_event = {		# Add techs
+	id = lv_game_start.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { has_valid_civic = civic_lv_milk_ranchers }
+			give_technology = { message = no tech = tech_lv_lactation_drugs }
+		}
+		if = {
+			limit = { has_valid_civic = civic_lv_sex_slaves }
+			give_technology = { message = no tech = tech_lv_sex_slavery }
+		}
+		if = {
+			limit = { has_valid_civic = civic_lv_pleasure_suits }
+			give_technology = { message = no tech = tech_lv_mechanized_pleasure_suits }
+		}
+		if = {
+			limit = { owner = { has_origin = origin_lv_invasive_breeders } }
+			give_technology = { message = no tech = tech_lv_hybridization_mastery }
+		}
+		if = {
+			limit = { owner = { has_origin = origin_lv_sworld } }
+			give_technology = { message = no tech = tech_lv_lactation_drugs }
+			give_technology = { message = no tech = tech_lv_generalized_sexology_studies }
+			give_technology = { message = no tech = tech_lv_gem_incubation_insight }
+		}
+		if = {
+			limit = {
+				owner = {
+					has_origin = origin_lv_sworld
+					NOR = {
+						has_ethic = ethic_spiritualist
+						has_ethic = ethic_fanatic_spiritualist
+					}
+				}
+			}
+			give_technology = { message = no tech = tech_powered_exoskeletons }
+			give_technology = { message = no tech = tech_robotic_workers }
+		}
+		if = {
+			limit = { owner = { has_origin = origin_lv_sring } }
+			give_technology = { message = no tech = tech_lv_lactation_drugs }
+			give_technology = { message = no tech = tech_lv_generalized_sexology_studies }
+			give_technology = { message = no tech = tech_lv_gem_incubation_insight }
+			add_resource = { consumer_goods = 200 }
+		}
+		if = {
+			limit = {
+				owner = {
+					has_origin = origin_lv_sring
+					NOR = {
+						has_ethic = ethic_spiritualist
+						has_ethic = ethic_fanatic_spiritualist
+					}
+				}
+			}
+			give_technology = { message = no tech = tech_powered_exoskeletons }
+			give_technology = { message = no tech = tech_robotic_workers }
+		}
+		if = {
+			limit = { owner = { has_origin = origin_lv_stentacle } }
+			give_technology = { message = no tech = tech_lv_lactation_drugs }
+			give_technology = { message = no tech = tech_lv_generalized_sexology_studies }
+			give_technology = { message = no tech = tech_lv_gem_incubation_insight }
+		}
+	}
+}
+
+country_event = {		# Add other country things
+	id = lv_game_start.2
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { has_valid_civic = civic_lv_sex_slaves }
+			set_policy = {
+				policy = lv_prostitution_legislation
+				option = lv_prostitution_slavery
+				cooldown = yes
+			}
+		}
+	}
+}
+
+###########
+# Origins #
+###########
+
+planet_event = {
+	id = lv_game_start.3
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						has_origin = origin_lv_parallel_evolution
+						has_origin = origin_lv_sadomasochistic_evolution
+						has_origin = origin_lv_symbiotic_evolution
+					} 
+				}
+			}
+			
+			if = {
+				limit = { owner = { has_origin = origin_lv_parallel_evolution } }
+		
+				last_created_species = {
+					set_species_flag = lv_parallel_species@root.owner
+					set_citizenship_type = {
+						country = root.owner
+						type = citizenship_slavery
+					}
+				}
+				while = {
+					count = 12
+					create_pop = {
+						species = last_created_species
+						ethos = random
+					}
+				}
+			}
+			
+			if = {
+				limit = { owner = { has_origin = origin_lv_sadomasochistic_evolution } }
+		
+				last_created_species = {
+					set_species_flag = lv_sadomasochistic_species@root.owner
+					set_citizenship_type = {
+						country = root.owner
+						type = citizenship_slavery
+					}
+				}
+				while = {
+					count = 12
+					create_pop = {
+						species = last_created_species
+						ethos = { ethic = ethic_authoritarian }
+					}
+				}
+			}
+			
+			if = {
+				limit = { owner = { has_origin = origin_lv_symbiotic_evolution } }
+				
+				last_created_species = {
+					set_citizenship_type = {
+						country = root.owner
+						type = citizenship_full
+					}
+					set_living_standard = {
+						country = root.owner
+						type = living_standard_hive_mind
+					}
+				}
+				
+				while = {
+					count = 16
+					create_pop = {
+						species = last_created_species
+						ethos = random
+					}
+					last_created_pop = {
+						clear_ethos = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = lv_game_start.4
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+		create_species = {
+			name = "Sexoid"
+			plural = "Sexoids"
+			class = LVROBOT
+			portrait = "lv_sexbot_humanoid"
+			namelist = "MACHINE3"
+			traits = {
+				trait = "trait_mechanical"
+				trait = "trait_lv_sex_bots"
+			}
+			effect = {
+				save_event_target_as = lv_smexbot_species
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					NOR = {
+						has_ethic = ethic_spiritualist
+						has_ethic = ethic_fanatic_spiritualist
+					}
+				}
+			}
+			
+			if = {
+				limit = { owner = { has_origin = origin_lv_sworld } }
+				while = {
+					count = 3
+					create_pop = {
+						species = event_target:lv_smexbot_species
+					}
+				}
+			}
+			
+			if = {
+				limit = { owner = { has_origin = origin_lv_sring } }
+				while = {
+					count = 3
+					create_pop = {
+						species = event_target:lv_smexbot_species
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = lv_game_start.5
+	title = "pop.3.name"
+	desc = "pop.3.desc"
+	picture = GFX_evt_nuclear_explosion
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		every_owned_species = {
+			limit = { is_same_species = root }
+			set_species_flag = lv_inv_bred_main_sp_flag
+		}
+		
+		if = {
+			limit = { has_origin = origin_lv_invasive_breeders }
+			country_event = { id = lv_pop_events.11 days = 10 random = 10 }
+		}
+	}
+}
+
+###

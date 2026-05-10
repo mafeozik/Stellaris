@@ -1,0 +1,257 @@
+################################
+###     Special Projects     ###
+################################
+# Available requirements:
+#
+#	SKILLS
+#	#skill = 2
+#
+#	LEADER
+#	leader = scientist
+#	leader = admiral
+#	leader = general
+#	leader = ruler
+#	leader = governor
+#	
+#	MILITARY SHIPS
+#	shipclass_military = 1
+#	
+#	CIVILIAN SHIPS
+#	shipclass_constructor = 2
+#	shipclass_science_ship = 1
+#	shipclass_colonizer = 2
+#	
+#	ARMIES
+#	shipclass_transport = 1
+#	assault_armies = 2
+#	defense_armies = 1
+#	
+#	STATIONS
+#	research_station = yes
+#	mining_station = yes
+#	observation_station = yes
+#
+#	SCOPES
+#	abort_trigger
+#	this = country (project owner)
+#	from = event scope (planet or ship, MIGHT NOT EXIST)
+#	fromfrom = project creation scope (usually equals location)
+#	
+#	on_success
+#	this = event scope (ship or planet)
+#	from = project creation scope (usually equals location)
+#	
+#	on_cancel 
+#	this = country (project owner)
+#	from = event scope (planet or ship, MIGHT NOT EXIST)
+#	fromfrom = project creation scope (usually equals location)
+#
+#	on_fail
+#	this = country (project owner)
+#	from = project creation scope (usually equals location)
+#
+###
+
+#Raunchy Titanic Life Mean
+#This is the Xenophobe option for permanently removing the raunchy titanic life. The event choice leading to this also gives a good planet modifier though
+special_project = {
+	key = "LV_RAUNCHY_TITANIC_LIFE_REMOVAL_MEAN"
+	cost = 500
+	tech_department = society_technology
+	picture = GFX_evt_lv_raunchy_titans_1_small
+	icon = "gfx/interface/icons/situation_log/situation_log_debris.dds"
+	
+	event_scope = planet_event
+	
+	on_success = {
+		random_list = {
+			50 = { planet_event = { id = lv_colony_events.11 } }
+			50 = { planet_event = { id = lv_colony_events.12 } }
+		}
+	}
+}
+
+#Raunchy Titanic Life Removal
+#This is the default option for permanently removing the raunchy titanic life.
+special_project = {
+	key = "LV_RAUNCHY_TITANIC_LIFE_REMOVAL"
+	cost = 500
+	tech_department = society_technology
+	picture = GFX_evt_lv_raunchy_titans_1_small
+	icon = "gfx/interface/icons/situation_log/situation_log_debris.dds"
+	
+	event_scope = planet_event
+	
+	on_success = {
+		random_list = {
+			70 = { planet_event = { id = lv_colony_events.11 } }
+			30 = { planet_event = { id = lv_colony_events.12 } }
+		}
+	}
+}
+
+#Raunchy Titanic Life Removal Nice
+#This is the nice option for permanently removing the raunchy titanic life.
+special_project = {
+	key = "LV_RAUNCHY_TITANIC_LIFE_REMOVAL_NICE"
+	cost = 500
+	tech_department = society_technology
+	picture = GFX_evt_lv_raunchy_titans_1_small
+	icon = "gfx/interface/icons/situation_log/situation_log_debris.dds"
+	
+	event_scope = planet_event
+	
+	on_success = {
+		random_list = {
+			90 = { planet_event = { id = lv_colony_events.11 } }
+			10 = { planet_event = { id = lv_colony_events.12 } }
+		}
+	}
+}
+
+#Hidden Flesh Pit Rescue
+special_project = {
+	key = "LV_RESCUE_CAPTURED_CREW_MEMBERS"
+	cost = 0
+	days_to_research = 90
+	tech_department = society_technology
+	picture = GFX_asteroid_field
+	
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+		#skill = 3
+	}
+	
+	on_success = {
+		random_list = {
+			40 = { ship_event = { id = lv_hidden_flesh_pit.3 } }
+			30 = { ship_event = { id = lv_hidden_flesh_pit.4 } }
+			30 = { ship_event = { id = lv_hidden_flesh_pit.5 } }
+		}
+	}
+}
+
+#Extract Rogue Sexy Scientist
+special_project = {
+	key = "LV_EXTRACT_ROGUE_SEXY_SCIENTIST"
+	cost = 0
+	days_to_research = 180
+	tech_department = society_technology
+	timelimit = 1080
+	picture = GFX_evt_gas_giant
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_transport = 2
+	}
+	
+	on_success = {
+		ship_event = { id = lv_observation_events.10 }
+	}
+	
+	on_fail = {
+		owner = {
+			country_event = { id = lv_observation_events.20 }
+		}
+	}
+	
+	abort_trigger = {
+		exists = event_target:pre_ftl_planet
+		event_target:pre_ftl_planet = {
+			OR = {
+				NOT = { exists = event_target:pre_ftl_country }
+				AND = {
+					exists = owner
+					owner = {
+						NOT = {
+							is_same_value = event_target:pre_ftl_country
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#Extract Enslaved Scientists
+special_project = {
+	key = "LV_EXTRACT_ENSLAVED_SCIENTISTS"
+	cost = 0
+	days_to_research = 180
+	tech_department = society_technology
+	timelimit = 320 # in days
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_transport = 2
+	}
+	
+	on_success = {
+		ship_event = { id = lv_observation_events.31 }
+	}
+	
+	on_fail = {
+		owner = {
+			country_event = { id = lv_observation_events.32 }
+		}
+	}
+	
+	abort_trigger = {
+		exists = event_target:pre_ftl_planet
+		event_target:pre_ftl_planet = {
+			OR = {
+				NOT = { exists = event_target:pre_ftl_country }
+				AND = {
+					exists = owner
+					owner = {
+						NOT = {
+							is_same_value = event_target:pre_ftl_country
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# Implant Modification
+special_project = {
+	key = "LV_SEXY_MODIFICATION_PROJECT"
+	cost = 500
+	tech_department = society_technology
+	picture = GFX_evt_lv_sexy_modification_1_small
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+	}
+	
+	on_success = {
+		ship_event = { id = lv_observation_events.1213 }
+	}
+	
+	abort_trigger = {
+		exists = event_target:pre_ftl_planet
+		event_target:pre_ftl_planet = {
+			OR = {
+				NOT = { exists = event_target:pre_ftl_country }
+				AND = {
+					exists = owner
+					owner = {
+						NOT = {
+							is_same_value = event_target:pre_ftl_country
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+###

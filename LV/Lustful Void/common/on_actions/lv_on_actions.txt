@@ -1,0 +1,221 @@
+##########################
+###     On-Actions     ###
+##########################
+
+# No scope
+on_game_start = {
+	events = {
+		lv_options.1
+		lv_event_mods.10
+		lv_trait_cleanup.9
+		lv_trait_cleanup.50
+		lv_sworld_origin_event.1
+		lv_arcsite_events.21
+		lv_sring_origin_event.1
+		lv_stentacle_origin_event.1
+		lv_colony_gate.9
+	}
+}
+
+# No scope, like on_game_start
+on_monthly_pulse = {
+	events = {
+		lv_colony_gate.4
+	}
+}
+
+# Via pre_ftl_tech_progress_situation / preftl.50
+# See also: on_monthly_pulse_pre_ftl_observation_broken_shackles (below)
+on_monthly_pulse_pre_ftl_observation = {
+	random_events = {
+		# Pre-Industrial Events
+		50 = lv_observation_events.1	# Sexy Rogue Scientist
+		# Non-Era Related Observation Events
+		50 = lv_observation_events.201	# Close Encounters of the Probing Kind
+		50 = lv_observation_events.212	# Sexy Modification
+	}
+}
+
+# The following are considered valid for "Broken Shackles" empires observing their original civilizations; see also on_monthly_pulse_pre_ftl_observation (above)
+# Via pre_ftl_tech_progress_situation / preftl.50
+on_monthly_pulse_pre_ftl_observation_broken_shackles = {
+	random_events = {
+		50 = lv_observation_events.1	# Sexy Rogue Scientist
+		50 = lv_observation_events.201	# Close Encounters of the Probing Kind
+		50 = lv_observation_events.212	# Sexy Modification
+	}
+}
+
+# No scope, like on_game_start
+on_yearly_pulse = {
+	events = {
+		lv_colony_gate.2
+		lv_building_events.2	# Cow transformation
+		lv_pop_events.101		# Feminization
+	}
+}
+
+# No scope, like on_game_start
+on_five_year_pulse = {
+	events = {
+		lv_biodiversity.1
+		lv_event_mods.10
+		lv_colony_gate.1
+		lv_colony_gate.9
+		lv_relic_events.23
+		lv_trait_cleanup.50
+	}
+}
+
+# a new leader is generated for an empire, to be available for recruitment
+# scope: country, from: leader
+on_leader_spawned = {
+	events = {
+		lv_leader_events.1
+		lv_leader_events.2
+		lv_leader_events.3
+		lv_leader_events.4
+		lv_leader_events.104
+	}
+}
+
+# called during empire initialization when starting a new game
+# scope: country
+empire_init_add_technologies = {
+	events = {
+		lv_game_start.1
+	}
+}
+
+# Called during empire initialization when starting a new game if has_secondary_species game rule is true.
+# Called before empire_init_create_capital_pops.
+# scope: planet
+# from: founder species
+# fromfrom: secondary species (if exists)
+empire_init_capital_planet = {
+	events = {
+		lv_game_start.3
+		lv_game_start.4
+		# at this point the species might have changed (because we added traits), so FROMFROM might not be the secondary species anymore
+	}
+}
+
+on_game_start_country = {
+	events = {
+		lv_game_start.2
+		lv_game_start.5
+	}
+}
+
+# From = Tile
+# This = Planet
+on_blocker_cleared = {
+	events = {
+		lv_event_mods.1		# Evaluate planet
+	}
+}
+
+on_pop_abducted	= {
+	events = {
+		lv_event_mods.11		# Evaluate planet in FROM
+	}
+}
+
+on_pop_added = {
+	events = {
+		lv_event_mods.11		# Evaluate planet in FROM
+	}
+}
+
+on_pop_grown = {
+	events = {
+		lv_event_mods.1		# Evaluate planet
+	}
+}
+
+on_pop_assembled = {
+	events = {
+		lv_event_mods.1		# Evaluate planet
+	}
+}
+
+on_pop_purged = {
+	events = {
+		lv_event_mods.1		# Evaluate planet
+	}
+}
+
+on_pop_declined = {
+	events = {
+		lv_event_mods.1		# Evaluate planet
+	}
+}
+
+on_pop_displaced = {
+	events = {
+		lv_event_mods.1		# Evaluate planet
+	}
+}
+
+on_planet_transfer = {
+	events = {
+		lv_event_mods.1		# Evaluate planet
+	}
+}
+
+# Triggers country_event for the attacker upon victory
+# (Before controller is switched)
+# This = country, leader attacker
+# From = country, planet owner
+# FromFrom = planet
+on_planet_attackers_win = {
+	events = { 
+	}
+	random_events = {
+		70 = lv_colony_war_events.gate
+		#30 = sadist_raid_gate.1
+	}
+}
+
+# This = owner of fleet 1 (winner)
+# From = owner of fleet 2 (loser)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+on_space_battle_won = {
+	events = {
+	}
+	random_events = {
+		90 = lv_null_event.2
+		10 = lv_fleet_events.1
+	}
+}
+
+# This = owner of fleet 1 (combatant)
+# From = owner of fleet 2 (destroyed)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+on_fleet_destroyed_perp = {
+	events = {
+	}
+	random_events = {
+		90 = lv_null_event.2
+		10 = lv_fleet_events.1
+	}
+}
+
+# X years has passed since a planet was colonized (won't trigger on empire homeworld)
+on_colony_1_year_old = {
+	events = {
+		lv_colony_events.6	# "Sexyplanet" Modifiers Gatekeeper
+	}
+
+	random_events = {
+		300 = 0
+
+		# Colony Events & Chains		
+		5 = lv_colony_events.1 # Invasive Tentacles
+		5 = lv_colony_events.2 # Xeno Zoo Breakout
+	}
+}
+
+###

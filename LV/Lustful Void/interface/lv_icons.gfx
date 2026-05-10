@@ -1,0 +1,19 @@
+#####################
+###     Icons     ###
+#####################
+
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_lv_orbitalring_nurture_hub"
+		texturefile = "gfx/interface/icons/modules/lv_orbitalring_nurture_hub.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_lv_orbitalring_brothel_hub"
+		texturefile = "gfx/interface/icons/modules/lv_orbitalring_brothel_hub.dds"
+	}
+
+}
+
+###

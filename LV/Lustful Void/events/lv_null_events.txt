@@ -1,0 +1,19 @@
+namespace = lv_null_event
+
+###########################
+###     Null Events     ###
+###########################
+
+planet_event = {
+	id = lv_null_event.1
+	hide_window = yes
+	is_triggered_only = yes
+}
+
+country_event = {
+	id = lv_null_event.2
+	hide_window = yes
+	is_triggered_only = yes
+}
+
+###

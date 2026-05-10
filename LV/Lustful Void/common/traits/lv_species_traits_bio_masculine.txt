@@ -1,0 +1,715 @@
+###########################################
+###     Biological/Masculine Traits     ###
+###########################################
+#
+# Note: All traits were made with the intention of adding events/other things relating to them
+# eventually, even if not stated on the traits themselves. Also, all traits can and probably
+# will change again! These are not final effects or values at all.
+#
+# The potential_crossbreeding_chance modifier is used for base game crossbreeding compatibility 
+# only.
+#
+# The following categories are more for organizational purposes than anything else:
+# Psychological  - Mentality or mind altering effects.
+# Physical       - Body parts or other physical attributes.
+#
+###
+
+############
+# Positive #
+############
+
+# Psychological #
+
+# Aphrodisiac Cum (advanced trait)
+trait_lv_aphrodisiac_cum = {
+	cost = {
+		base = 6
+		modifier = {
+			add = -6
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	initial = no
+	potential_crossbreeding_chance = 0.5
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_aphrodisiac_cum_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_all_female
+		trait_lv_sexually_inept
+		trait_lv_sexually_repressed
+		trait_lv_addictive_cum
+	}
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				AND = {
+					has_technology = tech_psionic_theory
+					has_technology = tech_lv_transformation_candy_blueberry
+				}
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	modifier = {
+		# Natural aphrodisiac
+		pop_happiness = 0.05
+		pop_growth_speed = 0.05
+		pop_growth_from_immigration = 0.1
+		# Blowjob fetishists
+		army_morale = 0.1
+		planet_jobs_unity_produces_mult = 0.05
+		species_empire_size_mult = -0.1
+		# Add cum stud things when made
+		# Sex Jobs Output +10% (zro)
+		pop_job_amenities_mult = 0.1
+		pop_job_trade_mult = 0.1
+		planet_lv_sex_jobs_produces_mult = 0.1
+		planet_lv_sex_jobs_sr_zro_produces_add = 0.05
+		# Adds 5 opinion with other empires (opinion_modifiers)
+	}
+	
+	slave_cost = {
+		energy = 300
+	}
+}
+
+# Addictive Cum (advanced trait)
+trait_lv_addictive_cum = {
+	cost = {
+		base = 8
+		modifier = {
+			add = -8
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	initial = no
+	potential_crossbreeding_chance = 0.5
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_addictive_cum_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_all_female
+		trait_lv_sexually_inept
+		trait_lv_sexually_repressed
+		trait_lv_aphrodisiac_cum
+	}
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				AND = {
+					has_tradition = tr_genetics_resequencing
+					has_technology = tech_lv_transformation_candy_blueberry
+				}
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	modifier = {
+		# Powerful aphrodisiac
+		pop_growth_speed = 0.25
+		pop_growth_from_immigration = 0.1
+		# Penis worship
+		army_morale = 0.2
+		pop_happiness = 0.1
+		planet_jobs_unity_produces_mult = 0.1
+		pop_housing_usage_mult = -0.1
+		species_empire_size_mult = -0.2
+		# Add cum stud things when made
+		# Sex Jobs Output +10% (dark_matter)
+		pop_job_amenities_mult = 0.1
+		pop_job_trade_mult = 0.1
+		planet_lv_sex_jobs_produces_mult = 0.1
+		planet_lv_sex_jobs_sr_dark_matter_produces_add = 0.05
+		# Adds 15 opinion with other empires (opinion_modifiers)
+	}
+	
+	slave_cost = {
+		energy = 400
+	}
+}
+
+# Physical #
+
+# Excess Testosterone
+trait_lv_excess_testosterone = {
+	cost = {
+		base = 1
+		modifier = {
+			add = -1
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_excess_testosterone_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_excess_estrogen
+		trait_lv_titanic_evolution
+	}
+	
+	modifier = {
+		# Very masculine
+		army_damage_mult = 0.15
+		planet_jobs_minerals_produces_mult = 0.1
+		planet_jobs_food_produces_mult = -0.1
+		planet_jobs_unity_produces_mult = 0.1
+		# Dairy Jobs Output +10% (cum) - To be made still!
+		#planet_lv_dairy_jobs_produces_mult = 0.1
+	}
+	
+	slave_cost = {
+		energy = 50
+	}
+}
+
+# Large Penis
+trait_lv_large_penis = {
+	cost = {
+		base = 3
+		modifier = {
+			add = -3
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_large_penis_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_huge_penis
+		trait_lv_sexually_inept
+		trait_lv_small_penis
+		trait_lv_all_female
+	}
+	
+	modifier = {
+		# Draws attention
+		pop_growth_speed = 0.05
+		pop_growth_from_immigration = 0.05
+		# Increased cum production
+		planet_livestock_food_produces_add = 0.25
+		# Add cum stud things when made
+		# Sex Jobs Output +10%
+		pop_job_amenities_mult = 0.1
+		pop_job_trade_mult = 0.1
+		planet_lv_sex_jobs_produces_mult = 0.1
+		# Adds 5 opinion with other empires (opinion_modifiers)
+	}
+	
+	slave_cost = {
+		energy = 150
+	}
+}
+
+# Huge Penis
+trait_lv_huge_penis = {
+	cost = {
+		base = 5
+		modifier = {
+			add = -5
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_huge_penis_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_excess_estrogen
+		trait_lv_large_penis
+		trait_lv_small_penis
+		trait_lv_sexually_inept
+		trait_lv_all_female
+	}
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				AND = {
+					has_technology = tech_glandular_acclimation
+					has_technology = tech_lv_transformation_candy_blueberry
+				}
+			}
+		}
+	}
+	
+	modifier = {
+		# Draws a lot of attention
+		pop_happiness = 0.05
+		pop_growth_speed = 0.1
+		pop_growth_from_immigration = 0.1
+		planet_jobs_produces_mult = -0.05
+		# Increased cum production
+		planet_livestock_food_produces_add = 0.5
+		# Add cum stud things when made
+		# Sex Jobs Output +20%
+		pop_job_amenities_mult = 0.2
+		pop_job_trade_mult = 0.2
+		planet_lv_sex_jobs_produces_mult = 0.2
+		# Adds 10 opinion with other empires (opinion_modifiers)
+	}
+	
+	slave_cost = {
+		energy = 250
+	}
+}
+
+# Multiple Penises
+trait_lv_multiple_penises = {
+	cost = {
+		base = 4
+		modifier = {
+			add = -4
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_multiple_penises_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_all_female
+		trait_lv_sexually_inept
+	}
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				AND = {
+					has_technology = tech_gene_expressions
+					has_technology = tech_lv_transformation_candy_blueberry
+				}
+			}
+		}
+	}
+	
+	modifier = {
+		# Multiple penetrations
+		pop_growth_speed = 0.1
+		pop_growth_from_immigration = 0.1
+		# Increased cum production
+		planet_livestock_food_produces_add = 1
+		# Add cum stud things when made
+		# Sex Jobs Output +20%
+		pop_job_amenities_mult = 0.2
+		pop_job_trade_mult = 0.2
+		planet_lv_sex_jobs_produces_mult = 0.2
+		# Adds 5 opinion with other empires (opinion_modifiers)
+	}
+	
+	slave_cost = {
+		energy = 200
+	}
+}
+
+# Equine Penis
+trait_lv_equine_penis = {
+	cost = {
+		base = 5
+		modifier = {
+			add = -5
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	initial = yes
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_equine_penis_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_all_female
+		trait_lv_sexually_inept
+#		trait_lvex_knotted_penis
+	}
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				AND = {
+					has_technology = tech_glandular_acclimation
+					has_technology = tech_lv_transformation_candy_blueberry
+				}
+			}
+		}
+	}
+	
+	modifier = {
+		# Impressive girth
+		pop_growth_speed = 0.15
+		pop_growth_from_immigration = 0.25
+		# Gets in the way
+		planet_jobs_produces_mult = -0.05
+		# Copious cum production
+		# Add cum stud things when made
+		planet_livestock_food_produces_add = 1
+		# Sex Jobs Output +30%
+		pop_job_amenities_mult = 0.35
+		pop_job_trade_mult = 0.35
+		planet_lv_sex_jobs_produces_mult = 0.35
+		# Adds 20 opinion with other empires (opinion_modifiers)
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 10
+			has_trait = trait_lv_futanari
+		}
+		modifier = {
+			factor = 15
+			OR = {
+				has_trait = trait_lv_small_penis
+				has_trait = trait_lv_large_penis
+				has_trait = trait_lv_huge_penis
+			}
+		}
+	}
+	
+	slave_cost = {
+		energy = 500
+	}
+}
+
+# High Volume Ejaculations
+trait_lv_high_volume_ejaculations = {
+	cost = {
+		base = 4
+		modifier = {
+			add = -4
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_high_volume_ejaculations_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_all_female
+		trait_lv_sexually_inept
+	}
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				AND = {
+					has_technology = tech_glandular_acclimation
+					has_technology = tech_lv_transformation_candy_blueberry
+				}
+			}
+		}
+	}
+	
+	modifier = {
+		# Cum showers
+		pop_growth_speed = 0.15
+		pop_growth_from_immigration = 0.1
+		# Everything is always sticky
+		pop_happiness = -0.05
+		planet_livestock_food_produces_add = 2
+		planet_pops_consumer_goods_upkeep_mult = 0.1
+		# Add cum stud things when made
+		# Sex Jobs Output +10%
+		pop_job_amenities_mult = 0.1
+		pop_job_trade_mult = 0.1
+		planet_lv_sex_jobs_produces_mult = 0.1
+	}
+	
+	slave_cost = {
+		energy = 200
+	}
+}
+
+############
+# Negative #
+############
+
+# Physical #
+
+# Small Penis
+trait_lv_small_penis = {
+	cost = {
+		base = -5
+		modifier = {
+			add = 5
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_small_penis_effect
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				can_do_advanced_gene_modding = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	opposites = {
+		trait_lv_excess_testosterone
+		trait_lv_large_penis
+		trait_lv_huge_penis
+		trait_lv_all_female
+	}
+	
+	modifier = {
+		# Touchy subject
+		pop_happiness = -0.05
+		pop_growth_speed = -0.1
+		pop_growth_from_immigration = -0.2
+		pop_ethic_xenophobe_attraction_mult = 0.1
+		# Decreased cum production
+		planet_livestock_food_produces_add = -0.5
+		# Add cum stud things when made
+		# Sex Jobs Output -20%
+		pop_job_amenities_mult = -0.2
+		pop_job_trade_mult = -0.2
+		planet_lv_sex_jobs_produces_mult = -0.2
+		# Adds -10 opinion with other empires (opinion_modifiers)
+	}
+	
+	slave_cost = {
+		energy = -250
+	}
+}
+
+###########
+# Special #
+###########
+
+# Physical #
+
+# All Male (found alternative)
+trait_lv_all_male = {
+	cost = 0
+	sorting_priority = 15
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_all_male_effect
+	
+	leader_age_min = 16
+	
+	opposites = {
+		trait_lv_all_female
+		trait_lv_futanari
+		trait_lv_androgynous
+		trait_lv_large_breasts
+		trait_lv_huge_breasts
+		trait_lv_multiple_breasts
+		trait_lv_high_volume_lactation
+		trait_lv_fizzy_milk
+		trait_lv_highly_nutritious_milk
+		trait_lv_drooling_vagina
+		trait_lv_aphrodisiac_milk
+		trait_lv_fuckable_nipples
+		trait_lv_litters
+		trait_lv_shapely_ass
+		trait_lv_breeder_hips
+		trait_lv_small_breasts
+		trait_lv_watery_milk
+#		trait_lv_cybernetic_minifacturing_fabrication_womb
+		trait_lv_titanic_evolution
+	}
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				has_technology = tech_lv_transformation_candy_orange
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				has_global_flag = lv_allow_special_trait_removal
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	modifier = {
+		# Always looking for alternatives
+		pop_growth_speed = -0.15
+		# Male only
+		army_damage_mult = 0.1
+		leader_lifespan_add = -20
+	}
+	
+	ai_weight = {
+		weight = 0.2
+	}
+}
+
+# Intercompatible Sperm
+trait_lv_intercompatible_sperm = {
+	cost = 0
+	sorting_priority = 15
+#	initial = no
+	randomized = no
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_intercompatible_sperm_effect
+	
+	opposites = {
+		trait_lv_intercompatible_womb
+		trait_lv_all_female
+		trait_lv_aggressively_adaptive_reproduction
+	}
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				has_technology = tech_lv_hybridization_mastery
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				has_global_flag = lv_allow_special_trait_removal
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	modifier = {
+		# Hard not to impregnate
+		pop_growth_speed = 0.2
+	}
+}
+
+###

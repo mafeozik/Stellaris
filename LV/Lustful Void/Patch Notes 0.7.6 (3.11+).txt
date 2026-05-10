@@ -1,0 +1,431 @@
+LV v0.7.6.0 (for game version 3.11+)
+
+(-- Notes --)
+
+This update focuses mainly on updating old code and a general balance pass to align better 
+with base game systems. This process takes a while and will be completed over multiple 
+updates.
+
+Irony versions have been removed as they are no longer needed.
+
+The next dlc will give me an excuse to finally make those cybernetics traits I've wanted
+to make! If you have any ideas for cybernetics, feel free to share :)
+
+(-- New stuff! --)
+
+-	Updated for game version 3.11!
+
+(-- Fixes/changes --)
+
+Consider this more as a log than a feature list this time, it's a bit messy.
+
+# Armies #
+
+-	Pleasure Suits:
+
+	-	Added proper ai weight to help it decide if there are better options available.
+	
+	
+# Buildings #
+
+-	Comfort Zone:
+
+	-	Build time increased from 180 to 360.
+	-	Potential conditions updated.
+	-	Build cost reduced from 500 minerals to 400. Upkeep reduced from 4 energy to 2.
+	-	Comfort worker jobs provided reduced from 3 to 2.
+	-	Removed ai_weight and ai_resource_production categories (no longer needed).
+	
+-	Comfort Megaplex:
+
+	-	Build time increased from 360 to 480.
+	-	Potential and allow conditions updated.
+	-	Build cost reduced from 750 minerals to 600. Upkeep reduced from 6 energy to 5.
+	-	Exotic gases cost and upkeep unchanged.
+	-	Comfort worker jobs provided reduced from 6 to 4.
+	-	Comfort worker jobs per pop unchanged.
+	-	Removed ai_weight and ai_resource_production categories (no longer needed).
+	
+-	Nurture Zone:
+
+	-	Nurture drone jobs provided reduced from 4 to 2.
+	-	Other than that, same changes as Comfort Zone.
+	
+-	Nurture Megaplex:
+
+	-	Nurture drone jobs provided reduced from 8 to 4.
+	-	Other than that, same changes as Comfort Megaplex.
+	
+-	Corporate Dairy:
+
+	-	Milk cow/drone jobs provided reduced from 2 to 1.
+	-	Build cost reduced from 750 minerals to 500. Upkeep reduced from 4 energy to 2.
+	-	Food produced for branch office owner increased from 10 to 15.
+	-	Minerals produced for branch office owner increased from 6 to 15 (lithoids).
+	-	Removed consumer goods production.
+	
+-	Pornography Studio:
+
+	-	Whore jobs provided reduced from 2 to 1.
+	-	Pleasure drone jobs provided reduced from 2 to 1.
+	-	Sexbot drone jobs provided reduced from 2 to 1.
+	-	Additional normal whore/pleasure drone jobs removed if owner has Mind Over Matter AP.
+	-	Build cost reduced from 750 minerals to 500. Upkeep reduced from 4 energy to 2.
+	-	Ai weight updated.
+	
+-	Escort Services:
+
+	-	Additional normal pleasure drone jobs removed if owner has Mind Over Matter AP.
+	-	Psi pleasure drone jobs provided increased from 1 to 2 (hivemind).
+	-	Build cost reduced from 1000 minerals to 800.
+	-	Ai weight updated, allowing ai to build this now.
+	
+-	Spaceship Decorators:
+
+	-	Additional normal whore/pleasure drone jobs removed if owner has Mind Over Matter or The 
+		Flesh Is Weak AP.
+	-	Psi whore/pleasure drone jobs provided increased from 1 to 2.
+	-	Sexbot jobs provided increased from 1 to 2.
+	-	Build cost reduced from 750 minerals to 500. Upkeep reduced from 4 energy to 2.
+	-	Ai weight reduced from 10 to 1.
+	
+-	Orgy Center:
+
+	-	Ai weight reduced from 5 to 2.
+	-	Other than that, same changes as Spaceship Decorators.
+	
+-	Erotic Research Institute:
+
+	-	Ai weight updated.
+	-	Other than that, same changes as Spaceship Decorators.
+	
+-	Recruitment Center:
+
+	-	Additional normal pleasure drone jobs removed if owner has Mind Over Matter AP.
+	-	Pleasure drone/psi pleasure drone/sexbot drone jobs provided increased from 2 to 3.
+	-	Escort jobs provided increased from 1 to 2.
+	-	Build cost increased from 1000 minerals to 2000. Upkeep reduced from 8 energy to 4.
+	
+-	Elite Corporate Dairy:
+
+	-	Build time reduced from 270 to 180.
+	-	Milk cow/drone jobs provided reduced from 3 to 2.
+	-	Pleasure drone jobs provided reduced from 2 to 1.
+	-	Sexbot jobs provided reduced from 2 to 1.
+	-	Additional normal pleasure drone jobs removed if owner has Mind Over Matter AP.
+	-	Build cost reduced from 560 minerals to 250. Upkeep reduced from 4 energy to 2.
+	-	Food produced for branch office owner increased from 12 to 20.
+	-	Minerals produced for branch office owner increased from 6 to 20 (lithoids).
+	-	Removed consumer goods production.
+	
+-	Elite Pornography Studio:
+
+	-	Build time reduced from 270 to 180.
+	-	Pleasure drone jobs provided reduced from 4 to 3.
+	-	Psi whore/pleasure drone jobs provided increased from 2 to 3 (1 to 2 for regular 
+		empires) if owner has Mind Over Matter AP.
+	-	Sexbot jobs provided reduced from 4 to 3 (1 to 2 for regular empires).
+	-	Additional normal whore/pleasure drone jobs removed if owner has Mind Over Matter or The 
+		Flesh Is Weak AP.
+	-	Build cost reduced from 500 minerals to 250. Upkeep reduced from 4 energy to 2.
+	-	Ai weight updated.
+	
+-	Elite Escort Services:
+
+	-	Build time reduced from 480 to 240.
+	-	Pleasure drone jobs provided reduced from 4 to 3.
+	-	Psi whore/pleasure drone jobs provided increased from 2 to 3 if owner has Mind Over 
+		Matter AP.
+	-	Sexbot drone jobs provided reduced from 4 to 3.
+	-	Escort jobs provided increased from 2 to 3.
+	-	Build cost reduced from 800 minerals to 400.
+	-	Ai weight updated, allowing ai to build this now.
+	
+-	Elite Spaceship Decorators:
+
+	-	Build time reduced from 270 to 180.
+	-	Pleasure drone jobs provided reduced from 4 to 3.
+	-	Psi whore/pleasure drone jobs provided increased from 2 to 3 (1 to 2 for regular 
+		empires) if owner has Mind Over Matter AP.
+	-	Sexbot jobs provided reduced from 4 to 3 (1 to 2 for regular empires).
+	-	Additional normal whore/pleasure drone jobs removed if owner has Mind Over Matter or The 
+		Flesh Is Weak AP.
+	-	Build cost reduced from 500 minerals to 250. Upkeep reduced from 4 energy to 2.
+	-	Ai weight reduced from 10 to 1.
+	
+-	Elite Orgy Center:
+
+	-	Build time reduced from 360 to 240.
+	-	Ai weight reduced from 5 to 2.
+	-	Other than that, same changes as Elite Spaceship Decorators.
+	
+-	Elite Erotic Research Institute:
+
+	-	Build time reduced from 360 to 240.
+	-	Ai weight updated.
+	-	Other than that, same changes as Elite Spaceship Decorators.
+	
+-	Elite Recruitment Center:
+
+	-	Build time reduced from 360 to 300.
+	-	Additional normal pleasure drone jobs removed if owner has Mind Over Matter AP.
+	-	Pleasure drone/psi pleasure drone/sexbot drone jobs provided increased from 2 to 3.
+	-	Escort jobs provided increased from 2 to 3.
+	-	Build cost increased from 800 minerals to 1000. Upkeep reduced from 8 energy to 4.
+	
+-	Private Farm:
+
+	-	Now provides 5 trade value.
+	-	Milk cow/drone jobs provided reduced from 3 to 1.
+	-	Build cost reduced from 750 minerals to 500. Upkeep reduced from 4 energy to 2.
+	-	Food produced for branch office owner increased from 10 to 15.
+	-	Minerals produced for branch office owner increased from 6 to 15 (lithoids).
+	-	Removed consumer goods production.
+	-	Ai weight updated, allowing ai to build this now.
+	
+-	Blackmail Dungeon:
+
+	-	Now provides 5 trade value.
+	-	Whore jobs provided reduced from 3 to 1.
+	-	Pleasure drone jobs provided reduced from 3 to 1.
+	-	Sexbot drone jobs provided reduced from 3 to 1.
+	-	Additional normal whore/pleasure drone jobs removed if owner has Mind Over Matter AP.
+	-	Build cost reduced from 750 minerals to 500. Upkeep reduced from 4 energy to 2.
+	-	Consumer goods production reduced from 8 to 6.
+	-	Ai weight updated.
+	
+-	Rape Services:
+
+	-	Build time increased from 360 to 480.
+	-	Build cap set to 1 (per planet).
+	-	Amenities production reduced from 12 to 10.
+	-	Energy production reduced from 50 to 10.
+	-	Additional normal pleasure drone jobs removed if owner has Mind Over Matter AP.
+	-	Psi pleasure drone jobs provided increased from 1 to 2 (hivemind).
+	-	Escort jobs increased from 1 to 2.
+	-	Build cost reduced from 1000 minerals to 800.
+	-	Ai weight updated, allowing ai to build this now.
+	
+-	Dildo Factory:
+
+	-	Alloy production reduced from 4 to 3.
+	-	Additional normal whore/pleasure drone jobs removed if owner has Mind Over Matter or The 
+		Flesh Is Weak AP.
+	-	Psi whore/pleasure drone jobs provided increased from 1 to 2.
+	-	Sexbot jobs provided increased from 1 to 2.
+	-	Build cost reduced from 750 minerals to 500. Upkeep reduced from 4 energy to 2.
+	-	Ai weight reduced from 10 to 1.
+	
+-	Orgy Swindler Association:
+
+	-	Unity production reduced from 8 to 6.
+	-	Over all, same changes as Dildo Factory.
+	
+-	Abductee Experiment Facility:
+
+	-	Research production reduced from 8 to 6.
+	-	Over all, same changes as Dildo Factory.
+	
+-	Sentient Acquisitions:
+
+	-	Diplomatic weight bonus reduced from 10% to 5%.
+	-	Additional normal pleasure drone jobs removed if owner has Mind Over Matter AP.
+	-	Pleasure drone/psi pleasure drone/sexbot drone jobs provided increased from 2 to 3.
+	-	Escort jobs provided increased from 1 to 2.
+	-	Build cost increased from 1000 minerals to 2000. Upkeep reduced from 8 energy to 4.
+	
+-	Elite Private Farm:
+
+	-	Now provides 6 trade value.
+	-	Build time reduced from 270 to 180.
+	-	Milk cow/drone jobs provided reduced from 3 to 2.
+	-	Pleasure drone jobs provided reduced from 2 to 1.
+	-	Sexbot jobs provided reduced from 2 to 1.
+	-	Additional normal pleasure drone jobs removed if owner has Mind Over Matter AP.
+	-	Build cost reduced from 560 minerals to 250. Upkeep reduced from 4 energy to 2.
+	-	Food produced for branch office owner increased from 12 to 20.
+	-	Minerals produced for branch office owner increased from 6 to 20 (lithoids).
+	-	Removed consumer goods production.
+	
+-	Elite Blackmail Dungeon:
+
+	-	Now provides 6 trade value.
+	-	Build time reduced from 270 to 180.
+	-	Pleasure drone jobs provided reduced from 4 to 3.
+	-	Psi whore/pleasure drone jobs provided increased from 2 to 3 (1 to 2 for regular 
+		empires) if owner has Mind Over Matter AP.
+	-	Sexbot jobs provided reduced from 4 to 3 (1 to 2 for regular empires).
+	-	Additional normal whore/pleasure drone jobs removed if owner has Mind Over Matter or The 
+		Flesh Is Weak AP.
+	-	Build cost reduced from 500 minerals to 250. Upkeep reduced from 4 energy to 2.
+	-	Ai weight updated.
+	
+-	Elite Rape Services:
+
+	-	Amenities production reduced from 12 to 10.
+	-	Energy production reduced from 16 to 12.
+	-	Build time reduced from 480 to 240.
+	-	Pleasure drone jobs provided reduced from 4 to 3.
+	-	Psi whore/pleasure drone jobs provided increased from 2 to 3 if owner has Mind Over 
+		Matter AP.
+	-	Sexbot drone jobs provided reduced from 4 to 3.
+	-	Escort jobs provided increased from 2 to 3.
+	-	Build cost reduced from 800 minerals to 400.
+	-	Ai weight updated, allowing ai to build this now.
+	
+-	Elite Dildo Factory:
+
+	-	Build time reduced from 270 to 180.
+	-	Alloys production reduced from 5 to 4.
+	-	Pleasure drone jobs provided reduced from 4 to 3.
+	-	Psi whore/pleasure drone jobs provided increased from 2 to 3 (1 to 2 for regular 
+		empires) if owner has Mind Over Matter AP.
+	-	Sexbot jobs provided reduced from 4 to 3 (1 to 2 for regular empires).
+	-	Additional normal whore/pleasure drone jobs removed if owner has Mind Over Matter or The 
+		Flesh Is Weak AP.
+	-	Build cost reduced from 500 minerals to 250. Upkeep reduced from 4 energy to 2.
+	-	Ai weight reduced from 10 to 1.
+	
+-	Elite Orgy Swindler Association:
+
+	-	Build time reduced from 360 to 240.
+	-	Ai weight reduced from 5 to 2.
+	-	Other than that, same changes as Elite Dildo Factory.
+	
+-	Elite Abductee Experiment Facility:
+
+	-	Build time reduced from 360 to 240.
+	-	Ai weight updated.
+	-	Research production reduced from 10 to 8.
+	-	Other than that, same changes as Elite Dildo Factory.
+	
+-	Elite Sentient Acquisitions:
+
+	-	Build time reduced from 360 to 300.
+	-	Diplomatic weight bonus reduced from 15% to 10%.
+	-	Additional normal pleasure drone jobs removed if owner has Mind Over Matter AP.
+	-	Pleasure drone/psi pleasure drone/sexbot drone jobs provided reduced from 8 to 3.
+	-	No longer gives psi/sexbot jobs for regular empires (escorts are better).
+	-	Escort jobs provided increased from 2 to 3.
+	-	Build cost increased from 800 minerals to 1000. Upkeep reduced from 8 energy to 4.
+	
+-	Slime Vats:
+
+	-	Build time increased from 360 to 600.
+	-	Can not be ruined.
+	-	Requires an upgraded capitol.
+	-	Can be build on resort worlds if you want, probably not recommended.
+	-	Build cost increased from 300 minerals to 600. Upkeep increased from 2 energy to 5.
+	
+-	Slime Labs:
+
+	-	Build time increased from 360 to 480.
+	-	Requires an upgraded capitol.
+	-	Can be build on resort worlds if you want, probably not recommended.
+	-	Build cost increased from 500 minerals to 600. Upkeep increased from 4 energy to 5.
+	
+-	Xeno Preservation Center:
+
+	-	Build time increased from 360 to 480.
+	-	Build cost increased from 200 minerals to 600. Upkeep increased from 1 energy to 5.
+	-	Removed entertainer jobs.
+	-	Removed society research production, replaced by 2 xeno zoo keeper jobs.
+	-	Added 6 livestock zoo animal jobs.
+	
+-	Brainwashing Centre:
+
+	-	Build time reduced from 600 to 480.
+	-	Can not be ruined.
+	
+-	Sexology Labs (and upgraded):
+
+	-	Removed blocks that prevented construction on resort/slave/crucible planets.
+	-	Updated basic code.
+	
+-	Sapient Dairy Ranch:
+
+	-	Build time increased from 180 to 360.
+	-	Upkeep reduced from 4 energy to 2.
+	-	Updated triggers to help ai handle them better.
+	-	Milk cow/drone jobs provided reduced from 2 to 1.
+	
+-	Sapient Dairy Estates:
+
+	-	Build time increased from 360 to 480.
+	-	Requires an upgraded capitol.
+	-	Same trigger changes as Sapient Dairy Ranch.
+	-	Building cost and upkeep aligned with base game Food Processing Center.
+	-	Adds 2 base food production to milk cow/drone jobs.
+	-	Milk cow/drone jobs provided reduced from 4 to 2.
+	-	Milk cow/drone jobs per pop reduced from 0.04 to 0.02.
+	-	Planet building multiplier bonus reduced from 10% to 5%.
+	
+-	Specialized Creamery:
+
+	-	Build cost reduced from 1200 minerals to 800. Upkeep reduced from 12 to 8.
+	-	Exotic gases cost increased from 80 to 100. Upkeep increased from 1 to 3.
+	-	Updated triggers to help ai handle them better.
+	
+
+# Jobs #
+
+-	Milk Cow:
+
+	-	Base food production reduced from 8 to 6.
+	-	Base minerals production (lithoids) increased from 4 to 6.
+	-	Same changes made to Milk Drone.
+	
+	
+# Policies #
+
+-	Dairy Specialization:
+
+	-	Maximize Production food bonus reduced from 4 to 3.
+	-	Maximize Production minerals bonus (lithoids) increased from 2 to 3.
+	
+
+# Traditions #
+
+-	Milking:
+
+	-	Orgasmic Lactation:
+	
+		-	Food bonus reduced from 4 to 3 (with fauna).
+		-	Food bonus reduced from 2 to 1 (without fauna).
+		-	Minerals bonus (lithoids) increased from 2 to 3 (with fauna).
+	
+	
+# Ascension Perks #
+
+-	Breeding Superiority:
+
+	-	Added fail condition for when you don't have at least 1 bio pop in your empire.
+	
+-	Tentacle Breeding Pit Integration:
+
+	-	Updated ai weight.
+	
+-	Updated some localizations.
+
+
+# Civics #
+
+-	Sex Contractors:
+
+	-	Build time and cost reduction bonus increased from 25% to 50%.
+	-	Updated localizations to clarify that it upgrades sexual corporate buildings.
+
+	
+# Other #
+
+-	Replaced now invalid tech requirements.
+-	Fixed some reported localization errors.
+
+
+(-- Balance Patch --)
+
+-	Adjusted to changes in base mod and updated to game version 3.11!
+
+(-- Base Game Overwrites --)
+
+-	Updated to game version 3.11!

@@ -1,0 +1,289 @@
+#################################
+###     Science Buildings     ###
+#################################
+
+
+# Regular #
+
+# Sexology Labs
+building_lv_sexology_labs = {
+	base_buildtime = @b1_time
+
+	exempt_from_ai_planet_specialization = no
+
+	category = research
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_lv_generalized_sexology_studies }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_lv_generalized_sexology_studies } }
+	}
+	
+	convert_to = {
+		building_research_lab_1
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b1_minerals
+		}
+		upkeep = {
+			energy = @b1_upkeep
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b1_minerals
+		}
+		upkeep = {
+			energy = @b1_upkeep
+		}
+	}
+	
+	upgrades = {
+		building_lv_sexology_complexes
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_lv_experimenter_drone_add = @b1_jobs
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_lv_sexologist_add = @b1_jobs
+		}
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+			owner = { is_gestalt = yes }
+        }
+        text = job_lv_experimenter_drone_effect_desc
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+			owner = { is_gestalt = no }
+        }
+        text = job_lv_sexologist_effect_desc
+	}
+	
+	prerequisites = {
+		"tech_lv_generalized_sexology_studies"
+	}
+}
+
+# Sexology Complexes
+building_lv_sexology_complexes = {
+	base_buildtime = @b2_time
+	can_build = no
+
+	category = research
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_lv_generalized_sexology_studies } }
+	}
+	
+	convert_to = {
+		building_research_lab_2
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+			exotic_gases = @b2_rare_cost
+		}
+		upkeep = {
+			energy = @b2_upkeep
+			exotic_gases = @b2_rare_upkeep
+		}
+	}
+	
+	upgrades = {
+		building_lv_advanced_sexology_complexes
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_lv_experimenter_drone_add = @b2_jobs
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_lv_sexologist_add = @b2_jobs
+		}
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+			owner = { is_gestalt = yes }
+        }
+        text = job_lv_experimenter_drone_effect_desc
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+			owner = { is_gestalt = no }
+        }
+        text = job_lv_sexologist_effect_desc
+	}
+
+	prerequisites = {
+		"tech_lv_generalized_sexology_studies"
+	}
+}
+
+# Advanced Sexology Complexes
+building_lv_advanced_sexology_complexes = {
+	base_buildtime = @b3_time
+	can_build = no
+
+	category = research
+
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_lv_generalized_sexology_studies } }
+	}
+	
+	convert_to = {
+		building_research_lab_3
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_galactic_community_member = yes
+			}
+			is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
+			has_modifier = pm_extradimensional_experimentation
+		}
+		modifier = {
+			job_dimensional_portal_researcher_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+				is_galactic_community_member = yes
+			}
+			is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
+			has_modifier = pm_extradimensional_experimentation
+		}
+		modifier = {
+			job_dimensional_portal_researcher_gestalt_add = 1
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b3_minerals
+			exotic_gases = @b3_rare_cost
+		}
+		upkeep = {
+			energy = @b3_upkeep
+			exotic_gases = @b3_rare_upkeep
+		}
+		upkeep = {
+			trigger = {
+				owner = {
+					is_galactic_community_member = yes
+				}
+				is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
+				planet = {
+					has_modifier = pm_extradimensional_experimentation
+				}
+			}
+			sr_zro = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_lv_experimenter_drone_add = @b3_jobs
+			job_lv_experimenter_drone_per_pop = 0.05
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_lv_sexologist_add = @b3_jobs
+			job_lv_sexologist_per_pop = 0.05
+		}
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+			owner = { is_gestalt = yes }
+        }
+        text = job_lv_experimenter_drone_effect_desc
+	}
+	
+	triggered_desc = {
+        trigger = {
+            exists = owner
+			owner = { is_gestalt = no }
+        }
+        text = job_lv_sexologist_effect_desc
+	}
+
+	prerequisites = {
+		"tech_lv_generalized_sexology_studies"
+	}
+}
+
+###

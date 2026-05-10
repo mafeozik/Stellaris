@@ -1,0 +1,64 @@
+namespace = lv_biodiversity
+
+############################
+###     Biodiversity     ###
+############################
+#
+########################################################################
+# Event to increase population growth if there are more then 3 species #
+########################################################################
+
+event = {
+	id = lv_biodiversity.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = { has_technology = tech_lv_hybridization_mastery }
+			
+			remove_modifier = "lv_biodiverse_three_static"
+			remove_modifier = "lv_biodiverse_five_static"
+			remove_modifier = "lv_biodiverse_ten_static"
+			remove_modifier = "lv_biodiverse_twenty_static"
+			
+			if = {
+				limit = { num_species > 19 }
+				add_modifier = {
+					modifier = lv_biodiverse_twenty_static
+					days = -1
+				}
+				break = yes
+			}
+			
+			if = {
+				limit = { num_species > 9 }
+				add_modifier = {
+					modifier = lv_biodiverse_ten_static
+					days = -1
+				}
+				break = yes
+			}
+			
+			if = {
+				limit = { num_species > 4 }
+				add_modifier = {
+					modifier = lv_biodiverse_five_static
+					days = -1
+				}
+				break = yes
+			}
+			
+			if = {
+				limit = { num_species > 2 }
+				add_modifier = {
+					modifier = lv_biodiverse_three_static
+					days = -1
+				}
+			}
+		}
+	}
+}
+
+###

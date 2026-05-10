@@ -1,0 +1,2068 @@
+##############################
+###     Anomaly Events     ###
+##############################
+
+@tier1materialreward = 6
+@tier1materialmin = 100
+@tier1materialmax = 500
+@tier2materialreward = 12
+@tier2materialmin = 150
+@tier2materialmax = 1000
+@tier3materialreward = 18
+@tier3materialmin = 250
+@tier3materialmax = 1500
+@tier4materialreward = 24
+@tier4materialmin = 350
+@tier4materialmax = 2000
+@tier5materialreward = 48
+@tier5materialmin = 700
+@tier5materialmax = 4000
+
+@tier1influencereward = 6
+@tier1influencemin = 40
+@tier1influencemax = 100
+@tier2influencereward = 12
+@tier2influencemin = 80
+@tier2influencemax = 175
+@tier3influencereward = 18
+@tier3influencemin = 125
+@tier3influencemax = 250
+@tier4influencereward = 24
+@tier4influencemin = 150
+@tier4influencemax = 300
+@tier5influencereward = 36
+@tier5influencemin = 250
+@tier5influencemax = 500
+@tier6influencereward = 48
+@tier6influencemin = 300
+@tier6influencemax = 600
+
+@tier1researchreward = 6
+@tier1researchmin = 60
+@tier1researchmax = 150
+@tier2researchreward = 12
+@tier2researchmin = 90
+@tier2researchmax = 250
+@tier3researchreward = 18
+@tier3researchmin = 120
+@tier3researchmax = 350
+@tier4researchreward = 24
+@tier4researchmin = 150
+@tier4researchmax = 500
+@tier5researchreward = 48
+@tier5researchmin = 300
+@tier5researchmax = 1000
+
+@tier1unityreward = 6
+@tier1unitymin = 100
+@tier1unitymax = 500
+@tier2unityreward = 12
+@tier2unitymin = 150
+@tier2unitymax = 1000
+@tier3unityreward = 18
+@tier3unitymin = 250
+@tier3unitymax = 1500
+@tier4unityreward = 24
+@tier4unitymin = 350
+@tier4unitymax = 2000
+@tier5unityreward = 48
+@tier5unitymin = 700
+@tier5unitymax = 4000
+
+###
+namespace = lv_lewd_asteroids_1
+
+# The Mad Scientist's Tentacled Creation #
+
+ship_event = {
+	id = lv_lewd_asteroids_1.1
+	title = lv_lewd_asteroids_1.1.name
+	desc = lv_lewd_asteroids_1.1.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_mad_scientist_tentacles_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		owner = { country_event = { id = story.2 days = 30 } }
+	}
+	
+	option = {
+		name = lv_events.next
+		hidden_effect = {
+			ship_event = { id = lv_lewd_asteroids_1.2 }
+		}
+	}
+}
+
+ship_event = {
+	id = lv_lewd_asteroids_1.2
+	title = lv_lewd_asteroids_1.2.name
+	desc = lv_lewd_asteroids_1.2.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_mad_scientist_tentacles_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lv_lewd_asteroids_1.2.a
+		leader = { 
+			if = {
+				limit = {
+					NOR = {
+						has_trait = leader_trait_scientist_lv_zoophile
+						has_trait = leader_trait_scientist_lv_zoophile_2
+						has_trait = leader_trait_scientist_lv_zoophile_3
+					}
+				}
+				add_trait = leader_trait_scientist_lv_zoophile
+			}
+			if = {
+				limit = { has_trait = leader_trait_scientist_lv_zoophile }
+				add_trait = leader_trait_scientist_lv_zoophile_2
+			}
+			if = {
+				limit = { has_trait = leader_trait_scientist_lv_zoophile_2 }
+				add_trait = leader_trait_scientist_lv_zoophile_3
+			}
+			add_experience = 50
+		}
+		
+		fromfrom = {
+			add_deposit = d_alloys_1
+		}
+		
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+			add_resource = { influence = -20 }
+		}
+	}
+	
+	option = {
+		name = lv_lewd_asteroids_1.2.b
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+				} 
+			}
+		}
+		
+		leader = { 
+			add_trait = leader_trait_lv_tormentor
+			add_experience = 100
+		}
+		
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+	
+	option = {
+		name = lv_lewd_asteroids_1.2.c
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+				} 
+			}
+		}
+		
+		leader = { 
+			if = {
+				limit = {
+					NOR = {
+						has_trait = leader_trait_scientist_lv_sexologist
+						has_trait = leader_trait_scientist_lv_sexologist_2
+						has_trait = leader_trait_scientist_lv_sexologist_3
+					}
+				}
+				add_trait = leader_trait_scientist_lv_sexologist
+			}
+			if = {
+				limit = { has_trait = leader_trait_scientist_lv_sexologist }
+				add_trait = leader_trait_scientist_lv_sexologist_2
+			}
+			if = {
+				limit = { has_trait = leader_trait_scientist_lv_sexologist_2 }
+				add_trait = leader_trait_scientist_lv_sexologist_3
+			}
+			add_experience = 100
+		}
+		
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+	}
+	
+	option = {
+		name = lv_lewd_asteroids_1.2.d
+		trigger = {
+			owner = { 
+				AND = {
+					OR = {
+						has_ethic = ethic_spiritualist
+						has_ethic = ethic_fanatic_spiritualist
+					}
+					NOR = {
+						has_ethic = ethic_xenophobe
+						has_ethic = ethic_fanatic_xenophobe
+					}
+				}
+			}
+		}
+		
+		leader = { 
+			add_experience = 200
+		}
+		
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier3influencereward
+				min = @tier3influencemin
+				max = @tier3influencemax
+			}
+			add_monthly_resource_mult = {
+				resource = unity
+				value = @tier2unityreward
+				min = @tier2unitymin
+				max = @tier2unitymax
+			}
+			create_leader = {
+				class = scientist
+				species = random
+				name = random
+				skill = 3
+				traits = {
+					trait = leader_trait_maniacal
+					trait = leader_trait_lv_tormentor
+					trait = leader_trait_scientist_lv_zoophile_3
+				}
+				event_leader = yes
+			}
+		}
+	}
+	
+	option = {
+		name = lv_lewd_asteroids_1.2.e
+		trigger = {
+			owner = {
+				AND = {
+					OR = {
+						has_ethic = ethic_egalitarian
+						has_ethic = ethic_fanatic_egalitarian
+					}
+					OR = {
+						has_ethic = ethic_militarist
+						has_ethic = ethic_fanatic_militarist
+					}
+				}
+			}
+		}
+		
+		leader = { 
+			add_trait = leader_trait_paranoid
+			add_experience = 250
+		}
+		
+		fromfrom = {
+			destroy_ambient_object = this
+			add_deposit = d_alloys_2
+		}
+		
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier2influencereward
+				min = @tier2influencemin
+				max = @tier2influencemax
+			}
+			add_monthly_resource_mult = {
+				resource = minerals
+				value = @tier2materialreward
+				min = @tier2materialmin
+				max = @tier2materialmax
+			}
+		}
+	}
+}
+
+namespace = lv_lewd_asteroids_2
+
+# The Cyber Shop #
+
+ship_event = {
+	id = lv_lewd_asteroids_2.1
+	title = lv_lewd_asteroids_2.1.name
+	desc = lv_lewd_asteroids_2.1.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_ship_bridge
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_cyber_shop_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		owner = { country_event = { id = story.2 days = 30 } }
+	}
+
+	option = {		# tax source
+		name = lv_lewd_asteroids_2.1.a
+		trigger = { 
+			owner = {
+				NOT = { has_ethic = ethic_gestalt_consciousness }
+			}
+		}
+		
+		fromfrom = {
+			add_deposit = d_trade_value_3
+		}
+	}
+	
+	option = {		# mineral source
+		name = lv_lewd_asteroids_2.1.b
+		trigger = { 
+			owner = {
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+		
+		fromfrom = {
+			add_deposit = d_minerals_3
+		}
+	}
+	
+	option = {		# Shut it down
+		name = lv_lewd_asteroids_2.1.c
+		custom_tooltip = lv_lewd_asteroids_2.1.c.tooltip
+		trigger = { 
+			owner = {
+				AND = {
+					OR = {
+						has_ethic = ethic_materialist
+						has_ethic = ethic_fanatic_materialist
+					}
+					NOT = { has_technology = tech_lv_transformation_candy } # Might change
+				}
+			}
+		}
+		
+		fromfrom = {
+			add_deposit = d_engineering_3
+		}
+		
+		owner = {
+			add_research_option = tech_lv_transformation_candy
+			add_tech_progress = {
+				tech = tech_lv_transformation_candy
+				progress = 0.1
+			}
+			create_leader = {
+				class = scientist
+				species = random
+				name = random
+				skill = 4
+				traits = {
+					trait = leader_trait_lv_tormentor
+					trait = leader_trait_scientist_lv_sexologist_3
+				}
+				event_leader = yes
+			}
+			add_resource = { energy = 200 }
+		}
+	}
+	
+	option = {		# Shut it down, but take notes (already got tech)
+		name = lv_lewd_asteroids_2.1.d
+		custom_tooltip = lv_lewd_asteroids_2.1.d.tooltip
+		trigger = { 
+			owner = { 
+				AND = {
+					OR = {
+						has_ethic = ethic_materialist
+						has_ethic = ethic_fanatic_materialist
+					}
+					has_technology = tech_lv_transformation_candy 
+				}
+			} 
+		}
+		
+		fromfrom = {
+			add_deposit = d_engineering_3
+		}
+
+		owner = {
+			create_leader = {
+				class = scientist
+				species = random
+				name = random
+				skill = 4
+				traits = {
+					trait = leader_trait_lv_tormentor
+					trait = leader_trait_scientist_lv_sexologist_3
+				}
+				event_leader = yes
+			}
+			add_resource = { energy = 200 }
+		}
+	}
+
+	option = {		# Offer	safe haven
+		name = lv_lewd_asteroids_2.1.e
+		trigger = { 
+			owner = { 
+				OR = {
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_fanatic_egalitarian
+				} 
+			} 
+		}
+		
+		leader = { 
+			if = {
+				limit = {
+					NOR = {
+						has_trait = leader_trait_scientist_lv_sexologist
+						has_trait = leader_trait_scientist_lv_sexologist_2
+						has_trait = leader_trait_scientist_lv_sexologist_3
+					}
+				}
+				add_trait = leader_trait_scientist_lv_sexologist
+			}
+			if = {
+				limit = { has_trait = leader_trait_scientist_lv_sexologist }
+				add_trait = leader_trait_scientist_lv_sexologist_2
+			}
+			if = {
+				limit = { has_trait = leader_trait_scientist_lv_sexologist_2 }
+				add_trait = leader_trait_scientist_lv_sexologist_3
+			}
+			add_experience = 100
+		}
+		
+		fromfrom = {
+			add_deposit = d_engineering_2
+			add_deposit = d_society_2
+		}
+		
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier1influencereward
+				min = @tier1influencemin
+				max = @tier1influencemax
+			}
+		}
+	}
+			
+	option = {		# Disrupts the natural order
+		name = lv_lewd_asteroids_2.1.f
+		trigger = { 
+			owner = { 
+				OR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+				} 
+			} 
+		}
+		
+		fromfrom = {
+			destroy_ambient_object = this
+			add_deposit = d_minerals_5
+			add_deposit = d_alloys_1
+		}
+		
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier2influencereward
+				min = @tier2influencemin
+				max = @tier2influencemax
+			}
+		}
+	}
+}
+
+###
+namespace = lv_slime_asteroid
+
+# Slime Tentacles Lab #
+
+ship_event = {
+	id = lv_slime_asteroid.1
+ 	title = lv_slime_asteroid.1.name
+ 	desc = lv_slime_asteroid.1.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_tentacles_slime_lab_1_room
+	}
+	
+ 	is_triggered_only = yes
+			
+ 	immediate = {
+ 		from = { clear_deposits = yes }
+		owner = { country_event = { id = story.3 days = 30 } }
+ 	}
+
+ 	option = {
+ 		name = lv_slime_asteroid.1.a
+ 		owner = {
+			set_country_flag = lv_slimes_active
+ 			add_monthly_resource_mult = {
+ 				resource = energy
+ 				value = @tier1materialreward
+ 				min = @tier1materialmin 
+ 				max = @tier1materialmax
+ 			}
+ 		}
+		
+		hidden_effect = {
+			fromfrom = {
+				set_deposit = d_trade_value_5
+			}
+		}
+ 	}
+	
+ 	option = {
+ 		name = lv_slime_asteroid.1.b
+ 		trigger = { 
+ 			owner = { 
+ 				OR = {
+ 					has_ethic = ethic_xenophile
+ 					has_ethic = ethic_fanatic_xenophile
+ 				} 
+ 			} 
+		}
+		
+		owner = {
+			set_country_flag = lv_slimes_active
+ 			add_monthly_resource_mult = {
+ 				resource = society_research
+ 				value = @tier1researchreward
+ 				min = @tier1researchmin
+ 				max = @tier1researchmax
+ 			}
+ 		}
+		
+		hidden_effect = {
+			fromfrom = {
+				set_deposit = d_society_5
+			}
+		}
+ 	}
+	
+ 	option = {
+ 		name = lv_slime_asteroid.1.c
+ 		trigger = { 
+ 			owner = { 
+ 				OR = {
+ 					has_ethic = ethic_materialist
+ 					has_ethic = ethic_fanatic_materialist
+ 				} 
+ 			} 
+ 		}
+
+ 		owner = {
+			set_country_flag = lv_slimes_active
+ 			add_monthly_resource_mult = {
+ 				resource = engineering_research
+ 				value = @tier1researchreward
+ 				min = @tier1researchmin
+ 				max = @tier1researchmax
+ 			}
+ 		}
+		
+		hidden_effect = {
+			fromfrom = {
+				set_deposit = d_engineering_5
+			}
+		}
+ 	}
+}
+
+###
+namespace = lv_hidden_flesh_pit		# by HavocForce
+
+# Hidden Flesh Pit #
+
+ship_event = {
+	id = lv_hidden_flesh_pit.1
+	title = lv_hidden_flesh_pit.1.name
+	desc = lv_hidden_flesh_pit.1.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_ship_bridge
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_hidden_flesh_pit_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+ 		owner = { country_event = { id = story.3 days = 30 } }
+ 	}
+	
+	option = {
+		name = lv_hidden_flesh_pit.1.a
+		from = {	
+			enable_special_project = {
+				name = "LV_RESCUE_CAPTURED_CREW_MEMBERS"
+				location = this
+				owner = root
+			}
+			add_resource = { influence = -10 }
+		}
+	}
+	
+	option = {
+		name = lv_hidden_flesh_pit.1.b
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+				} 
+			}
+		}
+		
+		leader = {
+			add_experience = 150
+		}
+		
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+	
+	option = {
+		name = lv_hidden_flesh_pit.1.c
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+				} 
+			}
+		}
+		
+		Leader = { 
+			add_experience = 150
+		}
+		
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+	}
+	
+	option = {
+		name = lv_hidden_flesh_pit.1.d
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+				}
+			}
+		}
+		
+		leader = { 
+			add_experience = 150
+		}
+		
+		fromfrom = {
+			destroy_ambient_object = this
+			add_deposit = d_minerals_2
+		}
+		
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier3influencereward
+				min = @tier3influencemin
+				max = @tier3influencemax
+			}
+		}
+	}
+
+	option = {
+		name = lv_hidden_flesh_pit.1.e
+		trigger = {
+			owner = {
+				has_authority = auth_hive_mind
+			}
+		}
+	
+		leader = {
+			add_experience = 200
+		}
+
+		fromfrom = {
+			set_deposit = d_society_6
+		}
+
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+}
+
+# Unknown Micro Biosphere Uncovered #
+
+ship_event = {
+	id = lv_hidden_flesh_pit.2
+	title = lv_hidden_flesh_pit.2.name
+	desc = lv_hidden_flesh_pit.2.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_ship_bridge
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_hidden_flesh_pit_2_room
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+ 		owner = { country_event = { id = story.3 days = 30 } }
+ 	}
+
+	option = {	# Tourist destination
+		name = lv_hidden_flesh_pit.2.a
+		trigger = {
+			owner = {
+				NOT = { has_ethic = ethic_gestalt_consciousness }
+			}
+		}
+		
+		fromfrom = {
+			add_deposit = d_trade_value_4
+		}
+
+		leader = {
+			add_experience = 100
+		}
+	}
+
+	option = {	# Research station
+		name = lv_hidden_flesh_pit.2.b
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+				}
+			}
+		}
+
+		fromfrom = {
+			add_deposit = d_society_5
+		}
+		
+		leader = {
+			add_experience = 100
+		}
+	}
+
+	option = {
+		name = lv_hidden_flesh_pit.2.c
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+				}
+			}
+		}
+
+		leader = {
+			add_experience = 100
+		}
+
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier3influencereward
+				min = @tier3influencemin
+				max = @tier3influencemax
+			}
+			add_monthly_resource_mult = {
+				resource = minerals
+				value = @tier2materialreward
+				min = @tier2materialmin
+				max = @tier2materialmax
+			}
+		}
+	}
+
+	option = {
+		name = lv_hidden_flesh_pit.2.d
+		trigger = {
+			owner = {
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+
+		leader = {
+			add_experience = 100
+		}
+
+		fromfrom = {
+			add_deposit = d_society_8
+		}
+	}
+}
+
+# Hidden Flesh Pit Rescue Success #
+
+ship_event = {
+	id = lv_hidden_flesh_pit.3
+	title = lv_hidden_flesh_pit.3.name
+	desc = lv_hidden_flesh_pit.3.desc
+	picture = GFX_evt_emergency_workers
+	show_sound = event_ship_bridge
+	location = FROM
+	trackable = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = UNDERSTOOD
+		fromfromfrom = { add_deposit = d_society_3 }
+	}
+}
+
+# Hidden Flesh Pit Rescue Wonderful Success #
+
+ship_event = {
+	id = lv_hidden_flesh_pit.4
+	title = lv_hidden_flesh_pit.4.name
+	desc = lv_hidden_flesh_pit.4.desc
+	picture = GFX_evt_society_research
+	show_sound = event_ship_bridge
+	location = FROM
+
+	is_triggered_only = yes
+
+	option = {
+		name = SPLENDID
+		fromfromfrom = { add_deposit = d_society_5 }
+		leader = { add_experience = 200 }
+	}
+}
+
+# Hidden Flesh Pit Rescue Defeat #
+
+ship_event = {
+	id = lv_hidden_flesh_pit.5
+	title = lv_hidden_flesh_pit.5.name
+	desc = lv_hidden_flesh_pit.5.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_ship_bridge
+	location = ROOT
+	
+	picture_event_data = {
+		room = evt_lv_hidden_flesh_pit_fail_1_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = DOTDOTDOT
+		add_modifier = {
+			modifier = lv_horrified_crew
+			days = 360
+		}
+		fromfromfrom = { add_deposit = d_society_1 }
+	}
+}
+
+###
+namespace = lv_sexy_planet
+
+# Cockpit Tentacles Anomaly #
+
+ship_event = {				
+	id = lv_sexy_planet.1				
+	title = lv_sexy_planet.1.name			
+	desc = lv_sexy_planet.1.desc	
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_tentacles_cockpit_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+ 		owner = { country_event = { id = story.3 days = 30 } }
+ 	}
+
+	option = {
+		name = lv_sexy_planet.1.a 
+		Leader = {
+			add_experience = 100		
+		}
+		
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+	}
+}
+
+# Tentacles Swarm Anomaly #
+
+ship_event = {
+	id = lv_sexy_planet.2
+	title = lv_sexy_planet.2.name
+	desc = lv_sexy_planet.2.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_tentacles_swarm_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+ 		owner = { country_event = { id = story.3 days = 30 } }
+ 	}
+		
+	option = {
+		name = lv_sexy_planet.2.a
+		Leader = {
+			add_experience = 200
+		}
+			
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+	}
+		
+	option = {
+		name = lv_sexy_planet.2.b
+		trigger = { 
+			owner = { 
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		
+		leader = { 
+			add_experience = 200
+		}
+		
+		owner = {
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+		
+	option = {
+		name = lv_sexy_planet.2.c
+		trigger = { 
+			owner = { 
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+		
+		leader = { 
+			add_experience = 200
+		}
+		
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+}
+
+# Tentacled Lifeforms #
+
+ship_event = {
+	id = lv_sexy_planet.3
+	title = lv_sexy_planet.3.name
+	desc = lv_sexy_planet.3.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_tentacles_drag_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+ 		owner = { country_event = { id = story.3 days = 30 } }
+ 	}
+	
+	option = {
+		name = lv_sexy_planet.3.a
+		leader = { 
+			add_experience = 200
+		}
+		
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+		
+		hidden_effect = {
+			from = {
+				add_modifier = { modifier = lv_tentacled_lifeforms days = -1 }
+				add_deposit = d_lv_tentacles_blocker
+			}
+		}
+	}
+	
+	option = {
+		name = lv_sexy_planet.3.b
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+				}
+			}
+		}
+	
+		leader = { 
+			add_experience = 200
+		}
+		
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+		
+		hidden_effect = {
+			from = {
+				add_modifier = { modifier = lv_tentacled_lifeforms days = -1 }
+				add_deposit = d_lv_tentacles_blocker
+			}
+		}
+	}
+	
+	option = {
+		name = lv_sexy_planet.3.c
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+	
+		leader = { 
+			add_experience = 200
+		}
+		
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier1influencereward
+				min = @tier1influencemin
+				max = @tier1influencemax
+			}
+		}
+	}
+}
+
+# The Xeno Terror #
+
+ship_event = {				
+	id = lv_sexy_planet.4				
+	title = lv_sexy_planet_hard.1.name			
+	desc = lv_sexy_planet_hard.1.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_xeno_terror_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+ 		owner = { country_event = { id = story.3 days = 30 } }
+ 	}
+
+	option = {
+		name = lv_sexy_planet_hard.1.a 
+		Leader = { 
+			add_experience = 100
+		}
+		
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+	}
+	
+	option = {
+		name = lv_sexy_planet_hard.1.b
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+				}
+			}
+		}
+		
+		Leader = {
+			add_experience = 100
+		}
+		
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier1influencereward
+				min = @tier1influencemin
+				max = @tier1influencemax
+			}
+			if = {
+				limit = {
+					AND = {
+						has_technology = tech_epigenetic_triggers
+						NOR = { 
+							has_technology = tech_morphogenetic_field_mastery
+							has_tech_option = tech_morphogenetic_field_mastery
+						}
+					}
+				}
+				add_research_option = tech_morphogenetic_field_mastery
+				add_tech_progress = {
+					tech = tech_morphogenetic_field_mastery
+					progress = 0.1
+				}
+			}
+			else = {
+				add_monthly_resource_mult = {
+					resource = society_research
+					value = @tier1researchreward
+					min = @tier1researchmin
+					max = @tier1researchmax
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = lv_sexy_planet_hard.1.c
+		trigger = { 
+			owner = { 
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+				
+		Leader = { 
+			add_experience = 100
+		}
+		
+		owner = {
+			add_resource = { influence = -100 }
+			if = {
+				limit = {
+					AND = {
+						has_technology = tech_epigenetic_triggers
+						NOR = { 
+							has_technology = tech_morphogenetic_field_mastery
+							has_tech_option = tech_morphogenetic_field_mastery
+						}
+					}
+				}
+				add_research_option = tech_morphogenetic_field_mastery
+				add_tech_progress = {
+					tech = tech_morphogenetic_field_mastery
+					progress = 0.1
+				}
+			}
+			else = {
+				add_monthly_resource_mult = {
+					resource = society_research
+					value = @tier1researchreward
+					min = @tier1researchmin
+					max = @tier1researchmax
+				}
+			}
+		}
+		
+		from = {
+			change_pc = pc_nuked
+			hidden_effect = {
+				reset_planet = yes	
+				destroy_colony = yes
+			}
+		}
+	}
+
+	option = {
+		name = lv_sexy_planet_hard.1.d
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+		
+		Leader = { 
+			add_experience = 150
+		}
+		
+		owner = {
+			if = {
+				limit = {
+					AND = {
+						has_technology = tech_epigenetic_triggers
+						NOR = { 
+							has_technology = tech_morphogenetic_field_mastery
+							has_tech_option = tech_morphogenetic_field_mastery
+						}
+					}
+				}
+				add_research_option = tech_morphogenetic_field_mastery
+				add_tech_progress = {
+					tech = tech_morphogenetic_field_mastery
+					progress = 0.5
+				}
+			}
+			else = {
+				add_monthly_resource_mult = {
+					resource = society_research
+					value = @tier4researchreward
+					min = @tier4researchmin
+					max = @tier4researchmax
+				}
+			}
+		}
+		
+		from = {
+			change_pc = pc_nuked
+			hidden_effect = {
+				reset_planet = yes	
+				destroy_colony =  yes 
+			}
+		}
+	}
+}
+
+###
+namespace = lv_nuclear_sex
+
+# Nuclear Sex #
+
+ship_event = {
+	id = lv_nuclear_sex.1
+	title = lv_nuclear_sex.1.name
+	desc = lv_nuclear_sex.1.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_nuclear_sex_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+ 		owner = { country_event = { id = story.3 days = 30 } }
+ 	}
+	
+	option = {
+		name = lv_nuclear_sex.1.a
+		Leader = { 
+			add_experience = 100
+		}
+		
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+	}
+	
+	option = {
+		name = lv_nuclear_sex.1.b
+		trigger = {
+			owner = {
+				NOT = {
+					OR = {
+						has_ethic = ethic_xenophobe
+						has_ethic = ethic_fanatic_xenophobe
+					}
+				}
+			}
+		}
+		
+		Leader = { 
+			add_experience = 100
+		}
+		
+		owner = {
+			add_modifier = { modifier = lv_biology_insights days = 1800 }
+		}
+		
+		root = {
+			add_modifier = { modifier = lv_embarrassed_crew days = 1800 }
+		}
+	}
+	
+	option = {
+		name = lv_nuclear_sex.1.c
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				} 
+			}
+		}
+		
+		Leader = { 
+			add_experience = 100
+		}
+		
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+	}
+}
+
+###
+namespace = lv_slug_planet
+
+# Slug Planet Anomaly #
+
+ship_event = {				
+	id = lv_slug_planet.1				
+	title = lv_slug_planet.1.name
+	desc = lv_slug_planet.1.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_slug_sex_1_room
+	}
+				
+	is_triggered_only = yes
+	
+	immediate = {
+ 		owner = { country_event = { id = story.3 days = 30 } }
+ 	}
+
+	option = {
+		name = lv_slug_planet.1.a 
+		Leader = {
+			add_experience = 100		
+		}
+		
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+	}
+}
+
+###
+namespace = lv_bad
+
+# Pirate Abduction (Planet) #
+
+ship_event = {
+	id = lv_bad.1
+	title = lv_bad.1.name
+	desc = lv_bad.1.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_red_alert
+	location = FROMFROM
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_bad_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lv_bad.1.a
+		this = {
+			add_modifier = {
+				modifier = lv_horrified_crew
+				days = 365
+			}
+		}
+	}
+}
+
+# Slaver Attack #
+
+ship_event = {
+	id = lv_bad.2
+	title = lv_bad.2.name
+	desc = lv_bad.2.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_red_alert
+	location = FROMFROM
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_bad_2_room
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		fromfrom = {
+			fleet = { kill_leader = { class = scientist show_notification = no } destroy_fleet = this }
+		}
+	}
+	
+	option = {
+		name = lv_bad.2.a
+		owner = { add_resource = { influence = -50 } }
+	}
+}
+
+# Fun Outdoors #
+
+ship_event = {
+	id = lv_bad.3
+	title = lv_bad.3.name
+	desc = lv_bad.3.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_ship_bridge
+	location = FROMFROM
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_bad_3_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = lv_bad.3.a
+	}
+}
+
+###
+namespace = lv_lewd_planets_1
+
+# Lost Sexbot Part 1 #
+
+ship_event = {						# Upon researching the anomaly
+	id = lv_lewd_planets_1.1
+	title = lv_lewd_planets_1.1.name
+	desc = lv_lewd_planets_1.1.desc
+	picture = GFX_evt_ship_in_orbit
+	show_sound = event_ship_bridge
+	location = FROM
+	trackable = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		owner = { country_event = { id = story.5 days = 30 } }
+		this = { leader = { save_event_target_as = lv_sexbot_finder } }
+		root.owner = {
+			capital_scope = {
+				planet_event = {
+					id = lv_lewd_planets_1.2
+					days = 10
+				}
+    		}
+    	}
+	}
+	
+	option = {
+		name = lv_lewd_planets_1.1.a
+		custom_tooltip = lv_lewd_planets_1.1.a.tooltip
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+					has_ethic = ethic_gestalt_consciousness
+				} 
+			}
+		}
+	}
+	
+	option = {
+		name = lv_lewd_planets_1.1.b
+		custom_tooltip = lv_lewd_planets_1.1.b.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+				}
+				NOT = { has_ethic = ethic_gestalt_consciousness }
+			}
+		}
+	}
+	
+	option = {
+		name = lv_lewd_planets_1.1.c
+		custom_tooltip = lv_lewd_planets_1.1.c.tooltip
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+	}
+}
+
+# Lost Sexbot Part 2 #
+
+planet_event = {						# Waking her up
+	id = lv_lewd_planets_1.2
+	title = lv_lewd_planets_1.2.name
+	desc = lv_lewd_planets_1.2.desc
+	picture = GFX_evt_city_planet
+	show_sound = event_cityscape
+	location = Root.Capital
+	trackable = yes
+	
+	is_triggered_only = yes
+	
+	immediate = { owner = { country_event = { id = lv_lewd_planets_1.3 days = 10 } } }
+	
+	option = {
+		name = lv_lewd_planets_1.2.a
+	}
+}
+
+# Lost Sexbot Part 3 #
+
+country_event = {						# Reveal
+	id = lv_lewd_planets_1.3
+	title = lv_lewd_planets_1.3.name
+	desc = lv_lewd_planets_1.3.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_mystic_reveal
+	location = FROM
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_lost_sexbot_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lv_events.next
+		hidden_effect = {
+			country_event = { id = lv_lewd_planets_1.4 }
+		}
+	}
+}
+
+country_event = {						# Reveal
+	id = lv_lewd_planets_1.4
+	title = lv_lewd_planets_1.4.name
+	desc = lv_lewd_planets_1.4.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_mystic_reveal
+	location = FROM
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_lost_sexbot_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lv_lewd_planets_1.4.a
+		custom_tooltip = lv_lewd_planets_1.4.a.tooltip
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+				}
+				ruler = {
+					OR = {
+						leader_class = governor
+						leader_class = scientist
+					}
+				}
+			}
+		}
+		owner = { country_event = { id = lv_lewd_planets_1.5 days = 20 } }
+	}
+	
+	option = {
+		name = lv_lewd_planets_1.4.b
+		custom_tooltip = lv_lewd_planets_1.4.b.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+				}
+				ruler = {
+					OR = {
+						leader_class = governor
+						leader_class = scientist
+					}
+				}
+			}
+		}
+		owner = { country_event = { id = lv_lewd_planets_1.5 days = 20 } }
+	}
+	
+	option = {
+		name = lv_lewd_planets_1.4.c
+		custom_tooltip = lv_lewd_planets_1.4.c.tooltip
+		owner = { country_event = { id = lv_lewd_planets_1.7 days = 20 } }
+	}
+	
+	option = {
+		name = lv_lewd_planets_1.4.d
+		custom_tooltip = lv_lewd_planets_1.4.d.tooltip
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+				}
+			}
+		}
+		owner = { add_resource = { energy = 500 } }
+	}
+	
+	option = {
+		name = lv_lewd_planets_1.4.e
+		custom_tooltip = lv_lewd_planets_1.4.e.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+				}
+			}
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier1influencereward
+				min = @tier1influencemin
+				max = @tier1influencemax
+			}
+		}
+	}
+}
+
+# Lost Sexbot Part 4 #
+
+country_event = {						# Ruler takes her
+	id = lv_lewd_planets_1.5
+	title = lv_lewd_planets_1.5.name
+	desc = lv_lewd_planets_1.5.desc
+	picture = {
+		trigger = { 
+			ruler = {
+				gender = female
+			}
+		}
+		picture = GFX_evt_lv_lost_sexbot_2
+	}
+	picture = {
+		trigger = { 
+			ruler = {
+				gender = male
+			}
+		}
+		picture = GFX_evt_lv_lost_sexbot_3
+	}
+	show_sound = event_cityscape
+	location = FROM
+	trackable = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lv_events.next
+		hidden_effect = {
+			country_event = { id = lv_lewd_planets_1.6 }
+		}
+	}
+}
+
+country_event = {						# Ruler takes her
+	id = lv_lewd_planets_1.6
+	title = lv_lewd_planets_1.6.name
+	desc = lv_lewd_planets_1.6.desc
+	picture = {
+		trigger = { 
+			event_target:lv_sexbot_finder = {
+				gender = female
+			}
+		}
+		picture = GFX_evt_lv_lost_sexbot_2
+	}
+	picture = {
+		trigger = { 
+			event_target:lv_sexbot_finder = {
+				gender = male
+			}
+		}
+		picture = GFX_evt_lv_lost_sexbot_3
+	}
+	show_sound = event_cityscape
+	location = FROM
+	trackable = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lv_lewd_planets_1.6.a
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+				}
+			}
+		}
+		
+		ruler = {
+			if = {
+				limit = { always = yes }
+				add_trait = leader_trait_lv_synth_sexbot_assistant
+			}
+		}
+		
+		owner = {
+			if = {
+				limit = {
+					AND = {
+						has_technology = tech_synthetic_workers
+						NOR = { 
+							has_technology = tech_lv_synth_sexbots
+							has_tech_option = tech_lv_synth_sexbots
+						}
+					}
+				}
+				add_research_option = tech_lv_synth_sexbots
+				add_tech_progress = {
+					tech = tech_lv_synth_sexbots
+					progress = 0.25
+				}
+			}
+			else = {
+				add_monthly_resource_mult = {
+					resource = engineering_research
+					value = @tier5researchreward
+					min = @tier5researchmin
+					max = @tier5researchmax
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = lv_lewd_planets_1.6.b
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+				}
+			}
+		}
+		
+		ruler = {
+			if = {
+				limit = { always = yes }
+				add_trait = leader_trait_lv_synth_sexbot_assistant
+			}
+		}
+		
+		owner = {
+			if = {
+				limit = {
+					AND = {
+						has_technology = tech_synthetic_workers
+						NOR = { 
+							has_technology = tech_lv_synth_sexbots
+							has_tech_option = tech_lv_synth_sexbots
+						}
+					}
+				}
+				add_research_option = tech_lv_synth_sexbots
+				add_tech_progress = {
+					tech = tech_lv_synth_sexbots
+					progress = 0.25
+				}
+			}
+			else = {
+				add_monthly_resource_mult = {
+					resource = engineering_research
+					value = @tier5researchreward
+					min = @tier5researchmin
+					max = @tier5researchmax
+				}
+			}
+		}
+		
+		tooltip = {
+			add_modifier = { modifier = lv_controversial_advisor days = 720 }
+		}
+	}
+}
+
+# Lost Sexbot Part 5 #
+
+country_event = {						# Scientist takes her
+	id = lv_lewd_planets_1.7
+	title = lv_lewd_planets_1.7.name
+	desc = lv_lewd_planets_1.7.desc
+	picture = {
+		trigger = { 
+			event_target:lv_sexbot_finder = {
+				gender = female
+			}
+		}
+		picture = GFX_evt_lv_lost_sexbot_2
+	}
+	picture = {
+		trigger = { 
+			event_target:lv_sexbot_finder = {
+				gender = male
+			}
+		}
+		picture = GFX_evt_lv_lost_sexbot_3
+	}
+	show_sound = event_cityscape
+	location = FROM
+	trackable = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lv_lewd_planets_1.7.a
+		event_target:lv_sexbot_finder = {
+			add_trait = leader_trait_scientist_lv_sexologist_3
+			add_trait = leader_trait_lv_synth_sexbot_assistant
+		}
+		owner = {
+			if = {
+				limit = {
+					AND = {
+						has_technology = tech_synthetic_workers
+						NOR = { 
+							has_technology = tech_lv_synth_sexbots
+							has_tech_option = tech_lv_synth_sexbots
+						}
+					}
+				}
+				add_research_option = tech_lv_synth_sexbots
+				add_tech_progress = {
+					tech = tech_lv_synth_sexbots
+					progress = 0.25
+				}
+			}
+			else = {
+				add_monthly_resource_mult = {
+					resource = engineering_research
+					value = @tier5researchreward
+					min = @tier5researchmin
+					max = @tier5researchmax
+				}
+			}
+		}
+	}
+}
+
+###

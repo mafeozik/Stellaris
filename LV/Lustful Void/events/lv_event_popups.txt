@@ -1,0 +1,2483 @@
+namespace = lv_event_popups
+
+#############################
+###     Event Pop-ups     ###
+#############################
+
+# Brood Parasite #
+
+planet_event = {
+	id = lv_event_popups.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOR = {
+					has_global_flag = lv_events_hidden
+					has_global_flag = lv_brood_parasite_hidden
+					has_global_flag = lv_all_disabled
+					has_global_flag = lv_rape_disabled
+				}
+			}
+			random_list = {
+				25 = {
+					planet_event = { id = lv_event_popups.2 }
+				}
+				25 = {
+					planet_event = { id = lv_event_popups.3 }
+				}
+				25 = {
+					planet_event = { id = lv_event_popups.4 }
+				}
+				25 = {
+					planet_event = { id = lv_event_popups.5 }
+				}
+			}
+		}
+	}
+}
+
+planet_event = {	# Brood Parasites 1
+	id = lv_event_popups.2
+	title = "Brood Parasites Breeding"
+	desc = "lv_brood_parasite_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_brood_parasite_1_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_brood_parasite.name.1
+		custom_tooltip = lv_ep_brood_parasite.name.1.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_brood_parasite.name.2
+		custom_tooltip = lv_ep_brood_parasite.name.2.tooltip
+		trigger = {
+			owner = {
+				AND = {
+					OR = {
+						has_ethic = ethic_xenophobe
+						has_ethic = ethic_fanatic_xenophobe
+					}
+					NOT = {
+						owner_species = {
+							has_trait = trait_lv_brood_parasite
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = lv_ep_brood_parasite.name.3
+		custom_tooltip = lv_ep_brood_parasite.name.3.tooltip
+		trigger = {
+			owner = {
+				AND = {
+					OR = {
+						has_ethic = ethic_xenophobe
+						has_ethic = ethic_fanatic_xenophobe
+					}
+					owner_species = {
+						has_trait = trait_lv_brood_parasite
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				} 
+			}
+		}
+	}
+}
+
+planet_event = {	# Brood Parasites 2
+	id = lv_event_popups.3
+	title = "Brood Parasites Breeding"
+	desc = "lv_brood_parasite_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_brood_parasite_2_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_brood_parasite.name.1
+		custom_tooltip = lv_ep_brood_parasite.name.1.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_brood_parasite.name.2
+		custom_tooltip = lv_ep_brood_parasite.name.2.tooltip
+		trigger = {
+			owner = {
+				AND = {
+					OR = {
+						has_ethic = ethic_xenophobe
+						has_ethic = ethic_fanatic_xenophobe
+					}
+					NOT = {
+						owner_species = {
+							has_trait = trait_lv_brood_parasite
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = lv_ep_brood_parasite.name.3
+		custom_tooltip = lv_ep_brood_parasite.name.3.tooltip
+		trigger = {
+			owner = {
+				AND = {
+					OR = {
+						has_ethic = ethic_xenophobe
+						has_ethic = ethic_fanatic_xenophobe
+					}
+					owner_species = {
+						has_trait = trait_lv_brood_parasite
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				} 
+			}
+		}
+	}
+}
+
+planet_event = {	# Brood Parasite 3
+	id = lv_event_popups.4
+	title = "Brood Parasites Breeding"
+	desc = "lv_brood_parasite_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_brood_parasite_3_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_brood_parasite.name.1
+		custom_tooltip = lv_ep_brood_parasite.name.1.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_brood_parasite.name.2
+		custom_tooltip = lv_ep_brood_parasite.name.2.tooltip
+		trigger = {
+			owner = {
+				AND = {
+					OR = {
+						has_ethic = ethic_xenophobe
+						has_ethic = ethic_fanatic_xenophobe
+					}
+					NOT = {
+						owner_species = {
+							has_trait = trait_lv_brood_parasite
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = lv_ep_brood_parasite.name.3
+		custom_tooltip = lv_ep_brood_parasite.name.3.tooltip
+		trigger = {
+			owner = {
+				AND = {
+					OR = {
+						has_ethic = ethic_xenophobe
+						has_ethic = ethic_fanatic_xenophobe
+					}
+					owner_species = {
+						has_trait = trait_lv_brood_parasite
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				} 
+			}
+		}
+	}
+}
+
+planet_event = {	# Brood Parasite 4
+	id = lv_event_popups.5
+	title = "Brood Parasites Breeding"
+	desc = "lv_brood_parasite_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_brood_parasite_4_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_brood_parasite.name.1
+		custom_tooltip = lv_ep_brood_parasite.name.1.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_brood_parasite.name.2
+		custom_tooltip = lv_ep_brood_parasite.name.2.tooltip
+		trigger = {
+			owner = {
+				AND = {
+					OR = {
+						has_ethic = ethic_xenophobe
+						has_ethic = ethic_fanatic_xenophobe
+					}
+					NOT = {
+						owner_species = {
+							has_trait = trait_lv_brood_parasite
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = lv_ep_brood_parasite.name.3
+		custom_tooltip = lv_ep_brood_parasite.name.3.tooltip
+		trigger = {
+			owner = {
+				AND = {
+					OR = {
+						has_ethic = ethic_xenophobe
+						has_ethic = ethic_fanatic_xenophobe
+					}
+					owner_species = {
+						has_trait = trait_lv_brood_parasite
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				} 
+			}
+		}
+	}
+}
+
+# Biomechanical Breeders #
+
+planet_event = {
+	id = lv_event_popups.6
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOR = {
+					has_global_flag = lv_events_hidden
+					has_global_flag = lv_mech_hybrids_hidden
+					has_global_flag = lv_all_disabled
+					has_global_flag = lv_rape_disabled
+				}
+			}
+			random_list = {
+				25 = {
+					planet_event = { id = lv_event_popups.7 }
+				}
+				25 = {
+					planet_event = { id = lv_event_popups.8 }
+				}
+				25 = {
+					planet_event = { id = lv_event_popups.9 }
+				}
+				25 = {
+					planet_event = { id = lv_event_popups.10 }
+				}
+			}
+		}
+	}
+}
+
+planet_event = {	# Biomechanical Breeders 1
+	id = lv_event_popups.7
+	title = "Biomechanical Breeders"
+	desc = "lv_biomechanical_breeder_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_ex_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_biomechanical_breeder_1_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_biomechanical_breeder.name.1
+		custom_tooltip = lv_ep_biomechanical_breeder.name.1.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_biomechanical_breeder.name.2
+		custom_tooltip = lv_ep_biomechanical_breeder.name.2.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_biomechanical_breeder.name.3
+		custom_tooltip = lv_ep_biomechanical_breeder.name.3.tooltip
+		trigger = {
+			owner = { 
+				has_authority = auth_machine_intelligence
+			}
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+					has_authority = auth_machine_intelligence
+				} 
+			}
+		}
+	}
+}
+
+planet_event = {	# Biomechanical Breeders 2
+	id = lv_event_popups.8
+	title = "Biomechanical Breeders"
+	desc = "lv_biomechanical_breeder_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_ex_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_biomechanical_breeder_2_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_biomechanical_breeder.name.1
+		custom_tooltip = lv_ep_biomechanical_breeder.name.1.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_biomechanical_breeder.name.2
+		custom_tooltip = lv_ep_biomechanical_breeder.name.2.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_biomechanical_breeder.name.3
+		custom_tooltip = lv_ep_biomechanical_breeder.name.3.tooltip
+		trigger = {
+			owner = { 
+				has_authority = auth_machine_intelligence
+			}
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+					has_authority = auth_machine_intelligence
+				} 
+			}
+		}
+	}
+}
+
+planet_event = {	# Biomechanical Breeders 3
+	id = lv_event_popups.9
+	title = "Biomechanical Breeders"
+	desc = "lv_biomechanical_breeder_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_ex_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_biomechanical_breeder_3_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_biomechanical_breeder.name.1
+		custom_tooltip = lv_ep_biomechanical_breeder.name.1.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_biomechanical_breeder.name.2
+		custom_tooltip = lv_ep_biomechanical_breeder.name.2.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_biomechanical_breeder.name.3
+		custom_tooltip = lv_ep_biomechanical_breeder.name.3.tooltip
+		trigger = {
+			owner = { 
+				has_authority = auth_machine_intelligence
+			}
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+					has_authority = auth_machine_intelligence
+				} 
+			}
+		}
+	}
+}
+
+planet_event = {	# Biomechanical Breeders 4
+	id = lv_event_popups.10
+	title = "Biomechanical Breeders"
+	desc = "lv_biomechanical_breeder_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_ex_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_biomechanical_breeder_4_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_biomechanical_breeder.name.1
+		custom_tooltip = lv_ep_biomechanical_breeder.name.1.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_biomechanical_breeder.name.2
+		custom_tooltip = lv_ep_biomechanical_breeder.name.2.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_biomechanical_breeder.name.3
+		custom_tooltip = lv_ep_biomechanical_breeder.name.3.tooltip
+		trigger = {
+			owner = { 
+				has_authority = auth_machine_intelligence
+			}
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+					has_authority = auth_machine_intelligence
+				} 
+			}
+		}
+	}
+}
+
+# All Female #
+
+planet_event = {
+	id = lv_event_popups.11
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOR = {
+					has_global_flag = lv_events_hidden
+					has_global_flag = lv_mono_gender_hidden
+					has_global_flag = lv_all_disabled
+					has_global_flag = lv_rape_disabled
+				}
+			}
+			random_list = {
+				25 = {
+					planet_event = { id = lv_event_popups.12 }
+				}
+				25 = {
+					planet_event = { id = lv_event_popups.13 }
+				}
+				25 = {
+					planet_event = { id = lv_event_popups.14 }
+				}
+				25 = {
+					planet_event = { id = lv_event_popups.15 }
+				}
+			}
+		}
+	}
+}
+
+planet_event = {	# All Female Synergy 1
+	id = lv_event_popups.12
+	title = "All Female Synergy"
+	desc = "lv_mono_gender_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_all_female_bonus_1_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_mono_gender.name.1
+		custom_tooltip = lv_ep_mono_gender.name.1.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_mono_gender.name.2
+		custom_tooltip = lv_ep_mono_gender.name.2.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+	}
+}
+
+planet_event = {	# All Female Synergy 2
+	id = lv_event_popups.13
+	title = "All Female Synergy"
+	desc = "lv_mono_gender_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_all_female_bonus_2_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_mono_gender.name.1
+		custom_tooltip = lv_ep_mono_gender.name.1.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_mono_gender.name.2
+		custom_tooltip = lv_ep_mono_gender.name.2.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+	}
+}
+
+planet_event = {	# All Female Synergy 3
+	id = lv_event_popups.14
+	title = "All Female Synergy"
+	desc = "lv_mono_gender_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_all_female_bonus_3_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_mono_gender.name.1
+		custom_tooltip = lv_ep_mono_gender.name.1.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_mono_gender.name.2
+		custom_tooltip = lv_ep_mono_gender.name.2.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+	}
+}
+
+planet_event = {	# All Female Synergy 4
+	id = lv_event_popups.15
+	title = "All Female Synergy"
+	desc = "lv_mono_gender_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_all_female_bonus_4_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_mono_gender.name.1
+		custom_tooltip = lv_ep_mono_gender.name.1.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_mono_gender.name.2
+		custom_tooltip = lv_ep_mono_gender.name.2.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+	}
+}
+
+# All Male #
+
+planet_event = {
+	id = lv_event_popups.16
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOR = {
+					has_global_flag = lv_events_hidden
+					has_global_flag = lv_mono_gender_hidden
+					has_global_flag = lv_all_disabled
+					has_global_flag = lv_rape_disabled
+				}
+			}
+			random_list = {
+				25 = {
+					planet_event = { id = lv_event_popups.17 }
+				}
+				25 = {
+					planet_event = { id = lv_event_popups.18 }
+				}
+				25 = {
+					planet_event = { id = lv_event_popups.19 }
+				}
+				25 = {
+					planet_event = { id = lv_event_popups.20 }
+				}
+			}
+		}
+	}
+}
+
+planet_event = {	# All Male Synergy 1
+	id = lv_event_popups.17
+	title = "All Male Synergy"
+	desc = "lv_mono_gender_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_all_male_bonus_1_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_mono_gender.name.1
+		custom_tooltip = lv_ep_mono_gender.name.1.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_mono_gender.name.2
+		custom_tooltip = lv_ep_mono_gender.name.2.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+	}
+}
+
+planet_event = {	# All Male Synergy 2
+	id = lv_event_popups.18
+	title = "All Male Synergy"
+	desc = "lv_mono_gender_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_all_male_bonus_2_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_mono_gender.name.1
+		custom_tooltip = lv_ep_mono_gender.name.1.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_mono_gender.name.2
+		custom_tooltip = lv_ep_mono_gender.name.2.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+	}
+}
+
+planet_event = {	# All Male Synergy 3
+	id = lv_event_popups.19
+	title = "All Male Synergy"
+	desc = "lv_mono_gender_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_all_male_bonus_3_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_mono_gender.name.1
+		custom_tooltip = lv_ep_mono_gender.name.1.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_mono_gender.name.2
+		custom_tooltip = lv_ep_mono_gender.name.2.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+	}
+}
+
+planet_event = {	# All Male Synergy 4
+	id = lv_event_popups.20
+	title = "All Male Synergy"
+	desc = "lv_mono_gender_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_all_male_bonus_4_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_mono_gender.name.1
+		custom_tooltip = lv_ep_mono_gender.name.1.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_mono_gender.name.2
+		custom_tooltip = lv_ep_mono_gender.name.2.tooltip
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+	}
+}
+
+# Sex Crazed #
+
+planet_event = {
+	id = lv_event_popups.26
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOR = {
+					has_global_flag = lv_events_hidden
+					has_global_flag = lv_all_disabled
+				}
+			}
+			random_list = {
+				25 = {
+					planet_event = { id = lv_event_popups.27 }
+				}
+				25 = {
+					planet_event = { id = lv_event_popups.28 }
+				}
+				25 = {
+					planet_event = { id = lv_event_popups.29 }
+				}
+				25 = {
+					planet_event = { id = lv_event_popups.30 }
+				}
+			}
+		}
+	}
+}
+
+planet_event = {	# Sex Crazed 1
+	id = lv_event_popups.27
+	title = "Sex Crazed"
+	desc = "lv_sex_crazed_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_sex_crazed_1_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_sex_crazed.name.1
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_sex_crazed.name.2
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_fanatic_egalitarian
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_sex_crazed.name.3
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_fanatic_egalitarian
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+	}
+}
+
+planet_event = {	# Sex Crazed 2
+	id = lv_event_popups.28
+	title = "Sex Crazed"
+	desc = "lv_sex_crazed_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_sex_crazed_2_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_sex_crazed.name.1
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_sex_crazed.name.2
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_fanatic_egalitarian
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_sex_crazed.name.3
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_fanatic_egalitarian
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+	}
+}
+
+planet_event = {	# Sex Crazed 3
+	id = lv_event_popups.29
+	title = "Sex Crazed"
+	desc = "lv_sex_crazed_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_sex_crazed_3_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_sex_crazed.name.1
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_sex_crazed.name.2
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_fanatic_egalitarian
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_sex_crazed.name.3
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_fanatic_egalitarian
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+	}
+}
+
+planet_event = {	# Sex Crazed 4
+	id = lv_event_popups.30
+	title = "Sex Crazed"
+	desc = "lv_sex_crazed_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_sex_crazed_4_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_sex_crazed.name.1
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_sex_crazed.name.2
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_fanatic_egalitarian
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_ep_sex_crazed.name.3
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				} 
+			}
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_fanatic_egalitarian
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+	}
+}
+
+
+#################
+# Dom/Sub (f/m) #
+#################
+
+# Gatekeeper
+planet_event = {
+	id = lv_event_popups.100
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+	
+		# Con
+		if = {
+			limit = {
+				NOR = {
+					has_global_flag = lv_events_hidden
+					has_global_flag = lv_all_disabled
+					has_global_flag = lv_rape_disabled
+				}
+			}
+			random_list = {
+				15 = { planet_event = { id = lv_event_popups.111 } }
+				15 = { planet_event = { id = lv_event_popups.112 } }
+				15 = { planet_event = { id = lv_event_popups.113 } }
+				15 = { planet_event = { id = lv_event_popups.114 } }
+				15 = { planet_event = { id = lv_event_popups.115 } }
+				15 = { planet_event = { id = lv_event_popups.116 } }
+				10 = { planet_event = { id = lv_event_popups.117 } }
+			}
+		}
+		
+		# Noncon
+		else_if = {
+			limit = {
+				NOR = {
+					has_global_flag = lv_events_hidden
+					has_global_flag = lv_all_disabled
+				}
+			}
+			random_list = {
+				9 = { planet_event = { id = lv_event_popups.111 } }
+				7 = { planet_event = { id = lv_event_popups.112 } }
+				7 = { planet_event = { id = lv_event_popups.113 } }
+				7 = { planet_event = { id = lv_event_popups.114 } }
+				7 = { planet_event = { id = lv_event_popups.115 } }
+				7 = { planet_event = { id = lv_event_popups.116 } }
+				7 = { planet_event = { id = lv_event_popups.117 } }
+				7 = { planet_event = { id = lv_event_popups.121 } }
+				7 = { planet_event = { id = lv_event_popups.122 } }
+				7 = { planet_event = { id = lv_event_popups.123 } }
+				7 = { planet_event = { id = lv_event_popups.124 } }
+				7 = { planet_event = { id = lv_event_popups.125 } }
+				7 = { planet_event = { id = lv_event_popups.126 } }
+				7 = { planet_event = { id = lv_event_popups.127 } }
+			}
+		}
+	}
+}
+
+# Con 1
+planet_event = {	
+	id = lv_event_popups.111
+	title = "BDSM Synergy"
+	desc = "lv_dom_sub_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_bdsm_fm_c_11_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_dom_sub.name.1
+		custom_tooltip = lv_ep_dom_sub.name.1.tooltip
+		trigger = {
+			exists = owner
+			owner = {  has_ethic = ethic_fanatic_authoritarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.2
+		custom_tooltip = lv_ep_dom_sub.name.2.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_egalitarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.3
+		custom_tooltip = lv_ep_dom_sub.name.3.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_militarist }
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_fanatic_authoritarian
+					has_ethic = ethic_fanatic_egalitarian
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+	}
+}
+
+# Con 2
+planet_event = {	
+	id = lv_event_popups.112
+	title = "BDSM Synergy"
+	desc = "lv_dom_sub_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_bdsm_fm_c_12_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_dom_sub.name.1
+		custom_tooltip = lv_ep_dom_sub.name.1.tooltip
+		trigger = {
+			exists = owner
+			owner = {  has_ethic = ethic_fanatic_authoritarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.2
+		custom_tooltip = lv_ep_dom_sub.name.2.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_egalitarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.3
+		custom_tooltip = lv_ep_dom_sub.name.3.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_militarist }
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_fanatic_authoritarian
+					has_ethic = ethic_fanatic_egalitarian
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+	}
+}
+
+# Con 3
+planet_event = {	
+	id = lv_event_popups.113
+	title = "BDSM Synergy"
+	desc = "lv_dom_sub_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_bdsm_fm_c_13_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_dom_sub.name.1
+		custom_tooltip = lv_ep_dom_sub.name.1.tooltip
+		trigger = {
+			exists = owner
+			owner = {  has_ethic = ethic_fanatic_authoritarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.2
+		custom_tooltip = lv_ep_dom_sub.name.2.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_egalitarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.3
+		custom_tooltip = lv_ep_dom_sub.name.3.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_militarist }
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_fanatic_authoritarian
+					has_ethic = ethic_fanatic_egalitarian
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+	}
+}
+
+# Con 4
+planet_event = {	
+	id = lv_event_popups.114
+	title = "BDSM Synergy"
+	desc = "lv_dom_sub_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_bdsm_fm_c_14_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_dom_sub.name.1
+		custom_tooltip = lv_ep_dom_sub.name.1.tooltip
+		trigger = {
+			exists = owner
+			owner = {  has_ethic = ethic_fanatic_authoritarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.2
+		custom_tooltip = lv_ep_dom_sub.name.2.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_egalitarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.3
+		custom_tooltip = lv_ep_dom_sub.name.3.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_militarist }
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_fanatic_authoritarian
+					has_ethic = ethic_fanatic_egalitarian
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+	}
+}
+
+# Con 5
+planet_event = {	
+	id = lv_event_popups.115
+	title = "BDSM Synergy"
+	desc = "lv_dom_sub_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_bdsm_fm_c_15_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_dom_sub.name.1
+		custom_tooltip = lv_ep_dom_sub.name.1.tooltip
+		trigger = {
+			exists = owner
+			owner = {  has_ethic = ethic_fanatic_authoritarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.2
+		custom_tooltip = lv_ep_dom_sub.name.2.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_egalitarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.3
+		custom_tooltip = lv_ep_dom_sub.name.3.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_militarist }
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_fanatic_authoritarian
+					has_ethic = ethic_fanatic_egalitarian
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+	}
+}
+
+# Con 6
+planet_event = {	
+	id = lv_event_popups.116
+	title = "BDSM Synergy"
+	desc = "lv_dom_sub_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_bdsm_fm_c_16_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_dom_sub.name.1
+		custom_tooltip = lv_ep_dom_sub.name.1.tooltip
+		trigger = {
+			exists = owner
+			owner = {  has_ethic = ethic_fanatic_authoritarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.2
+		custom_tooltip = lv_ep_dom_sub.name.2.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_egalitarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.3
+		custom_tooltip = lv_ep_dom_sub.name.3.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_militarist }
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_fanatic_authoritarian
+					has_ethic = ethic_fanatic_egalitarian
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+	}
+}
+
+# Con 7
+planet_event = {	
+	id = lv_event_popups.117
+	title = "BDSM Synergy"
+	desc = "lv_dom_sub_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_bdsm_fm_c_17_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_dom_sub.name.1
+		custom_tooltip = lv_ep_dom_sub.name.1.tooltip
+		trigger = {
+			exists = owner
+			owner = {  has_ethic = ethic_fanatic_authoritarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.2
+		custom_tooltip = lv_ep_dom_sub.name.2.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_egalitarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.3
+		custom_tooltip = lv_ep_dom_sub.name.3.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_militarist }
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_fanatic_authoritarian
+					has_ethic = ethic_fanatic_egalitarian
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+	}
+}
+
+# Noncon 1
+planet_event = {	
+	id = lv_event_popups.121
+	title = "BDSM Synergy"
+	desc = "lv_dom_sub_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_bdsm_fm_nc_21_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_dom_sub.name.1
+		custom_tooltip = lv_ep_dom_sub.name.1.tooltip
+		trigger = {
+			exists = owner
+			owner = {  has_ethic = ethic_fanatic_authoritarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.2
+		custom_tooltip = lv_ep_dom_sub.name.2.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_egalitarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.3
+		custom_tooltip = lv_ep_dom_sub.name.3.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_militarist }
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_fanatic_authoritarian
+					has_ethic = ethic_fanatic_egalitarian
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+	}
+}
+
+# Noncon 2
+planet_event = {	
+	id = lv_event_popups.122
+	title = "BDSM Synergy"
+	desc = "lv_dom_sub_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_bdsm_fm_nc_22_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_dom_sub.name.1
+		custom_tooltip = lv_ep_dom_sub.name.1.tooltip
+		trigger = {
+			exists = owner
+			owner = {  has_ethic = ethic_fanatic_authoritarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.2
+		custom_tooltip = lv_ep_dom_sub.name.2.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_egalitarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.3
+		custom_tooltip = lv_ep_dom_sub.name.3.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_militarist }
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_fanatic_authoritarian
+					has_ethic = ethic_fanatic_egalitarian
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+	}
+}
+
+# Noncon 3
+planet_event = {	
+	id = lv_event_popups.123
+	title = "BDSM Synergy"
+	desc = "lv_dom_sub_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_bdsm_fm_nc_23_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_dom_sub.name.1
+		custom_tooltip = lv_ep_dom_sub.name.1.tooltip
+		trigger = {
+			exists = owner
+			owner = {  has_ethic = ethic_fanatic_authoritarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.2
+		custom_tooltip = lv_ep_dom_sub.name.2.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_egalitarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.3
+		custom_tooltip = lv_ep_dom_sub.name.3.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_militarist }
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_fanatic_authoritarian
+					has_ethic = ethic_fanatic_egalitarian
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+	}
+}
+
+# Noncon 4
+planet_event = {	
+	id = lv_event_popups.124
+	title = "BDSM Synergy"
+	desc = "lv_dom_sub_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_bdsm_fm_nc_24_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_dom_sub.name.1
+		custom_tooltip = lv_ep_dom_sub.name.1.tooltip
+		trigger = {
+			exists = owner
+			owner = {  has_ethic = ethic_fanatic_authoritarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.2
+		custom_tooltip = lv_ep_dom_sub.name.2.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_egalitarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.3
+		custom_tooltip = lv_ep_dom_sub.name.3.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_militarist }
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_fanatic_authoritarian
+					has_ethic = ethic_fanatic_egalitarian
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+	}
+}
+
+# Noncon 5
+planet_event = {	
+	id = lv_event_popups.125
+	title = "BDSM Synergy"
+	desc = "lv_dom_sub_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_bdsm_fm_nc_25_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_dom_sub.name.1
+		custom_tooltip = lv_ep_dom_sub.name.1.tooltip
+		trigger = {
+			exists = owner
+			owner = {  has_ethic = ethic_fanatic_authoritarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.2
+		custom_tooltip = lv_ep_dom_sub.name.2.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_egalitarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.3
+		custom_tooltip = lv_ep_dom_sub.name.3.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_militarist }
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_fanatic_authoritarian
+					has_ethic = ethic_fanatic_egalitarian
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+	}
+}
+
+# Noncon 6
+planet_event = {	
+	id = lv_event_popups.126
+	title = "BDSM Synergy"
+	desc = "lv_dom_sub_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_bdsm_fm_nc_26_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_dom_sub.name.1
+		custom_tooltip = lv_ep_dom_sub.name.1.tooltip
+		trigger = {
+			exists = owner
+			owner = {  has_ethic = ethic_fanatic_authoritarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.2
+		custom_tooltip = lv_ep_dom_sub.name.2.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_egalitarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.3
+		custom_tooltip = lv_ep_dom_sub.name.3.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_militarist }
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_fanatic_authoritarian
+					has_ethic = ethic_fanatic_egalitarian
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+	}
+}
+
+# Noncon 7
+planet_event = {	
+	id = lv_event_popups.127
+	title = "BDSM Synergy"
+	desc = "lv_dom_sub_inform.desc"
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_bdsm_fm_nc_27_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = lv_ep_dom_sub.name.1
+		custom_tooltip = lv_ep_dom_sub.name.1.tooltip
+		trigger = {
+			exists = owner
+			owner = {  has_ethic = ethic_fanatic_authoritarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.2
+		custom_tooltip = lv_ep_dom_sub.name.2.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_egalitarian }
+		}
+	}
+	option = {
+		name = lv_ep_dom_sub.name.3
+		custom_tooltip = lv_ep_dom_sub.name.3.tooltip
+		trigger = {
+			exists = owner
+			owner = { has_ethic = ethic_fanatic_militarist }
+		}
+	}
+	option = {
+		name = lv_event_popups.0
+		trigger = {
+			owner = { 
+				NOR = {
+					has_ethic = ethic_fanatic_authoritarian
+					has_ethic = ethic_fanatic_egalitarian
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+	}
+}
+
+############
+# Policies #
+############
+
+# Milk Cow Specialization #
+
+country_event = {		# No Specialization
+	id = lv_event_popups.1000
+	title = "Milk Cow Specialization"
+	desc = lv_no_milk_cow_specialization.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_administrative_work
+	
+	picture_event_data = {
+		room = evt_lv_no_milk_cow_specialization_1_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = lv_event_popups.0
+	}
+}
+
+country_event = {		# Maximize Production
+	id = lv_event_popups.1001
+	title = "Maximize Production"
+	desc = lv_maximize_milk_cow_production.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_administrative_work
+	
+	picture_event_data = {
+		room = evt_lv_maximize_milk_cow_production_1_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = lv_event_popups.0
+	}
+}
+
+country_event = {		# Free Use Cows
+	id = lv_event_popups.1002
+	title = "Free Use Cows"
+	desc = lv_free_use_cows.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_administrative_work
+	
+	picture_event_data = {
+		room = evt_lv_free_use_cows_1_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = lv_event_popups.0
+	}
+}
+
+country_event = {		# Milk Cow Renting
+	id = lv_event_popups.1003
+	title = "Milk Cow Renting"
+	desc = lv_milk_cow_renting.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_administrative_work
+	
+	picture_event_data = {
+		room = evt_lv_milk_cow_renting_1_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = lv_event_popups.0
+	}
+}
+
+country_event = {		# Milk Cow Breeding
+	id = lv_event_popups.1004
+	title = "Milk Cow Breeding"
+	desc = lv_milk_cow_breeding.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_administrative_work
+	
+	picture_event_data = {
+		room = evt_lv_milk_cow_breeding_1_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = lv_event_popups.0
+	}
+}
+
+#############
+# Buildings #
+#############
+
+planet_event = {		# Pop Stealing Notify
+	id = lv_event_popups.1500
+	title = "Abduction Success"
+	desc = lv_pop_stealing_notify.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_criminal_activity
+	location = event_target:lv_relocated_planet
+	
+	picture_event_data = {
+		room = evt_lv_pop_stealing_notify_1_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = lv_event_popups.0
+	}
+}
+
+planet_event = {		# Pop Stolen Notify
+	id = lv_event_popups.1501
+	title = "Abducted"
+	desc = lv_pop_stolen_notify.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_criminal_activity
+	location = event_target:lv_relocated_planet
+	
+	picture_event_data = {
+		room = evt_lv_pop_stealing_notify_1_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = lv_event_popups.0
+	}
+}
+
+###

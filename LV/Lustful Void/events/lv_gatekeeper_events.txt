@@ -1,0 +1,205 @@
+namespace = lv_colony_gate
+
+########################################
+###     Colony Gatekeeper Events     ###
+########################################
+
+# 5 year pulse #
+
+event = {
+	id = lv_colony_gate.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = { is_ai = no }
+			every_owned_planet = {
+				planet_event = { id = lv_colony_events.2 days = 850 random = 900 }
+				random_list = {
+					59 = { planet_event = { id = lv_null_event.1 } }
+					1 = { planet_event = { id = lv_colony_events.1 days = 850 random = 900 } }
+					20 = { planet_event = { id = lv_colony_events.3 days = 850 random = 900 } }
+					20 = { planet_event = { id = lv_colony_events.4 days = 850 random = 900 } }
+				}
+			}
+		}
+	}
+}
+
+# 1 year pulse #
+
+event = {		# Crime Gatekeeper
+	id = lv_colony_gate.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = {
+				NOR = {
+					has_global_flag = lv_all_disabled
+					has_global_flag = lv_rape_disabled
+				}
+				NOT = { has_ethic = ethic_gestalt_consciousness }
+				any_owned_planet = {
+					OR = {
+						has_modifier = criminal_underworld
+						has_modifier = gang_wars
+						has_modifier = center_of_drug_trade
+						has_modifier = mob_rule
+					}
+					NOR = { 
+						has_planet_flag = planet_crime_flag
+						has_modifier = crime_lord_deal
+					}
+				}
+			}
+			random_owned_planet = {
+				if = {
+					limit = {
+						OR = {
+							has_modifier = criminal_underworld
+							has_modifier = gang_wars
+							has_modifier = center_of_drug_trade
+							has_modifier = mob_rule
+						}
+						NOR = { 
+							has_planet_flag = planet_crime_flag
+							has_modifier = crime_lord_deal
+						}
+					}
+					random_list = {
+						60 = {}
+						10 = {
+							modifier = {
+								factor = 0
+								NOT = { has_modifier = criminal_underworld }
+							}
+							planet_event = { id = lv_crime_events.1 days = 10 random = 300 }
+						}
+						10 = {
+							modifier = {
+								factor = 0
+								NOR = { 
+									has_modifier = gang_wars
+									has_modifier = center_of_drug_trade
+									has_modifier = mob_rule
+								}
+							}
+							planet_event = { id = lv_crime_events.2 days = 10 random = 300 }
+						}
+						10 = {
+							modifier = {
+								factor = 0
+								NOR = { 
+									has_modifier = gang_wars
+									has_modifier = center_of_drug_trade
+									has_modifier = mob_rule
+								}
+							}
+							planet_event = { id = lv_crime_events.3 days = 10 random = 300 }
+						}
+						10 = {
+							modifier = {
+								factor = 0
+								NOR = { 
+									has_modifier = gang_wars
+									has_modifier = center_of_drug_trade
+									has_modifier = mob_rule
+								}
+							}
+							planet_event = { id = lv_crime_events.4 days = 10 random = 300 }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# ~5 Yearly planet Gatekeeper #
+
+planet_event = {
+	id = lv_colony_gate.3
+	hide_window = yes
+	
+	trigger = {
+		NOR = {
+			has_global_flag = lv_all_disabled
+			has_global_flag = lv_raunchy_titans_disabled
+			has_global_flag = lv_bestiality_disabled
+			has_global_flag = lv_rape_disabled
+		}
+		NOT = { has_planet_flag = lv_had_yearly_event }
+		OR = {
+			has_planet_flag =  lv_titanic_life_active_4
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		set_timed_planet_flag = {
+			flag = lv_had_yearly_event
+			days = 1
+		}
+		
+		if = {
+			limit = {
+				has_planet_flag = lv_titanic_life_active_4
+				has_ground_combat = no
+				num_pops > 0
+			}
+			planet_event = { id = lv_colony_events.15 }
+		}
+	}
+}
+
+# Monthly pulse #
+
+event = {
+	id = lv_colony_gate.4
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = { is_ai = no }
+			every_owned_planet = {
+				random_list = {
+					96 = { planet_event = { id = lv_null_event.1 } }
+					1 = { planet_event = { id = lv_neuter_purge_event.1 days = 5 random = 4 } }
+					1 = { planet_event = { id = lv_neuter_purge_event.2 days = 5 random = 4 } }
+					1 = { planet_event = { id = lv_neuter_purge_event.3 days = 5 random = 4 } }
+					1 = { planet_event = { id = lv_neuter_purge_event.4 days = 5 random = 4 } }
+				}
+				random_list = {
+					95 = { planet_event = { id = lv_null_event.1 } }
+					5 = { planet_event = { id = lv_pop_events.9999 days = 5 random = 4 } }
+				}
+			}
+		}
+	}
+}
+
+# AI trait clean up #
+
+event = {
+	id = lv_colony_gate.9
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = { is_ai = yes }
+			every_owned_planet = {
+				planet_event = { id = lv_trait_cleanup.8 days = 20 random = 40 }
+			}
+		}
+	}
+}
+
+###

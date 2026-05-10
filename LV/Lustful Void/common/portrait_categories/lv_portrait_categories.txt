@@ -1,0 +1,20 @@
+lv_tentacle_category = {
+	name = LVTENTACLE
+	sets = {
+		lv_tentacle_set
+	}
+}
+
+lv_equine_futa_category = {
+	name = LVEQUINE_FUTA
+	sets = {
+		lv_equine_futa_set
+	}
+}
+
+lv_machine_category = {
+	name = LVMACHINE
+	sets = {
+		lv_robot_set
+	}
+}

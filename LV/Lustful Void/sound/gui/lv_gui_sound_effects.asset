@@ -1,0 +1,65 @@
+#########################
+###     Event SFX     ###
+#########################
+
+soundeffect = {
+	name = lv_event_alien_nature
+	sounds = {
+		sound = event_alien_nature
+	}  
+	volume = 0.2
+	max_audible = 1
+	max_audible_behaviour = fail	
+}
+
+soundeffect = {
+	name = lv_event_alien_nature_02
+	sounds = {
+		sound = event_alien_nature_02
+	}  
+	volume = 0.2
+	max_audible = 1
+	max_audible_behaviour = fail	
+}
+
+soundeffect = {
+	name = lv_event_alien_nature_03
+	sounds = {
+		sound = event_alien_nature_03
+	}  
+	volume = 0.2
+	max_audible = 1
+	max_audible_behaviour = fail	
+}
+
+soundeffect = {
+	name = lv_swarm_crisis_ambient_stage_02
+	sounds = {
+		sound = swarm_crisis_ambient_stage_02
+	}  
+	volume = 0.2
+	max_audible = 1
+	max_audible_behaviour = fail	
+}
+
+soundeffect = {
+	name = lv_swarm_crisis_ambient_stage_final_01
+	sounds = {
+		sound = swarm_crisis_ambient_stage_final_01
+	}  
+	volume = 0.2
+	max_audible = 1
+	max_audible_behaviour = fail	
+}
+
+soundeffect = {
+	name = lv_event_psionic_03
+	sounds = {
+		sound = event_psionic_03
+	}  
+	volume = 0.2
+	max_audible = 1
+	max_audible_behaviour = fail	
+}
+
+###

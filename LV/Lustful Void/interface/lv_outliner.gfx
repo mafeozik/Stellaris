@@ -1,0 +1,32 @@
+spriteTypes = {
+
+	#Megastructures
+	spriteType = {
+		name = "GFX_lv_sring_world_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/lv_ring_world.dds"
+	}
+	spriteType = {
+		name = "GFX_lv_sring_world_2_intermediate_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/lv_ring_world.dds"
+	}
+	spriteType = {
+		name = "GFX_lv_sring_world_2_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/lv_ring_world.dds"
+	}
+	spriteType = {
+		name = "GFX_lv_sring_world_3_intermediate_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/lv_ring_world.dds"
+	}
+	spriteType = {
+		name = "GFX_lv_sring_world_ruined_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/ring_world_ruined.dds"
+	}
+	spriteType = {
+		name = "GFX_lv_sring_world_restored_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/lv_ring_world.dds"
+	}
+	
+}
+
+
+

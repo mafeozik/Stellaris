@@ -1,0 +1,22 @@
+################################################
+# MASSA - Tentacle Portrait					   #
+# Author: Mk40							   	   #
+################################################
+
+portraits = {
+
+	# Tentacle
+	lv_tentacle_01 = {
+		entity = "portrait_molluscoid_16_entity"
+		clothes_selector = "no_texture"
+		attachment_selector = "no_texture"
+		greeting_sound = "molluscoid_01_greetings" 
+		character_textures = {
+			"gfx/models/portraits/tentacle/lv_tentacle_purple.dds"
+			"gfx/models/portraits/tentacle/lv_tentacle_red.dds"
+			"gfx/models/portraits/tentacle/lv_tentacle_green.dds"
+			"gfx/models/portraits/tentacle/lv_tentacle_teal.dds"
+			"gfx/models/portraits/tentacle/lv_tentacle_black.dds"
+		}
+	}
+}

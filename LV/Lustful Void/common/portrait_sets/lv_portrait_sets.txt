@@ -1,0 +1,21 @@
+lv_tentacle_set = {
+	species_class = LVTENTACLE
+	portraits = {
+		"lv_tentacle_01"
+	}
+}
+
+lv_equine_futa_set = {
+	species_class = LVEQUINE_FUTA
+	portraits = {
+		"lv_equine_futa_0"
+	}
+}
+
+lv_robot_set = {
+	species_class = LVROBOT
+	species_class = LVMACHINE
+	portraits = {
+		"lv_sexbot_humanoid"
+	}
+}

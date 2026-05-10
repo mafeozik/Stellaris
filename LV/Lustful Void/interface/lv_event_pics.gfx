@@ -1,0 +1,99 @@
+##############################
+###     Event Pictures     ###
+##############################
+
+spriteTypes = {	
+
+	# Anomalies
+	spriteType = {
+		name = "GFX_evt_lv_lost_sexbot_2"
+		texturefile = "gfx/event_pictures/evt_lv_lost_sexbot_2.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+    }
+	spriteType = {
+		name = "GFX_evt_lv_lost_sexbot_3"
+		texturefile = "gfx/event_pictures/evt_lv_lost_sexbot_3.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+    }
+	
+	# Archaeology
+	spriteType = {
+		name = "GFX_evt_lv_statue_path_1"
+		texturefile = "gfx/event_pictures/evt_lv_statue_path_1.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+    }
+	spriteType = {
+		name = "GFX_evt_lv_throne_room_1"
+		texturefile = "gfx/event_pictures/evt_lv_throne_room_1.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+    }
+	spriteType = {
+		name = "GFX_evt_lv_statue_riding_1"
+		texturefile = "gfx/event_pictures/evt_lv_statue_riding_1.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+    }
+	spriteType = {
+		name = "GFX_evt_lv_hcock_transformed_1"
+		texturefile = "gfx/event_pictures/evt_lv_hcock_transformed_1.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+    }
+	
+	# Colony Events
+	spriteType = {
+		name = "GFX_evt_lv_raunchy_titans_2"
+		texturefile = "gfx/event_pictures/evt_lv_raunchy_titans_2.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+    }
+	spriteType = {
+		name = "GFX_evt_lv_titanic_sex_fun_1"
+		texturefile = "gfx/event_pictures/evt_lv_titanic_sex_fun_1.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+    }
+	spriteType = {
+		name = "GFX_evt_lv_titanic_sex_scared_1"
+		texturefile = "gfx/event_pictures/evt_lv_titanic_sex_scared_1.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+    }
+	
+	# Country Events
+	spriteType = {
+		name = "GFX_evt_lv_pow_rapists_punished_1"
+		texturefile = "gfx/event_pictures/evt_lv_pow_rapists_punished_1.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+    }
+	
+	# Situation Log
+	spriteType = {
+		name = "GFX_evt_lv_raunchy_titans_1_small"
+		texturefile = "gfx/event_pictures/evt_lv_raunchy_titans_1_small.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_lv_sexy_modification_1_small"
+		texturefile = "gfx/event_pictures/evt_lv_sexy_modification_1_small.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	# Misc
+	spriteType = {
+		name = "GFX_evt_lv_options"
+		texturefile = "gfx/event_pictures/evt_lv_options.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+}
+
+###

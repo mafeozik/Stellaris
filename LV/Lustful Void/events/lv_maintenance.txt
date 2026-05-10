@@ -1,0 +1,123 @@
+namespace = lv_maintenance
+
+###########################
+###     Maintenance     ###
+###########################
+
+# Lag fixer
+country_event = {
+	id = lv_maintenance.1
+	hide_window = yes
+	is_triggered_only = yes
+
+    immediate = {
+        # 10%
+		every_country = {
+			limit = { always = yes }
+			every_owned_planet = {
+				every_owned_pop = {
+					random_list = {
+						10 = {
+							kill_pop = yes
+						}
+						90 = {}
+					}
+				}
+			}
+		}
+    }
+}
+
+country_event = {
+	id = lv_maintenance.2
+	hide_window = yes
+	is_triggered_only = yes
+
+    immediate = {
+        # 20%
+        every_country = {
+			limit = { always = yes }
+			every_owned_planet = {
+				every_owned_pop = {
+					random_list = {
+						20 = {
+							kill_pop = yes
+						}
+						80 = {}
+					}
+				}
+			}
+		}
+    }
+}
+
+country_event = {
+	id = lv_maintenance.3
+	hide_window = yes
+	is_triggered_only = yes
+
+    immediate = {
+        # 30%
+        every_country = {
+			limit = { always = yes }
+			every_owned_planet = {
+				every_owned_pop = {
+					random_list = {
+						30 = {
+							kill_pop = yes
+						}
+						70 = {}
+					}
+				}
+			}
+		}
+    }
+}
+
+country_event = {
+	id = lv_maintenance.4
+	hide_window = yes
+	is_triggered_only = yes
+
+    immediate = {
+        # 40%
+        every_country = {
+			limit = { always = yes }
+			every_owned_planet = {
+				every_owned_pop = {
+					random_list = {
+						40 = {
+							kill_pop = yes
+						}
+						60 = {}
+					}
+				}
+			}
+		}
+    }
+}
+
+country_event = {
+	id = lv_maintenance.5
+	hide_window = yes
+	is_triggered_only = yes
+
+    immediate = {
+        # 50%
+        every_country = {
+			limit = { always = yes }
+			every_owned_planet = {
+				every_owned_pop = {
+					random_list = {
+						50 = {
+							kill_pop = yes
+						}
+						50 = {}
+					}
+				}
+			}
+		}
+    }
+}
+
+###

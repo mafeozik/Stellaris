@@ -1,0 +1,272 @@
+namespace = lv_relic_events
+
+############################
+###     Relic Events     ###
+############################
+
+###
+
+# The Golden Rod #
+# Activation
+country_event = {
+	id = lv_relic_events.11
+	title = lv_relic_events.11.name
+	desc = lv_relic_events.11.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_default
+	
+	picture_event_data = {
+		room = evt_lv_hcock_transformed_2_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = lv_relic_events.11.a.name
+		custom_tooltip = lv_relic_events.11.a.tooltip
+		hidden_effect = {
+			random_owned_leader = {
+				if = {
+					limit = { 
+						leader_class = official
+						NOT = { has_trait = leader_trait_official_lv_equine_penis }
+					}
+					add_trait = leader_trait_official_lv_equine_penis
+				}
+				if = {
+					limit = { 
+						leader_class = scientist
+						NOT = { has_trait = leader_trait_scientist_lv_equine_penis }
+					}
+					add_trait = leader_trait_scientist_lv_equine_penis
+				}
+				if = {
+					limit = { 
+						leader_class = commander
+						NOT = { has_trait = leader_trait_commander_lv_equine_penis }
+					}
+					add_trait = leader_trait_commander_lv_equine_penis
+				}
+			}
+		}
+	}
+
+	option = {
+		name = lv_relic_events.11.b.name
+		custom_tooltip = lv_relic_events.11.b.tooltip
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { has_country_flag = relic_lv_golden_rod_activated }
+				}
+				set_timed_country_flag = { flag = relic_lv_golden_rod_activated days = 900 }
+			}
+		}
+	}
+}
+
+# A Promising Offer (get leader)
+country_event = {
+	id = lv_relic_events.21
+	title = lv_relic_events.21.name
+	desc = lv_relic_events.21.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_necrophage
+	
+	picture_event_data = {
+		room = evt_lv_hcock_transformed_2_room
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lv_relic_events.21.a
+		custom_tooltip = lv_relic_events.21.a.tooltip
+		hidden_effect = {
+			create_species = {
+				name = LVEQUINE_FUTA
+				plural = LVEQUINE_FUTA_plural
+				class = LVEQUINE_FUTA
+				portrait = random
+				namelist = MAM1
+				effect = {
+					save_global_event_target_as = lv_equine_futa_species
+				}
+			}
+			owner = {
+				create_leader = {
+					class = scientist
+					gender = female
+					species = event_target:lv_equine_futa_species
+					name = "Bonnie"
+					skill = 5
+					leader_age_min = 20
+					leader_age_max = 35
+					traits = {
+						trait = leader_trait_scientist_lv_zoophile_3
+						trait = leader_trait_scientist_lv_sexologist_3
+						trait = leader_trait_scientist_lv_equine_penis
+						trait = leader_trait_maniacal
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = lv_relic_events.21.b
+	}
+}
+
+# The temple is open!
+country_event = {
+	id = lv_relic_events.22
+	title = lv_relic_events.22.name
+	desc = lv_relic_events.22.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_necrophage
+	
+	picture_event_data = {
+		room = evt_lv_hcock_transformed_3_room
+	}
+	
+	is_triggered_only = yes
+
+
+	option = {
+		name = lv_relic_events.22.a
+		custom_tooltip = lv_relic_events.22.a.tooltip
+	}
+}
+
+# Temple Conversion
+event = {
+	id = lv_relic_events.23
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		any_playable_country = {
+			any_owned_planet = {
+				has_deposit = d_lv_rod_temple
+			}
+			OR = {
+				num_assigned_jobs = {
+					job = lv_rod_temple_initiate
+					value >= 1
+				}
+				num_assigned_jobs = {
+					job = lv_rod_temple_initiate_drone
+					value >= 1
+				}
+			}
+		}
+	}
+
+	immediate = {
+		every_country = {
+			limit = {
+				any_owned_planet = {
+					has_deposit = d_lv_rod_temple
+				}
+			}
+			set_timed_country_flag = {
+				flag = lv_rod_transform_alert_timer
+				days = 2880
+			}
+			
+			every_owned_pop = {
+				limit = {
+					OR = {
+						has_job = lv_rod_temple_initiate
+						has_job = lv_rod_temple_initiate_drone
+					}
+				}
+				root.owner = {
+				}
+				root = {
+					change_variable = {
+						which = var_lv_horsified_pops
+						value = 1
+					}
+				}
+				if = {
+					limit = { NOT = { pop_has_trait = trait_lv_equine_penis } }
+					modify_species = {
+						add_trait = trait_lv_equine_penis
+					}
+				}
+				if = {
+					limit = { 
+						pop_has_trait = trait_lv_all_female
+					}
+					modify_species = {
+						remove_trait = trait_lv_all_female
+						add_trait = trait_lv_futanari
+					}
+				}
+			}
+			
+			create_message = {
+				type = MESSAGE_NECROPHAGE_POPS_NECROPHAGED
+				localization = MESSAGE_LV_HORSIFICATION_POPS_HORSIFIED
+				days = 30
+				target = this
+				variable = {
+					type = name
+					localization = PLANET
+					scope = this
+				}
+				variable = {
+					type = variable
+					varname = var_lv_horsified_pops
+					localization = VALUE
+					scope = this
+				}
+			}
+	
+			set_variable = {
+				which = var_lv_horsified_pops
+				value = 0
+			}
+		}
+	}
+}
+
+# Golden Rod Transformation (decision)
+planet_event = {
+	id = lv_relic_events.24
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		every_owned_pop = {
+			limit = {
+				NOR = {
+					pop_has_trait = trait_lv_equine_penis
+					pop_has_trait = trait_lv_all_female
+				}
+			}
+			modify_species = {
+				add_trait = trait_lv_equine_penis
+			}
+		}
+		every_owned_pop = {
+			limit = { pop_has_trait = trait_lv_all_female }
+			modify_species = {
+				remove_trait = trait_lv_all_female
+				add_trait = trait_lv_futanari
+				add_trait = trait_lv_equine_penis
+			}
+		}
+		planet_event = { id = lv_trait_cleanup.1 }
+	}
+}
+
+###

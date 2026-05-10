@@ -1,0 +1,24 @@
+################################
+###     Planet Modifiers     ###
+################################
+
+pm_lv_satmospheric_aphrodisiac = {
+	spawn_chance = {
+		modifier = {
+			add = 100
+			is_planet_class = "pc_lv_srelic"
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_atmospheric_aphrodisiac"
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_lv_satmospheric_aphrodisiac"
+		}
+	}
+	
+	modifier = "lv_satmospheric_aphrodisiac"
+}
+
+###

@@ -1,0 +1,95 @@
+######################################
+###     Orbital Ring Buildings     ###
+######################################
+
+###########
+# Regular #
+###########
+
+# The Giga-Brothel
+lv_ring_brothel_hub = {
+	icon = "GFX_lv_orbitalring_brothel_hub"
+	construction_days = 360
+
+	potential = {
+		exists = owner
+		owner = {
+			has_technology = tech_interstellar_economics
+			is_gestalt = no
+		}
+		is_orbital_ring = yes
+	}
+
+	planet_modifier = {
+		trade_value_mult = 0.10
+		planet_lv_whore_upkeep_mult = -0.10
+	}
+
+	triggered_planet_modifier = {
+		custom_tooltip = "sm_lv_ring_brothel_hub_effect"
+	}
+
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 200
+			rare_crystals = 200
+		}
+
+		upkeep = {
+			energy = 4
+			rare_crystals = 2
+		}
+	}
+
+	show_in_tech = "tech_interstellar_economics"
+
+	ai_weight = {
+		weight = 100
+	}
+}
+
+###########
+# Gestalt #
+###########
+
+# Orbital Care Package Drops
+lv_ring_nurture_hub = {
+	icon = "GFX_lv_orbitalring_nurture_hub"
+	construction_days = 360
+
+	potential = {
+		exists = owner
+		owner = {
+			has_technology = tech_resource_processing_algorithms
+			is_machine_empire = yes
+		}
+		is_orbital_ring = yes
+	}
+
+	planet_modifier = {
+		custom_tooltip = "sm_lv_ring_nurture_hub_effect"
+		planet_lv_comfort_worker_upkeep_mult = -0.10
+	}
+
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 200
+			exotic_gases = 300
+		}
+
+		upkeep = {
+			energy = 2
+			exotic_gases = 1
+		}
+	}
+
+	show_in_tech = "tech_resource_processing_algorithms"
+
+	ai_weight = {
+		weight = 100
+	}
+}
+
+###

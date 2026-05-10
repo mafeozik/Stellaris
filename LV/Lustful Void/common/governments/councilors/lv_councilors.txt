@@ -1,0 +1,194 @@
+###########################
+###     Councillors     ###
+###########################
+#
+# councilor_name_key = {
+#	possible = { }								Country scope triggers to evaluate if the council position is allowed. 
+#   leader_class = { }							Which leader classes can have this council position. Currently only used for the Recruit new Leader buttons. Default = none.
+#   is_leader_possible = { }					Leader scope triggers to evaluate if a leader can be assigned to this position.
+#	conditional_tooltip = "LOC_KEY"				Custom tooltip text shown for the requirements of the council position.
+#   civic = civic_imperial_cult					Civic that is required for this council position. Also used by UI. Default = none.
+#	custom_unlock_title	= "LOC_KEY"				Custom text shown instead of "UNLOCK_COUNCIL_POSITION_TOOLTIP for council positions without a civic"
+#   modifier = { }								Country Modifier, that is multiplied by assigned Leader's level.
+#	custom_tooltip = "LOC_KEY"					Custom tooltip text shown instead of the auto-generated modifier tooltip text of the council position.
+#	custom_tooltip_with_modifiers = "LOC_KEY"	Custom tooltip text shown in addition to the auto-generated modifier tooltip text of the council position.
+#	icon = "GFX_icon_name"						Icon used for the council position, if a civic is not specified.
+#	required = yes/no							Is this position forced to be on the council. Default = no
+# }
+#
+# councilor_expert_programmer = {
+# 	leader_class = { scientist }
+# 	possible = {
+# 		has_country_flag = expert_programmer
+# 	}
+# 	is_leader_possible = {
+# 		leader_class = scientist
+# 	}
+# 	modifier = {
+# 		planet_researchers_physics_research_produces_add = 1
+# 	}
+# 	custom_tooltip_with_modifiers = "councilor_expert_programmer_modifiers"
+# 	icon = "GFX_icon_councilor_research"
+# 	custom_unlock_title = "councilor_expert_programmer_unlock_title"
+# 	conditional_tooltip = "councilor_expert_programmer_conditional"
+# }
+#
+###
+
+#################
+# Normal Civics #
+#################
+
+# Divine Coupling - Exalted Concubine
+councilor_lv_divine_coupling = {
+	leader_class = { governor admiral general scientist }
+	is_leader_possible = {
+		OR = {
+			leader_class = governor
+			leader_class = admiral
+			leader_class = general
+			leader_class = scientist
+		}
+	}
+	civic = civic_lv_divine_coupling
+	modifier = {
+		planet_lv_concubine_unity_produces_add = 0.50
+	}
+}
+
+# Sex Crazed Breeders - Most Breedable Baby Oven
+councilor_lv_sex_crazed_breeders = {
+	leader_class = { governor admiral general scientist }
+	is_leader_possible = {
+		OR = {
+			leader_class = governor
+			leader_class = admiral
+			leader_class = general
+			leader_class = scientist
+		}
+	}
+	civic = civic_lv_sex_crazed_breeders
+	modifier = {
+		pop_growth_speed = 0.01
+		pop_cat_worker_happiness = 0.02
+		pop_government_ethic_attraction = 0.01
+		species_leader_exp_gain = 0.03
+	}
+}
+
+# Milk Ranchers - Biggest Mommy Milkers
+councilor_lv_milk_ranchers = {
+	leader_class = { governor admiral general scientist }
+	is_leader_possible = {
+		OR = {
+			leader_class = governor
+			leader_class = admiral
+			leader_class = general
+			leader_class = scientist
+		}
+	}
+	civic = civic_lv_milk_ranchers
+	modifier = {
+		planet_lv_milk_cow_produces_mult = 0.01
+		leaders_upkeep_mult = -0.02
+		country_trust_cap_add = 1
+		commercial_pact_mult = 0.02
+	}
+}
+
+# Institutionalized Sex Slavery - Sex Slave Training Master
+councilor_lv_sex_slaves = {
+	leader_class = { governor admiral general scientist }
+	is_leader_possible = {
+		OR = {
+			leader_class = governor
+			leader_class = admiral
+			leader_class = general
+			leader_class = scientist
+		}
+	}
+	civic = civic_lv_sex_slaves
+	modifier = {
+		pop_cat_slave_happiness = 0.01
+		trade_value_mult = 0.02
+	}
+}
+
+# Pleasure Suit Industry - Pleasure Suit Optimizer
+councilor_lv_pleasure_suits = {
+	leader_class = { governor admiral general scientist }
+	is_leader_possible = {
+		OR = {
+			leader_class = governor
+			leader_class = admiral
+			leader_class = general
+			leader_class = scientist
+		}
+	}
+	civic = civic_lv_pleasure_suits
+	modifier = {
+		species_leader_exp_gain = 0.05
+		councilor_exp_gain = 0.03
+	}
+}
+
+# Sexualised Culture - Galactic Thot
+councilor_lv_sexculture = {
+	leader_class = { governor admiral general scientist }
+	is_leader_possible = {
+		OR = {
+			leader_class = governor
+			leader_class = admiral
+			leader_class = general
+			leader_class = scientist
+		}
+	}
+	civic = civic_lv_sexculture
+	modifier = {
+		country_trust_cap_add = 2
+		trade_value_mult = 0.05
+	}
+}
+
+############
+# Megacorp #
+############
+
+# Franchised Prostitution - Throbhub Recruiter
+councilor_lv_franchised_prostitution = {
+	leader_class = { governor admiral general scientist }
+	is_leader_possible = {
+		OR = {
+			leader_class = governor
+			leader_class = admiral
+			leader_class = general
+			leader_class = scientist
+		}
+	}
+	civic = civic_lv_franchised_prostitution
+	modifier = {
+		branch_office_value_mult = 0.02
+		trade_value_mult = 0.02
+	}
+}
+
+# Sex Contractors - Sexual Conduct Enforcer
+councilor_lv_sex_contractors = {
+	leader_class = { governor admiral general scientist }
+	is_leader_possible = {
+		OR = {
+			leader_class = governor
+			leader_class = admiral
+			leader_class = general
+			leader_class = scientist
+		}
+	}
+	civic = civic_lv_sex_contractors
+	modifier = {
+		species_leader_exp_gain = 0.02
+		branch_office_value_mult = 0.01
+		commercial_pact_mult = 0.01
+	}
+}
+
+###

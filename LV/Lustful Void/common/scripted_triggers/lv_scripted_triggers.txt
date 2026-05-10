@@ -1,0 +1,616 @@
+#################################
+###     Scripted Triggers     ###
+#################################
+
+#############
+# Buildings #
+#############
+
+lv_unemployed = {
+	planet = {
+		any_owned_pop = {
+			NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+			NOR = {
+				is_pop_category = specialist
+				is_pop_category = ruler
+			}
+			OR = { 
+				is_unemployed = yes 
+				has_job = servant 
+			}
+		}
+	}
+}
+
+lv_uses_food = {
+	OR = {
+		NOR = { 
+			has_authority = auth_machine_intelligence
+			has_ascension_perk = ap_synthetic_evolution
+		}
+		has_valid_civic = civic_machine_servitor
+		has_valid_civic = civic_machine_assimilator
+	}
+}
+
+lv_has_motes = {
+	exists = owner
+	owner = {
+		has_monthly_income = {
+			resource = volatile_motes
+			value >= 1
+		}
+	}
+}
+
+lv_has_exotic_gases = {
+	exists = owner
+	owner = {
+		is_ai = yes
+		has_monthly_income = {
+			resource = exotic_gases
+			value >= 1
+		}
+	}
+}
+
+lv_has_rare_crystals = {
+	exists = owner
+	owner = {
+		is_ai = yes
+		has_monthly_income = {
+			resource = rare_crystals
+			value >= 1
+		}
+	}
+}
+
+#########
+# Other #
+#########
+
+lv_is_habitable_world = {		# Makes it easy to add support for other mods that add planet types
+	OR = {
+		is_planet_class = pc_desert
+		is_planet_class = pc_tropical
+		is_planet_class = pc_arid
+		is_planet_class = pc_continental
+		is_planet_class = pc_ocean
+		is_planet_class = pc_tundra
+		is_planet_class = pc_arctic
+		is_planet_class = pc_alpine
+		is_planet_class = pc_savannah
+		is_planet_class = pc_gaia
+		is_planet_class = pc_relic
+		is_planet_class = pc_city
+		
+		is_planet_class = pc_lv_sworld
+		is_planet_class = pc_lv_stentacle
+		
+		is_planet_class = pc_retinal
+		is_planet_class = pc_tidallylocked
+		is_planet_class = pc_glacial
+		is_planet_class = pc_frozen_desert
+		is_planet_class = pc_steppe
+		is_planet_class = pc_hadesert
+		is_planet_class = pc_antarctic
+		is_planet_class = pc_sandsea
+		is_planet_class = pc_subarctic
+		is_planet_class = pc_geothermal
+		is_planet_class = pc_cascadian
+		is_planet_class = pc_swamp
+		is_planet_class = pc_mangrove
+		is_planet_class = pc_desertislands
+		is_planet_class = pc_mesa
+		is_planet_class = pc_oasis
+		is_planet_class = pc_hajungle
+		is_planet_class = pc_crystal
+		is_planet_class = pc_floating
+		is_planet_class = pc_forest
+		is_planet_class = pc_wetswamp
+		is_planet_class = pc_med
+		is_planet_class = pc_prairie
+		is_planet_class = pc_boreal
+		is_planet_class = pc_snow
+		is_planet_class = pc_outback
+		is_planet_class = pc_highland
+		is_planet_class = pc_mushroom
+	}
+}
+
+lv_beasties_on_planet = {
+	OR = {
+		has_deposit = d_lv_tentacles_blocker
+		has_deposit = d_lv_tentacle_symbiosis
+		has_deposit = d_dangerous_wildlife_blocker
+		has_deposit = d_titanic_life_blocker
+		has_deposit = d_hibernating_lithoids
+		has_deposit = d_venomous_insects
+		has_deposit = d_seed_bombing_fungoid_blocker
+		has_deposit = d_seed_bombing_plantoid_blocker
+		has_deposit = d_alien_pets_deposit
+		has_deposit = d_mutant_landfill
+		has_deposit = d_worm_mine
+		has_deposit = d_worm_farm
+		has_deposit = d_ancient_one
+		has_deposit = d_fungal_study_zone
+		has_deposit = d_landed_dragon
+		has_deposit = d_toxic_god_deitys_swarms
+		has_deposit = d_toxic_god_deitys_swarms_upgraded
+		has_deposit = d_alien_sanctuary
+	}
+}
+
+lv_is_sexopolis_structure = {
+	OR = {
+		is_planet_class = pc_lv_sringworld
+		# Gigastructural Engineering
+		#is_planet_class = pc_lv_alderson_slice_sex
+		#is_planet_class = pc_lv_spenrose
+	}
+}
+
+lv_tentacle_present = {
+	OR = {
+		has_modifier = lv_tentacled_lifeforms
+		has_modifier = lv_aggressive_tentacled_lifeforms
+		has_modifier = lv_coexisting_tentacled_lifeforms
+		has_deposit = d_lv_tentacles_blocker
+		has_deposit = d_lv_tentacle_symbiosis
+		any_owned_species = {
+			has_trait = trait_lv_presapient_tentacle_lifeform
+		}	
+	}
+}
+
+has_encountered_other_species = {
+	OR = {
+		has_origin = origin_syncretic_evolution
+		has_origin = origin_necrophage
+		has_origin = origin_payback
+		### LV
+		has_origin = origin_lv_parallel_evolution
+		has_origin = origin_lv_sadomasochistic_evolution
+		has_origin = origin_lv_symbiotic_evolution
+		### LV
+		has_civic = civic_machine_servitor
+		num_communications > 0
+		any_owned_species = {
+			NOT = { has_trait = "trait_mechanical" }
+			NOT = { is_same_species = prev }
+		}
+	}	
+}
+
+lv_enslaved_sadist = {
+	pop_has_trait = trait_lv_sadistic
+	is_enslaved = yes
+}
+
+# Checks if a pop can procreate
+# This = Pop
+lv_can_pop_procreate = {
+	OR = {
+		AND = {
+			is_sapient = yes
+			is_robot_pop = no
+		}
+		AND = {
+			OR = {
+				pop_has_trait = trait_lv_lushtech_synthetic_womb
+				pop_has_trait = trait_lv_sex_bots
+				pop_has_trait = trait_lv_sex_bots_o
+			}
+		}
+	}
+}
+
+lv_is_a_smexy_robutt = {
+	OR = {
+		has_trait = trait_lv_lushtech_synthetic_womb
+		has_trait = trait_lv_breast_attachments
+		has_trait = trait_lv_synth_breasts
+		has_trait = trait_lv_custom_fleshlight_slot
+		has_trait = trait_lv_synth_vagina
+		has_trait = trait_lv_sex_bots
+		has_trait = trait_lv_sex_bots_o
+		has_trait = trait_lv_custom_dildo_attachment
+		has_trait = trait_lv_synth_penis
+		has_trait = trait_lv_lushtech_omni_seed_fabrication_modules
+	}
+}
+
+# Dairy weight
+lv_dairy_weight_low = {
+	OR = {
+		has_trait = trait_lv_honey
+		has_trait = trait_lv_natural_anal_lube
+		has_trait = trait_lv_neuron_saliva
+		has_trait = trait_lv_aphrodisiac_milk
+		has_trait = trait_lv_drooling_vagina
+		has_trait = trait_lv_synth_breasts
+		has_trait = trait_lv_sex_bots
+		has_trait = trait_lv_sex_bots_o
+	}
+}
+
+lv_dairy_weight_med = {
+	OR = {
+		has_trait = trait_lv_exotic_honey
+		has_trait = trait_lv_excess_estrogen
+		has_trait = trait_lv_large_breasts
+		has_trait = trait_lv_multiple_breasts
+		has_trait = trait_lv_perfect_hybrid
+	}
+}
+
+lv_dairy_weight_high = {
+	OR = {
+		has_trait = trait_lv_huge_breasts
+		has_trait = trait_lv_fuckable_nipples
+		has_trait = trait_lv_high_volume_lactation
+		has_trait = trait_lv_highly_nutritious_milk
+		has_trait = trait_lv_fizzy_milk
+		has_trait = trait_lv_titanic_evolution
+	}
+}
+
+lv_dairy_weight_neg = {
+	OR = {
+		has_trait = trait_lv_small_breasts
+		has_trait = trait_lv_watery_milk
+	}
+}
+
+# Sex weight
+lv_sex_weight_low = {
+	OR = {
+		has_trait = trait_lv_soft
+		has_trait = trait_lv_masochistic
+		has_trait = trait_lv_nudist
+		has_trait = trait_lv_honey
+		has_trait = trait_lv_neuron_saliva
+		has_trait = trait_lv_large_breasts
+		has_trait = trait_lv_high_volume_lactation
+		has_trait = trait_lv_futanari
+		has_trait = trait_lv_nano_forge_womb
+		has_trait = trait_lv_maternal_programming
+		has_trait = trait_lv_breast_attachments
+		has_trait = trait_lv_custom_fleshlight_slot
+		has_trait = trait_lv_custom_dildo_attachment
+	}
+}
+
+lv_sex_weight_med = {
+	OR = {
+		has_trait = trait_lv_cute
+		has_trait = trait_lv_sexual_pheromones
+		has_trait = trait_lv_exotic_honey
+		has_trait = trait_lv_elastic_orifices
+		has_trait = trait_lv_long_tongues
+		has_trait = trait_lv_huge_breasts
+		has_trait = trait_lv_multiple_breasts
+		has_trait = trait_lv_aphrodisiac_milk
+		has_trait = trait_lv_shapely_ass
+		has_trait = trait_lv_large_penis
+		has_trait = trait_lv_high_volume_ejaculations
+		has_trait = trait_lv_aphrodisiac_cum
+		has_trait = trait_lv_addictive_cum
+		has_trait = trait_lv_erogenous_anus
+		has_trait = trait_lv_lewd_mind
+		has_trait = trait_lv_brood_parasite
+		has_trait = trait_lv_pheromone_generators
+	}
+}
+
+lv_sex_weight_high = {
+	OR = {
+		has_trait = trait_lv_sexually_gifted
+		has_trait = trait_lv_targeted_pheromones
+		has_trait = trait_lv_exhibitionist
+		has_trait = trait_lv_natural_anal_lube
+		has_trait = trait_lv_fuckable_nipples
+		has_trait = trait_lv_fizzy_milk
+		has_trait = trait_lv_drooling_vagina
+		has_trait = trait_lv_breeder_hips
+		has_trait = trait_lv_huge_penis
+		has_trait = trait_lv_multiple_penises
+		has_trait = trait_lv_sex_crazed
+		has_trait = trait_lv_perfect_hybrid
+		has_trait = trait_lv_titanic_evolution
+		has_trait = trait_lv_synth_breasts
+		has_trait = trait_lv_synth_vagina
+		has_trait = trait_lv_lushtech_synthetic_womb
+		has_trait = trait_lv_sex_bots
+		has_trait = trait_lv_sex_bots_o
+		has_trait = trait_lv_synth_penis
+		has_trait = trait_lv_lushtech_omni_seed_fabrication_modules
+	}
+}
+
+lv_sex_weight_neg = {
+	OR = {
+		has_trait = trait_lv_sadistic
+		has_trait = trait_lv_seasonal_breeders
+		has_trait = trait_lv_sexually_inept
+		has_trait = trait_lv_sexually_repressed
+		has_trait = trait_lv_small_penis
+	}
+}
+
+# Breeder weight
+lv_breeders_weight_low = {
+	OR = {
+		has_trait = trait_lv_soft
+		has_trait = trait_lv_nudist
+		has_trait = trait_lv_honey
+		has_trait = trait_lv_neuron_saliva
+		has_trait = trait_lv_large_breasts
+		has_trait = trait_lv_multiple_breasts
+		has_trait = trait_lv_high_volume_lactation
+		has_trait = trait_lv_futanari
+		has_trait = trait_lv_nano_forge_womb
+		has_trait = trait_lv_breast_attachments
+		has_trait = trait_lv_custom_fleshlight_slot
+		has_trait = trait_lv_custom_dildo_attachment
+	}
+}
+
+lv_breeders_weight_med = {
+	OR = {
+		has_trait = trait_lv_cute
+		has_trait = trait_lv_sexual_pheromones
+		has_trait = trait_lv_exotic_honey
+		has_trait = trait_lv_elastic_orifices
+		has_trait = trait_lv_long_tongues
+		has_trait = trait_lv_huge_breasts
+		has_trait = trait_lv_fizzy_milk
+		has_trait = trait_lv_aphrodisiac_milk
+		has_trait = trait_lv_shapely_ass
+		has_trait = trait_lv_large_penis
+		has_trait = trait_lv_high_volume_ejaculations
+		has_trait = trait_lv_aphrodisiac_cum
+		has_trait = trait_lv_addictive_cum
+		has_trait = trait_lv_erogenous_anus
+		has_trait = trait_lv_lewd_mind
+		has_trait = trait_lv_brood_parasite
+		has_trait = trait_lv_pheromone_generators
+	}
+}
+
+lv_breeders_weight_high = {
+	OR = {
+		has_trait = trait_robot_domestic_protocols
+		has_trait = trait_charismatic
+		has_trait = trait_lv_targeted_pheromones
+		has_trait = trait_lv_exhibitionist
+		has_trait = trait_lv_natural_anal_lube
+		has_trait = trait_lv_fuckable_nipples
+		has_trait = trait_lv_drooling_vagina
+		has_trait = trait_lv_litters
+		has_trait = trait_lv_breeder_hips
+		has_trait = trait_lv_huge_penis
+		has_trait = trait_lv_multiple_penises
+		has_trait = trait_lv_sex_crazed
+		has_trait = trait_lv_perfect_hybrid
+		has_trait = trait_lv_titanic_evolution
+		has_trait = trait_lv_synth_breasts
+		has_trait = trait_lv_synth_vagina
+		has_trait = trait_lv_lushtech_synthetic_womb
+		has_trait = trait_lv_sex_bots
+		has_trait = trait_lv_sex_bots_o
+		has_trait = trait_lv_synth_penis
+		has_trait = trait_lv_lushtech_omni_seed_fabrication_modules
+	}
+}
+
+lv_breeders_weight_neg = {
+	OR = {
+		has_trait = trait_repugnant
+		has_trait = trait_lv_sadistic
+		has_trait = trait_lv_seasonal_breeders
+		has_trait = trait_lv_sexually_inept
+		has_trait = trait_lv_sexually_repressed
+		has_trait = trait_lv_small_penis
+	}
+}
+
+# Monster check
+lv_is_not_a_bad_dwagon = {
+	NOR = {
+		is_ship_size = security_system_drone
+		is_ship_size = asteroid
+		is_ship_size = probe
+		is_ship_size = large_ship_swarm
+		is_ship_size = large_ship_carrier_swarm
+		is_ship_size = small_ship_swarm
+		is_ship_size = queen_swarm
+		is_ship_size = construction_ship_swarm
+		is_ship_size = colony_ship_swarm
+		is_ship_size = transport_ship_swarm
+		is_ship_size = large_ship_ed
+		is_ship_size = medium_ship_ed
+		is_ship_size = small_ship_ed
+		is_ship_size = dimensional_portal_ed
+		is_ship_size = construction_ship_ed
+		is_ship_size = crystal_ship_small_blue
+		is_ship_size = crystal_ship_medium_blue
+		is_ship_size = crystal_ship_large_blue
+		is_ship_size = crystal_ship_small_green
+		is_ship_size = crystal_ship_medium_green
+		is_ship_size = crystal_ship_large_green
+		is_ship_size = crystal_ship_small_yellow
+		is_ship_size = crystal_ship_medium_yellow
+		is_ship_size = crystal_ship_large_yellow
+		is_ship_size = crystal_ship_small_red
+		is_ship_size = crystal_ship_medium_red
+		is_ship_size = crystal_ship_large_red
+		is_ship_size = crystal_ship_small_blue_elite
+		is_ship_size = crystal_ship_medium_blue_elite
+		is_ship_size = crystal_ship_large_blue_elite
+		is_ship_size = crystal_ship_small_green_elite
+		is_ship_size = crystal_ship_medium_green_elite
+		is_ship_size = crystal_ship_large_green_elite
+		is_ship_size = crystal_ship_small_yellow_elite
+		is_ship_size = crystal_ship_medium_yellow_elite
+		is_ship_size = crystal_ship_large_yellow_elite
+		is_ship_size = crystal_ship_small_red_elite
+		is_ship_size = crystal_ship_medium_red_elite
+		is_ship_size = crystal_ship_large_red_elite
+		is_ship_size = crystal_station_large
+		is_ship_size = space_cloud
+		is_ship_size = space_amoeba
+		is_ship_size = space_amoeba_mother
+		is_ship_size = space_whale_1
+		is_ship_size = space_whale_2
+		is_ship_size = space_whale_3
+		is_ship_size = space_whale_4
+		is_ship_size = space_whale_5
+		is_ship_size = lost_swarm_adult
+		is_ship_size = ancient_mining_drone
+		is_ship_size = ancient_corvette
+		is_ship_size = ancient_destroyer
+		is_ship_size = lesser_space_cloud
+		is_ship_size = large_ship_ai
+		is_ship_size = small_ship_ai
+		is_ship_size = military_station_large_ai
+		is_ship_size = military_station_small_ai
+		is_ship_size = core_ai
+		is_ship_size = final_core_ai
+		is_ship_size = construction_ship_ai
+		is_ship_size = colony_ship_ai
+		is_ship_size = transport_ship_ai
+		is_ship_size = blue_core_ai
+		is_ship_size = blue_military_station_large_ai
+		is_ship_size = blue_military_station_small_ai
+		is_ship_size = blue_transport_ship_ai
+		is_ship_size = space_dragon_red
+		is_ship_size = stellarite
+		is_ship_size = sphere
+		is_ship_size = dimensional_horror
+		is_ship_size = npc_warship_01
+		is_ship_size = wraith_01_blue
+		is_ship_size = wraith_01_red
+		is_ship_size = wraith_01_yellow
+		is_ship_size = space_dragon_baby
+		is_ship_size = space_dragon_blue
+		is_ship_size = space_dragon_origin
+		is_ship_size = space_dragon_origin_baby
+		is_ship_size = psionic_avatar
+		is_ship_size = corrupted_avatar
+		is_ship_size = shroud_manifestation
+		is_ship_size = warped_consciousness
+		is_ship_size = leviathan_01_scavenger_bot
+		is_ship_size = leviathan_01_elder_tiyanki
+		is_ship_size = leviathan_01_voidspawn
+		is_ship_size = enigmatic_cache
+		is_ship_size = nanite_space_dragon_baby
+		is_ship_size = space_amoeba_centenarian
+		is_ship_size = graygoo_mothership
+		is_ship_size = graygoo_interdictor
+		is_ship_size = graygoo_factory
+		is_ship_size = wenkwort_drone
+		is_ship_size = training_target
+		is_ship_size = ancient_mining_expansion_barge
+		is_ship_size = ancient_mining_expansion_drone
+		is_ship_size = crystal_splitter_ship_large_blue
+		is_ship_size = reanimated_space_dragon_red
+		is_ship_size = reanimated_space_dragon_blue
+		is_ship_size = reanimated_space_dragon_origin
+		is_ship_size = reanimated_leviathan_01_elder_tiyanki
+		is_ship_size = reanimated_leviathan_01_voidspawn
+		is_ship_size = reanimated_space_amoeba
+		is_ship_size = reanimated_space_amoeba_centenarian
+		is_ship_size = reanimated_space_amoeba_mother
+		is_ship_size = reanimated_space_whale_1
+		is_ship_size = reanimated_space_whale_2
+		is_ship_size = reanimated_space_whale_3
+		is_ship_size = reanimated_space_whale_4
+	}
+}
+
+# StarTech AI (for if you don't use it)
+# If AI ever reaches lategame it will scrap science facilities and spam strongholds and alloys
+
+lategame = {
+    OR = {
+		AND = {    
+			has_technology = tech_battleships 
+			has_technology = tech_zero_point_power 
+			has_technology = tech_ascension_theory 
+			has_technology = tech_energy_torpedoes_2 
+			has_technology = tech_energy_lance_2 
+			has_technology = tech_kinetic_artillery_2 
+			has_technology = tech_mass_accelerator_2 
+			has_technology = tech_arc_emitter_2 
+			OR = {
+				has_technology = tech_matter_decompressor 
+				has_technology = tech_dyson_sphere 
+				NOR = {
+					host_has_dlc = "Utopia" 
+					host_has_dlc = "Megacorp" 
+				} 
+			}
+		}
+		AND = {
+			minilategame = yes
+			has_ascension_perk = ap_become_the_crisis
+			has_crisis_level = crisis_level_3
+        }
+    }
+}
+
+minilategame = {
+    has_technology = tech_battleships 
+    has_technology = tech_ascension_theory 
+    has_technology = tech_energy_torpedoes_2 
+}
+
+# Gigastructural Engineering (for if you don't use it)
+
+has_mineral_deposit = {
+	OR = {
+		has_deposit = d_minerals_1
+		has_deposit = d_minerals_2
+		has_deposit = d_minerals_3
+		has_deposit = d_minerals_4
+		has_deposit = d_minerals_5
+		has_deposit = d_minerals_6
+		has_deposit = d_minerals_7
+		has_deposit = d_minerals_8
+		has_deposit = d_minerals_9
+		has_deposit = d_minerals_10
+	}
+}
+
+has_energy_deposit = {
+	OR = {
+		has_deposit = d_energy_1
+		has_deposit = d_energy_2
+		has_deposit = d_energy_3
+		has_deposit = d_energy_4
+		has_deposit = d_energy_5
+		has_deposit = d_energy_6
+		has_deposit = d_energy_7
+		has_deposit = d_energy_8
+		has_deposit = d_energy_9
+		has_deposit = d_energy_10
+	}
+}
+
+has_trade_deposit = {
+	OR = {
+		has_deposit = d_trade_value_1
+		has_deposit = d_trade_value_2
+		has_deposit = d_trade_value_3
+		has_deposit = d_trade_value_4
+		has_deposit = d_trade_value_5
+		has_deposit = d_trade_value_6
+		has_deposit = d_trade_value_7
+		has_deposit = d_trade_value_8
+		has_deposit = d_trade_value_9
+		has_deposit = d_trade_value_10
+	}
+}
+
+###

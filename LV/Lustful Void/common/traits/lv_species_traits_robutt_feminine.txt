@@ -1,0 +1,427 @@
+######################################
+###     Robutt/Feminine Traits     ###
+######################################
+#
+# Note: All traits were made with the intention of adding events/other things relating to them
+# eventually, even if not stated on the traits themselves. Also, all traits can and probably
+# will change again! These are not final effects or values at all.
+#
+# The following categories are more for organizational purposes than anything else:
+# Psychological  - Mentality or mind altering effects.
+# Physical       - Body parts or other physical attributes.
+#
+###
+
+############
+# Positive #
+############
+
+# Psychological #
+
+# Maternal Programming
+trait_lv_maternal_programming = {
+	cost = {
+		base = 3
+		modifier = {
+			add = -3
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	allowed_archetypes = { ROBOT MACHINE }
+	custom_tooltip = trait_lv_maternal_programming_effect
+	
+	opposites = {
+		trait_lv_paternal_programming
+	}
+	
+	# Synth and Machine only
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				has_technology = tech_synthetic_leaders
+				has_country_flag = lv_cheat_mode
+			}
+			NOT = { has_policy_flag = ai_outlawed }
+		}
+	}
+	
+	modifier = {
+		# Protective
+		army_defense_health_mult = 0.1
+		army_defense_morale_mult = 0.1
+		army_defense_damage_mult = 0.1
+		# Nurturing
+		planet_jobs_food_produces_mult = 0.15
+		pop_housing_usage_mult = -0.15
+		pop_resettlement_cost_mult = -0.25
+	}
+	
+	slave_cost = {
+		energy = 150
+	}
+}
+
+# Physical #
+
+# Lushtech Synthetic Womb
+trait_lv_lushtech_synthetic_womb = {
+	cost = {
+		base = 3
+		modifier = {
+			add = -3
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	allowed_archetypes = { ROBOT MACHINE }
+	custom_tooltip = trait_lv_lushtech_synthetic_womb_effect
+	
+	opposites = {
+		trait_lv_custom_fleshlight_slot
+		trait_lv_sex_bots
+		trait_lv_sex_bots_o
+	}
+	
+	# Synth and Machine only
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				has_technology = tech_synthetic_leaders
+				has_country_flag = lv_cheat_mode
+			}
+			NOT = { has_policy_flag = ai_outlawed }
+		}
+	}
+	
+	modifier = {
+		# Perfect breeders
+		pop_happiness = 0.1
+		planet_jobs_unity_produces_mult = 0.15
+		pop_resettlement_cost_mult = -0.25
+		# Fragile
+		army_health = -0.25
+		planet_pops_robotics_upkeep_mult = 0.5
+		# Sex Jobs Output +15% (nanites)
+		pop_job_amenities_mult = 0.15
+		pop_job_trade_mult = 0.15
+		planet_lv_sex_jobs_produces_mult = 0.15
+		planet_lv_sex_jobs_nanites_produces_add = 0.05
+	}
+	
+	slave_cost = {
+		energy = 250
+	}
+}
+
+# Breast Attachments
+trait_lv_breast_attachments = {
+	cost = {
+		base = 1
+		modifier = {
+			add = -1
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	allowed_archetypes = { ROBOT MACHINE }
+	custom_tooltip = trait_lv_breast_attachments_effect
+	
+	opposites = {
+		trait_lv_synth_breasts
+		trait_lv_sex_bots
+		trait_lv_sex_bots_o
+	}
+	
+	# Synth and Droid only
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				has_technology = tech_droid_workers
+				has_country_flag = lv_cheat_mode
+			}
+			NOT = { has_policy_flag = ai_outlawed }
+		}
+	}
+	
+	modifier = {
+		# Fun to play with
+		pop_housing_usage_mult = -0.1
+		species_empire_size_mult = -0.05
+		# Sex Jobs Output +5%
+		pop_job_amenities_mult = 0.05
+		pop_job_trade_mult = 0.05
+		planet_lv_sex_jobs_produces_mult = 0.05
+		# Adds 5 opinion with other empires (opinion_modifiers)
+	}
+	
+	slave_cost = {
+		energy = 100
+	}
+}
+
+# Synth Breasts
+trait_lv_synth_breasts = {
+	cost = {
+		base = 2
+		modifier = {
+			add = -2
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	allowed_archetypes = { ROBOT MACHINE }
+	custom_tooltip = trait_lv_synth_breasts_effect
+	
+	opposites = {
+		trait_lv_breast_attachments
+		trait_lv_sex_bots
+		trait_lv_sex_bots_o
+	}
+	
+	# Synth and Machine only
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				has_technology = tech_synthetic_leaders
+				has_country_flag = lv_cheat_mode
+			}
+			NOT = { has_policy_flag = ai_outlawed }
+		}
+	}
+	
+	modifier = {
+		# Luscious pillows
+		pop_happiness = 0.05
+		pop_housing_usage_mult = -0.15
+		species_empire_size_mult = -0.15
+		planet_pops_robotics_upkeep_mult = 0.1
+		# Dairy Jobs Output +5%
+		planet_lv_dairy_jobs_produces_mult = 0.05
+		# Sex Jobs Output +15%
+		pop_job_amenities_mult = 0.15
+		pop_job_trade_mult = 0.15
+		planet_lv_sex_jobs_produces_mult = 0.15
+		# Adds 15 opinion with other empires (opinion_modifiers)
+	}
+	
+	slave_cost = {
+		energy = 200
+	}
+}
+
+# Custom Fleshlight Slot
+trait_lv_custom_fleshlight_slot = {
+	cost = {
+		base = 1
+		modifier = {
+			add = -1
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	allowed_archetypes = { ROBOT MACHINE }
+	custom_tooltip = trait_lv_custom_fleshlight_slot_effect
+	
+	opposites = {
+		trait_lv_synth_vagina
+		trait_lv_lushtech_synthetic_womb
+		trait_lv_sex_bots
+		trait_lv_sex_bots_o
+	}
+	
+	# Synth and Droid only
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				has_technology = tech_droid_workers
+				has_country_flag = lv_cheat_mode
+			}
+			NOT = { has_policy_flag = ai_outlawed }
+		}
+	}
+	
+	modifier = {
+		# Lots of friction
+		planet_jobs_energy_produces_mult = 0.1
+		pop_housing_usage_mult = -0.05
+		# Sex Jobs Output +5%
+		pop_job_amenities_mult = 0.05
+		pop_job_trade_mult = 0.05
+		planet_lv_sex_jobs_produces_mult = 0.05
+	}
+	
+	slave_cost = {
+		energy = 100
+	}
+}
+
+# Synth Vagina
+trait_lv_synth_vagina = {
+	cost = {
+		base = 2
+		modifier = {
+			add = -2
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	allowed_archetypes = { ROBOT MACHINE }
+	custom_tooltip = trait_lv_synth_vagina_effect
+	
+	opposites = {
+		trait_lv_custom_fleshlight_slot
+		trait_lv_sex_bots
+		trait_lv_sex_bots_o
+	}
+	
+	# Synth and Machine only
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				has_technology = tech_synthetic_leaders
+				has_country_flag = lv_cheat_mode
+			}
+			NOT = { has_policy_flag = ai_outlawed }
+		}
+	}
+	
+	modifier = {
+		# Superior in every way
+		pop_happiness = 0.1
+		planet_jobs_energy_produces_mult = 0.15
+		pop_housing_usage_mult = -0.1
+		planet_pops_robotics_upkeep_mult = 0.1
+		# Sex Jobs Output +25%
+		pop_job_amenities_mult = 0.25
+		pop_job_trade_mult = 0.25
+		planet_lv_sex_jobs_produces_mult = 0.25
+	}
+	
+	slave_cost = {
+		energy = 150
+	}
+}
+
+#########
+# Combo #
+#########
+
+# Sex Bots
+trait_lv_sex_bots = {
+	cost = {
+		base = 8
+		modifier = {
+			add = -8
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	allowed_archetypes = { ROBOT MACHINE }
+	custom_tooltip = trait_lv_sex_bots_effect
+	
+	opposites = {
+		trait_lv_pheromone_generators		# included
+		trait_lv_breast_attachments
+		trait_lv_custom_fleshlight_slot
+		trait_lv_synth_breasts				# included
+		trait_lv_synth_vagina				# included
+		trait_lv_lushtech_synthetic_womb	# included
+		trait_lv_sex_bots_o
+	}
+	
+	# Synth and Machine only
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				has_technology = tech_synthetic_leaders
+				has_country_flag = lv_cheat_mode
+			}
+			NOT = { has_policy_flag = ai_outlawed }
+		}
+	}
+	
+	modifier = {
+		army_health = -0.25
+		pop_happiness = 0.25
+		planet_jobs_energy_produces_mult = 0.15
+		planet_jobs_unity_produces_mult = 0.2
+		pop_housing_usage_mult = -0.35
+		species_empire_size_mult = -0.15
+		pop_resettlement_cost_mult = -0.25
+		planet_pops_robotics_upkeep_mult = 0.7
+		# Dairy Jobs Output +5%
+		planet_lv_dairy_jobs_produces_mult = 0.05
+		# Sex Jobs Output +65% (nanites)
+		pop_job_amenities_mult = 0.65
+		pop_job_trade_mult = 0.65
+		planet_lv_sex_jobs_produces_mult = 0.65
+		planet_lv_sex_jobs_nanites_produces_add = 0.05
+		# Adds 20 opinion with other empires (opinion_modifiers)
+	}
+	
+	slave_cost = {
+		energy = 700
+	}
+}
+
+# Sex Bots (origin)
+trait_lv_sex_bots_o = {
+	cost = 0
+	allowed_archetypes = { ROBOT MACHINE }
+	custom_tooltip = trait_lv_sex_bots_effect
+	initial = no
+	randomized = no
+	
+	opposites = {
+		trait_lv_pheromone_generators		# included
+		trait_lv_breast_attachments
+		trait_lv_custom_fleshlight_slot
+		trait_lv_synth_breasts				# included
+		trait_lv_synth_vagina				# included
+		trait_lv_lushtech_synthetic_womb	# included
+		trait_lv_sex_bots
+	}
+	
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+	
+	modifier = {
+		army_health = -0.25
+		pop_happiness = 0.25
+		planet_jobs_energy_produces_mult = 0.15
+		planet_jobs_unity_produces_mult = 0.2
+		pop_housing_usage_mult = -0.35
+		species_empire_size_mult = -0.15
+		pop_resettlement_cost_mult = -0.25
+		planet_pops_robotics_upkeep_mult = 0.7
+		# Dairy Jobs Output +5%
+		planet_lv_dairy_jobs_produces_mult = 0.05
+		# Sex Jobs Output +65% (nanites)
+		pop_job_amenities_mult = 0.65
+		pop_job_trade_mult = 0.65
+		planet_lv_sex_jobs_produces_mult = 0.65
+		planet_lv_sex_jobs_nanites_produces_add = 0.05
+		# Adds 20 opinion with other empires (opinion_modifiers)
+	}
+	
+	slave_cost = {
+		energy = 700
+	}
+}
+
+###

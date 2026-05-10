@@ -1,0 +1,1623 @@
+namespace = lv_country_events
+
+##############################
+###     Country Events     ###
+##############################
+
+@tier1materialreward = 6
+@tier1materialmin = 100
+@tier1materialmax = 500
+@tier2materialreward = 12
+@tier2materialmin = 150
+@tier2materialmax = 1000
+@tier3materialreward = 18
+@tier3materialmin = 250
+@tier3materialmax = 1500
+@tier4materialreward = 24
+@tier4materialmin = 350
+@tier4materialmax = 2000
+
+@tier1influencereward = 6
+@tier1influencemin = 40
+@tier1influencemax = 100
+@tier2influencereward = 12
+@tier2influencemin = 80
+@tier2influencemax = 175
+@tier3influencereward = 18
+@tier3influencemin = 125
+@tier3influencemax = 250
+@tier4influencereward = 24
+@tier4influencemin = 150
+@tier4influencemax = 300
+
+@tier1researchreward = 6
+@tier1researchmin = 60
+@tier1researchmax = 150
+@tier2researchreward = 12
+@tier2researchmin = 90
+@tier2researchmax = 250
+@tier3researchreward = 18
+@tier3researchmin = 120
+@tier3researchmax = 350
+@tier4researchreward = 24
+@tier4researchmin = 150
+@tier4researchmax = 500
+
+@tier1unityreward = 6
+@tier1unitymin = 40
+@tier1unitymax = 100
+@tier2unityreward = 12
+@tier2unitymin = 80
+@tier2unitymax = 175
+@tier3unityreward = 18
+@tier3unitymin = 125
+@tier3unitymax = 250
+@tier4unityreward = 24
+@tier4unitymin = 150
+@tier4unitymax = 300
+
+###
+
+# Interstellar Exchange Caller #
+
+country_event = {
+	id = lv_country_events.1
+	hide_window = yes
+#	is_triggered_only = yes
+	
+	pre_triggers = {
+		is_ai = no
+	}
+	
+	trigger = {
+		NOT = { has_global_flag = lv_all_disabled }
+		NOT = { has_country_flag = lv_had_exchange }
+	}
+	
+	mean_time_to_happen = {
+		months = 18
+	}
+	
+	immediate = {
+		random_list = {
+			100 = { country_event = { id = lv_null_event.2 } }
+			45 = { country_event = { id = lv_country_events.2 } }
+			5 = { country_event = { id = lv_country_events.6 } }
+			15 = { country_event = { id = lv_country_events.7 } }
+#			15 = { country_event = { id = sexy_country.3 } }
+			15 = { country_event = { id = lv_country_events.4 } }
+			10 = { country_event = { id = lv_country_events.3 } }
+		}
+		if = {
+			limit = {
+				has_country_flag = lv_longer_event_wait
+			}
+			set_timed_country_flag = {
+				flag = lv_had_exchange
+				days = 730
+			}
+		}
+		else = {
+			set_timed_country_flag = {
+				flag = lv_had_exchange
+				days = 180
+			}
+		}
+	}
+}
+
+# Interstellar Exchange #
+
+country_event = {
+	id = lv_country_events.2
+	title = lv_country_events.2.name
+	desc = lv_country_events.2.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_default
+	
+	picture_event_data = {
+		room = evt_lv_interstellar_exchange_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_global_flag = lv_all_disabled }
+		this = {
+            num_communications > 1
+			NOT = { is_gestalt = yes }
+		}
+	}
+	
+	option = {
+		name = lv_country_events.2.a
+		add_monthly_resource_mult = {
+			resource = energy
+			value = @tier1materialreward
+			min = @tier1influencemin
+			max = @tier1influencemax
+		}
+	}
+	
+	option = {
+		name = lv_country_events.2.b
+		trigger = {
+			this = {
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = energy
+			value = @tier1materialreward
+			min = @tier1influencemin
+			max = @tier1influencemax
+		}
+		add_modifier = {
+			modifier = lv_xeno_businesses_accepted
+			days = 180
+		}
+	}
+	
+	option = {
+		name = lv_country_events.2.c
+		trigger = {
+			this = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = energy
+			value = @tier1materialreward
+			min = @tier1influencemin
+			max = @tier1influencemax
+		}
+		add_monthly_resource_mult = {
+			resource = minerals
+			value = @tier1materialreward
+			min = @tier1influencemin
+			max = @tier1influencemax
+		}
+	}
+	
+	option = {
+		name = lv_country_events.2.d
+		trigger = {
+			this = {
+				has_valid_civic = civic_fanatic_purifiers
+			}
+		}
+        add_monthly_resource_mult = {
+            resource = unity
+            value = @tier1unityreward
+            min = @tier1unitymin
+            max = @tier1unitymax
+        }
+    }
+	
+	option = {
+		name = lv_country_events.2.e
+		trigger = {
+			this = {
+				OR = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+				}
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = energy
+			value = @tier2materialreward
+			min = @tier2influencemin
+			max = @tier2influencemax
+		}
+	}
+}
+
+# Robot Rape #
+
+country_event = {
+	id = lv_country_events.3
+	title = lv_country_events.3.name
+	desc = lv_country_events.3.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_default
+	
+	picture_event_data = {
+		room = evt_lv_robot_rape_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOR = {
+			has_global_flag = lv_all_disabled
+			has_global_flag = lv_rape_disabled
+		}
+		this = {
+			has_technology = tech_robotic_workers
+			NOT = { has_ethic = ethic_gestalt_consciousness }
+			NOT = { has_country_flag = lv_bad_lewd_event }
+			any_owned_planet = {
+				any_owned_pop = {
+					is_non_sapient_robot = yes
+				}
+				planet_crime > 30
+			}
+		}
+	}
+	
+	immediate = {
+		this = {
+			set_timed_country_flag = {
+				flag = lv_bad_lewd_event
+				days = 730
+			}
+		}
+	}
+	
+	option = {
+		name = lv_country_events.3.a
+		trigger = { 
+			this = { 
+				NOT = {
+					OR = {
+						has_ethic = ethic_spiritualist
+						has_ethic = ethic_fanatic_spiritualist
+					} 
+				}
+			} 
+		}
+		add_resource = { influence = -50 }
+	}
+	
+	option = {
+		name = lv_country_events.3.b
+		trigger = {
+			this = {
+				OR = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+				}
+			}
+		}
+		this = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+		add_resource = { influence = -10 }
+	}
+	
+	option = {
+		name = lv_country_events.3.c
+		trigger = {
+			this = {
+				has_ethic = ethic_spiritualist
+			}
+		}
+		add_resource = { influence = -20 }
+		random_owned_pop = {
+			limit = { is_non_sapient_robot = yes }
+			kill_pop = yes
+		}
+	}
+	
+	option = {
+		name = lv_country_events.3.c
+		trigger = {
+			this = {
+				has_ethic = ethic_fanatic_spiritualist
+			}
+		}
+		add_resource = {influence = -50 }
+		every_owned_pop = {
+			limit = { is_non_sapient_robot = yes }
+			kill_pop = yes
+		}
+	}
+	
+	option = {
+		name = lv_country_events.3.d
+		trigger = {
+			this = {
+				OR = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+		this = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+			add_resource = { influence = 10 }
+			random_owned_pop = {
+				limit = { is_non_sapient_robot = yes }
+				kill_pop = yes
+			}
+		}
+	}
+}
+
+# Military Gangbang #
+
+country_event = {
+	id = lv_country_events.4
+	title = lv_country_events.4.name
+	desc = lv_country_events.4.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_default
+	
+	picture_event_data = {
+		room = evt_lv_military_gangbang_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOR = {
+			has_global_flag = lv_all_disabled
+			has_global_flag = lv_rape_disabled
+		}
+		this = {
+			NOT = { has_ethic = ethic_gestalt_consciousness }
+			NOT = { has_country_flag = lv_bad_lewd_event }
+			NOT = { has_country_flag = lv_gangbang_officiers_punished }
+		}
+	}
+	
+	immediate = {
+		this = {
+			set_timed_country_flag = {
+				flag = lv_bad_lewd_event
+				days = 730
+			}
+		}
+	}
+	
+	option = {
+		name = lv_country_events.4.a
+		trigger = { 
+			this = { 
+				NOT = {
+					OR = {
+						has_ethic = ethic_militarist
+						has_ethic = ethic_fanatic_militarist
+						has_ethic = ethic_pacifist
+						has_ethic = ethic_fanatic_pacifist
+						has_ethic = ethic_fanatic_egalitarian
+					} 
+				}
+			} 
+		}
+		add_resource = { influence = -10 }
+		add_resource = { energy = 25 }
+	}
+	
+	option = {
+		name = lv_country_events.4.b
+		trigger = {
+			this = {
+				OR = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+		add_resource = { influence = -20 }
+		set_timed_country_flag = {
+			flag = lv_gangbang_officiers_punished
+			days = 1825
+		}
+	}
+	
+	option = {
+		name = lv_country_events.4.c
+		trigger = {
+			this = {
+				OR = {
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_fanatic_pacifist
+				}
+			}
+		}
+		add_resource = { influence = -20 }
+	}
+	
+	option = { 
+		name = lv_country_events.4.d
+		trigger = {
+			this = {
+				OR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+				}
+			}
+		}
+		add_resource = { influence = 10 }
+	}
+	
+	option = { 
+		name = lv_country_events.4.e
+		trigger = {
+			this = {
+				OR = {
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_fanatic_egalitarian
+				}
+			}
+		}
+		add_resource = { influence = -10 }
+	}
+	
+	option = { 
+		name = lv_country_events.4.f
+		trigger = {
+			this = {
+				OR = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+				}
+			}
+		}
+		add_resource = { influence = -10 }
+		add_modifier = {
+			modifier = lv_military_recreational_sex_study
+			days = 1095
+		}
+	}
+}
+
+# War Prisoner Rapists Punished #
+
+country_event = {
+	id = lv_country_events.5
+	title = lv_country_events.5.name
+	desc = lv_country_events.5.desc
+	picture = GFX_evt_lv_pow_rapists_punished_1
+	show_sound = event_default
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		this = {
+			set_timed_country_flag = {
+				flag = lv_pow_rapists_punished
+				days = 1825
+			}
+		}
+	}
+	
+	option = {
+		name = lv_country_events.5.a
+	}
+	
+	option = {
+		name = lv_country_events.5.b
+		trigger = {
+			this = {
+				OR = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+		add_monthly_resource_mult = {
+            resource = influence
+            value = @tier1influencereward
+            min = @tier1influencemin
+            max = @tier1influencemax
+        }
+	}
+	
+	option = {
+		name = lv_country_events.5.c
+		trigger = {
+			this = {
+				OR = {
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_fanatic_pacifist
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_fanatic_egalitarian
+				}
+			}
+		}
+		add_monthly_resource_mult = {
+            resource = influence
+            value = @tier1influencereward
+            min = @tier1influencemin
+            max = @tier1influencemax
+        }
+		add_monthly_resource_mult = {
+            resource = unity
+            value = @tier1unityreward
+            min = @tier1unitymin
+            max = @tier1unitymax
+        }
+	}
+}
+
+# Festival of Love #
+
+country_event = {
+	id = lv_country_events.6
+	title = lv_country_events.6.name
+	desc = lv_country_events.6.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_default
+	
+	picture_event_data = {
+		room = evt_lv_festival_of_love_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_global_flag = lv_all_disabled }
+		this = {
+			NOT = {
+				has_country_flag = lv_festival_of_love_outlawed
+			}
+		}
+	}
+	
+	option = {
+		name = lv_country_events.6.a
+		add_resource = { influence = 10 }
+		random_owned_planet = {
+			add_modifier = {
+				modifier = lv_festival_of_love
+				days = 180
+			}
+		}		
+	}
+	
+	option = {
+		name = lv_country_events.6.b
+		trigger = {
+			this = {
+				OR = {
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_fanatic_pacifist
+				}
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = influence
+			value = @tier1influencereward
+			min = @tier1influencemin
+			max = @tier1influencemax
+        }
+		random_owned_planet = {
+			add_modifier = {
+				modifier = lv_festival_of_love
+				days = 360
+			}
+		}
+	}
+	
+	option = {
+		name = lv_country_events.6.c
+		trigger = {
+			this = {
+				OR = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+				}
+			}
+		}
+		random_owned_planet = {
+			add_modifier = {
+				modifier = lv_festival_of_love
+				days = 180
+			}
+		}
+		this = {
+			add_modifier = {
+				modifier = lv_contraceptive_boom
+				days = 180
+			}
+		}
+	}
+	
+	option = {
+		name = lv_country_events.6.d
+		trigger = {
+			this = {
+				OR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+				}
+			}
+		}
+		this = { 
+			set_timed_country_flag = { flag = lv_festival_of_love_outlawed days = 1825 } #5 years
+			add_modifier = {
+				modifier = lv_festival_of_love_outlawed
+				days = 1825
+			}
+		}
+		add_monthly_resource_mult = {
+            resource = influence
+            value = @tier1influencereward
+            min = @tier1influencemin
+            max = @tier1influencemax
+        }
+		add_monthly_resource_mult = {
+            resource = unity
+            value = @tier1unityreward
+            min = @tier1unitymin
+            max = @tier1unitymax
+        }
+	}
+	
+	option = {
+		name = lv_country_events.6.e
+		this = { 
+			set_timed_country_flag = { flag = lv_festival_of_love_outlawed days = 1095 } #3 years
+			add_modifier = {
+				modifier = lv_festival_of_love_outlawed
+				days = 1095
+			}
+		}
+		add_monthly_resource_mult = {
+            resource = influence
+            value = @tier1influencereward
+            min = @tier1influencemin
+            max = @tier1influencemax
+        }
+	}
+}
+
+# Futa Rising #
+
+country_event = {
+	id = lv_country_events.7
+	title = lv_country_events.7.name
+	desc = lv_country_events.7.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_default
+	
+	picture_event_data = {
+		room = evt_lv_futa_rising_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_global_flag = lv_all_disabled }
+		NOT = { has_global_flag = lv_futa_disabled }
+		this = {
+			has_technology = tech_gene_tailoring
+			NOT = { has_ethic = ethic_gestalt_consciousness }
+			NOT = { has_country_flag = lv_futa_outlawed }
+		}
+		from = { species = { NOT = { has_trait = trait_lv_futanari } } }
+	}
+
+	option = {
+		name = lv_country_events.7.a
+		add_resource = { influence = 10 }		
+	}
+	
+	option = {
+		name = lv_country_events.7.b
+		trigger = {
+			this = {
+				OR = {
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_fanatic_pacifist
+				}
+			}
+		}
+		add_monthly_resource_mult = {
+            resource = unity
+            value = @tier1unityreward
+            min = @tier1unitymin
+            max = @tier1unitymax
+        }
+		add_monthly_resource_mult = {
+            resource = influence
+            value = @tier1influencereward
+            min = @tier1influencemin
+            max = @tier1influencemax
+        }
+	}
+	
+	option = {
+		name = lv_country_events.7.c
+		trigger = {
+			this = {
+				OR = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+				}
+			}
+		}
+		add_monthly_resource_mult = {
+            resource = society_research
+            value = @tier1researchreward
+            min = @tier1researchmin
+            max = @tier1researchmax
+        }		
+	}
+	
+	option = {
+		name = lv_country_events.7.d
+		trigger = {
+			this = {
+				OR = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+				}
+			}
+		}
+		add_resource = { influence = -10 }
+		add_monthly_resource_mult = {
+            resource = unity
+            value = @tier1unityreward
+            min = @tier1unitymin
+            max = @tier1unitymax
+        }		
+	}
+	
+	option = {
+		name = lv_country_events.7.e
+		trigger = {
+			this = {
+				OR = {
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_fanatic_egalitarian
+				}
+			}
+		}
+		add_monthly_resource_mult = {
+            resource = unity
+            value = @tier1unityreward
+            min = @tier1unitymin
+            max = @tier1unitymax
+        }
+		add_monthly_resource_mult = {
+            resource = influence
+            value = @tier1influencereward
+            min = @tier1influencemin
+            max = @tier1influencemax
+        }
+	}
+	
+	option = {
+		name = lv_country_events.7.f
+		trigger = {
+			this = {
+				OR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+				}
+			}
+		}
+		this = { 
+			set_timed_country_flag = { flag = lv_futa_outlawed days = 1825 } #5 years
+			add_modifier = {
+				modifier = lv_futa_outlawed
+				days = 1825
+			}
+		}	
+	}
+	
+	option = {
+		name = lv_country_events.7.g
+		this = { 
+			set_timed_country_flag = { flag = lv_futa_outlawed days = 1095 } #3 years
+			add_modifier = {
+				modifier = lv_futa_outlawed
+				days = 1095
+			}			
+		}
+	}
+}
+
+# Science Gone Wrong #
+
+country_event = {
+	id = lv_country_events.8
+	title = lv_country_events.8.name
+	desc = lv_country_events.8.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_default
+	
+	picture_event_data = {
+		room = evt_lv_science_gone_wrong_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+        NOR = {
+			has_global_flag = lv_all_disabled
+			has_global_flag = lv_rape_disabled
+		}
+        this = {
+            num_communications > 0
+        }
+	}
+	
+	option = {
+		name = lv_country_events.8.a
+		trigger = {
+			this = {
+				NOR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+				}
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier1researchreward
+			min = @tier1researchmin
+			max = @tier1researchmax
+		}
+		add_resource = { influence = -5 }
+	}
+	
+	option = {
+		name = lv_country_events.8.b
+		trigger = {
+			this = {
+				OR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+				}
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier1researchreward
+			min = @tier1researchmin
+			max = @tier1researchmax
+		}
+		add_resource = { influence = -15 }
+	}
+	
+	option = {
+		name = lv_country_events.8.c
+		trigger = {
+			this = {
+				OR = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+				}
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier2researchreward
+			min = @tier2researchmin
+			max = @tier2researchmax
+		}
+		add_monthly_resource_mult = {
+			resource = engineering_research
+			value = @tier1researchreward
+			min = @tier1researchmin
+			max = @tier1researchmax
+		}
+		add_resource = { influence = -5 }
+	}
+}
+
+# Illegal Sexbots #
+
+country_event = {
+	id = lv_country_events.9
+	title = lv_country_events.9.name
+	desc = lv_country_events.9.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_default
+	
+	picture_event_data = {
+		room = evt_lv_sexbots_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+        this = {
+            has_technology = tech_droid_workers
+			NOT = { has_ethic = ethic_gestalt_consciousness }
+			NOT = { has_policy_flag = ai_outlawed }
+        }
+		NOR = {
+			has_global_flag = lv_all_disabled
+			has_global_flag = lv_had_sexbot_event
+		}
+	}
+
+	immediate = {
+		random_owned_planet = {
+			save_event_target_as = lv_sexbot_planet
+    	}
+		create_species = {
+			name = "Sexoid"
+			plural = "Sexoids"
+			class = LVROBOT
+			portrait = "lv_sexbot_humanoid"
+			namelist = "MACHINE3"
+			traits = {
+				trait = "trait_mechanical"
+				trait = "trait_lv_sex_bots"
+			}
+			effect = {
+				save_event_target_as = lv_smexbot_1_species
+			}
+		}
+		create_species = {
+			name = random
+			class = ROBOT
+			portrait = "sd_hum_robot"
+			namelist = "MACHINE3"
+			traits = {
+				trait = "trait_mechanical"
+			}
+			effect = {
+				save_event_target_as = lv_smexbot_2_species
+			}
+		}
+		set_global_flag = lv_had_sexbot_event
+	}
+	
+	#allow the modified robots
+	option = {
+		name = lv_country_events.9.a
+		trigger = { 
+			this = { 
+				NOT = {
+					OR = {
+						has_ethic = ethic_spiritualist
+						has_ethic = ethic_fanatic_spiritualist
+						has_policy_flag = lv_prostitution_prohibited
+					} 
+				}
+			}			
+		}
+		event_target:lv_sexbot_planet = {
+			while = {
+				count = 1
+				create_pop = {
+					species = event_target:lv_smexbot_1_species
+				}
+			}
+		}
+	}
+	
+	#reprogram the robots
+	option = {
+		name = lv_country_events.9.b
+		trigger = { 
+			this = { 
+				NOT = { has_policy_flag = ai_full_rights }
+			}			
+		}
+		event_target:lv_sexbot_planet = {
+			while = {
+				count = 1
+				create_pop = {
+					species = event_target:lv_smexbot_2_species
+				}
+			}
+		}
+	}
+	
+	#dismantle the robots for parts
+	option = {
+		name = lv_country_events.9.c
+		trigger = { 
+			this = { 
+				NOT = {
+					OR = {
+						has_ethic = ethic_spiritualist
+						has_ethic = ethic_fanatic_spiritualist
+					} 
+				}
+			} 
+		}
+		add_resource = { minerals = 500 }
+	}
+	
+	#allow the modified robots and reverse engineer one of them
+	option = {
+		name = lv_country_events.9.d
+		trigger = { 
+			this = { 
+				OR = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+				}
+				NOT = { has_policy_flag = lv_prostitution_prohibited }
+			} 
+		}
+		
+		event_target:lv_sexbot_planet = {
+			while = {
+				count = 3
+				create_pop = {
+					species = event_target:lv_smexbot_1_species
+				}
+			}
+		}			
+	}
+	
+	#eradicate the modified robots
+	option = {
+		name = lv_country_events.9.e
+		trigger = { 
+			this = { 
+				OR = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+				} 
+			} 
+		}
+		add_resource = { unity = 250 }
+	}
+	
+	#dismantled robotic prostitution network
+	option = {
+		name = lv_country_events.9.e
+		trigger = { 
+			this = {
+				NOT = {
+					OR = {
+						has_ethic = ethic_spiritualist
+						has_ethic = ethic_fanatic_spiritualist
+					} 
+				}			
+				AND = { 
+					has_policy_flag = ai_full_rights
+					not = { has_policy_flag = lv_prostitution_prohibited }
+				}
+			}			
+		}
+		add_resource = { influence = 50 }
+	}
+}
+
+# Sexy Neighbour Gate #
+
+country_event = {
+	id = lv_country_events.10
+	hide_window = yes
+	
+	trigger = {
+		NOT = { has_global_flag = lv_all_disabled }
+		any_neighbor_country = {
+			has_communications = root
+			NOR = {
+				is_at_war_with = ROOT
+				is_subject = yes
+				has_authority = auth_machine_intelligence
+				has_authority = auth_hive_mind
+			}
+			OR = {
+				NOT = { has_policy_flag = lv_prostitution_prohibited }
+			}
+			
+		}
+		NOT = { has_authority = auth_machine_intelligence }
+	}
+	
+	mean_time_to_happen = {
+		months = 60 #5 years
+	}
+	
+	immediate = {
+		random_list = {
+			50 = { country_event = { id = lv_country_events.11 } }
+			50 = { country_event = { id = lv_country_events.12 } }
+		}
+		if = {
+			limit = {
+				has_country_flag = lv_longer_event_wait
+			}
+			set_timed_country_flag = {
+				flag = lv_had_neighbor_exchange
+				days = 3650 #10 years
+			}
+		}
+		else = {
+			set_timed_country_flag = {
+				flag = lv_had_neighbor_exchange
+				days = 1825 #5 years
+			}
+		}
+	}	
+}
+
+# Xeno Clients #
+
+country_event = {
+	id = lv_country_events.11
+	title = lv_country_events.11.name
+	desc = lv_country_events.11.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_default
+	
+	picture_event_data = {
+		room = evt_lv_xeno_client_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_ai = no
+		NOT = { has_global_flag = lv_all_disabled }
+		NOT = { has_policy_flag = lv_prostitution_prohibited }
+        any_neighbor_country = {
+			has_communications = root
+			NOR = {
+				is_at_war_with = ROOT
+				is_subject = yes
+				has_authority = auth_machine_intelligence
+				has_authority = auth_hive_mind
+			}
+			NOT = { has_policy_flag = lv_prostitution_prohibited }		
+		}
+	}
+	
+	immediate = {
+		random_neighbor_country = {
+			limit = {
+				has_communications = root
+				NOR = {
+					is_at_war_with = ROOT
+					is_subject = yes
+					has_authority = auth_machine_intelligence
+					has_authority = auth_hive_mind
+				}
+				NOT = { has_policy_flag = lv_prostitution_prohibited }
+			}
+			save_event_target_as = lv_neighbour_target
+		}
+		this = {
+			save_event_target_as = lv_prost_country
+		}
+	}
+	
+	option = {
+		name = lv_country_events.11.a
+		trigger = {
+			this = {
+				NOR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		if = {
+			limit = {
+				this = {
+					has_policy_flag = lv_prostitution_authorized
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier1materialreward
+				min = @tier1materialmin
+				max = @tier1materialmax
+			}
+			add_modifier = {
+				modifier = lv_booming_prostitution_industry
+				days = 40
+			}
+			break = yes
+		}
+		if = {
+			limit = {
+				this = {
+					has_policy_flag = lv_prostitution_supported
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier1materialreward
+				min = @tier1materialmin
+				max = @tier1materialmax
+			}
+			add_modifier = {
+				modifier = lv_booming_prostitution_industry
+				days = 80
+			}
+			break = yes
+		}	
+		if = {
+			limit = {
+				this = {
+					OR = {
+						has_policy_flag = lv_prostitution_industrialized
+						has_policy_flag = lv_prostitution_slavery
+					}
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier2materialreward
+				min = @tier2materialmin
+				max = @tier2materialmax
+			}
+			add_modifier = {
+				modifier = lv_booming_prostitution_industry
+				days = 120
+			}
+			break = yes
+		}
+	}
+	
+	option = {
+		name = lv_country_events.11.b
+		trigger = {
+			this = {
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+				}
+			}
+		}
+		if = {
+			limit = {
+				this = {
+					has_policy_flag = lv_prostitution_authorized
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier1materialreward
+				min = @tier1materialmin
+				max = @tier1materialmax
+			}
+			add_modifier = {
+				modifier = lv_booming_prostitution_industry
+				days = 120
+			}
+			break = yes
+		}
+		if = {
+			limit = {
+				this = {
+					has_policy_flag = lv_prostitution_supported
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier1materialreward
+				min = @tier1materialmin
+				max = @tier1materialmax
+			}
+			add_modifier = {
+				modifier = lv_booming_prostitution_industry
+				days = 240
+			}
+			break = yes
+		}	
+		if = {
+			limit = {
+				this = {
+					OR = {
+						has_policy_flag = lv_prostitution_industrialized
+						has_policy_flag = lv_prostitution_slavery
+					}
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier2materialreward
+				min = @tier2materialmin
+				max = @tier2materialmax
+			}
+			add_modifier = {
+				modifier = lv_booming_prostitution_industry
+				days = 365
+			}
+			break = yes
+		}
+	}
+	
+	option = {
+		name = lv_country_events.11.c
+		trigger = {
+			this = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		if = {
+			limit = {
+				this = {
+					has_policy_flag = lv_prostitution_authorized
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier1materialreward
+				min = @tier1materialmin
+				max = @tier1materialmax
+			}
+			break = yes
+		}
+		if = {
+			limit = {
+				this = {
+					has_policy_flag = lv_prostitution_supported
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier1materialreward
+				min = @tier1materialmin
+				max = @tier1materialmax
+			}
+			break = yes
+		}	
+		if = {
+			limit = {
+				this = {
+					OR = {
+						has_policy_flag = lv_prostitution_industrialized
+						has_policy_flag = lv_prostitution_slavery
+					}
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier2materialreward
+				min = @tier2materialmin
+				max = @tier2materialmax
+			}
+			break = yes
+		}
+	}
+	
+	option = {
+		name = lv_country_events.11.d
+		trigger = {
+			this = {
+				OR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+				}
+			}
+		}
+		if = {
+			limit = {
+				this = {
+					has_policy_flag = lv_prostitution_authorized
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier1materialreward
+				min = @tier1materialmin
+				max = @tier1materialmax
+			}
+			add_modifier = {
+				modifier = lv_booming_prostitution_industry
+				days = 40
+			}
+			break = yes
+		}
+		if = {
+			limit = {
+				this = {
+					has_policy_flag = lv_prostitution_supported
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier1materialreward
+				min = @tier1materialmin
+				max = @tier1materialmax
+			}
+			add_modifier = {
+				modifier = lv_booming_prostitution_industry
+				days = 80
+			}
+			break = yes
+		}	
+		if = {
+			limit = {
+				this = {
+					OR = {
+						has_policy_flag = lv_prostitution_industrialized
+						has_policy_flag = lv_prostitution_slavery
+					}
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier2materialreward
+				min = @tier2materialmin
+				max = @tier2materialmax
+			}
+			add_modifier = {
+				modifier = lv_booming_prostitution_industry
+				days = 365
+			}
+			break = yes
+		}
+	}
+	
+	option = {
+		name = lv_country_events.11.e
+		trigger = {
+			this = {
+				has_civic = civic_lv_sex_slaves
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = energy
+			value = @tier3materialreward
+			min = @tier3materialmin
+			max = @tier3materialmax
+		}
+		add_modifier = {
+			modifier = lv_booming_prostitution_industry
+			days = 730
+		}
+	}
+}
+
+# Money Can Buy Happiness #
+
+country_event = {
+	id = lv_country_events.12
+	title = lv_country_events.12.name
+	desc = lv_country_events.12.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_default
+	
+	picture_event_data = {
+		room = evt_lv_xeno_prostitutes_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_ai = no
+        any_neighbor_country = {
+			has_communications = root
+			NOR = {
+				is_at_war_with = ROOT
+				is_subject = yes
+				has_authority = auth_machine_intelligence
+				has_authority = auth_hive_mind
+			}
+			NOT = { has_policy_flag = lv_prostitution_prohibited }		
+		}   
+	}
+	
+	immediate = {
+		random_neighbor_country = {
+			limit = {
+				has_communications = root
+				NOR = {
+					is_at_war_with = ROOT
+					is_subject = yes
+					has_authority = auth_machine_intelligence
+					has_authority = auth_hive_mind
+				}
+				NOT = { has_policy_flag = lv_prostitution_prohibited }
+			}
+			save_event_target_as = lv_neighbour_target
+		}
+		this = {
+			save_event_target_as = lv_prost_country
+		}
+	}
+	
+	option = {
+		name = lv_country_events.12.a
+		trigger = {
+			this = {
+				NOT = {
+					has_policy_flag = lv_prostitution_prohibited
+				}
+			}
+		}
+		if = {
+			limit = {
+				this = {
+					has_policy_flag = lv_prostitution_authorized
+				}
+			}
+			add_resource = { energy = -100 }
+			add_modifier = {
+				modifier = lv_booming_xeno_prostitution
+				days = 30
+			}
+			break = yes
+		}
+		if = {
+			limit = {
+				this = {
+					has_policy_flag = lv_prostitution_supported
+				}
+			}
+			add_resource = { energy = -100 }
+			add_modifier = {
+				modifier = lv_booming_xeno_prostitution
+				days = 80
+			}
+			break = yes
+		}	
+		if = {
+			limit = {
+				this = {
+					OR = {
+						has_policy_flag = lv_prostitution_industrialized
+						has_policy_flag = lv_prostitution_slavery
+					}
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier1materialreward
+				min = @tier1materialmin
+				max = @tier1materialmax
+			}
+			add_modifier = {
+				modifier = lv_xeno_prostitution
+				days = 80
+			}
+			break = yes
+		}
+	}
+	
+	option = {
+		name = lv_country_events.12.b
+		trigger = {
+			this = {
+				has_policy_flag = lv_prostitution_prohibited
+			}
+		}
+		add_resource = { energy = -100 }
+		add_resource = { unity = -100 }
+		add_modifier = {
+			modifier = lv_booming_xeno_prostitution
+			days = 60
+		}
+	}
+}
+
+###

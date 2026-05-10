@@ -1,0 +1,41 @@
+#####################################
+###     Start Screen Messages     ###
+#####################################
+
+# The Advent of the Sexopolis #
+
+part = {
+	location = 0
+	localization = "START_SCREEN_LV_SWORLD_ORIGIN_ORG"
+	
+	trigger = {
+		has_origin = origin_lv_sworld
+		NOT = { has_authority = auth_machine_intelligence }
+	}
+}
+
+# Shattered Pleasure Ring #
+
+part = {
+	location = 0
+	localization = "START_SCREEN_LV_SRING_ORIGIN_ORG"
+	
+	trigger = {
+		has_origin = origin_lv_sring
+		NOT = { has_authority = auth_machine_intelligence }
+	}
+}
+
+# Tentacle Symbiosis #
+
+part = {
+	location = 0
+	localization = "START_SCREEN_LV_STENTACLE_ORIGIN_ORG"
+	
+	trigger = {
+		has_origin = origin_lv_stentacle
+		NOT = { has_authority = auth_machine_intelligence }
+	}
+}
+
+###

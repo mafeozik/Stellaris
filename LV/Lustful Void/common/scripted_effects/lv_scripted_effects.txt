@@ -1,0 +1,929 @@
+################################
+###     Scripted Effects     ###
+################################
+
+
+# Pleasure Suit #
+lv_add_suit = {
+	if = {
+		limit = {
+			NOR = {
+				has_trait = leader_trait_lv_pleasure_suit_addict
+				has_trait = leader_trait_lv_pleasure_suit_addict_2
+				has_trait = leader_trait_lv_pleasure_suit_addict_3
+			}
+		}
+		remove_trait = leader_trait_lv_pleasure_suit_withdrawal
+		add_trait = leader_trait_lv_pleasure_suit_addict
+	}
+}
+
+lv_remove_suit = {
+	if = {
+		limit = { has_trait = leader_trait_lv_pleasure_suit_addict }
+		remove_trait = leader_trait_lv_pleasure_suit_addict
+		add_trait = leader_trait_lv_pleasure_suit_withdrawal
+	}
+	if = {
+		limit = { has_trait = leader_trait_lv_pleasure_suit_addict_2 }
+		remove_trait = leader_trait_lv_pleasure_suit_addict_2
+		add_trait = leader_trait_lv_pleasure_suit_withdrawal
+	}
+	if = {
+		limit = { has_trait = leader_trait_lv_pleasure_suit_addict_3 }
+		remove_trait = leader_trait_lv_pleasure_suit_addict_3
+		add_trait = leader_trait_lv_pleasure_suit_withdrawal
+	}
+}
+
+# Sexopolis #
+lv_srelic_world_deposits = {
+	reset_planet = yes
+	clear_deposits = yes
+	add_deposit = d_lv_srelic_dense_ruins
+	add_deposit = d_lv_broken_phallic_spire
+	add_deposit = d_lv_ancient_living_cum
+	add_deposit = d_lv_murky_cum_lakes
+	add_deposit = d_lv_rotting_tunnels
+	add_deposit = d_lv_srelic_metal_boneyard
+	prevent_anomaly = yes
+}
+
+# Cow Transformation #
+# root/this = planet
+lv_milk_cow_transform_effect = {
+	every_owned_pop = {
+		limit = {
+			is_robot_pop = no
+			OR = {
+				NOT = { pop_has_trait = trait_lv_all_male }
+				pop_has_trait = trait_lv_femboy05
+			}
+		}
+		if = {
+			limit = { 
+				NOR = {
+					has_pop_flag = lv_milk_cow_transform_1
+					has_pop_flag = lv_milk_cow_transform_2
+					has_pop_flag = lv_milk_cow_transform_3
+					has_pop_flag = lv_milk_cow_transform_4
+					has_modifier = lv_milk_cow_transform_complete
+				}
+			}
+			set_pop_flag = lv_milk_cow_transform_1
+			lv_mct_1_effect = yes
+		}
+		else_if = {
+			limit = { has_pop_flag = lv_milk_cow_transform_1 }
+			remove_pop_flag = lv_milk_cow_transform_1
+			set_pop_flag = lv_milk_cow_transform_2
+			lv_mct_2_effect = yes
+		}
+		else_if = {
+			limit = { has_pop_flag = lv_milk_cow_transform_2 }
+			remove_pop_flag = lv_milk_cow_transform_2
+			set_pop_flag = lv_milk_cow_transform_3
+			lv_mct_3_effect = yes
+		}
+		else_if = {
+			limit = { has_pop_flag = lv_milk_cow_transform_3 }
+			remove_pop_flag = lv_milk_cow_transform_3
+			set_pop_flag = lv_milk_cow_transform_4
+			lv_mct_4_effect = yes
+		}
+		else_if = {
+			limit = { has_pop_flag = lv_milk_cow_transform_4 }
+			remove_pop_flag = lv_milk_cow_transform_4
+			add_modifier = {
+				modifier = lv_milk_cow_transform_complete
+				days = -1
+			}
+			lv_mct_5_effect = yes
+			owner = {
+				add_monthly_resource_mult = {
+					resource = society_research
+					value = 1
+					min = 1
+					max = 100
+				}
+			}
+		}
+	}
+}
+
+lv_full_milk_cow_transform_effect = {
+	lv_mct_1_effect = yes
+	lv_mct_2_effect = yes
+	lv_mct_3_effect = yes
+	lv_mct_4_effect = yes
+	lv_mct_5_effect = yes
+	if = {
+		limit = { 
+			has_pop_flag = lv_milk_cow_transform_1
+		}
+		modify_species = {
+			remove_pop_flag = lv_milk_cow_transform_1
+		}
+	}
+	if = {
+		limit = { 
+			has_pop_flag = lv_milk_cow_transform_2
+		}
+		modify_species = {
+			remove_pop_flag = lv_milk_cow_transform_2
+		}
+	}
+	if = {
+		limit = { 
+			has_pop_flag = lv_milk_cow_transform_3
+		}
+		modify_species = {
+			remove_pop_flag = lv_milk_cow_transform_3
+		}
+	}
+	if = {
+		limit = { 
+			has_pop_flag = lv_milk_cow_transform_4
+		}
+		modify_species = {
+			remove_pop_flag = lv_milk_cow_transform_4
+		}
+	}
+	if = {
+		limit = { 
+			has_modifier = lv_milk_cow_transform_complete
+		}
+		modify_species = {
+			remove_modifier = lv_milk_cow_transform_complete
+		}
+	}
+	modify_species = {
+		has_modifier = lv_milk_cow_transform_complete
+	}
+}
+
+lv_mct_1_effect = {
+	if = {
+		limit = { pop_has_trait = trait_lv_small_penis } 
+		modify_species = {
+			species = this
+			remove_trait = trait_lv_small_penis
+		}
+	}
+	if = {
+		limit = { pop_has_trait = trait_lv_small_breasts }
+		modify_species = {
+			species = this
+			remove_trait = trait_lv_small_breasts
+		}
+	}
+	if = {
+		limit = { pop_has_trait = trait_lv_watery_milk }
+		modify_species = {
+			species = this
+			remove_trait = trait_lv_watery_milk
+		}
+	}
+	if = {
+		limit = { pop_has_trait = trait_lv_sexually_repressed }
+		modify_species = {
+			species = this
+			remove_trait = trait_lv_sexually_repressed
+		}
+	}
+	if = {
+		limit = { pop_has_trait = trait_lv_sexually_inept }
+		modify_species = {
+			species = this
+			remove_trait = trait_lv_sexually_inept
+		}
+	}
+	if = {
+		limit = { pop_has_trait = trait_lv_seasonal_breeders }
+		modify_species = {
+			species = this
+			remove_trait = trait_lv_seasonal_breeders
+		}
+	}
+	if = {
+		limit = { pop_has_trait = trait_lv_excess_testosterone }
+		modify_species = {
+			species = this
+			remove_trait = trait_lv_excess_testosterone
+		}
+	}
+}
+
+lv_mct_2_effect = {
+	if = {
+		limit = { NOT = { pop_has_trait = trait_lv_excess_estrogen } }
+		modify_species = {
+			species = this
+			add_trait = trait_lv_excess_estrogen
+		}
+	}
+	if = {
+		limit = {  
+			NOR = { 
+				pop_has_trait = trait_lv_large_breasts  
+				pop_has_trait = trait_lv_titanic_evolution 
+			} 
+		}
+		modify_species = {
+			species = this
+			add_trait = trait_lv_large_breasts
+		}
+	}
+	if = {
+		limit = { NOT = { pop_has_trait = trait_lv_highly_nutritious_milk } }
+		modify_species = {
+			species = this
+			add_trait = trait_lv_highly_nutritious_milk
+		}
+	}
+}
+
+lv_mct_3_effect = {
+	if = {
+		limit = { NOT = { pop_has_trait = trait_lv_honey } }
+		modify_species = {
+			species = this
+			add_trait = trait_lv_honey
+		}
+	}
+	if = {
+		limit = { NOT = { pop_has_trait = trait_lv_multiple_breasts } }
+		modify_species = {
+			species = this
+			add_trait = trait_lv_multiple_breasts
+		}
+	}
+	if = {
+		limit = { NOT = { pop_has_trait = trait_docile } }
+		modify_species = {
+			species = this
+			add_trait = trait_docile
+		}
+	}
+	if = {
+		limit = { pop_has_trait = trait_agrarian } 
+		modify_species = {
+			species = this
+			remove_trait = trait_agrarian
+		}
+	}
+	if = {
+		limit = { pop_has_trait = trait_ingenious } 
+		modify_species = {
+			species = this
+			remove_trait = trait_ingenious
+		}
+	}
+	if = {
+		limit = { pop_has_trait = trait_industrious } 
+		modify_species = {
+			species = this
+			remove_trait = trait_industrious
+		}
+	}
+}
+
+lv_mct_4_effect = {
+	if = {
+		limit = { pop_has_trait = trait_lv_large_breasts }
+		modify_species = {
+			species = this
+			remove_trait = trait_lv_large_breasts
+		}
+	}
+	if = {
+		limit = { NOT = { pop_has_trait = trait_lv_huge_breasts } }
+		modify_species = {
+			species = this
+			add_trait = trait_lv_huge_breasts
+		}
+	}
+	if = {
+		limit = { NOT = { pop_has_trait = trait_lv_high_volume_lactation } }
+		modify_species = {
+			species = this
+			add_trait = trait_lv_high_volume_lactation
+		}
+	}
+	if = {
+		limit = { 
+			NOR = { 
+				pop_has_trait = trait_lv_high_volume_ejaculations
+				pop_has_trait = trait_lv_all_female
+			} 
+		}
+		modify_species = {
+			species = this
+			add_trait = trait_lv_high_volume_ejaculations
+		}
+	}
+	if = {
+		limit = { NOT = { pop_has_trait = trait_lv_exotic_honey } }
+		modify_species = {
+			species = this
+			add_trait = trait_lv_exotic_honey
+		}
+	}
+}
+
+lv_mct_5_effect = {
+	if = {
+		limit = { NOT = { pop_has_trait = trait_lv_neuron_saliva } }
+		modify_species = {
+			species = this
+			add_trait = trait_lv_neuron_saliva
+		}
+	}
+	if = {
+		limit = { NOT = { pop_has_trait = trait_lv_fuckable_nipples } }
+		modify_species = {
+			species = this
+			add_trait = trait_lv_fuckable_nipples
+		}
+	}
+	if = {
+		limit = { NOT = { pop_has_trait = trait_lv_fizzy_milk } }
+		modify_species = {
+			species = this
+			add_trait = trait_lv_fizzy_milk
+		}
+	}
+}
+
+# Feminization Policy Effect #
+lv_feminization_effect = {
+	if = {
+		limit = {
+			NOR = {
+				#pop_has_trait = trait_lvex_amazon
+				pop_has_trait = trait_lv_all_female
+				pop_has_trait = trait_lv_futanari
+			}
+		}
+		if = {
+			limit = { 
+				pop_has_trait = trait_lv_all_male
+				NOR = {
+					pop_has_trait = trait_lv_femboy01
+					pop_has_trait = trait_lv_femboy02
+					pop_has_trait = trait_lv_femboy03
+					pop_has_trait = trait_lv_femboy04
+					pop_has_trait = trait_lv_femboy05
+				}
+			}
+			modify_species = {
+				add_trait = trait_lv_femboy01
+				remove_trait = trait_lv_all_male
+			}
+			lv_ft_1_effect = yes
+		}
+		else_if = {
+			limit = { pop_has_trait = trait_lv_femboy01 }
+			modify_species = {
+				remove_trait = trait_lv_femboy01
+				add_trait = trait_lv_femboy02
+			}
+			lv_ft_2_effect = yes
+		}
+		else_if = {
+			limit = { pop_has_trait = trait_lv_femboy02 }
+			modify_species = {
+				remove_trait = trait_lv_femboy02
+				add_trait = trait_lv_femboy03
+			}
+			lv_ft_3_effect = yes
+		}
+		else_if = {
+			limit = { pop_has_trait = trait_lv_femboy03 }
+			modify_species = {
+				remove_trait = trait_lv_femboy03
+				add_trait = trait_lv_femboy04
+			}
+			lv_ft_4_effect = yes
+		}
+		else_if = {
+			limit = { pop_has_trait = trait_lv_femboy04 }
+			modify_species = {
+				remove_trait = trait_lv_femboy04
+				add_trait = trait_lv_femboy05
+			}
+			lv_ft_5_effect = yes
+			owner = {
+				add_monthly_resource_mult = {
+					resource = unity
+					value = 1.5
+					min = 5
+					max = 100
+				}
+				add_monthly_resource_mult = {
+					resource = society_research
+					value = 1
+					min = 1
+					max = 100
+				}
+			}
+		}
+	}
+	if = {
+		limit = { 
+			pop_has_trait = trait_lv_femboy05
+			owner = { has_policy_flag = lv_feminization_degree_futa }
+		}
+		modify_species = {
+			remove_trait = trait_lv_small_breasts
+			remove_trait = trait_lv_small_penis
+			remove_trait = trait_lv_erogenous_anus
+			remove_trait = trait_lv_excess_estrogen
+			remove_trait = trait_lv_femboy05
+			remove_trait = trait_lv_submissive
+			add_trait = trait_lv_futanari
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 1.5
+				min = 5
+				max = 100
+			}
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = 1
+				min = 1
+				max = 100
+			}
+		}
+	}
+	if = {
+		limit = { 
+			pop_has_trait = trait_lv_femboy05
+			owner = { has_policy_flag = lv_feminization_degree_female }
+		}
+		modify_species = {
+			remove_trait = trait_lv_small_breasts
+			remove_trait = trait_lv_small_penis
+			remove_trait = trait_lv_erogenous_anus
+			remove_trait = trait_lv_excess_estrogen
+			remove_trait = trait_lv_femboy05
+			remove_trait = trait_lv_submissive
+			add_trait = trait_lv_all_female
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 1.5
+				min = 5
+				max = 100
+			}
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = 1
+				min = 1
+				max = 100
+			}
+		}
+	}
+	if = {
+		limit = { 
+			pop_has_trait = trait_lv_femboy05
+			owner = { has_policy_flag = lv_feminization_degree_mixed }
+		}
+		random_list = {
+			33 = { set_pop_flag = lv_femboy_pop_flag }
+			33 = { 
+				modify_species = {
+					remove_trait = trait_lv_small_breasts
+					remove_trait = trait_lv_small_penis
+					remove_trait = trait_lv_erogenous_anus
+					remove_trait = trait_lv_excess_estrogen
+					remove_trait = trait_lv_femboy05
+					remove_trait = trait_lv_submissive
+					add_trait = trait_lv_all_female
+				}
+				owner = {
+					add_monthly_resource_mult = {
+						resource = unity
+						value = 1.5
+						min = 5
+						max = 100
+					}
+					add_monthly_resource_mult = {
+						resource = society_research
+						value = 1
+						min = 1
+						max = 100
+					}
+				}
+			}
+			33 = {  
+				modify_species = {
+					remove_trait = trait_lv_small_breasts
+					remove_trait = trait_lv_small_penis
+					remove_trait = trait_lv_erogenous_anus
+					remove_trait = trait_lv_excess_estrogen
+					remove_trait = trait_lv_femboy05
+					remove_trait = trait_lv_submissive
+					add_trait = trait_lv_futanari
+				}
+				owner = {
+					add_monthly_resource_mult = {
+						resource = unity
+						value = 1.5
+						min = 5
+						max = 100
+					}
+					add_monthly_resource_mult = {
+						resource = society_research
+						value = 1
+						min = 1
+						max = 100
+					}
+				}
+			}
+		}
+	}
+	if = {
+		limit = { 
+			pop_has_trait = trait_lv_femboy05
+			pop_has_trait = trait_lv_futanari
+		}
+		modify_species = {
+			remove_trait = trait_lv_femboy05
+		}
+	}
+	if = {
+		limit = { 
+			pop_has_trait = trait_lv_femboy05
+			pop_has_trait = trait_lv_all_female
+		}
+		modify_species = {
+			remove_trait = trait_lv_femboy05
+		}
+	}
+	if = {
+		limit = { 
+			pop_has_trait = trait_lv_femboy05
+			pop_has_trait = trait_lv_all_male
+		}
+		modify_species = {
+			remove_trait = trait_lv_all_male
+		}
+	}
+}
+
+lv_full_feminization_effect = {
+	lv_ft_1_effect = yes
+	lv_ft_2_effect = yes
+	lv_ft_3_effect = yes
+	lv_ft_4_effect = yes
+	lv_ft_5_effect = yes
+	if = {
+		limit = { 
+			pop_has_trait = trait_lv_femboy01
+		}
+		modify_species = {
+			remove_trait = trait_lv_femboy01
+		}
+	}
+	if = {
+		limit = { 
+			pop_has_trait = trait_lv_femboy02
+		}
+		modify_species = {
+			remove_trait = trait_lv_femboy02
+		}
+	}
+	if = {
+		limit = { 
+			pop_has_trait = trait_lv_femboy03
+		}
+		modify_species = {
+			remove_trait = trait_lv_femboy03
+		}
+	}
+	if = {
+		limit = { 
+			pop_has_trait = trait_lv_femboy04
+		}
+		modify_species = {
+			remove_trait = trait_lv_femboy04
+		}
+	}
+	if = {
+		limit = { 
+			pop_has_trait = trait_lv_femboy05
+		}
+		modify_species = {
+			remove_trait = trait_lv_femboy05
+		}
+	}
+	modify_species = {
+		add_trait = trait_lv_femboy05
+	}
+	if = {
+		limit = { 
+			pop_has_trait = trait_lv_femboy05
+			owner = { has_policy_flag = lv_feminization_degree_futa }
+		}
+		modify_species = {
+			remove_trait = trait_lv_small_breasts
+			remove_trait = trait_lv_small_penis
+			remove_trait = trait_lv_erogenous_anus
+			remove_trait = trait_lv_excess_estrogen
+			remove_trait = trait_lv_femboy05
+			remove_trait = trait_lv_submissive
+			add_trait = trait_lv_futanari
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 1.5
+				min = 5
+				max = 100
+			}
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = 1
+				min = 1
+				max = 100
+			}
+		}
+	}
+	if = {
+		limit = { 
+			pop_has_trait = trait_lv_femboy05
+			owner = { has_policy_flag = lv_feminization_degree_female }
+		}
+		modify_species = {
+			remove_trait = trait_lv_small_breasts
+			remove_trait = trait_lv_small_penis
+			remove_trait = trait_lv_erogenous_anus
+			remove_trait = trait_lv_excess_estrogen
+			remove_trait = trait_lv_femboy05
+			remove_trait = trait_lv_submissive
+			add_trait = trait_lv_all_female
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 1.5
+				min = 5
+				max = 100
+			}
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = 1
+				min = 1
+				max = 100
+			}
+		}
+	}
+	if = {
+		limit = { 
+			pop_has_trait = trait_lv_femboy05
+			owner = { has_policy_flag = lv_feminization_degree_mixed }
+		}
+		random_list = {
+			33 = { set_pop_flag = lv_femboy_pop_flag }
+			33 = { 
+				modify_species = {
+					remove_trait = trait_lv_small_breasts
+					remove_trait = trait_lv_small_penis
+					remove_trait = trait_lv_erogenous_anus
+					remove_trait = trait_lv_excess_estrogen
+					remove_trait = trait_lv_femboy05
+					remove_trait = trait_lv_submissive
+					add_trait = trait_lv_all_female
+				}
+				owner = {
+					add_monthly_resource_mult = {
+						resource = unity
+						value = 1.5
+						min = 5
+						max = 100
+					}
+					add_monthly_resource_mult = {
+						resource = society_research
+						value = 1
+						min = 1
+						max = 100
+					}
+				}
+			}
+			33 = {  
+				modify_species = {
+					remove_trait = trait_lv_small_breasts
+					remove_trait = trait_lv_small_penis
+					remove_trait = trait_lv_erogenous_anus
+					remove_trait = trait_lv_excess_estrogen
+					remove_trait = trait_lv_femboy05
+					remove_trait = trait_lv_submissive
+					add_trait = trait_lv_futanari
+				}
+				owner = {
+					add_monthly_resource_mult = {
+						resource = unity
+						value = 1.5
+						min = 5
+						max = 100
+					}
+					add_monthly_resource_mult = {
+						resource = society_research
+						value = 1
+						min = 1
+						max = 100
+					}
+				}
+			}
+		}
+	}
+	if = {
+		limit = { 
+			pop_has_trait = trait_lv_femboy05
+			pop_has_trait = trait_lv_futanari
+		}
+		modify_species = {
+			remove_trait = trait_lv_femboy05
+		}
+	}
+	if = {
+		limit = { 
+			pop_has_trait = trait_lv_femboy05
+			pop_has_trait = trait_lv_all_female
+		}
+		modify_species = {
+			remove_trait = trait_lv_femboy05
+		}
+	}
+	if = {
+		limit = { 
+			pop_has_trait = trait_lv_femboy05
+			pop_has_trait = trait_lv_all_male
+		}
+		modify_species = {
+			remove_trait = trait_lv_all_male
+		}
+	}
+}
+
+lv_ft_1_effect = {
+	if = {
+		limit = { pop_has_trait = trait_lv_large_penis } 
+		modify_species = {
+			species = this
+			remove_trait = trait_lv_large_penis
+		}
+	}
+	if = {
+		limit = { pop_has_trait = trait_lv_huge_penis }
+		modify_species = {
+			species = this
+			remove_trait = trait_lv_huge_penis
+		}
+	}
+	if = {
+		limit = { pop_has_trait = trait_lv_equine_penis }
+		modify_species = {
+			species = this
+			remove_trait = trait_lv_equine_penis
+		}
+	}
+	if = {
+		limit = { pop_has_trait = trait_lv_excess_testosterone }
+		modify_species = {
+			species = this
+			remove_trait = trait_lv_excess_testosterone
+		}
+	}
+	if = {
+		limit = { NOT = { pop_has_trait = trait_lv_excess_estrogen } }
+		modify_species = {
+			species = this
+			add_trait = trait_lv_excess_estrogen
+		}
+	}
+}
+
+lv_ft_2_effect = {
+	if = {
+		limit = { NOT = { pop_has_trait = trait_lv_small_penis } }
+		modify_species = {
+			species = this
+			add_trait = trait_lv_small_penis
+		}
+	}
+	if = {
+		limit = { pop_has_trait = trait_strong }
+		modify_species = {
+			species = this
+			remove_trait = trait_strong
+		}
+	}
+	if = {
+		limit = { pop_has_trait = trait_very_strong }
+		modify_species = {
+			species = this
+			remove_trait = trait_very_strong
+		}
+	}
+	if = {
+		limit = { pop_has_trait = trait_robust }
+		modify_species = {
+			species = this
+			remove_trait = trait_robust
+		}
+	}
+	if = {
+		limit = { pop_has_trait = trait_slow_breeders }
+		modify_species = {
+			species = this
+			remove_trait = trait_slow_breeders
+		}
+	}
+	if = {
+		limit = { pop_has_trait = trait_rapid_breeders }
+		modify_species = {
+			species = this
+			remove_trait = trait_rapid_breeders
+		}
+	}
+	if = {
+		limit = { pop_has_trait = trait_rapid_breeders_lithoid }
+		modify_species = {
+			species = this
+			remove_trait = trait_rapid_breeders_lithoid
+		}
+	}
+	if = {
+		limit = { pop_has_trait = trait_fertile }
+		modify_species = {
+			species = this
+			remove_trait = trait_fertile
+		}
+	}
+}
+
+lv_ft_3_effect = {
+	if = {
+		limit = { NOT = { pop_has_trait = trait_lv_submissive } }
+		modify_species = {
+			species = this
+			add_trait = trait_lv_submissive
+		}
+	}
+	if = {
+		limit = { pop_has_trait = trait_lv_addictive_cum } 
+		modify_species = {
+			species = this
+			remove_trait = trait_lv_addictive_cum
+		}
+	}
+	if = {
+		limit = { pop_has_trait = trait_lv_aphrodisiac_cum } 
+		modify_species = {
+			species = this
+			remove_trait = trait_lv_aphrodisiac_cum
+		}
+	}
+	if = {
+		limit = { pop_has_trait = trait_lv_high_volume_ejaculations } 
+		modify_species = {
+			species = this
+			remove_trait = trait_lv_high_volume_ejaculations
+		}
+	}
+}
+
+lv_ft_4_effect = {
+	if = {
+		limit = { NOT = { pop_has_trait = trait_lv_erogenous_anus } }
+		modify_species = {
+			species = this
+			add_trait = trait_lv_erogenous_anus
+		}
+	}
+	clear_ethos = yes
+}
+
+lv_ft_5_effect = {
+	if = {
+		limit = { NOT = { pop_has_trait = trait_lv_natural_anal_lube } }
+		modify_species = {
+			species = this
+			add_trait = trait_lv_natural_anal_lube
+		}
+	}
+	if = {
+		limit = { NOT = { pop_has_trait = trait_lv_small_breasts } }
+		modify_species = {
+			species = this
+			add_trait = trait_lv_small_breasts
+		}
+	}
+}
+
+###

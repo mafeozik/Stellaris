@@ -1,0 +1,195 @@
+#############################################
+###     Researcher Complex Drone Jobs     ###
+#############################################
+
+lv_experimenter_drone = {			# Experimenter Drone
+	category = complex_drone
+	condition_string = DRONE_JOB_TRIGGER
+	building_icon = building_lv_sexology_labs
+	
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	
+	possible_precalc = can_fill_drone_job
+
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
+	
+	resources = {
+		category = planet_lv_sexologist
+		
+		# Any
+		produces = {
+			trigger = {
+				planet = { 
+					NOR = {
+						has_planet_flag = lv_sexology_focus_research
+						has_planet_flag = lv_sexology_focus_consumer_goods
+					}
+				}
+			}
+			physics_research = 2
+			engineering_research = 2
+			society_research = 2
+			consumer_goods = 4
+		}
+		produces = {
+			trigger = {
+				planet = { has_planet_flag = lv_sexology_focus_research }
+			}
+			physics_research = 4
+			engineering_research = 4
+			society_research = 4
+		}
+		produces = {
+			trigger = {
+				planet = { has_planet_flag = lv_sexology_focus_research }
+				OR = {
+					pop_has_trait = trait_lv_neuron_saliva
+					pop_has_trait = trait_lv_perfect_hybrid
+				}
+			}
+			physics_research = 1
+			engineering_research = 1
+			society_research = 1
+		}
+		produces = {
+			trigger = {
+				planet = { has_planet_flag = lv_sexology_focus_consumer_goods }
+			}
+			consumer_goods = 4
+		}
+		produces = {
+			trigger = {
+				planet = { has_planet_flag = lv_sexology_focus_consumer_goods }
+				pop_has_trait = trait_lv_honey
+			}
+			consumer_goods = 1
+		}
+		produces = {
+			trigger = {
+				planet = { has_planet_flag = lv_sexology_focus_consumer_goods }
+				pop_has_trait = trait_lv_exotic_honey
+			}
+			consumer_goods = 2
+		}
+		produces = {
+			trigger = {
+				planet = { has_planet_flag = lv_sexology_focus_consumer_goods }
+				OR = {
+					pop_has_trait = trait_lv_natural_anal_lube
+					pop_has_trait = trait_lv_perfect_hybrid
+				}
+			}
+			consumer_goods = 1
+		}
+		upkeep = {
+			minerals = 6
+		}
+		
+		# Overlord
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_produce_requisitorium
+					exists = owner.overlord
+					owner.overlord = { is_gestalt = no }
+					NOR = {
+						has_planet_flag = lv_sexology_focus_research
+						has_planet_flag = lv_sexology_focus_consumer_goods
+					}
+				}
+			}
+			consumer_goods = @requisitorium_consumer_goods_reduction
+		}
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_produce_requisitorium
+					exists = owner.overlord
+					owner.overlord = { is_gestalt = no }
+					has_planet_flag = lv_sexology_focus_consumer_goods
+				}
+			}
+			consumer_goods = @requisitorium_consumer_goods_reduction
+		}
+		upkeep = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_produce_requisitorium
+					exists = owner.overlord
+					owner.overlord = { is_gestalt = no }
+					has_planet_flag = lv_sexology_focus_consumer_goods
+				}
+			}
+			minerals = 1
+		}
+	}
+	
+	# Overlord
+	overlord_resources = {
+		category = planet_requisitioned_consumer_goods
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_produce_requisitorium
+					exists = owner.overlord
+					owner.overlord = { is_gestalt = no }
+					NOR = {
+						has_planet_flag = lv_sexology_focus_research
+						has_planet_flag = lv_sexology_focus_consumer_goods
+					}
+				}
+			}
+			consumer_goods = @requisitorium_consumer_goods_overlord
+		}
+	}
+	overlord_resources = {
+		category = planet_requisitioned_consumer_goods
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_produce_requisitorium
+					exists = owner.overlord
+					owner.overlord = { is_gestalt = no }
+					has_planet_flag = lv_sexology_focus_consumer_goods
+				}
+			}
+			consumer_goods = @requisitorium_consumer_goods_overlord
+		}
+	}
+	
+	weight = {
+		weight = 10
+		mult = value:job_weights_research_modifier|JOB|lv_experimenter_drone|
+		# factors
+		modifier = {
+			factor = 1.2
+			has_job = lv_experimenter_drone
+		}
+		
+		# sex traits
+		modifier = {
+			add = 0.05
+			lv_sex_weight_low = yes
+		}
+		modifier = {
+			add = 0.1
+			lv_sex_weight_med = yes
+		}
+		modifier = {
+			add = 0.2
+			lv_sex_weight_high = yes
+		}
+		modifier = {
+			add = -0.2
+			lv_sex_weight_neg = yes
+		}
+	}
+}
+
+###

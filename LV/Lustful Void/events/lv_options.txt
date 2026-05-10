@@ -1,0 +1,696 @@
+############################
+###     Options Menu     ###
+############################
+
+namespace = lv_options
+
+event = {
+	id = lv_options.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		# Hide Events
+		set_global_flag = lv_events_not_hidden
+		set_global_flag = lv_brood_parasite_not_hidden
+		set_global_flag = lv_mech_hybrids_not_hidden
+		set_global_flag = lv_mono_gender_not_hidden
+		set_global_flag = lv_dom_sub_not_hidden
+		set_global_flag = lv_more_aggressively_smexing_spam
+		
+		# Disable Events
+		set_global_flag = lv_neuter_purge_not_disabled
+		set_global_flag = lv_raunchy_titans_enabled			# _disabled
+		set_global_flag = lv_bestiality_enabled
+		set_global_flag = lv_futa_enabled
+		set_global_flag = lv_rape_enabled
+		set_global_flag = lv_all_enabled
+		
+		# Other Features
+#		set_global_flag = lv_aa_restricted
+		set_global_flag = lv_bio_hybrids_enabled
+		set_global_flag = lv_mech_hybrids_enabled
+		set_global_flag = lv_pop_stealing_mc_not_disabled
+		set_global_flag = lv_disallow_special_trait_removal
+		set_global_flag = lv_aggressively_smexing_please
+		set_global_flag = lv_cheat_mode_menu
+	}
+}
+
+country_event = {		# Main Menu
+	id = lv_options.2
+	title = lv_options.2.name
+	desc = lv_options.2.desc
+	picture = GFX_evt_lv_options
+	
+	is_triggered_only = yes
+	
+	option = {		# Hide Events Submenu
+		name = lv_options.2.a
+		hidden_effect = {
+			country_event = { id = lv_options.3 }
+		}
+	}
+	
+	option = {		# Disable Events Submenu
+		name = lv_options.2.b
+		hidden_effect = {
+			country_event = { id = lv_options.4 }
+		}
+	}
+	
+	option = {		# Disable Features Submenu
+		name = lv_options.2.c
+		hidden_effect = {
+			country_event = { id = lv_options.5 }
+		}
+	}
+	
+	option = {		# Maintenance Submenu
+		name = lv_options.2.d
+		hidden_effect = {
+			country_event = { id = lv_options.6 }
+		}
+	}
+	
+	option = {		# Exit
+		name = lv_options.exit
+	}
+}
+
+country_event = {		# Hide Events Submenu
+	id = lv_options.3
+	title = lv_options.3.name
+	desc = lv_options.3.desc
+	picture = GFX_evt_lv_options
+	
+	is_triggered_only = yes
+	
+	option = {		# Hide All Events
+		name = lv_options.3.a
+		trigger = {
+			has_global_flag = lv_events_not_hidden
+		}
+		remove_global_flag = lv_events_not_hidden
+		set_global_flag = lv_events_hidden
+		hidden_effect = {
+			country_event = { id = lv_options.3 }
+		}
+	}
+	
+	option = {		# Show All Events
+		name = lv_options.3.b
+		trigger = {
+			NOT = {
+				has_global_flag = lv_events_not_hidden
+			}
+		}
+		set_global_flag = lv_events_not_hidden
+		remove_global_flag = lv_events_hidden
+		hidden_effect = {
+			country_event = { id = lv_options.3 }
+		}
+	}
+	
+	option = {		# Hide Brood Parasite Events
+		name = lv_options.3.c
+		trigger = {
+			has_global_flag = lv_brood_parasite_not_hidden
+		}
+		remove_global_flag = lv_brood_parasite_not_hidden
+		set_global_flag = lv_brood_parasite_hidden
+		hidden_effect = {
+			country_event = { id = lv_options.3 }
+		}
+	}
+	
+	option = {		# Show Brood Parasite Events
+		name = lv_options.3.d
+		trigger = {
+			NOT = {
+				has_global_flag = lv_brood_parasite_not_hidden
+			}
+		}
+		set_global_flag = lv_brood_parasite_not_hidden
+		remove_global_flag = lv_brood_parasite_hidden
+		hidden_effect = {
+			country_event = { id = lv_options.3 }
+		}
+	}
+	
+	option = {		# Hide Mech Hybrid Events
+		name = lv_options.3.e
+		trigger = {
+			has_global_flag = lv_mech_hybrids_not_hidden
+		}
+		remove_global_flag = lv_mech_hybrids_not_hidden
+		set_global_flag = lv_mech_hybrids_hidden
+		hidden_effect = {
+			country_event = { id = lv_options.3 }
+		}
+	}
+	
+	option = {		# Show Mech Hybrid Events
+		name = lv_options.3.f
+		trigger = {
+			NOT = {
+				has_global_flag = lv_mech_hybrids_not_hidden
+			}
+		}
+		set_global_flag = lv_mech_hybrids_not_hidden
+		remove_global_flag = lv_mech_hybrids_hidden
+		hidden_effect = {
+			country_event = { id = lv_options.3 }
+		}
+	}
+	
+	option = {		# Hide Mono Gender Events
+		name = lv_options.3.g
+		trigger = {
+			has_global_flag = lv_mono_gender_not_hidden
+		}
+		remove_global_flag = lv_mono_gender_not_hidden
+		set_global_flag = lv_mono_gender_hidden
+		hidden_effect = {
+			country_event = { id = lv_options.3 }
+		}
+	}
+	
+	option = {		# Show Mono Gender Events
+		name = lv_options.3.h
+		trigger = {
+			NOT = {
+				has_global_flag = lv_mono_gender_not_hidden
+			}
+		}
+		set_global_flag = lv_mono_gender_not_hidden
+		remove_global_flag = lv_mono_gender_hidden
+		hidden_effect = {
+			country_event = { id = lv_options.3 }
+		}
+	}
+	
+	option = {		# Hide Dom/sub Events
+		name = lv_options.3.i
+		trigger = {
+			has_global_flag = lv_dom_sub_not_hidden
+		}
+		remove_global_flag = lv_dom_sub_not_hidden
+		set_global_flag = lv_dom_sub_hidden
+		hidden_effect = {
+			country_event = { id = lv_options.3 }
+		}
+	}
+	
+	option = {		# Show Dom/sub Events
+		name = lv_options.3.j
+		trigger = {
+			NOT = {
+				has_global_flag = lv_dom_sub_not_hidden
+			}
+		}
+		set_global_flag = lv_dom_sub_not_hidden
+		remove_global_flag = lv_dom_sub_hidden
+		hidden_effect = {
+			country_event = { id = lv_options.3 }
+		}
+	}
+	
+	option = {		# Hide Invasive Breeding Events
+		name = lv_options.3.k
+		trigger = {
+			has_global_flag = lv_more_aggressively_smexing_spam
+		}
+		remove_global_flag = lv_more_aggressively_smexing_spam
+		set_global_flag = lv_no_more_aggressively_smexing_spam
+		hidden_effect = {
+			country_event = { id = lv_options.3 }
+		}
+	}
+	
+	option = {		# Show Invasive Breeding Events
+		name = lv_options.3.l
+		trigger = {
+			NOT = {
+				has_global_flag = lv_more_aggressively_smexing_spam
+			}
+		}
+		set_global_flag = lv_more_aggressively_smexing_spam
+		remove_global_flag = lv_no_more_aggressively_smexing_spam
+		hidden_effect = {
+			country_event = { id = lv_options.3 }
+		}
+	}
+	
+	option = {		# Back to previous Menu
+		name = lv_options.back
+		hidden_effect = {
+			country_event = { id = lv_options.2 }
+		}
+	}
+	
+	option = {		# Exit
+		name = lv_options.exit
+	}
+}
+
+country_event = {		# Disable Events Submenu
+	id = lv_options.4
+	title = lv_options.4.name
+	desc = lv_options.4.desc
+	picture = GFX_evt_lv_options
+	
+	is_triggered_only = yes
+	
+	option = {		# Disable Neuter Purge Events
+		name = lv_options.4.a
+		trigger = {
+			has_global_flag = lv_neuter_purge_not_disabled
+		}
+		remove_global_flag = lv_neuter_purge_not_disabled
+		set_global_flag = lv_neuter_purge_disabled
+		hidden_effect = {
+			country_event = { id = lv_options.4 }
+		}
+	}
+	
+	option = {		# Enable Neuter Purge Events
+		name = lv_options.4.b
+		trigger = {
+			NOT = {
+				has_global_flag = lv_neuter_purge_not_disabled
+			}
+		}
+		set_global_flag = lv_neuter_purge_not_disabled
+		remove_global_flag = lv_neuter_purge_disabled
+		hidden_effect = {
+			country_event = { id = lv_options.4 }
+		}
+	}
+	
+	option = {		# Disable Raunchy Titans Events
+		name = lv_options.4.c
+		trigger = {
+			has_global_flag = lv_raunchy_titans_enabled
+		}
+		remove_global_flag = lv_raunchy_titans_enabled
+		set_global_flag = lv_raunchy_titans_disabled
+		hidden_effect = {
+			country_event = { id = lv_options.4 }
+		}
+	}
+	
+	option = {		# Enable Raunchy Titans Events
+		name = lv_options.4.d
+		trigger = {
+			NOT = {
+				has_global_flag = lv_raunchy_titans_enabled
+			}
+		}
+		set_global_flag = lv_raunchy_titans_enabled
+		remove_global_flag = lv_raunchy_titans_disabled
+		hidden_effect = {
+			country_event = { id = lv_options.4 }
+		}
+	}
+	
+	option = {		# Disable Bestiality Events
+		name = lv_options.4.e
+		trigger = {
+			has_global_flag = lv_bestiality_enabled
+		}
+		remove_global_flag = lv_bestiality_enabled
+		set_global_flag = lv_bestiality_disabled
+		hidden_effect = {
+			country_event = { id = lv_options.4 }
+		}
+	}
+	
+	option = {		# Enable Bestiality Events
+		name = lv_options.4.f
+		trigger = {
+			NOT = {
+				has_global_flag = lv_bestiality_enabled
+			}
+		}
+		set_global_flag = lv_bestiality_enabled
+		remove_global_flag = lv_bestiality_disabled
+		hidden_effect = {
+			country_event = { id = lv_options.4 }
+		}
+	}
+	
+	option = {		# Disable Futa Events
+		name = lv_options.4.g
+		trigger = {
+			has_global_flag = lv_futa_enabled
+		}
+		remove_global_flag = lv_futa_enabled
+		set_global_flag = lv_futa_disabled
+		hidden_effect = {
+			country_event = { id = lv_options.4 }
+		}
+	}
+	
+	option = {		# Enable Bestiality Events
+		name = lv_options.4.h
+		trigger = {
+			NOT = {
+				has_global_flag = lv_futa_enabled
+			}
+		}
+		set_global_flag = lv_futa_enabled
+		remove_global_flag = lv_futa_disabled
+		hidden_effect = {
+			country_event = { id = lv_options.4 }
+		}
+	}
+	
+	option = {		# Disable Rape Events
+		name = lv_options.4.i
+		trigger = {
+			has_global_flag = lv_rape_enabled
+		}
+		remove_global_flag = lv_rape_enabled
+		set_global_flag = lv_rape_disabled
+		hidden_effect = {
+			country_event = { id = lv_options.4 }
+		}
+	}
+	
+	option = {		# Enable Rape Events
+		name = lv_options.4.j
+		trigger = {
+			NOT = {
+				has_global_flag = lv_rape_enabled
+			}
+		}
+		set_global_flag = lv_rape_enabled
+		remove_global_flag = lv_rape_disabled
+		hidden_effect = {
+			country_event = { id = lv_options.4 }
+		}
+	}
+	
+	option = {		# Disable Invasive Breeding Events
+		name = lv_options.4.k
+		trigger = {
+			has_global_flag = lv_aggressively_smexing_please
+		}
+		remove_global_flag = lv_aggressively_smexing_please
+		set_global_flag = lv_no_more_aggressively_smexing_please
+		hidden_effect = {
+			country_event = { id = lv_options.4 }
+		}
+	}
+	
+	option = {		# Enable Invasive Breeding Events
+		name = lv_options.4.l
+		trigger = {
+			NOT = {
+				has_global_flag = lv_aggressively_smexing_please
+			}
+		}
+		set_global_flag = lv_aggressively_smexing_please
+		remove_global_flag = lv_no_more_aggressively_smexing_please
+		hidden_effect = {
+			country_event = { id = lv_options.4 }
+		}
+	}
+	
+	option = {		# Disable All Events
+		name = lv_options.4.m
+		trigger = {
+			has_global_flag = lv_all_enabled
+		}
+		remove_global_flag = lv_all_enabled
+		set_global_flag = lv_all_disabled
+		hidden_effect = {
+			country_event = { id = lv_options.4 }
+		}
+	}
+	
+	option = {		# Enable All Events
+		name = lv_options.4.n
+		trigger = {
+			NOT = {
+				has_global_flag = lv_all_enabled
+			}
+		}
+		set_global_flag = lv_all_enabled
+		remove_global_flag = lv_all_disabled
+		hidden_effect = {
+			country_event = { id = lv_options.4 }
+		}
+	}
+	
+	option = {		# Back to previous Menu
+		name = lv_options.back
+		hidden_effect = {
+			country_event = { id = lv_options.2 }
+		}
+	}
+	
+	option = {		# Exit
+		name = lv_options.exit
+	}
+}
+
+country_event = {		# Disable Features Submenu
+	id = lv_options.5
+	title = lv_options.5.name
+	desc = lv_options.5.desc
+	picture = GFX_evt_lv_options
+	
+	is_triggered_only = yes
+	
+#	option = {		# Unrestrict Auto Assimilation
+#		name = lv_options.5.a
+#		custom_tooltip = lv_options.5.a.tooltip
+#		trigger = {
+#			has_global_flag = aa_active
+#			has_global_flag = lv_aa_restricted
+#		}
+#		remove_global_flag = lv_aa_restricted
+#		set_global_flag = lv_aa_unrestricted
+#		hidden_effect = {
+#			country_event = { id = lv_options.5 }
+#		}
+#	}
+	
+#	option = {		# Restrict Auto Assimilation
+#		name = lv_options.5.b
+#		trigger = {
+#			has_global_flag = aa_active
+#			NOT = {
+#				has_global_flag = lv_aa_restricted
+#			}
+#		}
+#		set_global_flag = lv_aa_restricted
+#		remove_global_flag = lv_aa_unrestricted
+#		hidden_effect = {
+#			country_event = { id = lv_options.5 }
+#		}
+#	}
+	
+	option = {		# Disable Bio Hybrids
+		name = lv_options.5.c
+		trigger = {
+			has_global_flag = lv_bio_hybrids_enabled
+		}
+		remove_global_flag = lv_bio_hybrids_enabled
+		set_global_flag = lv_bio_hybrids_disabled
+		hidden_effect = {
+			country_event = { id = lv_options.5 }
+		}
+	}
+	
+	option = {		# Enable Bio Hybrids
+		name = lv_options.5.d
+		trigger = {
+			NOT = {
+				has_global_flag = lv_bio_hybrids_enabled
+			}
+		}
+		set_global_flag = lv_bio_hybrids_enabled
+		remove_global_flag = lv_bio_hybrids_disabled
+		hidden_effect = {
+			country_event = { id = lv_options.5 }
+		}
+	}
+	
+	option = {		# Disable Mech Hybrids
+		name = lv_options.5.e
+		trigger = {
+			has_global_flag = lv_mech_hybrids_enabled
+		}
+		remove_global_flag = lv_mech_hybrids_enabled
+		set_global_flag = lv_mech_hybrids_disabled
+		hidden_effect = {
+			country_event = { id = lv_options.5 }
+		}
+	}
+	
+	option = {		# Enable Mech Hybrids
+		name = lv_options.5.f
+		trigger = {
+			NOT = {
+				has_global_flag = lv_mech_hybrids_enabled
+			}
+		}
+		set_global_flag = lv_mech_hybrids_enabled
+		remove_global_flag = lv_mech_hybrids_disabled
+		hidden_effect = {
+			country_event = { id = lv_options.5 }
+		}
+	}
+	
+	option = {		# Disable Pop Stealing Events
+		name = lv_options.5.g
+		trigger = {
+			has_global_flag = lv_pop_stealing_mc_not_disabled
+		}
+		remove_global_flag = lv_pop_stealing_mc_not_disabled
+		set_global_flag = lv_pop_stealing_mc_disabled
+		hidden_effect = {
+			country_event = { id = lv_options.5 }
+		}
+	}
+	
+	option = {		# Enable Pop Stealing Events
+		name = lv_options.5.h
+		trigger = {
+			NOT = {
+				has_global_flag = lv_pop_stealing_mc_not_disabled
+			}
+		}
+		set_global_flag = lv_pop_stealing_mc_not_disabled
+		remove_global_flag = lv_pop_stealing_mc_disabled
+		hidden_effect = {
+			country_event = { id = lv_options.5 }
+		}
+	}
+	
+	option = {		# Disallow Special Trait Removal
+		name = lv_options.5.i
+		trigger = {
+			has_global_flag = lv_allow_special_trait_removal
+		}
+		remove_global_flag = lv_allow_special_trait_removal
+		set_global_flag = lv_disallow_special_trait_removal
+		hidden_effect = {
+			country_event = { id = lv_options.5 }
+		}
+	}
+	
+	option = {		# Allow Special Trait Removal
+		name = lv_options.5.j
+		trigger = {
+			NOT = {
+				has_global_flag = lv_allow_special_trait_removal
+			}
+		}
+		set_global_flag = lv_allow_special_trait_removal
+		remove_global_flag = lv_disallow_special_trait_removal
+		hidden_effect = {
+			country_event = { id = lv_options.5 }
+		}
+	}
+	
+	option = {		# Enable Cheat Mode
+		name = lv_options.5.k
+		custom_tooltip = lv_options.5.k.tooltip
+		trigger = {
+			has_global_flag = lv_cheat_mode_menu
+		}
+		remove_global_flag = lv_cheat_mode_menu
+		hidden_effect = {
+			country_event = { id = lv_options.5 }
+			country_event = { id = lv_trait_cleanup.20 }
+		}
+	}
+	
+	option = {		# Disable Cheat Mode
+		name = lv_options.5.l
+		custom_tooltip = lv_options.5.l.tooltip
+		trigger = {
+			NOT = {
+				has_global_flag = lv_cheat_mode_menu
+			}
+		}
+		set_global_flag = lv_cheat_mode_menu
+		hidden_effect = {
+			country_event = { id = lv_options.5 }
+			country_event = { id = lv_trait_cleanup.21 }
+		}
+	}
+	
+	option = {		# Back to previous Menu
+		name = lv_options.back
+		hidden_effect = {
+			country_event = { id = lv_options.2 }
+		}
+	}
+	
+	option = {		# Exit
+		name = lv_options.exit
+	}
+}
+
+country_event = {		# Maintenance Submenu
+	id = lv_options.6
+	title = lv_options.6.name
+	desc = lv_options.6.desc
+	picture = GFX_evt_lv_options
+	
+	is_triggered_only = yes
+	
+	option = {		# Reduce by 10%
+		name = lv_options.6.a
+		hidden_effect = {
+			country_event = { id = lv_maintenance.1 }
+		}
+	}
+	
+	option = {		# Reduce by 20%
+		name = lv_options.6.b
+		hidden_effect = {
+			country_event = { id = lv_maintenance.2 }
+		}
+	}
+	
+	option = {		# Reduce by 30%
+		name = lv_options.6.c
+		hidden_effect = {
+			country_event = { id = lv_maintenance.3 }
+		}
+	}
+	
+	option = {		# Reduce by 40%
+		name = lv_options.6.d
+		hidden_effect = {
+			country_event = { id = lv_maintenance.4 }
+		}
+	}
+	
+	option = {		# Reduce by 50%
+		name = lv_options.6.e
+		hidden_effect = {
+			country_event = { id = lv_maintenance.5 }
+		}
+	}
+	
+	option = {		# Back to previous Menu
+		name = lv_options.back
+		hidden_effect = {
+			country_event = { id = lv_options.2 }
+		}
+	}
+	
+	option = {		# Exit
+		name = lv_options.exit
+	}
+}
+
+###

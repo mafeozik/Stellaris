@@ -1,0 +1,257 @@
+########################
+###     Breeding     ###
+########################
+
+tr_lv_breeding_adopt = {
+	
+	possible = {
+		OR = {
+			NOT = { has_authority = auth_machine_intelligence }
+			has_civic = civic_machine_assimilator
+			has_civic = civic_machine_servitor	
+		}
+		is_ai = no
+	}
+	
+	modifier = {
+		pop_growth_speed = 0.20
+	}
+	
+	ai_weight = {
+		factor = 10
+		modifier = {
+			factor = 2
+			has_civic = civic_lv_sex_crazed_breeders
+		}			
+		modifier = {
+			factor = 2
+			has_civic = civic_lv_sex_contractors
+		}			
+		modifier = {
+			factor = 2
+			has_trait = trait_lv_breeder_hips
+		}	
+	}
+}
+
+tr_lv_breeding_finish = {	
+	on_enabled = { set_country_flag = tr_lv_breeding_finish }
+	modifier = {
+		ascension_perks_add = 1
+		BIOLOGICAL_species_trait_picks_add = 1
+		description = tr_lv_breeding_finish_desc
+	}
+}
+
+tr_lv_breeding_1_incentives = {	# Incentives/Brood Mothers
+	custom_tooltip = tr_lv_breeding_1_incentives_desc
+	modifier = {
+		planet_colony_development_speed_mult = 0.25
+	}
+	
+	tradition_swap = {
+		name = tr_lv_breeding_1_brood_mothers_hive
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		trigger = {
+			has_ethic = ethic_gestalt_consciousness
+			NOT = {
+				has_authority = auth_machine_intelligence
+			}
+		}
+		custom_tooltip = tr_lv_breeding_1_brood_mothers_hive_desc
+		modifier = {	
+			planet_colony_development_speed_mult = 0.25
+		}
+		weight = {factor =  1}
+	}
+	
+	tradition_swap = {
+		name = tr_lv_breeding_1_incentives_machines
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		trigger = {
+			has_ethic = ethic_gestalt_consciousness
+			has_authority = auth_machine_intelligence
+		}
+		custom_tooltip = tr_lv_breeding_1_incentives_machines_desc
+		modifier = {	
+			planet_colony_development_speed_mult = 0.25
+		}
+		weight = {factor =  1}
+	}
+	
+	ai_weight = {
+		factor = 2000
+	}
+}
+
+tr_lv_breeding_2_aphrodisiac_additives = {	# Aphrodisiac Additives
+	possible = {
+		has_tradition = tr_lv_breeding_1_incentives
+	}
+
+	custom_tooltip = tr_lv_breeding_2_aphrodisiac_additives_desc
+	modifier = {	
+		empire_size_systems_mult = -0.15
+		empire_size_colonies_mult = -0.15
+	}
+	
+	tradition_swap = {
+		name = tr_lv_breeding_2_aphrodisiac_additives_machines
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			has_ethic = ethic_gestalt_consciousness
+			has_authority = auth_machine_intelligence
+		}
+		custom_tooltip = tr_lv_breeding_2_aphrodisiac_additives_machines_desc
+		modifier = {	
+			empire_size_systems_mult = -0.15
+			empire_size_colonies_mult = -0.15
+		}
+		weight = {factor =  1}
+	}
+	
+	ai_weight = {
+		factor = 5000
+	}
+}
+
+tr_lv_breeding_3_pheromonal_dispersion = {	# Pheromonal Dispersion
+	possible = {
+		has_tradition = tr_lv_breeding_1_incentives
+	}
+	
+	custom_tooltip = tr_lv_breeding_3_pheromonal_dispersion_desc
+	modifier = {
+		pop_housing_usage_mult = -0.10
+	}
+	
+	tradition_swap = {
+		name = tr_lv_breeding_3_pheromonal_dispersion_hive
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			has_ethic = ethic_gestalt_consciousness
+			NOT = {
+				has_authority = auth_machine_intelligence
+			}
+		}
+		custom_tooltip = tr_lv_breeding_3_pheromonal_dispersion_hive_desc
+		modifier = {	
+			pop_housing_usage_mult = -0.10
+		}
+		weight = {factor =  1}
+	}
+	
+	tradition_swap = {
+		name = tr_lv_breeding_3_pheromonal_dispersion_machines
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			has_ethic = ethic_gestalt_consciousness
+			has_authority = auth_machine_intelligence
+		}
+		custom_tooltip = tr_lv_breeding_3_pheromonal_dispersion_machines_desc
+		modifier = {	
+			pop_housing_usage_mult = -0.10
+		}
+		weight = {factor =  1}
+	}
+	
+	ai_weight = {
+		factor = 5000
+	}
+}
+
+tr_lv_breeding_4_breeding_culture = {	# Breeding Culture/Breeding Focus
+	on_enabled = { set_country_flag = tr_lv_breeding_building_unlock }
+	
+	custom_tooltip = tr_lv_breeding_4_breeding_culture_desc
+	
+	tradition_swap = {
+		name = tr_lv_breeding_4_breeding_focus_hive
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		trigger = {
+			has_ethic = ethic_gestalt_consciousness
+			NOT = {
+				has_authority = auth_machine_intelligence
+			}
+		}	
+		on_enabled = { set_country_flag = tr_lv_breeding_building_unlock }
+		custom_tooltip = tr_lv_breeding_4_breeding_focus_hive_desc
+		weight = {factor =  1}
+	}
+	
+	tradition_swap = {
+		name = tr_lv_breeding_4_breeding_focus_machines
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		trigger = {
+			has_ethic = ethic_gestalt_consciousness
+			has_authority = auth_machine_intelligence
+		}	
+		on_enabled = { set_country_flag = tr_lv_breeding_building_unlock }
+		custom_tooltip = tr_lv_breeding_4_breeding_focus_machines_desc
+		weight = {factor =  1}
+	}
+
+	ai_weight = {
+		factor = 2000
+	}
+}
+
+tr_lv_breeding_5_mandatory_breeding = {	# Mandatory Breeding/Forced Breeding
+	possible = {
+		has_tradition = tr_lv_breeding_4_breeding_culture
+	}
+	
+	on_enabled = { set_country_flag = tr_lv_breeding_building_upgrade }
+	
+	custom_tooltip = tr_lv_breeding_5_mandatory_breeding_desc
+	
+	tradition_swap = {
+		name = tr_lv_breeding_5_forced_breeding_hive
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		trigger = {
+			has_ethic = ethic_gestalt_consciousness
+			NOT = {
+				has_authority = auth_machine_intelligence
+			}
+		}	
+		on_enabled = { set_country_flag = tr_lv_breeding_building_upgrade }
+		custom_tooltip = tr_lv_breeding_5_forced_breeding_hive_desc
+		weight = {factor =  1}
+	}
+	
+	tradition_swap = {
+		name = tr_lv_breeding_5_forced_breeding_machines
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			has_ethic = ethic_gestalt_consciousness
+			has_authority = auth_machine_intelligence
+		}	
+		on_enabled = { set_country_flag = tr_lv_breeding_building_upgrade }
+		custom_tooltip = tr_lv_breeding_5_forced_breeding_machines_desc
+		weight = {factor =  1}
+	}
+	
+	ai_weight = {
+		factor = 3000
+	}
+}
+
+###

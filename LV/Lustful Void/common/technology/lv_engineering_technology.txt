@@ -1,0 +1,550 @@
+#################################
+###     Engineering Techs     ###
+#################################
+
+##########
+# Tier 1 #
+##########
+
+tech_lv_cyber_sextoys = {		# Cyber Sextoys
+	cost = @tier1cost3
+	area = engineering
+	tier = 1
+	category = { industry }
+	weight = @tier1weight3
+
+	modifier = {
+		pop_happiness = 0.05 #NEED TO BE CHANGED
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0.25
+			OR = {
+				has_ethic = ethic_spiritualist
+				has_ethic = ethic_fanatic_spiritualist
+			}	
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
+		modifier = {
+			factor = 0
+			has_ethic = "ethic_gestalt_consciousness"
+		}
+	}	
+	ai_weight = {
+		modifier = {
+			factor = 0
+			has_ethic = ethic_gestalt_consciousness
+		}
+	}
+}
+
+tech_lv_cyber_milker = {		# Cyber Milker
+	cost = @tier1cost3
+	area = engineering
+	tier = 1
+	category = { industry }
+	prerequisites = { "tech_lv_lactation_drugs" }
+	weight = @tier1weight3
+
+	modifier = {
+		planet_lv_milk_cow_produces_mult = 0.05
+		description = tech_lv_cyber_milker_modifier_desc
+	}
+	
+	weight_modifier = {
+		factor = 1.5
+		modifier = {
+			factor = 0
+			is_machine_empire = yes
+			NOR = { 
+				has_valid_civic = civic_machine_servitor 
+				has_valid_civic = civic_machine_assimilator 	
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_authority = auth_hive_mind
+		}
+		modifier = {
+			factor = 4
+			has_ascension_perk = ap_mastery_of_nature
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_supremacy_adopt
+		}
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist_2 }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist_3 }
+			}
+		}
+		modifier = {
+			factor = 2.5
+			OR = {
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_zoophile }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_zoophile_2 }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_zoophile_3 }
+			}
+		}
+	}
+	ai_weight = {
+		factor = 3
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist_2 }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist_3 }
+			}
+		}
+		modifier = {
+			factor = 2.5
+			OR = {
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_zoophile }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_zoophile_2 }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_zoophile_3 }
+			}
+		}
+	}
+}
+
+tech_lv_gem_incubation_insight = {			# Gem Incubation Insight
+	cost = @tier1cost1
+	area = engineering
+	tier = 1
+	category = { industry }
+	weight = @tier1weight1
+	
+	potential = {
+		OR = {
+			NOT = { has_authority = auth_machine_intelligence }
+			has_civic = civic_machine_assimilator
+			has_civic = civic_machine_servitor
+		}
+	}
+	
+	modifier = {
+		description = tech_lv_gem_incubation_insight_modifier_desc
+	}
+	
+	weight_modifier = {
+		factor = 1.5
+		modifier = {
+			factor = 0
+			is_machine_empire = yes
+			NOR = { 
+				has_valid_civic = civic_machine_servitor 
+				has_valid_civic = civic_machine_assimilator 	
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_authority = auth_hive_mind
+		}
+		modifier = {
+			factor = 1.25
+			has_trait_in_council = { TRAIT = leader_trait_expertise_industry }
+		}
+	}
+	
+	ai_weight = {
+		factor = 3
+		modifier = {
+			factor = 1.25
+			has_trait_in_council = { TRAIT = leader_trait_expertise_industry }
+		}
+	}
+}
+
+##########
+# Tier 2 #
+##########
+
+tech_lv_mechanized_pleasure_suits = {			# Mechanized Pleasure Suits
+	cost = @tier2cost3
+	area = engineering
+	tier = 2
+	category = { materials }
+	prerequisites = { "tech_powered_exoskeletons" }
+	weight = @tier3weight2
+	is_dangerous = yes
+	
+	potential = {
+		NOT = { has_ethic = ethic_gestalt_consciousness }
+	}
+	
+	modifier = {
+		description = tech_lv_mechanized_pleasure_suits_modifier_desc
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				AND = {
+                    NOT = { has_civic = civic_machine_servitor }
+                    has_ethic = ethic_gestalt_consciousness
+                }
+				has_policy_flag = lv_prostitution_prohibited
+			}	
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_discovery_adopt
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_trait_in_council = { TRAIT = leader_trait_maniacal }
+				has_trait_in_council = { TRAIT = leader_trait_maniacal_2 }
+				has_trait_in_council = { TRAIT = leader_trait_maniacal_3 }
+			}
+		}
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_trait_in_council = { TRAIT = leader_trait_expertise_materials }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_zoophile }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_zoophile_2 }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_zoophile_3 }
+			}
+		}
+		modifier = {
+			factor = 2.5
+			OR = {
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist_2 }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist_3 }
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_trait_in_council = { TRAIT = leader_trait_maniacal }
+				has_trait_in_council = { TRAIT = leader_trait_maniacal_2 }
+				has_trait_in_council = { TRAIT = leader_trait_maniacal_3 }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist_2 }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist_3 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				NOT = {
+					has_civic = civic_machine_servitor
+				}
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_trait_in_council = { TRAIT = leader_trait_expertise_materials }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_zoophile }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_zoophile_2 }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_zoophile_3 }
+			}
+		}
+		modifier = {
+			factor = 2.5
+			OR = {
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist_2 }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist_3 }
+			}
+		}
+	}
+}
+
+##########
+# Tier 3 #
+##########
+
+tech_lv_sex_supply = {			# Sex Supply
+	cost = @tier3cost1
+	area = engineering
+	tier = 3
+	category = { industry }
+	prerequisites = { "tech_exotic_gases" "tech_volatile_motes" "tech_rare_crystals"}
+	weight = @tier3weight1
+	is_rare = yes
+
+	prereqfor_desc = {
+		diplo_action = {
+			title = "tech_lv_sex_supply_effect_title"
+			desc = "tech_lv_sex_supply_effect_desc"
+		}
+	}
+	
+	weight_modifier = {
+		factor = 0.25
+		modifier = {
+			factor = 1.5
+			has_trait_in_council = { TRAIT = leader_trait_expertise_industry }
+		}
+		modifier = {
+			factor = 5
+			has_ascension_perk = "ap_lv_sworld_project"
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				any_owned_planet =  {
+					is_planet_class = pc_lv_sworld
+					is_planet_class = pc_lv_sringworld
+				}
+			}
+		}
+	}
+
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			has_trait_in_council = { TRAIT = leader_trait_expertise_industry }
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				any_owned_planet =  {
+					is_planet_class = pc_lv_sworld
+					is_planet_class = pc_lv_sringworld
+				}
+			}
+		}
+	}
+}
+
+tech_lv_self_contained_life_support_miniaturization = {			# Self-Contained Life Support Miniaturization
+	cost = @tier3cost2
+	area = engineering
+	tier = 3
+	category = { industry }
+	prerequisites = { "tech_lv_sex_slavery" }
+	weight = @tier3weight2
+	is_rare = yes
+	
+	potential = {
+		OR = {
+			NOT = { has_authority = auth_machine_intelligence }
+			has_civic = civic_machine_assimilator
+			has_civic = civic_machine_servitor
+		}
+	}
+	
+	modifier = {
+		description = tech_lv_self_contained_life_support_miniaturization_effect
+		colony_start_num_pops_add = 1 			# can fit more on the ship
+		local_trade_protection_add = 5 			# makes it harder for pirates to steal your sex slaves
+		country_resettlement_cost_mult = -0.2 	# just shove them in a box
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			has_policy_flag = lv_prostitution_prohibited
+		}
+		modifier = {
+			factor = 0.5
+			OR = {
+				has_ethic = "ethic_spiritualist"
+				has_ethic = "ethic_fanatic_spiritualist"
+			}
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_trait_in_council = { TRAIT = leader_trait_expertise_industry }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_zoophile }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_zoophile_2 }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_zoophile_3 }
+			}
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_trait_in_council = { TRAIT = leader_trait_lv_tormentor }
+				has_trait_in_council = { TRAIT = leader_trait_lv_tormentor_2 }
+			}
+		}
+		modifier = {
+			factor = 2.5
+			OR = {
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist_2 }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist_3 }
+			}
+		}
+		
+		#Rare tech modifiers
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = tech_synthetic_workers }
+			}
+		}
+		modifier = {
+			factor = 0.20
+			NOR = {
+				has_trait_in_council = { TRAIT = leader_trait_maniacal }
+				has_trait_in_council = { TRAIT = leader_trait_maniacal_2 }
+				has_trait_in_council = { TRAIT = leader_trait_maniacal_3 }
+				has_trait_in_council = { TRAIT = leader_trait_spark_of_genius }
+				has_trait_in_council = { TRAIT = leader_trait_spark_of_genius_2 }
+				has_trait_in_council = { TRAIT = leader_trait_curator }
+				has_trait_in_council = { TRAIT = leader_trait_expertise_industry }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist_2 }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist_3 }
+				has_trait_in_council = { TRAIT = leader_trait_lv_tormentor }
+				has_trait_in_council = { TRAIT = leader_trait_lv_tormentor_2 }
+			}
+		}
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 #rare tech
+		modifier = {
+			factor = 1.25
+			has_trait_in_council = { TRAIT = leader_trait_expertise_industry }
+		}
+		modifier = {
+			factor = 0.5
+			OR = {
+				has_ethic = "ethic_spiritualist"
+				has_ethic = "ethic_fanatic_spiritualist"
+			}
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
+		modifier = {
+			factor = 2.5
+			OR = {
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist_2 }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist_3 }
+			}
+		}
+	}
+}
+
+##########
+# Tier 4 #
+##########
+
+tech_lv_interchangeable_cybernetics = {		# Interchangeable Cybernetics
+	cost = @tier4cost2
+	area = engineering
+	tier = 4
+	category = { industry }
+#	prerequisites = { "tech_lv_cyber_sextoys" }
+	weight = @tier4weight2
+	is_rare = yes
+	
+	potential = {
+		OR = {
+			has_technology = tech_robomodding
+			AND = {
+				has_technology = tech_robomodding_m
+				NOT = { has_civic = civic_machine_terminator }	
+			}
+		}
+	}
+	
+	modifier = {
+		ROBOT_species_trait_points_add = 2
+		ROBOT_species_trait_picks_add = 1
+		MACHINE_species_trait_points_add = 2
+		MACHINE_species_trait_picks_add = 1
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0.33
+			NOR = {
+				has_trait_in_council = { TRAIT = leader_trait_maniacal }
+				has_trait_in_council = { TRAIT = leader_trait_maniacal_2 }
+				has_trait_in_council = { TRAIT = leader_trait_maniacal_3 }
+				has_trait_in_council = { TRAIT = leader_trait_spark_of_genius }
+				has_trait_in_council = { TRAIT = leader_trait_spark_of_genius_2 }
+				has_trait_in_council = { TRAIT = leader_trait_curator }
+				has_trait_in_council = { TRAIT = leader_trait_expertise_industry }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist_2 }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist_3 }
+			}	
+		}
+		modifier = {
+			factor = 1.25
+			has_trait_in_council = { TRAIT = leader_trait_expertise_industry }
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist_2 }
+				has_trait_in_council = { TRAIT = leader_trait_scientist_lv_sexologist_3 }
+			}
+		}
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 #rare tech
+		modifier = {
+			factor = 1.25
+			has_trait_in_council = { TRAIT = leader_trait_expertise_industry }
+		}
+	}
+}
+
+##########
+# Tier 5 #
+##########
+
+###

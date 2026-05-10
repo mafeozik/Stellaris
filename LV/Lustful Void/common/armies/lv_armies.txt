@@ -1,0 +1,170 @@
+######################
+###     Armies     ###
+######################
+
+# Slimes #
+
+army_lv_slime = {
+	damage = 0.5
+	health = 10.0
+	has_morale = no
+	morale_damage = 10.0
+	collateral_damage = 2.5
+	war_exhaustion = 0.2
+	time = 90
+	icon = GFX_army_type_xenomorph
+	has_species = no
+	
+	resources = {
+		category = armies
+		cost = {
+			minerals = 150
+			food = 150
+		}
+
+		upkeep = {
+			food = 2
+		}
+	}
+	
+	potential = {
+		has_building = "building_lv_slime_vats"
+	}
+	
+	ai_weight = {
+		base = 0
+	}
+}
+
+# Battle Sluts #
+
+army_lv_slut = {
+	damage = 0.75
+	health = 1.25
+	morale = 1.50
+	morale_damage = 1.50
+	collateral_damage = 0.69
+	war_exhaustion = 0.69
+	time = 69
+	icon = GFX_army_type_clone
+	
+	resources = {
+		category = armies
+		cost = {
+			consumer_goods = 30
+		}
+
+		upkeep = {
+			energy = 0.69
+		}
+	}
+	
+	prerequisites = { "tech_lv_battle_slut" }
+
+	show_tech_unlock_if = { 
+		OR = {
+			NOT = { has_authority = auth_machine_intelligence }
+			has_valid_civic = civic_machine_assimilator
+		}
+	}
+	
+	potential_country = {
+		OR = {
+			NOT = { has_authority = auth_machine_intelligence }
+			has_valid_civic = civic_machine_assimilator
+		}
+	}
+	potential = {
+		from = {
+			NOR = {
+				has_trait = "trait_mechanical"
+				has_trait = "trait_machine_unit"
+				is_sapient = no
+			}
+		}
+	}
+	
+	ai_weight = {
+		base = 0
+	}
+}
+
+# Pleasure Suits #
+
+army_lv_pleasure_suit = {
+	damage = 1.10
+	health = 1.25
+	morale = 3.69
+	morale_damage = 1.25
+	collateral_damage = 1
+	war_exhaustion = 1 
+	time = 100
+	icon = GFX_army_type_defensive
+	
+	resources = {
+		category = armies
+		cost = {
+			consumer_goods = 60
+		}
+
+		upkeep = {
+			energy = 0.69
+		}
+	}
+	
+	prerequisites = { "tech_lv_mechanized_pleasure_suits" } 
+
+	show_tech_unlock_if = { 
+		OR = {
+			NOT = { has_authority = auth_machine_intelligence }
+			has_valid_civic = civic_machine_assimilator
+		}
+	}
+	
+	potential_country = {
+		OR = {
+			NOT = { has_authority = auth_machine_intelligence }
+			has_valid_civic = civic_machine_assimilator
+		}
+	}
+	potential = {
+		from = {
+			NOR = {
+				has_trait = "trait_mechanical"
+				has_trait = "trait_machine_unit"
+				is_sapient = no
+			}
+		}
+	}
+	
+	ai_weight = {
+		base = 100
+		modifier = {
+			set = 0
+			OR = {
+				is_fallen_empire = yes
+				has_technology = tech_telepathy
+				has_technology = tech_gene_seed_purification
+				AND = {
+					OR = {
+						has_ethic = ethic_militarist
+						has_ethic = ethic_fanatic_militarist
+					}
+					has_technology = tech_gene_banks
+				}
+			}
+		}
+		modifier = {
+			factor = 0.01 #cannot guarantee that they actually have slaves/robots to get armies from
+			OR = {
+				AND = {
+					has_ai_personality_behaviour = robot_liberator
+					has_technology = tech_droid_workers
+				}
+				has_valid_civic = civic_reanimated_armies
+			}
+		}
+	}
+}
+
+###

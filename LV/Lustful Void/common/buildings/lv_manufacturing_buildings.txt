@@ -1,0 +1,307 @@
+#######################################
+###     Manufacturing Buildings     ###
+#######################################
+
+###########
+# Regular #
+###########
+
+building_lv_gem_incubation_foundries = {			# Gem Incubation Foundries
+	base_buildtime = @b1_time
+#	base_cap_amount = 1
+	
+	category = manufacturing
+
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				NOT = { has_authority = auth_machine_intelligence }
+				has_civic = civic_machine_assimilator
+				has_civic = civic_machine_servitor	
+			}
+			has_technology = tech_lv_gem_incubation_insight
+		}
+		OR = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
+			has_any_industry_district = yes
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_lv_gem_incubation_insight } }
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b1_minerals
+		}
+		upkeep = {
+			energy = @b1_upkeep
+		}
+	}
+
+	upgrades = {
+		building_lv_gem_incubation_mega_forges
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_lv_gem_incubator_drone_add = @b1_jobs
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_lv_gem_incubator_add = @b1_jobs
+		}
+	}
+
+	prerequisites = {
+		tech_lv_gem_incubation_insight
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_lv_gem_incubator_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = job_lv_gem_incubator_effect_desc
+	}
+}
+
+building_lv_gem_incubation_mega_forges = {			# Gem Incubation Mega-Forges
+	base_buildtime = @b2_time
+	can_build = no
+	
+	category = manufacturing
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_lv_gem_incubation_insight } }
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+			volatile_motes = @b3_rare_cost
+		}
+		upkeep = {
+			energy = @b2_upkeep
+			volatile_motes = @b3_rare_upkeep
+		}
+	}
+
+	upgrades = {
+		building_lv_gem_incubation_nano_plants
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_lv_gem_incubator_drone_add = @b2_jobs
+			planet_lv_gem_incubator_energy_upkeep_add = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_lv_gem_incubator_add = @b2_jobs
+			planet_lv_gem_incubator_food_upkeep_add = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			has_planet_flag = lv_gem_incubator_processing_alloys
+		}
+		modifier = {
+			planet_lv_gem_incubator_alloys_produces_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			has_planet_flag = lv_gem_incubator_processing_minerals
+		}
+		modifier = {
+			planet_lv_gem_incubator_minerals_produces_add = 2
+		}
+	}
+
+	prerequisites = {
+		tech_alloys_1
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_lv_gem_incubator_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = job_lv_gem_incubator_effect_desc
+	}
+}
+
+building_lv_gem_incubation_nano_plants = {			# Gem Incubation Nano-Plants
+	base_buildtime = @b3_time
+	can_build = no
+	
+	category = manufacturing
+
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_lv_gem_incubation_insight } }
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			trigger = {
+				has_ringworld_output_boost = no
+			}
+			minerals = @b3_minerals
+			volatile_motes = @b4_rare_cost
+		}
+		cost = {
+			trigger = {
+				has_ringworld_output_boost = yes
+			}
+			minerals = 1500
+			volatile_motes = 600
+		}
+		upkeep = {
+			trigger = {
+				has_ringworld_output_boost = no
+			}
+			energy = @b3_upkeep
+			volatile_motes = @b4_rare_upkeep
+		}
+		upkeep = {
+			trigger = {
+				has_ringworld_output_boost = yes
+			}
+			energy = 15
+			volatile_motes = 8
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_lv_gem_incubator_drone_add = @b3_jobs
+			planet_lv_gem_incubator_energy_upkeep_add = 6
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_lv_gem_incubator_add = @b3_jobs
+			planet_lv_gem_incubator_food_upkeep_add = 6
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			NOR = {
+				has_planet_flag = lv_gem_incubator_processing_alloys
+				has_planet_flag = lv_gem_incubator_processing_minerals
+			}
+		}
+		modifier = {
+			planet_lv_gem_incubator_alloys_produces_add = 1
+			planet_lv_gem_incubator_minerals_produces_add = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			has_planet_flag = lv_gem_incubator_processing_alloys
+		}
+		modifier = {
+			planet_lv_gem_incubator_alloys_produces_add = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			has_planet_flag = lv_gem_incubator_processing_minerals
+		}
+		modifier = {
+			planet_lv_gem_incubator_minerals_produces_add = 4
+		}
+	}
+
+	prerequisites = {
+		tech_alloys_2
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_lv_gem_incubator_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = job_lv_gem_incubator_effect_desc
+	}
+}
+
+###

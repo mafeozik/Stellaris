@@ -1,0 +1,539 @@
+################################
+###     Static Modifiers     ###
+################################
+
+#################
+# Interbreeding #
+#################
+
+# Biodiversity #
+
+lv_biodiverse_three_static = {		# 3+ Biodiversity
+	pop_growth_speed = 0.05
+}
+
+lv_biodiverse_five_static = {		# 5+ Biodiversity
+	pop_growth_speed = 0.1
+}
+
+lv_biodiverse_ten_static = {		# 10+ Biodiversity
+	pop_growth_speed = 0.15
+}
+
+lv_biodiverse_twenty_static = {		# 20+ Biodiversity
+	pop_growth_speed = 0.3
+}
+
+#############
+# Decisions #
+#############
+
+lv_breeding_planet = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_breeding_planet.dds"
+	icon_frame = 1
+	pop_growth_speed = 2
+	job_lv_breeder_per_pop = 0.1
+	planet_jobs_engineering_research_produces_mult = -0.25
+	planet_jobs_physics_research_produces_mult = -0.25
+	planet_jobs_society_research_produces_mult = 0.1
+	planet_jobs_energy_produces_mult = -0.25
+	planet_jobs_minerals_produces_mult = -0.25
+	planet_jobs_alloys_produces_mult = -0.25
+	planet_jobs_consumer_goods_produces_mult = -0.25
+	planet_jobs_unity_produces_mult = 0.25
+}
+
+lv_breeding_frenzy = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_breeding_frenzy.dds"
+	icon_frame = 1
+	pop_growth_speed = 4
+	job_lv_breeder_per_pop = 0.2
+	planet_jobs_engineering_research_produces_mult = -0.5
+	planet_jobs_physics_research_produces_mult = -0.5
+	planet_jobs_society_research_produces_mult = 0.25
+	planet_jobs_energy_produces_mult = -0.5
+	planet_jobs_minerals_produces_mult = -0.5
+	planet_jobs_alloys_produces_mult = -0.5
+	planet_jobs_consumer_goods_produces_mult = -0.5
+	planet_jobs_unity_produces_mult = 0.5
+}
+
+lv_fuck_fest = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_fuck_fest.dds"
+	icon_frame = 1
+	pop_growth_speed = 6
+	job_lv_breeder_per_pop = 0.3
+	planet_jobs_engineering_research_produces_mult = -0.8
+	planet_jobs_physics_research_produces_mult = -0.8
+	planet_jobs_society_research_produces_mult = 0.4
+	planet_jobs_energy_produces_mult = -0.8
+	planet_jobs_minerals_produces_mult = -0.8
+	planet_jobs_alloys_produces_mult = -0.8
+	planet_jobs_consumer_goods_produces_mult = -0.8
+	planet_jobs_unity_produces_mult = 0.8
+}
+
+lv_breeding_planet_hive = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_breeding_planet_hive.dds"
+	icon_frame = 1
+	pop_growth_speed = 2
+	job_lv_breeder_drone_per_pop = 0.1
+	planet_jobs_engineering_research_produces_mult = -0.25
+	planet_jobs_physics_research_produces_mult = -0.25
+	planet_jobs_society_research_produces_mult = 0.1
+	planet_jobs_energy_produces_mult = -0.25
+	planet_jobs_minerals_produces_mult = -0.25
+	planet_jobs_alloys_produces_mult = -0.25
+	planet_jobs_consumer_goods_produces_mult = -0.25
+	planet_jobs_unity_produces_mult = 0.25
+}
+
+lv_breeding_frenzy_hive = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_breeding_frenzy_hive.dds"
+	icon_frame = 1
+	pop_growth_speed = 4
+	job_lv_breeder_drone_per_pop = 0.2
+	planet_jobs_engineering_research_produces_mult = -0.5
+	planet_jobs_physics_research_produces_mult = -0.5
+	planet_jobs_society_research_produces_mult = 0.25
+	planet_jobs_energy_produces_mult = -0.5
+	planet_jobs_minerals_produces_mult = -0.5
+	planet_jobs_alloys_produces_mult = -0.5
+	planet_jobs_consumer_goods_produces_mult = -0.5
+	planet_jobs_unity_produces_mult = 0.5
+}
+
+lv_fuck_fest_hive = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_fuck_fest_hive.dds"
+	icon_frame = 1
+	pop_growth_speed = 6
+	job_lv_breeder_drone_per_pop = 0.3
+	planet_jobs_engineering_research_produces_mult = -0.8
+	planet_jobs_physics_research_produces_mult = -0.8
+	planet_jobs_society_research_produces_mult = 0.4
+	planet_jobs_energy_produces_mult = -0.8
+	planet_jobs_minerals_produces_mult = -0.8
+	planet_jobs_alloys_produces_mult = -0.8
+	planet_jobs_consumer_goods_produces_mult = -0.8
+	planet_jobs_unity_produces_mult = 0.8
+}
+
+lv_public_exhibitionism = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_public_exhibitionism.dds"
+	icon_frame = 1
+	pop_growth_speed = 0.5
+	pop_happiness = 0.1
+	planet_jobs_unity_produces_mult = 0.25
+}
+
+# Mono Gender Conversion
+
+lv_mono_gender_conversion_fsm_ca = {		# Female Convert All
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_mono_gender_conversion_fsm.dds"
+	icon_frame = 3
+	pop_happiness = -0.1
+	pop_growth_speed = -0.2
+	planet_jobs_unity_produces_mult = -0.2
+	pop_ethic_materialist_attraction_mult = 0.2
+	country_society_research_produces_mult = 0.1
+	planet_stability_add = -25
+}
+
+lv_mono_gender_conversion_fsm_cxo = {		# Female Convert Xenos Only
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_mono_gender_conversion_fsm.dds"
+	icon_frame = 3
+	pop_happiness = -0.2
+	pop_growth_speed = -0.3
+	planet_jobs_unity_produces_mult = -0.3
+	pop_ethic_materialist_attraction_mult = 0.1
+	pop_ethic_xenophobe_attraction_mult = 0.2
+	country_society_research_produces_mult = 0.2
+	planet_stability_add = -35
+}
+
+lv_mono_gender_conversion_msm_ca = {		# Male Convert All
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_mono_gender_conversion_msm.dds"
+	icon_frame = 3
+	pop_happiness = -0.1
+	pop_growth_speed = -0.2
+	planet_jobs_unity_produces_mult = -0.2
+	pop_ethic_militarist_attraction_mult = 0.2
+	country_society_research_produces_mult = 0.1
+	planet_stability_add = -25
+}
+
+lv_mono_gender_conversion_msm_cxo = {		# Male Convert Xenos Only
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_mono_gender_conversion_msm.dds"
+	icon_frame = 3
+	pop_happiness = -0.2
+	pop_growth_speed = -0.3
+	planet_jobs_unity_produces_mult = -0.3
+	pop_ethic_militarist_attraction_mult = 0.1
+	pop_ethic_xenophobe_attraction_mult = 0.2
+	country_society_research_produces_mult = 0.2
+	planet_stability_add = -35
+}
+
+lv_mono_gender_conversion_fusm_ca = {		# Futa Convert All
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_mono_gender_conversion_fusm.dds"
+	icon_frame = 3
+	pop_happiness = -0.1
+	pop_growth_speed = -0.2
+	planet_jobs_unity_produces_mult = -0.2
+	pop_ethic_authoritarian_attraction_mult = 0.2
+	country_society_research_produces_mult = 0.1
+	planet_stability_add = -25
+}
+
+lv_mono_gender_conversion_fusm_cxo = {		# Futa Convert Xenos Only
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_mono_gender_conversion_fusm.dds"
+	icon_frame = 3
+	pop_happiness = -0.2
+	pop_growth_speed = -0.3
+	planet_jobs_unity_produces_mult = -0.3
+	pop_ethic_authoritarian_attraction_mult = 0.1
+	pop_ethic_xenophobe_attraction_mult = 0.2
+	country_society_research_produces_mult = 0.2
+	planet_stability_add = -35
+}
+
+#########
+# Other #
+#########
+
+#################
+# Pop Modifiers #
+#################
+
+lv_xeno_beast_fun = {
+	pop_happiness = 0.25
+	planet_jobs_unity_produces_mult = 0.05
+}
+
+lv_xeno_beast_rape = {
+	pop_happiness = -0.25
+	planet_jobs_unity_produces_mult = -0.1
+}
+
+lv_sadomasochist_fun = {
+	pop_happiness = 0.25
+	planet_jobs_unity_produces_mult = 0.05
+}
+
+lv_abused_by_sadist = {
+	pop_happiness = -0.25
+	planet_jobs_unity_produces_mult = -0.1
+}
+
+# Cow Transformation
+
+lv_milk_cow_transform_complete = {
+	pop_happiness = 0.05
+	planet_jobs_unity_produces_mult = 0.05
+}
+
+####################
+# Planet Modifiers #
+####################
+
+# Trait Synergy Bonus #
+
+# Brood Parasites
+
+lv_brood_parasite_planet_bonus_nh = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_brood_parasite_planet_bonus.dds"
+	icon_frame = 1
+	
+	pop_growth_speed = 0.1
+	planet_jobs_society_research_produces_mult = 0.05
+	job_lv_breeder_add = 2
+}
+
+lv_brood_parasite_planet_bonus_h = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_brood_parasite_planet_bonus.dds"
+	icon_frame = 1
+	
+	pop_growth_speed = 0.1
+	planet_jobs_society_research_produces_mult = 0.05
+	job_lv_breeder_drone_add = 2
+}
+
+# All Female
+
+lv_all_female_planet_bonus_nh = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_all_female_planet_bonus.dds"
+	icon_frame = 1
+	
+	pop_growth_speed = 0.05
+	planet_jobs_society_research_produces_mult = 0.1
+	job_lv_breeder_add = 1
+}
+
+lv_all_female_planet_bonus_h = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_all_female_planet_bonus.dds"
+	icon_frame = 1
+	
+	pop_growth_speed = 0.05
+	planet_jobs_society_research_produces_mult = 0.1
+	job_lv_breeder_drone_add = 1
+}
+
+# All Male
+
+lv_all_male_planet_bonus_nh = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_all_male_planet_bonus.dds"
+	icon_frame = 1
+	
+	pop_growth_speed = 0.05
+	planet_jobs_society_research_produces_mult = 0.1
+	job_lv_breeder_add = 1
+}
+
+lv_all_male_planet_bonus_h = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_all_male_planet_bonus.dds"
+	icon_frame = 1
+	
+	pop_growth_speed = 0.05
+	planet_jobs_society_research_produces_mult = 0.1
+	job_lv_breeder_drone_add = 1
+}
+
+# Crime #
+
+lv_crime_trafficking = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_crime_trafficking.dds"
+	icon_frame = 3
+	
+	planet_crime_add = 5
+}
+
+lv_crime_attacked_enforcers = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_crime_attacked_enforcers.dds"
+	icon_frame = 3
+	
+	planet_stability_add = -20
+	planet_crime_add = 5
+}
+
+lv_crime_raped_enforcers = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_crime_raped_enforcers.dds"
+	icon_frame = 3
+	
+	planet_stability_add = -20
+	planet_crime_add = 10
+}
+
+lv_crime_headquarters_raided = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_crime_headquarters_raided.dds"
+	icon_frame = 3
+	
+	planet_stability_add = -20
+	planet_crime_add = 30
+}
+
+lv_crime_slave_enforcers = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_crime_slave_enforcers.dds"
+	icon_frame = 3
+	
+	planet_stability_add = -20
+	job_criminal_add = 5
+	job_criminal_per_crime = 0.05 # 1 per 20 crime
+}
+
+# Other #
+
+lv_tentacled_lifeforms = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_tentacle_modifier.dds"
+	icon_frame = 2
+	
+	planet_jobs_society_research_produces_mult = 0.25
+}
+
+lv_aggressive_tentacled_lifeforms = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_tentacle_modifier.dds"
+	icon_frame = 3
+	
+	pop_environment_tolerance = -0.1
+	pop_happiness = -0.1
+	planet_jobs_society_research_produces_mult = 0.05
+}
+
+lv_coexisting_tentacled_lifeforms = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_tentacle_modifier.dds"
+	icon_frame = 1
+	
+	pop_environment_tolerance = 0.2
+	pop_growth_speed = -0.1
+	planet_jobs_society_research_produces_mult = 0.2
+}
+
+lv_festival_of_love = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_festival_of_love.dds"
+	icon_frame = 1
+	
+	pop_growth_speed = 0.1
+	pop_happiness = 0.2
+}
+
+lv_integrated_tentacle_breeding_pits = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_integrated_tentacle_breeding_pits.dds"
+	icon_frame = 1
+	
+	planet_max_districts_add = 2
+	custom_tooltip = lv_integrated_tentacle_breeding_pits_effects
+}
+
+# Divine Coupling Bonus #
+
+lv_concubine_small_bonus = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_concubine_bonus.dds"
+	icon_frame = 1
+	job_lv_concubine_per_pop = 0.1
+}
+
+lv_concubine_average_bonus = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_concubine_bonus.dds"
+	icon_frame = 1
+	job_lv_concubine_per_pop = 0.2
+}
+
+lv_concubine_large_bonus = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_concubine_bonus.dds"
+	icon_frame = 1
+	job_lv_concubine_per_pop = 0.3
+}
+
+lv_concubine_huge_bonus = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_concubine_bonus.dds"
+	icon_frame = 1
+	job_lv_concubine_per_pop = 0.4
+}
+
+# Milking World #
+
+lv_milking_world = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_milking_world.dds"
+	icon_frame = 1
+	planet_lv_dairy_jobs_produces_mult = 1.75
+	planet_jobs_produces_mult = -0.75
+}
+
+# Breeding World #
+
+lv_breeding_world = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_breeding_world.dds"
+	icon_frame = 1
+	
+	pop_growth_speed = 1
+	planet_pop_assembly_organic_mult = 1
+	planet_jobs_produces_mult = -0.75
+}
+
+# Sexopolis #
+
+lv_satmospheric_aphrodisiac = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_atmospheric_aphrodisiac.dds"
+	icon_frame = 2
+	
+	pop_growth_speed = 0.20
+	pop_happiness = 0.10
+	planet_jobs_energy_produces_mult = -0.10
+	planet_jobs_minerals_produces_mult = -0.10
+}
+
+# Pleasure Suites #
+
+lv_suit_planet = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_suit_planet.dds"
+	icon_frame = 2
+	
+	pop_growth_speed = -0.5
+	planet_jobs_produces_mult = -0.25
+	planet_crime_mult = -0.25
+	planet_stability_add = 10
+	pop_happiness = 0.1
+}
+
+lv_ex_suit_planet = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_ex_suit_planet.dds"
+	icon_frame = 2
+	
+	pop_growth_speed = -0.25
+	planet_jobs_produces_mult = -0.10
+	pop_happiness = -0.05
+}
+
+# Golden Rod #
+
+lv_golden_rod_transform = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lv_golden_rod_transform.dds"
+	icon_frame = 2
+	
+	planet_jobs_produces_mult = -0.10
+	pop_happiness = 0.05
+}
+
+####################
+# Empire Modifiers #
+####################
+
+lv_biology_insights = {
+	planet_jobs_society_research_produces_mult = 0.1
+}
+
+lv_xeno_businesses_accepted = {
+	pop_happiness = 0.05
+	planet_immigration_pull_mult = 0.1
+}
+
+lv_booming_prostitution_industry = {
+	pop_happiness = 0.10
+	pop_job_trade_mult = 0.10
+}
+
+lv_booming_xeno_prostitution = {
+	pop_happiness = 0.10
+	pop_job_trade_mult = -0.05
+}
+
+lv_xeno_prostitution = {
+	pop_happiness = -0.05
+}
+
+lv_military_recreational_sex_study = {
+	planet_jobs_society_research_produces_mult = 0.05
+}
+
+lv_controversial_advisor = {
+	pop_ethic_spiritualist_attraction_mult = -0.25
+}
+
+lv_contraceptive_boom = {
+	planet_jobs_energy_produces_mult = 0.15
+}
+
+lv_festival_of_love_outlawed = {
+	pop_happiness = -0.10
+	planet_jobs_productive_produces_mult = 0.05
+}
+
+lv_futa_outlawed = {
+	pop_happiness = -0.10
+	planet_jobs_unity_produces_mult = 0.05
+}
+
+##################
+# Ship Modifiers #
+##################
+
+lv_embarrassed_crew = {
+	ship_anomaly_research_speed_mult = -0.1
+	science_ship_survey_speed = -0.1
+}
+
+lv_horrified_crew = {
+	ship_anomaly_research_speed_mult = -0.5
+	science_ship_survey_speed = -0.5
+}
+
+###

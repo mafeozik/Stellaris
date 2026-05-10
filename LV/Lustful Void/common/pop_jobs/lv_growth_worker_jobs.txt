@@ -1,0 +1,746 @@
+##################################
+###     Growth Worker Jobs     ###
+##################################
+
+lv_breeder = {					# Breeder
+	category = worker
+	condition_string = WORKER_JOB_TRIGGER
+	building_icon = building_lv_breeder_nh
+	clothes_texture_index = 2
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+	
+	possible_precalc = lv_can_fill_breeder_worker_job
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+	}
+
+	resources = {
+		category = planet_lv_breeder
+		
+		# Organic (or robutts with proper parts)
+		upkeep = {
+			trigger = {
+				is_lithoid = no
+				is_robot_pop = no
+			}
+			food = 6
+			consumer_goods = 3
+		}
+		
+		# Lithoids
+		upkeep = {
+			trigger = {
+				is_lithoid = yes
+				is_robot_pop = no
+			}
+			minerals = 6
+			consumer_goods = 3
+		}
+		
+		# Robutts
+		upkeep = {
+			trigger = {
+				is_lithoid = no
+				is_robot_pop = yes
+			}
+			energy = 6
+			consumer_goods = 3
+		}
+		
+		# Any
+		produces = {
+			trigger = {
+				exists = owner
+				owner = { has_valid_civic = civic_lv_sexculture }
+			}
+			unity = 1
+		}
+		produces = {
+			trigger = {
+				OR = {
+					pop_has_trait = trait_lv_sexual_pheromones
+					pop_has_trait = trait_lv_pheromone_generators
+					pop_has_trait = trait_lv_sex_bots
+					pop_has_trait = trait_lv_sex_bots_o
+					pop_has_trait = trait_lv_aphrodisiac_milk
+					pop_has_trait = trait_lv_aphrodisiac_cum
+				}
+			}
+			unity = 1
+		}
+		produces = {
+			trigger = {
+				OR = {
+					pop_has_trait = trait_lv_targeted_pheromones
+					pop_has_trait = trait_lv_addictive_cum
+					pop_has_trait = trait_lv_perfect_hybrid
+					pop_has_trait = trait_lv_maternal_programming
+					pop_has_trait = trait_lv_paternal_programming
+				}
+			}
+			unity = 2
+		}
+	}
+	
+	# Any
+	planet_modifier = {
+		pop_growth_speed = 0.2
+		planet_pop_assembly_organic_mult = 0.2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_trait = trait_robot_domestic_protocols							# 20%
+				has_trait = trait_charismatic
+			}
+		}
+		modifier = {
+			pop_growth_speed = 0.04
+			planet_pop_assembly_organic_mult = 0.04
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_repugnant												# -20%
+		}
+		modifier = {
+			pop_growth_speed = -0.04
+			planet_pop_assembly_organic_mult = -0.04
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_pleasure_seeker = yes }
+		}
+		modifier = {
+			pop_growth_speed = 0.05
+			planet_pop_assembly_organic_mult = 0.05
+		}
+	}
+	
+	## LV Traits (these are still needed for breeder jobs)
+	# Biological/Lithoid
+	# All Genders - Positive
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_soft
+		}
+		modifier = {
+			pop_growth_speed = 0.01
+			planet_pop_assembly_organic_mult = 0.01
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_cute
+		}
+		modifier = {
+			pop_growth_speed = 0.02
+			planet_pop_assembly_organic_mult = 0.02
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_sexually_gifted
+		}
+		modifier = {
+			pop_growth_speed = 0.04
+			planet_pop_assembly_organic_mult = 0.04
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_masochistic
+		}
+		modifier = {
+			pop_growth_speed = 0.01
+			planet_pop_assembly_organic_mult = 0.01
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_sexual_pheromones
+		}
+		modifier = {
+			pop_growth_speed = 0.02
+			planet_pop_assembly_organic_mult = 0.02
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_targeted_pheromones
+		}
+		modifier = {
+			pop_growth_speed = 0.04
+			planet_pop_assembly_organic_mult = 0.04
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_nudist
+		}
+		modifier = {
+			pop_growth_speed = 0.01
+			planet_pop_assembly_organic_mult = 0.01
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_exhibitionist
+		}
+		modifier = {
+			pop_growth_speed = 0.03
+			planet_pop_assembly_organic_mult = 0.03
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_honey
+		}
+		modifier = {
+			pop_growth_speed = 0.01
+			planet_pop_assembly_organic_mult = 0.01
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_exotic_honey
+		}
+		modifier = {
+			pop_growth_speed = 0.02
+			planet_pop_assembly_organic_mult = 0.02
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_elastic_orifices
+		}
+		modifier = {
+			pop_growth_speed = 0.02
+			planet_pop_assembly_organic_mult = 0.02
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_natural_anal_lube
+		}
+		modifier = {
+			pop_growth_speed = 0.03
+			planet_pop_assembly_organic_mult = 0.03
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_long_tongues
+		}
+		modifier = {
+			pop_growth_speed = 0.02
+			planet_pop_assembly_organic_mult = 0.02
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_neuron_saliva
+		}
+		modifier = {
+			pop_growth_speed = 0.01
+			planet_pop_assembly_organic_mult = 0.01
+		}
+	}
+	
+	# Female - Positive
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_large_breasts
+		}
+		modifier = {
+			pop_growth_speed = 0.01
+			planet_pop_assembly_organic_mult = 0.01
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_huge_breasts
+		}
+		modifier = {
+			pop_growth_speed = 0.02
+			planet_pop_assembly_organic_mult = 0.02
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_multiple_breasts
+		}
+		modifier = {
+			pop_growth_speed = 0.02
+			planet_pop_assembly_organic_mult = 0.02
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_fuckable_nipples
+		}
+		modifier = {
+			pop_growth_speed = 0.04
+			planet_pop_assembly_organic_mult = 0.04
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_high_volume_lactation
+		}
+		modifier = {
+			pop_growth_speed = 0.01
+			planet_pop_assembly_organic_mult = 0.01
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_fizzy_milk
+		}
+		modifier = {
+			pop_growth_speed = 0.02
+			planet_pop_assembly_organic_mult = 0.02
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_aphrodisiac_milk
+		}
+		modifier = {
+			pop_growth_speed = 0.02
+			planet_pop_assembly_organic_mult = 0.02
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_drooling_vagina
+		}
+		modifier = {
+			pop_growth_speed = 0.03
+			planet_pop_assembly_organic_mult = 0.03
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_litters
+		}
+		modifier = {
+			pop_growth_speed = 0.1
+			planet_pop_assembly_organic_mult = 0.1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_shapely_ass
+		}
+		modifier = {
+			pop_growth_speed = 0.02
+			planet_pop_assembly_organic_mult = 0.02
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_breeder_hips
+		}
+		modifier = {
+			pop_growth_speed = 0.1
+			planet_pop_assembly_organic_mult = 0.1
+		}
+	}
+	
+	# Male - Positive
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_large_penis
+		}
+		modifier = {
+			pop_growth_speed = 0.02
+			planet_pop_assembly_organic_mult = 0.02
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_huge_penis
+		}
+		modifier = {
+			pop_growth_speed = 0.04
+			planet_pop_assembly_organic_mult = 0.04
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_multiple_penises
+		}
+		modifier = {
+			pop_growth_speed = 0.04
+			planet_pop_assembly_organic_mult = 0.04
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_high_volume_ejaculations
+		}
+		modifier = {
+			pop_growth_speed = 0.02
+			planet_pop_assembly_organic_mult = 0.02
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_aphrodisiac_cum
+		}
+		modifier = {
+			pop_growth_speed = 0.02
+			planet_pop_assembly_organic_mult = 0.02
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_addictive_cum
+		}
+		modifier = {
+			pop_growth_speed = 0.02
+			planet_pop_assembly_organic_mult = 0.02
+		}
+	}
+	
+	# All Genders - Negative
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_sadistic
+		}
+		modifier = {
+			pop_growth_speed = -0.02
+			planet_pop_assembly_organic_mult = -0.02
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_erogenous_anus
+		}
+		modifier = {
+			pop_growth_speed = 0.02
+			planet_pop_assembly_organic_mult = 0.02
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_lewd_mind
+		}
+		modifier = {
+			pop_growth_speed = 0.02
+			planet_pop_assembly_organic_mult = 0.02
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_sex_crazed
+		}
+		modifier = {
+			pop_growth_speed = 0.1
+			planet_pop_assembly_organic_mult = 0.1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_seasonal_breeders
+		}
+		modifier = {
+			pop_growth_speed = -0.04
+			planet_pop_assembly_organic_mult = -0.04
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_sexually_inept
+		}
+		modifier = {
+			pop_growth_speed = -0.1
+			planet_pop_assembly_organic_mult = -0.1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_sexually_repressed
+		}
+		modifier = {
+			pop_growth_speed = -0.05
+			planet_pop_assembly_organic_mult = -0.05
+		}
+	}
+	
+	# Male - Negative
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_small_penis
+		}
+		modifier = {
+			pop_growth_speed = -0.04
+			planet_pop_assembly_organic_mult = -0.04
+		}
+	}
+	
+	# Special
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_brood_parasite
+		}
+		modifier = {
+			pop_growth_speed = 0.02
+			planet_pop_assembly_organic_mult = 0.02
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_futanari
+		}
+		modifier = {
+			pop_growth_speed = 0.01
+			planet_pop_assembly_organic_mult = 0.01
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_nano_forge_womb
+		}
+		modifier = {
+			pop_growth_speed = 0.01
+			planet_pop_assembly_organic_mult = 0.01
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_perfect_hybrid
+		}
+		modifier = {
+			pop_growth_speed = 0.17
+			planet_pop_assembly_organic_mult = 0.17
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_titanic_evolution
+		}
+		modifier = {
+			pop_growth_speed = 0.18
+			planet_pop_assembly_organic_mult = 0.18
+		}
+	}
+	
+	# Robotic
+	# All Genders - Positive
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_pheromone_generators
+		}
+		modifier = {
+			pop_growth_speed = 0.02
+			planet_pop_assembly_organic_mult = 0.02
+		}
+	}
+	
+	# Female - Positive
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_breast_attachments
+		}
+		modifier = {
+			pop_growth_speed = 0.01
+			planet_pop_assembly_organic_mult = 0.01
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_custom_fleshlight_slot
+		}
+		modifier = {
+			pop_growth_speed = 0.01
+			planet_pop_assembly_organic_mult = 0.01
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_synth_breasts
+		}
+		modifier = {
+			pop_growth_speed = 0.03
+			planet_pop_assembly_organic_mult = 0.03
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_synth_vagina
+		}
+		modifier = {
+			pop_growth_speed = 0.05
+			planet_pop_assembly_organic_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_lushtech_synthetic_womb
+		}
+		modifier = {
+			pop_growth_speed = 0.08
+			planet_pop_assembly_organic_mult = 0.08
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_sex_bots
+		}
+		modifier = {
+			pop_growth_speed = 0.13
+			planet_pop_assembly_organic_mult = 0.13
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_sex_bots_o
+		}
+		modifier = {
+			pop_growth_speed = 0.13
+			planet_pop_assembly_organic_mult = 0.13
+		}
+	}
+	
+	# Male - Positive
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_custom_dildo_attachment
+		}
+		modifier = {
+			pop_growth_speed = 0.01
+			planet_pop_assembly_organic_mult = 0.01
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_synth_penis
+		}
+		modifier = {
+			pop_growth_speed = 0.05
+			planet_pop_assembly_organic_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_lv_lushtech_omni_seed_fabrication_modules
+		}
+		modifier = {
+			pop_growth_speed = 0.03
+			planet_pop_assembly_organic_mult = 0.03
+		}
+	}
+	
+	weight = {
+		weight = 200
+		
+		# factors
+		modifier = {
+			factor = 1.2
+			has_job = lv_breeder
+		}
+		modifier = {
+			factor = 0
+			planet = { has_modifier = planet_population_control }
+		}
+		modifier = {
+			factor = 0.01 # crisis purge
+			exists = planet
+			exists = planet.controller
+			planet.controller = {
+				OR = {
+					is_country_type = swarm
+					is_country_type = ai_empire
+				}
+			}
+		}
+		
+		# low income modifier (for ai)
+		modifier = {
+			factor = 0.01
+			exists = planet
+			planet = { has_available_jobs = lv_breeder }
+			exists = owner
+			owner = {
+				is_ai = yes
+				has_monthly_income = {
+					resource = food
+					value < 10
+				}
+			}
+		}
+		modifier = {
+			factor = 0.01
+			exists = planet
+			planet = { has_available_jobs = lv_breeder }
+			exists = owner
+			owner = {
+				is_ai = yes
+				has_monthly_income = {
+					resource = consumer_goods
+					value < 10
+				}
+			}
+		}
+		modifier = {
+			factor = 0.01
+			exists = planet
+			planet = { has_available_jobs = lv_breeder }
+			exists = owner
+			owner = {
+				is_ai = yes
+				is_lithoid_empire = yes
+				has_monthly_income = {
+					resource = minerals
+					value < 10
+				}
+			}
+		}
+		modifier = {
+			factor = 0.01
+			exists = planet
+			planet = { has_available_jobs = lv_breeder }
+			exists = owner
+			owner = {
+				is_ai = yes
+				is_robot_empire = yes
+				has_monthly_income = {
+					resource = energy
+					value < 10
+				}
+			}
+		}
+		
+		# breeding traits
+		modifier = {
+			add = 0.05
+			lv_breeders_weight_low = yes
+		}
+		modifier = {
+			add = 0.1
+			lv_breeders_weight_med = yes
+		}
+		modifier = {
+			add = 0.2
+			lv_breeders_weight_high = yes
+		}
+		modifier = {
+			add = -0.2
+			lv_breeders_weight_neg = yes
+		}
+	}
+}
+
+###

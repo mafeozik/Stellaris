@@ -1,0 +1,991 @@
+namespace = lv_decision_events
+
+###############################
+###     Decision Events     ###
+###############################
+
+# Mono Gender Conversion #
+
+planet_event = {
+	id = lv_decision_events.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+		random_list = {
+			25 = {
+				planet_event = { id = lv_decision_events.2 }
+			}
+			25 = {
+				planet_event = { id = lv_decision_events.3 }
+			}
+			25 = {
+				planet_event = { id = lv_decision_events.4 }
+			}
+			25 = {
+				planet_event = { id = lv_decision_events.5 }
+			}
+		}
+	}
+}
+
+planet_event = {		# Main Menu
+	id = lv_decision_events.2
+	title = "Mono Gender Conversion"
+	desc = lv_mono_gender_conversion_mm.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = lv_swarm_crisis_ambient_stage_final_01
+	location = ROOT
+	
+	picture_event_data = {
+		room = evt_lv_mono_gender_conversion_1_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {		# Female Submenu
+		name = lv_mono_gender_conversion_mm.1
+		hidden_effect = {
+			planet_event = { id = lv_decision_events.6 }
+		}
+	}
+	
+	option = {		# Male Submenu
+		name = lv_mono_gender_conversion_mm.2
+		hidden_effect = {
+			planet_event = { id = lv_decision_events.7 }
+		}
+	}
+	
+	option = {		# Futa Submenu
+		name = lv_mono_gender_conversion_mm.3
+		hidden_effect = {
+			planet_event = { id = lv_decision_events.8 }
+		}
+	}
+	
+	option = {		# Exit
+		name = lv_options.exit
+		hidden_effect = {
+			ROOT = {
+				if = {
+					limit = {
+						num_pops < 10
+					}
+					owner = { add_resource = { exotic_gases = 20 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 10
+						num_pops < 20
+					}
+					owner = { add_resource = { exotic_gases = 40 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 20
+						num_pops < 30
+					}
+					owner = { add_resource = { exotic_gases = 60 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 30
+						num_pops < 40
+					}
+					owner = { add_resource = { exotic_gases = 80 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 40
+						num_pops < 50
+					}
+					owner = { add_resource = { exotic_gases = 100 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 50
+						num_pops < 60
+					}
+					owner = { add_resource = { exotic_gases = 120 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 60
+						num_pops < 70
+					}
+					owner = { add_resource = { exotic_gases = 140 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 70
+						num_pops < 85
+					}
+					owner = { add_resource = { exotic_gases = 160 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 85
+						num_pops < 100
+					}
+					owner = { add_resource = { exotic_gases = 180 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 100
+					}
+					owner = { add_resource = { exotic_gases = 200 } }
+				}
+			}
+		}
+	}
+}
+
+planet_event = {		# Main Menu
+	id = lv_decision_events.3
+	title = "Mono Gender Conversion"
+	desc = lv_mono_gender_conversion_mm.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = lv_swarm_crisis_ambient_stage_final_01
+	location = ROOT
+	
+	picture_event_data = {
+		room = evt_lv_mono_gender_conversion_2_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {		# Female Submenu
+		name = lv_mono_gender_conversion_mm.1
+		hidden_effect = {
+			planet_event = { id = lv_decision_events.6 }
+		}
+	}
+	
+	option = {		# Male Submenu
+		name = lv_mono_gender_conversion_mm.2
+		hidden_effect = {
+			planet_event = { id = lv_decision_events.7 }
+		}
+	}
+	
+	option = {		# Futa Submenu
+		name = lv_mono_gender_conversion_mm.3
+		hidden_effect = {
+			planet_event = { id = lv_decision_events.8 }
+		}
+	}
+	
+	option = {		# Exit
+		name = lv_options.exit
+		hidden_effect = {
+			ROOT = {
+				if = {
+					limit = {
+						num_pops < 10
+					}
+					owner = { add_resource = { exotic_gases = 20 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 10
+						num_pops < 20
+					}
+					owner = { add_resource = { exotic_gases = 40 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 20
+						num_pops < 30
+					}
+					owner = { add_resource = { exotic_gases = 60 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 30
+						num_pops < 40
+					}
+					owner = { add_resource = { exotic_gases = 80 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 40
+						num_pops < 50
+					}
+					owner = { add_resource = { exotic_gases = 100 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 50
+						num_pops < 60
+					}
+					owner = { add_resource = { exotic_gases = 120 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 60
+						num_pops < 70
+					}
+					owner = { add_resource = { exotic_gases = 140 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 70
+						num_pops < 85
+					}
+					owner = { add_resource = { exotic_gases = 160 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 85
+						num_pops < 100
+					}
+					owner = { add_resource = { exotic_gases = 180 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 100
+					}
+					owner = { add_resource = { exotic_gases = 200 } }
+				}
+			}
+		}
+	}
+}
+
+planet_event = {		# Main Menu
+	id = lv_decision_events.4
+	title = "Mono Gender Conversion"
+	desc = lv_mono_gender_conversion_mm.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = lv_swarm_crisis_ambient_stage_final_01
+	location = ROOT
+	
+	picture_event_data = {
+		room = evt_lv_mono_gender_conversion_3_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {		# Female Submenu
+		name = lv_mono_gender_conversion_mm.1
+		hidden_effect = {
+			planet_event = { id = lv_decision_events.6 }
+		}
+	}
+	
+	option = {		# Male Submenu
+		name = lv_mono_gender_conversion_mm.2
+		hidden_effect = {
+			planet_event = { id = lv_decision_events.7 }
+		}
+	}
+	
+	option = {		# Futa Submenu
+		name = lv_mono_gender_conversion_mm.3
+		hidden_effect = {
+			planet_event = { id = lv_decision_events.8 }
+		}
+	}
+	
+	option = {		# Exit
+		name = lv_options.exit
+		hidden_effect = {
+			ROOT = {
+				if = {
+					limit = {
+						num_pops < 10
+					}
+					owner = { add_resource = { exotic_gases = 20 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 10
+						num_pops < 20
+					}
+					owner = { add_resource = { exotic_gases = 40 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 20
+						num_pops < 30
+					}
+					owner = { add_resource = { exotic_gases = 60 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 30
+						num_pops < 40
+					}
+					owner = { add_resource = { exotic_gases = 80 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 40
+						num_pops < 50
+					}
+					owner = { add_resource = { exotic_gases = 100 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 50
+						num_pops < 60
+					}
+					owner = { add_resource = { exotic_gases = 120 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 60
+						num_pops < 70
+					}
+					owner = { add_resource = { exotic_gases = 140 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 70
+						num_pops < 85
+					}
+					owner = { add_resource = { exotic_gases = 160 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 85
+						num_pops < 100
+					}
+					owner = { add_resource = { exotic_gases = 180 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 100
+					}
+					owner = { add_resource = { exotic_gases = 200 } }
+				}
+			}
+		}
+	}
+}
+
+planet_event = {		# Main Menu
+	id = lv_decision_events.5
+	title = "Mono Gender Conversion"
+	desc = lv_mono_gender_conversion_mm.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = lv_swarm_crisis_ambient_stage_final_01
+	location = ROOT
+	
+	picture_event_data = {
+		room = evt_lv_mono_gender_conversion_4_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {		# Female Submenu
+		name = lv_mono_gender_conversion_mm.1
+		hidden_effect = {
+			planet_event = { id = lv_decision_events.6 }
+		}
+	}
+	
+	option = {		# Male Submenu
+		name = lv_mono_gender_conversion_mm.2
+		hidden_effect = {
+			planet_event = { id = lv_decision_events.7 }
+		}
+	}
+	
+	option = {		# Futa Submenu
+		name = lv_mono_gender_conversion_mm.3
+		hidden_effect = {
+			planet_event = { id = lv_decision_events.8 }
+		}
+	}
+	
+	option = {		# Exit
+		name = lv_options.exit
+		hidden_effect = {
+			ROOT = {
+				if = {
+					limit = {
+						num_pops < 10
+					}
+					owner = { add_resource = { exotic_gases = 20 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 10
+						num_pops < 20
+					}
+					owner = { add_resource = { exotic_gases = 40 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 20
+						num_pops < 30
+					}
+					owner = { add_resource = { exotic_gases = 60 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 30
+						num_pops < 40
+					}
+					owner = { add_resource = { exotic_gases = 80 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 40
+						num_pops < 50
+					}
+					owner = { add_resource = { exotic_gases = 100 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 50
+						num_pops < 60
+					}
+					owner = { add_resource = { exotic_gases = 120 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 60
+						num_pops < 70
+					}
+					owner = { add_resource = { exotic_gases = 140 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 70
+						num_pops < 85
+					}
+					owner = { add_resource = { exotic_gases = 160 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 85
+						num_pops < 100
+					}
+					owner = { add_resource = { exotic_gases = 180 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 100
+					}
+					owner = { add_resource = { exotic_gases = 200 } }
+				}
+			}
+		}
+	}
+}
+
+planet_event = {		# Female Submenu
+	id = lv_decision_events.6
+	title = "Female Submenu"
+	desc = lv_mono_gender_conversion_fsm.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = lv_swarm_crisis_ambient_stage_02
+	location = ROOT
+	
+	picture_event_data = {
+		room = evt_lv_mono_gender_conversion_fsm_1_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {		# Convert All
+		name = lv_mono_gender_conversion_fsm.1
+		custom_tooltip = lv_mono_gender_conversion_fsm.1.tooltip
+		hidden_effect = {
+			planet_event = { id = lv_trait_cleanup.2 }
+			planet_event = { id = lv_trait_cleanup.1 days = 5 }
+			planet_event = { id = lv_decision_events.9 }
+		}
+	}
+	
+	option = {		# Convert Xenos Only
+		name = lv_mono_gender_conversion_fsm.2
+		custom_tooltip = lv_mono_gender_conversion_fsm.2.tooltip
+		hidden_effect = {
+			planet_event = { id = lv_trait_cleanup.3 }
+			planet_event = { id = lv_trait_cleanup.1 days = 5 }
+			planet_event = { id = lv_decision_events.10 }
+		}
+	}
+	
+	option = {		# Back to previous Menu
+		name = lv_options.back
+		hidden_effect = {
+			planet_event = { id = lv_decision_events.1 }
+		}
+	}
+	
+	option = {		# Exit
+		name = lv_options.exit
+		hidden_effect = {
+			ROOT = {
+				if = {
+					limit = {
+						num_pops < 10
+					}
+					owner = { add_resource = { exotic_gases = 20 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 10
+						num_pops < 20
+					}
+					owner = { add_resource = { exotic_gases = 40 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 20
+						num_pops < 30
+					}
+					owner = { add_resource = { exotic_gases = 60 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 30
+						num_pops < 40
+					}
+					owner = { add_resource = { exotic_gases = 80 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 40
+						num_pops < 50
+					}
+					owner = { add_resource = { exotic_gases = 100 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 50
+						num_pops < 60
+					}
+					owner = { add_resource = { exotic_gases = 120 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 60
+						num_pops < 70
+					}
+					owner = { add_resource = { exotic_gases = 140 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 70
+						num_pops < 85
+					}
+					owner = { add_resource = { exotic_gases = 160 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 85
+						num_pops < 100
+					}
+					owner = { add_resource = { exotic_gases = 180 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 100
+					}
+					owner = { add_resource = { exotic_gases = 200 } }
+				}
+			}
+		}
+	}
+}
+
+planet_event = {		# Male Submenu
+	id = lv_decision_events.7
+	title = "Male Submenu"
+	desc = lv_mono_gender_conversion_msm.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = lv_swarm_crisis_ambient_stage_02
+	location = ROOT
+	
+	picture_event_data = {
+		room = evt_lv_mono_gender_conversion_msm_1_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {		# Convert All
+		name = lv_mono_gender_conversion_msm.1
+		custom_tooltip = lv_mono_gender_conversion_msm.1.tooltip
+		hidden_effect = {
+			planet_event = { id = lv_trait_cleanup.4 }
+			planet_event = { id = lv_trait_cleanup.1 days = 5 }
+			planet_event = { id = lv_decision_events.11 }
+		}
+	}
+	
+	option = {		# Convert Xenos Only
+		name = lv_mono_gender_conversion_msm.2
+		custom_tooltip = lv_mono_gender_conversion_msm.2.tooltip
+		hidden_effect = {
+			planet_event = { id = lv_trait_cleanup.5 }
+			planet_event = { id = lv_trait_cleanup.1 days = 5 }
+			planet_event = { id = lv_decision_events.12 }
+		}
+	}
+	
+	option = {		# Back to previous Menu
+		name = lv_options.back
+		hidden_effect = {
+			planet_event = { id = lv_decision_events.1 }
+		}
+	}
+	
+	option = {		# Exit
+		name = lv_options.exit
+		hidden_effect = {
+			ROOT = {
+				if = {
+					limit = {
+						num_pops < 10
+					}
+					owner = { add_resource = { exotic_gases = 20 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 10
+						num_pops < 20
+					}
+					owner = { add_resource = { exotic_gases = 40 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 20
+						num_pops < 30
+					}
+					owner = { add_resource = { exotic_gases = 60 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 30
+						num_pops < 40
+					}
+					owner = { add_resource = { exotic_gases = 80 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 40
+						num_pops < 50
+					}
+					owner = { add_resource = { exotic_gases = 100 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 50
+						num_pops < 60
+					}
+					owner = { add_resource = { exotic_gases = 120 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 60
+						num_pops < 70
+					}
+					owner = { add_resource = { exotic_gases = 140 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 70
+						num_pops < 85
+					}
+					owner = { add_resource = { exotic_gases = 160 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 85
+						num_pops < 100
+					}
+					owner = { add_resource = { exotic_gases = 180 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 100
+					}
+					owner = { add_resource = { exotic_gases = 200 } }
+				}
+			}
+		}
+	}
+}
+
+planet_event = {		# Futa Submenu
+	id = lv_decision_events.8
+	title = "Futa Submenu"
+	desc = lv_mono_gender_conversion_fusm.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = lv_swarm_crisis_ambient_stage_02
+	location = ROOT
+	
+	picture_event_data = {
+		room = evt_lv_mono_gender_conversion_fusm_1_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {		# Convert All
+		name = lv_mono_gender_conversion_fusm.1
+		custom_tooltip = lv_mono_gender_conversion_fusm.1.tooltip
+		hidden_effect = {
+			planet_event = { id = lv_trait_cleanup.6 }
+			planet_event = { id = lv_decision_events.13 }
+		}
+	}
+	
+	option = {		# Convert Xenos Only
+		name = lv_mono_gender_conversion_fusm.2
+		custom_tooltip = lv_mono_gender_conversion_fusm.2.tooltip
+		hidden_effect = {
+			planet_event = { id = lv_trait_cleanup.7 }
+			planet_event = { id = lv_decision_events.14 }
+		}
+	}
+	
+	option = {		# Back to previous Menu
+		name = lv_options.back
+		hidden_effect = {
+			planet_event = { id = lv_decision_events.1 }
+		}
+	}
+	
+	option = {		# Exit
+		name = lv_options.exit
+		hidden_effect = {
+			ROOT = {
+				if = {
+					limit = {
+						num_pops < 10
+					}
+					owner = { add_resource = { exotic_gases = 20 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 10
+						num_pops < 20
+					}
+					owner = { add_resource = { exotic_gases = 40 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 20
+						num_pops < 30
+					}
+					owner = { add_resource = { exotic_gases = 60 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 30
+						num_pops < 40
+					}
+					owner = { add_resource = { exotic_gases = 80 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 40
+						num_pops < 50
+					}
+					owner = { add_resource = { exotic_gases = 100 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 50
+						num_pops < 60
+					}
+					owner = { add_resource = { exotic_gases = 120 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 60
+						num_pops < 70
+					}
+					owner = { add_resource = { exotic_gases = 140 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 70
+						num_pops < 85
+					}
+					owner = { add_resource = { exotic_gases = 160 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 85
+						num_pops < 100
+					}
+					owner = { add_resource = { exotic_gases = 180 } }
+				}
+				if = {
+					limit = {
+						num_pops >= 100
+					}
+					owner = { add_resource = { exotic_gases = 200 } }
+				}
+			}
+		}
+	}
+}
+
+planet_event = {		# Female Convert All
+	id = lv_decision_events.9
+	title = "Female Convert All"
+	desc = lv_mono_gender_conversion_fsm_ca.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	
+	picture_event_data = {
+		room = evt_lv_mono_gender_conversion_fsm_1_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {		# Convert All
+		name = lv_mono_gender_conversion_fsm_ca.1
+		hidden_effect = {
+			planet = { add_modifier = { modifier = lv_mono_gender_conversion_fsm_ca days = 900 } }
+		}
+	}
+}
+
+planet_event = {		# Female Convert Xenos Only
+	id = lv_decision_events.10
+	title = "Female Convert Xenos Only"
+	desc = lv_mono_gender_conversion_fsm_cxo.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	
+	picture_event_data = {
+		room = evt_lv_mono_gender_conversion_fsm_1_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {		# Convert Xenos Only
+		name = lv_mono_gender_conversion_fsm_cxo.1
+		hidden_effect = {
+			planet = { add_modifier = { modifier = lv_mono_gender_conversion_fsm_cxo days = 900 } }
+		}
+	}
+}
+
+planet_event = {		# Male Convert All
+	id = lv_decision_events.11
+	title = "Male Convert All"
+	desc = lv_mono_gender_conversion_msm_ca.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	
+	picture_event_data = {
+		room = evt_lv_mono_gender_conversion_msm_1_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {		# Convert All
+		name = lv_mono_gender_conversion_msm_ca.1
+		hidden_effect = {
+			planet = { add_modifier = { modifier = lv_mono_gender_conversion_msm_ca days = 900 } }
+		}
+	}
+}
+
+planet_event = {		# Male Convert Xenos Only
+	id = lv_decision_events.12
+	title = "Male Convert Xenos Only"
+	desc = lv_mono_gender_conversion_msm_cxo.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	
+	picture_event_data = {
+		room = evt_lv_mono_gender_conversion_msm_1_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {		# Convert Xenos Only
+		name = lv_mono_gender_conversion_msm_cxo.1
+		hidden_effect = {
+			planet = { add_modifier = { modifier = lv_mono_gender_conversion_msm_cxo days = 900 } }
+		}
+	}
+}
+
+planet_event = {		# Futa Convert All
+	id = lv_decision_events.13
+	title = "Futa Convert All"
+	desc = lv_mono_gender_conversion_fusm_ca.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	
+	picture_event_data = {
+		room = evt_lv_mono_gender_conversion_fusm_1_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {		# Convert All
+		name = lv_mono_gender_conversion_fusm_ca.1
+		hidden_effect = {
+			planet = { add_modifier = { modifier = lv_mono_gender_conversion_fusm_ca days = 900 } }
+		}
+	}
+}
+
+planet_event = {		# Futa Convert Xenos Only
+	id = lv_decision_events.14
+	title = "Futa Convert Xenos Only"
+	desc = lv_mono_gender_conversion_fusm_cxo.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	
+	picture_event_data = {
+		room = evt_lv_mono_gender_conversion_fusm_1_room
+	}
+	
+	is_triggered_only = yes
+
+	option = {		# Convert Xenos Only
+		name = lv_mono_gender_conversion_fusm_cxo.1
+		hidden_effect = {
+			planet = { add_modifier = { modifier = lv_mono_gender_conversion_fusm_cxo days = 900 } }
+		}
+	}
+}
+
+###

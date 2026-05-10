@@ -1,0 +1,28 @@
+#########################
+###     Nurturing     ###
+#########################
+
+tradition_lv_nurturing = {
+	tree_template = "tree_11_12"
+	adoption_bonus = "tr_lv_nurturing_adopt"
+	finish_bonus = "tr_lv_nurturing_finish"
+	traditions = {
+		"tr_lv_nurturing_1_pamper_subroutines"
+		"tr_lv_nurturing_2_chat_ai"
+		"tr_lv_nurturing_3_sleep_mode"
+		"tr_lv_nurturing_4_triboelectric_casings"
+		"tr_lv_nurturing_5_interlocking_units"
+	}
+
+	potential = {
+		has_authority = auth_machine_intelligence
+	}
+
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 2
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+}

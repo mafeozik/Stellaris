@@ -1,0 +1,4429 @@
+namespace = lv_colony_events
+
+#############################
+###     Colony Events     ###
+#############################
+
+@tier1influencecontact = 7
+@tier1influencecontactxenophile = 8
+@tier1influencecontactmin = 20
+@tier1influencecontactmax = 80
+
+@tier2influencecontact = 10
+@tier2influencecontactxenophile = 12
+@tier2influencecontactmin = 40
+@tier2influencecontactmax = 100
+
+@tier1materialreward = 6
+@tier1materialmin = 100
+@tier1materialmax = 500
+@tier2materialreward = 12
+@tier2materialmin = 150
+@tier2materialmax = 1000
+@tier3materialreward = 18
+@tier3materialmin = 250
+@tier3materialmax = 1500
+@tier4materialreward = 24
+@tier4materialmin = 350
+@tier4materialmax = 2000
+@tier5materialreward = 48
+@tier5materialmin = 700
+@tier5materialmax = 4000
+
+@tier1influencereward = 6
+@tier1influencemin = 40
+@tier1influencemax = 100
+@tier2influencereward = 12
+@tier2influencemin = 80
+@tier2influencemax = 175
+@tier3influencereward = 18
+@tier3influencemin = 125
+@tier3influencemax = 250
+@tier4influencereward = 24
+@tier4influencemin = 150
+@tier4influencemax = 300
+@tier5influencereward = 36
+@tier5influencemin = 250
+@tier5influencemax = 500
+@tier6influencereward = 48
+@tier6influencemin = 300
+@tier6influencemax = 600
+
+@tier1unityreward = 6
+@tier1unitymin = 100
+@tier1unitymax = 500
+@tier2unityreward = 12
+@tier2unitymin = 150
+@tier2unitymax = 1000
+@tier3unityreward = 18
+@tier3unitymin = 250
+@tier3unitymax = 1500
+@tier4unityreward = 24
+@tier4unitymin = 350
+@tier4unitymax = 2000
+@tier5unityreward = 48
+@tier5unitymin = 700
+@tier5unitymax = 4000
+
+@tier1researchreward = 6
+@tier1researchmin = 60
+@tier1researchmax = 150
+@tier2researchreward = 12
+@tier2researchmin = 90
+@tier2researchmax = 250
+@tier3researchreward = 18
+@tier3researchmin = 120
+@tier3researchmax = 350
+@tier4researchreward = 24
+@tier4researchmin = 150
+@tier4researchmax = 500
+@tier5researchreward = 48
+@tier5researchmin = 300
+@tier5researchmax = 1000
+
+###
+
+# Invasive Tentacles #
+
+planet_event = {
+	id = lv_colony_events.1
+	title = lv_colony_events.1.name
+	desc = lv_colony_events.1.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_invasive_tentacles_1_room
+	}
+	
+	pre_triggers = {
+		has_owner = yes
+		is_ai = no
+		has_ground_combat = no
+		is_occupied_flag = no
+	}
+	
+	trigger = {
+		NOR = {
+			has_global_flag = lv_all_disabled
+			has_global_flag = lv_bestiality_disabled
+			has_global_flag = lv_rape_disabled
+		}
+		count_owned_pop = {
+			limit = { is_non_sapient_robot = no }
+			count > 3
+		}
+		NOT = { has_modifier = lv_tentacled_lifeforms }
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		add_deposit = d_lv_tentacles_blocker
+		add_modifier = {
+			modifier = lv_tentacled_lifeforms
+			days = -1
+		}
+	}
+	
+	option = {
+		name = lv_colony_events.1.a
+		tooltip = { 
+			add_deposit = d_lv_tentacles_blocker
+		}
+		
+		add_modifier = { modifier = scared_population days = 360 }
+	}
+	
+	option = {
+		name = lv_colony_events.1.b
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+		
+		add_modifier = { modifier = fear_as_control_militarist days = 360 }
+		add_modifier = { modifier = hostile_animal_life days = 180 }
+		
+		owner = { add_resource = { influence = -25 } }
+		
+		remove_modifier = lv_tentacled_lifeforms
+		hidden_effect = {
+			remove_deposit = d_lv_tentacles_blocker
+		}
+	}
+	
+	option = {
+		name = lv_colony_events.1.c
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+		
+		tooltip = { 
+			add_deposit = d_lv_tentacles_blocker
+		}
+		
+		add_modifier = { modifier = society_animal_life days = 360 }
+
+		owner = { add_resource = { influence = 10 } }
+	}
+	
+	option = {
+		name = lv_colony_events.1.d
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		
+		add_modifier = { modifier = scared_population days = 360 }
+		add_modifier = { modifier = hostile_animal_life days = 360 }
+		
+		owner = { add_resource = { influence = -15 } }
+		
+		remove_modifier = lv_tentacled_lifeforms
+		hidden_effect = {
+			remove_deposit = d_lv_tentacles_blocker
+		}
+	}
+	
+	option = {
+		name = lv_colony_events.1.e
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+				}
+			}
+		}
+		
+		tooltip = { 
+			add_deposit = d_lv_tentacles_blocker
+		}
+		
+		add_modifier = { modifier = spiritualist_attraction days = 360 }
+		add_modifier = { modifier = food_rich_planet days = 360 }
+		
+		owner = { add_resource = { unity = 100 } }
+	}
+}
+
+# Xeno Zoo Breakout #
+
+planet_event = {
+	id = lv_colony_events.2
+	title = lv_colony_events.2.name
+	desc = lv_colony_events.2.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_xeno_zoo_breakout_1_room
+	}
+	
+	pre_triggers = {
+		has_owner = yes
+		has_ground_combat = no
+		is_occupied_flag = no
+	}
+	
+	trigger = {
+		NOR = {
+			has_global_flag = lv_all_disabled
+			has_global_flag = lv_bestiality_disabled
+			has_global_flag = lv_rape_disabled
+		}
+		count_owned_pop = {
+			limit = { is_non_sapient_robot = no }
+			count > 3
+		}	
+		NOT = {
+			has_planet_flag = lv_had_xeno_zoo_breakout
+		}
+		has_building = building_xeno_zoo
+	}
+
+#	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1800
+	}
+
+	option = {
+		name = lv_colony_events.2.a
+		set_timed_planet_flag = { flag = lv_had_xeno_zoo_breakout days = 3600 }
+		while = {
+			limit = {
+				count_owned_pop = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = lv_xeno_beast_fun
+							has_modifier = lv_xeno_beast_rape
+						}
+					}
+					count < 3
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					NOR = {
+						has_modifier = lv_xeno_beast_fun
+						has_modifier = lv_xeno_beast_rape
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							pop_has_ethic = ethic_xenophile
+							pop_has_ethic = ethic_fanatic_xenophile
+						}
+					}
+					add_modifier = {
+						modifier = lv_xeno_beast_fun
+						days = 180
+					}
+				}
+				else = {
+					add_modifier = {
+						modifier = lv_xeno_beast_rape
+						days = 180
+					}
+				}
+			}
+		}
+	}
+}
+
+# Futa Sadists #
+
+planet_event = {
+	id = lv_colony_events.3
+	title = lv_colony_events.3.name
+	desc = lv_colony_events.3.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_futa_sadists_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	pre_triggers = {
+		has_owner = yes
+		has_ground_combat = no
+		is_occupied_flag = no
+	}
+	
+	trigger = {
+		NOR = {
+			has_global_flag = lv_all_disabled
+			has_global_flag = lv_futa_disabled
+			has_global_flag = lv_rape_disabled
+		}
+		owner = { has_technology = tech_gene_tailoring }
+		AND = {
+			count_owned_pop = {
+				limit = {
+					AND = {
+						pop_has_trait = trait_lv_sadistic
+						pop_has_trait = trait_lv_futanari
+					}
+					is_non_sapient_robot = no
+					is_enslaved = no
+				}
+				count > 2
+			}
+			count_owned_pop = {
+				limit = {
+					is_non_sapient_robot = no
+					OR = {
+						NOT = { pop_has_trait = trait_lv_sadistic }
+						AND = {
+							pop_has_trait = trait_lv_sadistic
+							is_enslaved = yes
+						}
+					}
+				}
+				count > 2
+			}
+		}
+	}
+
+	option = {
+		name = lv_colony_events.3.a
+		while = {
+			limit = {
+				count_owned_pop = {
+					limit = {
+						is_non_sapient_robot = no
+						is_enslaved = no
+						pop_has_trait = trait_lv_sadistic
+						has_modifier = lv_sadomasochist_fun
+					}
+					count < 2
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					pop_has_trait = trait_lv_sadistic
+					is_enslaved = no
+					NOT = {
+						has_modifier = lv_sadomasochist_fun
+					}
+				}
+				add_modifier = {
+					modifier = lv_sadomasochist_fun
+					days = 100
+				}
+			}
+		}
+		while = {
+			limit = {
+				count_owned_pop = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = lv_sadomasochist_fun
+							has_modifier = lv_abused_by_sadist
+						}
+						OR = {
+							Not = { pop_has_trait = trait_lv_sadistic }
+							lv_enslaved_sadist = yes
+						}
+					}
+					count < 2
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					is_non_sapient_robot = no
+					NOR = {
+						has_modifier = lv_sadomasochist_fun
+						has_modifier = lv_abused_by_sadist
+					}
+					OR = {
+						NOT = { pop_has_trait = trait_lv_sadistic }
+						lv_enslaved_sadist = yes
+					}
+				}
+				if = {
+					limit = {
+						pop_has_trait = trait_lv_sadistic
+					}
+					add_modifier = {
+						modifier = lv_sadomasochist_fun
+						days = 100
+					}
+				}
+				else = {
+					add_modifier = {
+						modifier = lv_abused_by_sadist
+						days = 100
+					}
+				}
+			}
+		}
+	}
+}
+
+# Sadist Fun #
+
+planet_event = {
+	id = lv_colony_events.4
+	title = lv_colony_events.4.name
+	desc = lv_colony_events.4.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_sadist_fun_1_room
+	}
+	
+	pre_triggers = {
+		has_owner = yes
+		has_ground_combat = no
+		is_occupied_flag = no
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOR = {
+			has_global_flag = lv_all_disabled
+			has_global_flag = lv_rape_disabled
+		}
+		AND = {
+			count_owned_pop = {
+				limit = {
+					is_non_sapient_robot = no
+					pop_has_trait = trait_lv_sadistic
+					is_enslaved = no
+				}
+				count > 2
+			}
+			count_owned_pop = {
+				limit = {
+					is_non_sapient_robot = no
+					OR = {
+						NOT = { pop_has_trait = trait_lv_sadistic }
+						lv_enslaved_sadist = yes
+					}
+				}
+				count > 2
+			}
+		}
+	}
+
+	option = {
+		name = lv_colony_events.4.a
+		trigger = {
+			owner = {
+				NOT = {
+					OR = {
+						has_ethic = ethic_egalitarian
+						has_ethic = ethic_fanatic_egalitarian
+						has_ethic = ethic_pacifist
+						has_ethic = ethic_fanatic_pacifist
+					}
+				}
+			}
+		}
+		while = {
+			limit = {
+				count_owned_pop = {
+					limit = {
+						is_non_sapient_robot = no
+						is_enslaved = no
+						pop_has_trait = trait_lv_sadistic
+						has_modifier = lv_sadomasochist_fun
+					}
+					count < 2
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					pop_has_trait = trait_lv_sadistic
+					is_enslaved = no
+					NOT = {
+						has_modifier = lv_sadomasochist_fun
+					}
+				}
+				add_modifier = {
+					modifier = lv_sadomasochist_fun
+					days = 100
+				}
+			}
+		}
+		while = {
+			limit = {
+				count_owned_pop = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = lv_sadomasochist_fun
+							has_modifier = lv_abused_by_sadist
+						}
+						OR = {
+							Not = { pop_has_trait = trait_lv_sadistic }
+							lv_enslaved_sadist = yes
+						}
+					}
+					count < 2
+				}
+			}
+			random_owned_pop = {
+				limit = {
+						is_non_sapient_robot = no
+						NOR = {
+							has_modifier = lv_sadomasochist_fun
+							has_modifier = lv_abused_by_sadist
+						}
+						OR = {
+							Not = { pop_has_trait = trait_lv_sadistic }
+							lv_enslaved_sadist = yes
+						}
+				}
+				if = {
+					limit = {
+						pop_has_trait = trait_lv_sadistic
+					}
+					add_modifier = {
+							modifier = lv_sadomasochist_fun
+							days = 100
+						}
+				}
+				else = {
+					add_modifier = {
+						modifier = lv_abused_by_sadist
+						days = 100
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = lv_colony_events.4.b
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_fanatic_egalitarian
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_fanatic_pacifist
+				}
+			}
+		}
+		owner = { add_resource = { influence = -10 } }
+		while = {
+			limit = {
+				count_owned_pop = {
+					limit = {
+						is_non_sapient_robot = no
+						is_enslaved = no
+						pop_has_trait = trait_lv_sadistic
+						has_modifier = lv_sadomasochist_fun
+					}
+					count < 2
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					pop_has_trait = trait_lv_sadistic
+					is_enslaved = no
+					NOT = {
+						has_modifier = lv_sadomasochist_fun
+					}
+				}
+				add_modifier = {
+					modifier = lv_sadomasochist_fun
+					days = 100
+				}
+			}
+		}
+		while = {
+			limit = {
+				count_owned_pop = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = lv_sadomasochist_fun
+							has_modifier = lv_abused_by_sadist
+						}
+						OR = {
+							Not = { pop_has_trait = trait_lv_sadistic }
+							lv_enslaved_sadist = yes
+						}
+					}
+					count < 2
+				}
+			}
+			random_owned_pop = {
+				limit = {
+						is_non_sapient_robot = no
+						NOR = {
+							has_modifier = lv_sadomasochist_fun
+							has_modifier = lv_abused_by_sadist
+						}
+						OR = {
+							Not = { pop_has_trait = trait_lv_sadistic }
+							lv_enslaved_sadist = yes
+						}
+				}
+				if = {
+					limit = {
+						pop_has_trait = trait_lv_sadistic
+					}
+					add_modifier = {
+						modifier = lv_sadomasochist_fun
+						days = 100
+					}
+				}
+				else = {
+					add_modifier = {
+						modifier = lv_abused_by_sadist
+						days = 100
+					}
+				}
+			}
+		}
+	}
+}
+
+# Masochistic Fun #
+
+planet_event = {
+	id = lv_colony_events.5
+	title = lv_colony_events.5.name
+	desc = lv_colony_events.5.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_masochistic_fun_1_room
+	}
+	
+	pre_triggers = {
+		has_owner = yes
+		has_ground_combat = no
+		is_occupied_flag = no
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_global_flag = lv_all_disabled }
+		count_owned_pop = {
+			limit = {
+				is_non_sapient_robot = no
+				pop_has_trait = trait_lv_masochistic
+				is_enslaved = no
+			}
+			count > 2
+		}
+		NOT = { has_planet_flag = lv_had_masochistic_fun }
+	}
+
+	option = {
+		name = lv_colony_events.5.a
+		set_timed_planet_flag = { flag = lv_had_masochistic_fun days = 1095 }
+		while = {
+			limit = {
+				count_owned_pop = {
+					limit = {
+						is_non_sapient_robot = no
+						is_enslaved = no
+						pop_has_trait = trait_lv_masochistic
+						has_modifier = lv_sadomasochist_fun
+					}
+					count < 2
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					pop_has_trait = trait_lv_masochistic
+					is_enslaved = no
+					NOT = {
+						has_modifier = lv_sadomasochist_fun
+					}
+				}
+				add_modifier = {
+					modifier = lv_sadomasochist_fun
+					days = 100
+				}
+			}
+		}
+		while = {
+			limit = {
+				count_owned_pop = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = lv_sadomasochist_fun
+							has_modifier = lv_abused_by_sadist
+						}
+						pop_has_trait = trait_lv_sadistic
+					}
+					count < 2
+				}
+			}
+			random_owned_pop = {
+				limit = {
+						is_non_sapient_robot = no
+						NOR = {
+							has_modifier = lv_sadomasochist_fun
+							has_modifier = lv_abused_by_sadist
+						}			
+						pop_has_trait = trait_lv_sadistic
+				}
+				add_modifier = {
+					modifier = lv_sadomasochist_fun
+					days = 100
+				}
+			}
+		}
+	}
+}
+
+# "Sexyplanet" Modifiers Gatekeeper #
+
+planet_event = {
+	id = lv_colony_events.6
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	pre_triggers = {
+		has_owner = yes
+		is_ai = no
+		has_ground_combat = no
+		is_occupied_flag = no
+	}
+
+	trigger = {
+		NOR = {
+			has_global_flag = lv_all_disabled
+			has_global_flag = lv_bestiality_disabled
+			has_global_flag = lv_rape_disabled
+		}
+		has_modifier = lv_tentacled_lifeforms
+		NOT = { has_modifier = lv_aggressive_tentacled_lifeforms }
+		NOT = { has_modifier = lv_coexisting_tentacled_lifeforms }
+		NOT = { has_planet_flag = lv_presapient_tentacles_spawned }
+		num_pops > 0
+	}
+	
+	immediate = {
+		random_list = {
+			50 = { planet_event = { id = lv_colony_events_1.1 days = 30 random = 90 } }
+			50 = { planet_event = { id = lv_colony_events_1.3 days = 30 random = 90 } }
+		}
+	}	
+}
+
+# Titanic Life Events #
+
+# Raunchy Titans #
+
+planet_event = { 
+	id = lv_colony_events.9
+	title = lv_colony_events.9.name
+	desc = {
+		text = lv_colony_events.9.desc
+		trigger = {
+			owner = {
+				NOR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+	}
+	desc = {
+		text = lv_colony_events.9.desc_phile
+		trigger = { 
+			owner = { 
+				OR = { 
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}  
+		}
+	}
+	desc = {
+		text = lv_colony_events.9.desc_phobe
+		trigger = { 
+			owner = { 
+				OR = { 
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}  
+		}
+	}
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_raunchy_titans_1_room
+	}
+	
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		has_ground_combat = no
+		is_capital = no
+	}
+	
+	trigger = {
+		NOR = {
+			has_global_flag = lv_all_disabled
+			has_global_flag = lv_raunchy_titans_disabled
+			has_global_flag = lv_bestiality_disabled
+			has_global_flag = lv_rape_disabled
+		}
+		owner = { 
+			is_ai = no 
+			NOR = {
+				has_authority = auth_hive_mind
+				has_authority = auth_machine_intelligence
+			}
+		}
+		has_modifier = titanic_life
+		NOT = { has_planet_flag = lv_titanic_life_active_1 }
+		num_pops > 0
+	}
+	
+	immediate = {
+		set_planet_flag = lv_titanic_life_active_1
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = lv_colony_events.9.a
+		trigger = {
+			owner = {
+				NOR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		random_owned_pop = {
+			limit = {
+				NOR = {
+					has_modifier = lv_xeno_beast_fun
+					has_modifier = lv_xeno_beast_rape
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						pop_has_ethic = ethic_xenophile
+						pop_has_ethic = ethic_fanatic_xenophile
+					}
+				}
+				add_modifier = {
+					modifier = lv_xeno_beast_fun
+					days = 360
+				}
+				
+			}
+			else = {
+				add_modifier = {
+					modifier = lv_xeno_beast_rape
+					days = 360
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = lv_colony_events.9.b
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+		random_owned_pop = {
+			limit = {
+				NOR = {
+					has_modifier = lv_xeno_beast_fun
+					has_modifier = lv_xeno_beast_rape
+				}
+				OR = {
+					pop_has_ethic = ethic_xenophile
+					pop_has_ethic = ethic_fanatic_xenophile
+				}
+			}
+			add_modifier = {
+				modifier = lv_xeno_beast_fun
+				days = 360
+			}
+		}
+	}
+	
+	option = {
+		name = lv_colony_events.9.c
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		random_owned_pop = {
+			limit = {
+				NOR = {
+					has_modifier = lv_xeno_beast_fun
+					has_modifier = lv_xeno_beast_rape
+				}
+			}
+			add_modifier = {
+				modifier = lv_xeno_beast_rape
+				days = 360
+			}	
+		}
+	}
+}
+
+# Titanic Rising #
+
+planet_event = {
+	id = lv_colony_events.10
+	title = lv_colony_events.10.name
+	desc = {
+		text = lv_colony_events.10.desc
+		trigger = {
+			owner = {
+				NOR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+	}
+	desc = {
+		text = lv_colony_events.10.desc_phile
+		trigger = { 
+			owner = { 
+				OR = { 
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}  
+		}
+	}
+	desc = {
+		text = lv_colony_events.10.desc_phobe
+		trigger = { 
+			owner = { 
+				OR = { 
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}  
+		}
+	}
+	picture = {
+		trigger = { 
+			owner = { 
+				NOR = { 
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			} 
+		}
+		picture = GFX_evt_lv_raunchy_titans_2
+	}
+	picture = {
+		trigger = { 
+			owner = { 
+				OR = { 
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			} 
+		}
+		picture = GFX_evt_lv_titanic_sex_fun_1
+	}
+	picture = {
+		trigger = { 
+			owner = { 
+				OR = { 
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}  
+		}
+		picture = GFX_evt_lv_titanic_sex_scared_1
+	}
+	show_sound = event_swarm_started
+	location = root
+	trackable = yes
+	
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		has_ground_combat = no
+		is_capital = no
+	}
+	
+	trigger = {
+		NOR = {
+			has_global_flag = lv_all_disabled
+			has_global_flag = lv_raunchy_titans_disabled
+			has_global_flag = lv_bestiality_disabled
+			has_global_flag = lv_rape_disabled
+		}
+		owner = { 
+			is_ai = no 
+			NOR = {
+				has_authority = auth_hive_mind
+				has_authority = auth_machine_intelligence
+			}
+		}
+		has_modifier = titanic_life
+		NOT = { has_planet_flag = lv_titanic_life_active_2 }
+		num_pops > 0
+		has_planet_flag = lv_titanic_life_active_1
+	}
+	
+	immediate = {
+		set_planet_flag = lv_titanic_life_active_2
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = lv_colony_events.10.a
+		while = {
+			limit = {
+				count_owned_pop = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = lv_xeno_beast_fun
+							has_modifier = lv_xeno_beast_rape
+						}
+					}
+					count < 3
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					NOR = {
+						has_modifier = lv_xeno_beast_fun
+						has_modifier = lv_xeno_beast_rape
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							pop_has_ethic = ethic_xenophile
+							pop_has_ethic = ethic_fanatic_xenophile
+						}
+					}
+					add_modifier = {
+						modifier = lv_xeno_beast_fun
+						days = 360
+					}
+				}
+				else = {
+					add_modifier = {
+						modifier = lv_xeno_beast_rape
+						days = 360
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = lv_colony_events.10.b
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+		while = {
+			limit = {
+				count_owned_pop = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = lv_xeno_beast_fun
+							has_modifier = lv_xeno_beast_rape
+						}
+					}
+					count < 3
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					NOR = {
+						has_modifier = lv_xeno_beast_fun
+						has_modifier = lv_xeno_beast_rape
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							pop_has_ethic = ethic_xenophile
+							pop_has_ethic = ethic_fanatic_xenophile
+						}
+					}
+					add_modifier = {
+						modifier = lv_xeno_beast_fun
+						days = 720
+					}
+				}
+				else = {
+					add_modifier = {
+						modifier = lv_xeno_beast_rape
+						days = 180
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = lv_colony_events.10.c
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		random_owned_pop = {
+			limit = {
+				NOR = {
+					has_modifier = lv_xeno_beast_fun
+					has_modifier = lv_xeno_beast_rape
+				}
+			}
+			add_modifier = {
+				modifier = lv_xeno_beast_rape
+				days = 720
+			}	
+		}
+		enable_special_project = {
+			name = "LV_RAUNCHY_TITANIC_LIFE_REMOVAL_MEAN"
+			location = this
+			owner = root
+		}
+		hidden_effect = {
+			set_planet_flag = lv_raunchy_titanic_life_removal_mean_1
+		}
+		add_modifier = {
+			modifier = eat_the_titans
+			days = -1
+		}
+	}	
+}
+
+# Raunchy Titans Contained #
+
+planet_event = {
+	id = lv_colony_events.11
+	title = lv_colony_events.11.name
+	desc = lv_colony_events.11.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_air_raid_siren
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_raunchy_titans_contained_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_planet_flag = lv_raunchy_titanic_life_contained_1
+	}
+	
+	option = {
+		name = lv_colony_events.11.a
+		trigger = {
+			has_planet_flag = lv_raunchy_titanic_life_removal_mean_1
+		}
+	}
+	
+	option = {
+		name = lv_colony_events.11.b
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+		}
+	}
+}
+
+# Enraged Raunchy Titans #
+
+planet_event = {
+	id = lv_colony_events.12
+	title = lv_colony_events.12.name
+	desc = lv_colony_events.12.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_air_raid_siren
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_raunchy_titans_enraged_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		create_country = {
+			name = "NAME_Titanic_Life"
+			type = faction
+			effect = {
+				establish_communications_no_message = root.owner
+			}
+		}
+		create_species = {
+			name = "NAME_Titans"
+			class = random_non_machine
+			portrait = random
+			traits = random
+		}
+		create_army = {
+			name = "NAME_Enraged_Guardian"
+			owner = last_created
+			species = last_created
+			type = "titanic_guardian_army"
+		}
+		create_army = {
+			name = "NAME_Enraged_Titan"
+			owner = last_created
+			species = last_created
+			type = "titanic_guardian_army"
+		}
+		create_army = {
+			name = "NAME_Enraged_Titan"
+			owner = last_created
+			species = last_created
+			type = "titanic_guardian_army"
+		}
+		if = {
+			limit = {
+				has_planet_flag = lv_raunchy_titanic_life_removal_mean_1
+			}
+			remove_modifier = eat_the_titans
+			remove_planet_flag = lv_raunchy_titanic_life_removal_mean_1
+		}
+	}
+	
+	option = {
+		name = TERRIBLE
+		custom_tooltip = lv_colony_events.12.a.tooltip
+		while = {
+			limit = {
+				count_owned_pop = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = lv_xeno_beast_fun
+							has_modifier = lv_xeno_beast_rape
+						}
+					}
+					count < 10
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					NOR = {
+						has_modifier = lv_xeno_beast_fun
+						has_modifier = lv_xeno_beast_rape
+					}
+				}
+				add_modifier = {
+					modifier = lv_xeno_beast_rape
+					days = 720
+				}
+			}
+		}
+	}
+}
+
+# Titanic Changes #
+
+planet_event = {
+	id = lv_colony_events.13
+	title = lv_colony_events.13.name
+	desc = {
+		text = lv_colony_events.13.desc
+		trigger = {
+			owner = {
+				NOR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+	}
+	desc = {
+		text = lv_colony_events.13.desc_phile
+		trigger = { 
+			owner = { 
+				OR = { 
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}  
+		}
+	}
+	desc = {
+		text = lv_colony_events.13.desc_phobe
+		trigger = { 
+			owner = { 
+				OR = { 
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}  
+		}
+	}
+	picture = {
+		trigger = { 
+			owner = { 
+				NOR = { 
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			} 
+		}
+		picture = GFX_evt_lv_titanic_sex_scared_1
+	}
+	picture = {
+		trigger = { 
+			owner = { 
+				OR = { 
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			} 
+		}
+		picture = GFX_evt_lv_titanic_sex_fun_1
+	}
+	show_sound = event_swarm_started
+	location = ROOT
+	
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		has_ground_combat = no
+		is_capital = no
+	}
+	
+	trigger = {
+		NOR = {
+			has_global_flag = lv_all_disabled
+			has_global_flag = lv_raunchy_titans_disabled
+			has_global_flag = lv_bestiality_disabled
+			has_global_flag = lv_rape_disabled
+		}
+		owner = { 
+			is_ai = no 
+			NOR = {
+				has_authority = auth_hive_mind
+				has_authority = auth_machine_intelligence
+			}
+		}
+		has_modifier = titanic_life
+		NOR = { 
+			has_planet_flag = lv_titanic_life_active_3
+			has_planet_flag = lv_raunchy_titanic_life_contained_1
+		}
+		num_pops > 0
+		has_planet_flag = lv_titanic_life_active_2
+	}
+	
+	immediate = {
+		set_planet_flag = lv_titanic_life_active_3
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	#Let nature take its course option	
+	option = {
+		name = lv_colony_events.13.a
+		while = {
+			limit = {
+				count_owned_pop = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = lv_xeno_beast_fun
+							has_modifier = lv_xeno_beast_rape
+						}
+					}
+					count < 3
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					NOR = {
+						has_modifier = lv_xeno_beast_fun
+						has_modifier = lv_xeno_beast_rape
+					}
+				}
+				If = {
+					limit = {
+						OR = {
+							pop_has_ethic = ethic_xenophile
+							pop_has_ethic = ethic_fanatic_xenophile
+						}
+					}
+					add_modifier = {
+						modifier = lv_xeno_beast_fun
+						days = 360
+					}
+				}
+				else = {
+					add_modifier = {
+						modifier = lv_xeno_beast_rape
+						days = 360
+					}
+				}
+			}
+		}
+	}
+	
+	#Let nature take its course xenophile option
+	option = {
+		name = lv_colony_events.13.b
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+		while = {
+			limit = {
+				count_owned_pop = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = lv_xeno_beast_fun
+							has_modifier = lv_xeno_beast_rape
+						}
+					}
+					count < 3
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					NOR = {
+						has_modifier = lv_xeno_beast_fun
+						has_modifier = lv_xeno_beast_rape
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							pop_has_ethic = ethic_xenophile
+							pop_has_ethic = ethic_fanatic_xenophile
+						}
+					}
+					add_modifier = {
+						modifier = lv_xeno_beast_fun
+						days = 720
+					}
+				}
+				else = {
+					add_modifier = {
+						modifier = lv_xeno_beast_rape
+						days = 180
+					}
+				}
+			}
+		}
+	}
+	
+	#Deal with the titans option	
+	option = {
+		name = lv_colony_events.13.c
+		while = {
+			limit = {
+				count_owned_pop = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = lv_xeno_beast_fun
+							has_modifier = lv_xeno_beast_rape
+						}
+					}
+					count < 3
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					NOR = {
+						has_modifier = lv_xeno_beast_fun
+						has_modifier = lv_xeno_beast_rape
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							pop_has_ethic = ethic_xenophile
+							pop_has_ethic = ethic_fanatic_xenophile
+						}
+					}
+					add_modifier = {
+						modifier = lv_xeno_beast_fun
+						days = 360
+					}
+				}
+				else = {
+					add_modifier = {
+						modifier = lv_xeno_beast_rape
+						days = 360
+					}
+				}
+			}
+		}
+		enable_special_project = {
+			name = "LV_RAUNCHY_TITANIC_LIFE_REMOVAL"
+			location = this
+			owner = root
+		}
+		hidden_effect = {
+			set_planet_flag = lv_raunchy_titanic_life_removal_1
+		}
+	}
+	#Deal with the titans xenophile option
+	option = {
+		name = lv_colony_events.13.d
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+		while = {
+			limit = {
+				count_owned_pop = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = lv_xeno_beast_fun
+							has_modifier = lv_xeno_beast_rape
+						}
+					}
+					count < 3
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					NOR = {
+						has_modifier = lv_xeno_beast_fun
+						has_modifier = lv_xeno_beast_rape
+					}
+				}
+				If = {
+					limit = {
+						OR = {
+							pop_has_ethic = ethic_xenophile
+							pop_has_ethic = ethic_fanatic_xenophile
+						}
+					}
+					add_modifier = {
+						modifier = lv_xeno_beast_fun
+						days = 720
+					}
+				}
+				else = {
+					add_modifier = {
+						modifier = lv_xeno_beast_rape
+						days = 180
+					}
+				}
+			}
+		}
+		enable_special_project = {
+			name = "LV_RAUNCHY_TITANIC_LIFE_REMOVAL_NICE"
+			location = this
+			owner = root
+		}
+		hidden_effect = {
+			set_planet_flag = lv_raunchy_titanic_life_removal_nice_1
+		}
+	}
+	#Deal with the titans xenophobe option	
+	option = {
+		name = lv_colony_events.13.e
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		random_owned_pop = {
+			limit = {
+				NOR = {
+					has_modifier = lv_xeno_beast_fun
+					has_modifier = lv_xeno_beast_rape
+				}
+			}
+			add_modifier = {
+				modifier = lv_xeno_beast_rape
+				days = 720
+			}	
+		}
+		enable_special_project = {
+			name = "LV_RAUNCHY_TITANIC_LIFE_REMOVAL_MEAN"
+			location = this
+			owner = root
+		}
+		hidden_effect = {
+			set_planet_flag = lv_raunchy_titanic_life_removal_mean_1
+		}
+		add_modifier = {
+			modifier = "eat_the_titans"
+			days = -1
+		}
+	}
+}
+
+# Titanic Evolution #
+
+planet_event = {
+	id = lv_colony_events.14
+	title = lv_colony_events.14.name
+	desc = {
+		text = lv_colony_events.14.desc
+		trigger = {
+			owner = {
+				NOR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+	}
+	desc = {
+		text = lv_colony_events.14.desc_phile
+		trigger = { 
+			owner = { 
+				OR = { 
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}  
+		}
+	}
+	desc = {
+		text = lv_colony_events.14.desc_phobe
+		trigger = { 
+			owner = { 
+				OR = { 
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}  
+		}
+	}
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_titanic_sex_fun_1_room
+	}
+	
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		has_ground_combat = no
+		is_capital = no
+	}
+	
+	trigger = {
+		NOR = {
+			has_global_flag = lv_all_disabled
+			has_global_flag = lv_raunchy_titans_disabled
+			has_global_flag = lv_bestiality_disabled
+			has_global_flag = lv_rape_disabled
+		}
+		owner = { 
+			is_ai = no 
+			NOR = {
+				has_authority = auth_hive_mind
+				has_authority = auth_machine_intelligence
+			}
+		}
+		has_modifier = titanic_life
+		NOR = {
+			has_planet_flag = lv_raunchy_titanic_life_contained_1
+			has_planet_flag = lv_raunchy_titanic_life_removal_1
+			has_planet_flag = lv_raunchy_titanic_life_removal_nice_1
+			has_planet_flag = lv_raunchy_titanic_life_removal_mean_1
+			has_planet_flag = lv_titanic_life_active_timeout
+		}
+		num_pops > 0
+		has_planet_flag = lv_titanic_life_active_3
+	}
+	
+	immediate = {
+		set_planet_flag = lv_titanic_life_active_4
+		set_timed_planet_flag = {
+			flag = lv_titanic_life_active_timeout
+			days = 720
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60 #5 years
+	}
+	
+	option = {
+		name = lv_colony_events.14.a
+		while = {
+			limit = {
+				count_owned_pop = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = lv_xeno_beast_fun
+							has_modifier = lv_xeno_beast_rape
+						}
+					}
+					count < 3
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					NOR = {
+						has_modifier = lv_xeno_beast_fun
+						has_modifier = lv_xeno_beast_rape
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							pop_has_ethic = ethic_xenophile
+							pop_has_ethic = ethic_fanatic_xenophile
+						}
+					}
+					add_modifier = {
+						modifier = lv_xeno_beast_fun
+						days = 180
+					}
+				}
+				else = {
+					add_modifier = {
+						modifier = lv_xeno_beast_rape
+						days = 180
+					}
+				}
+			}
+		}
+		every_owned_pop = {
+			limit = {
+				is_robot_pop = no
+				is_sapient = yes
+			}
+			if = {
+				limit = { has_trait = trait_lv_dominant }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_dominant
+				}
+			}
+			if = {
+				limit = { has_trait = trait_unruly }
+				modify_species = {
+					species = this
+					remove_trait = trait_unruly
+				}
+			}
+			if = {
+				limit = { has_trait = trait_sedentary }
+				modify_species = {
+					species = this
+					remove_trait = trait_sedentary
+				}
+			}
+			if = {
+				limit = { has_trait = trait_deviants }
+				modify_species = {
+					species = this
+					remove_trait = trait_deviants
+				}
+			}
+			if = {
+				limit = { has_trait = trait_decadent }
+				modify_species = {
+					species = this
+					remove_trait = trait_decadent
+				}
+			}
+			if = {
+				limit = { NOT = { has_trait = trait_lv_submissive } }
+				modify_species = {
+					species = this
+					add_trait = trait_lv_submissive
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_sexually_inept }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_sexually_inept
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_large_breasts }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_large_breasts
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_excess_testosterone }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_excess_testosterone
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_small_breasts }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_small_breasts
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_watery_milk }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_watery_milk
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_shapely_ass }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_shapely_ass
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_sexually_repressed }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_sexually_repressed
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_lewd_mind }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_lewd_mind
+				}
+			}
+			if = {
+				limit = { has_trait = trait_conformists }
+				modify_species = {
+					species = this
+					remove_trait = trait_conformists
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_elastic_orifices }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_elastic_orifices
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_huge_breasts }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_huge_breasts
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_highly_nutritious_milk }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_highly_nutritious_milk
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_breeder_hips }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_breeder_hips
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_litters }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_litters
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_sex_crazed }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_sex_crazed
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_sex_crazed }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_sex_crazed
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_all_male }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_all_male
+				}
+			}
+			if = {
+				limit = {
+					NOR = {
+						has_trait = trait_lv_all_female
+						has_trait = trait_lv_futanari
+					}
+				}
+				modify_species = {
+					species = this
+					add_trait = trait_lv_all_female
+				}
+			}
+			if = {
+				limit = { NOT = { has_trait = trait_lv_titanic_evolution } }
+				modify_species = {
+					species = this
+					add_trait = trait_lv_titanic_evolution
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = lv_colony_events.14.b
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+		while = {
+			limit = {
+				count_owned_pop = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = lv_xeno_beast_fun
+							has_modifier = lv_xeno_beast_rape
+						}
+					}
+					count < 3
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					NOR = {
+						has_modifier = lv_xeno_beast_fun
+						has_modifier = lv_xeno_beast_rape
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							pop_has_ethic = ethic_xenophile
+							pop_has_ethic = ethic_fanatic_xenophile
+						}
+					}
+					add_modifier = {
+						modifier = lv_xeno_beast_fun
+						days = 720
+					}
+				}
+				else = {
+					add_modifier = {
+						modifier = lv_xeno_beast_rape
+						days = 180
+					}
+				}
+			}
+		}
+		every_owned_pop = {
+			limit = {
+				is_robot_pop = no
+				is_sapient = yes
+			}
+			if = {
+				limit = { has_trait = trait_lv_dominant }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_dominant
+				}
+			}
+			if = {
+				limit = { has_trait = trait_unruly }
+				modify_species = {
+					species = this
+					remove_trait = trait_unruly
+				}
+			}
+			if = {
+				limit = { has_trait = trait_sedentary }
+				modify_species = {
+					species = this
+					remove_trait = trait_sedentary
+				}
+			}
+			if = {
+				limit = { has_trait = trait_deviants }
+				modify_species = {
+					species = this
+					remove_trait = trait_deviants
+				}
+			}
+			if = {
+				limit = { has_trait = trait_decadent }
+				modify_species = {
+					species = this
+					remove_trait = trait_decadent
+				}
+			}
+			if = {
+				limit = { NOT = { has_trait = trait_lv_submissive } }
+				modify_species = {
+					species = this
+					add_trait = trait_lv_submissive
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_sexually_inept }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_sexually_inept
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_large_breasts }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_large_breasts
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_excess_testosterone }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_excess_testosterone
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_small_breasts }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_small_breasts
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_watery_milk }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_watery_milk
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_shapely_ass }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_shapely_ass
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_sexually_repressed }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_sexually_repressed
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_lewd_mind }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_lewd_mind
+				}
+			}
+			if = {
+				limit = { has_trait = trait_conformists }
+				modify_species = {
+					species = this
+					remove_trait = trait_conformists
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_elastic_orifices }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_elastic_orifices
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_huge_breasts }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_huge_breasts
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_highly_nutritious_milk }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_highly_nutritious_milk
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_breeder_hips }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_breeder_hips
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_litters }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_litters
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_sex_crazed }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_sex_crazed
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_sex_crazed }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_sex_crazed
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_all_male }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_all_male
+				}
+			}
+			if = {
+				limit = {
+					NOR = {
+						has_trait = trait_lv_all_female
+						has_trait = trait_lv_futanari
+					}
+				}
+				modify_species = {
+					species = this
+					add_trait = trait_lv_all_female
+				}
+			}
+			if = {
+				limit = { NOT = { has_trait = trait_lv_titanic_evolution } }
+				modify_species = {
+					species = this
+					add_trait = trait_lv_titanic_evolution
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = lv_colony_events.14.c
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		random_owned_pop = {
+			limit = {
+				NOR = {
+					has_modifier = lv_xeno_beast_fun
+					has_modifier = lv_xeno_beast_rape
+				}
+			}
+			add_modifier = {
+				modifier = lv_xeno_beast_rape
+				days = 720
+			}	
+		}
+		every_owned_pop = {
+			limit = {
+				is_robot_pop = no
+				is_sapient = yes
+			}
+			if = {
+				limit = { has_trait = trait_lv_dominant }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_dominant
+				}
+			}
+			if = {
+				limit = { has_trait = trait_unruly }
+				modify_species = {
+					species = this
+					remove_trait = trait_unruly
+				}
+			}
+			if = {
+				limit = { has_trait = trait_sedentary }
+				modify_species = {
+					species = this
+					remove_trait = trait_sedentary
+				}
+			}
+			if = {
+				limit = { has_trait = trait_deviants }
+				modify_species = {
+					species = this
+					remove_trait = trait_deviants
+				}
+			}
+			if = {
+				limit = { has_trait = trait_decadent }
+				modify_species = {
+					species = this
+					remove_trait = trait_decadent
+				}
+			}
+			if = {
+				limit = { NOT = { has_trait = trait_lv_submissive } }
+				modify_species = {
+					species = this
+					add_trait = trait_lv_submissive
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_sexually_inept }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_sexually_inept
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_large_breasts }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_large_breasts
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_excess_testosterone }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_excess_testosterone
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_small_breasts }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_small_breasts
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_watery_milk }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_watery_milk
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_shapely_ass }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_shapely_ass
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_sexually_repressed }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_sexually_repressed
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_lewd_mind }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_lewd_mind
+				}
+			}
+			if = {
+				limit = { has_trait = trait_conformists }
+				modify_species = {
+					species = this
+					remove_trait = trait_conformists
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_elastic_orifices }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_elastic_orifices
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_huge_breasts }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_huge_breasts
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_highly_nutritious_milk }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_highly_nutritious_milk
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_breeder_hips }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_breeder_hips
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_litters }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_litters
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_sex_crazed }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_sex_crazed
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_sex_crazed }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_sex_crazed
+				}
+			}
+			if = {
+				limit = { has_trait = trait_lv_all_male }
+				modify_species = {
+					species = this
+					remove_trait = trait_lv_all_male
+				}
+			}
+			if = {
+				limit = {
+					NOR = {
+						has_trait = trait_lv_all_female
+						has_trait = trait_lv_futanari
+					}
+				}
+				modify_species = {
+					species = this
+					add_trait = trait_lv_all_female
+				}
+			}
+			if = {
+				limit = { NOT = { has_trait = trait_lv_titanic_evolution } }
+				modify_species = {
+					species = this
+					add_trait = trait_lv_titanic_evolution
+				}
+			}
+		}
+	}
+}
+
+# Titanic Fun #
+
+planet_event = {
+	id = lv_colony_events.15
+	title = lv_colony_events.15.name
+	desc = {
+		text = lv_colony_events.15.desc
+		trigger = {
+			owner = {
+				NOR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+	}
+	desc = {
+		text = lv_colony_events.15.desc_phile
+		trigger = { 
+			owner = { 
+				OR = { 
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}  
+		}
+	}
+	desc = {
+		text = lv_colony_events.15.desc_phobe
+		trigger = { 
+			owner = { 
+				OR = { 
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}  
+		}
+	}
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_titanic_sex_fun_1_room
+	}
+	
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		has_ground_combat = no
+		is_capital = no
+	}
+	
+	trigger = {
+		NOR = {
+			has_global_flag = lv_all_disabled
+			has_global_flag = lv_raunchy_titans_disabled
+			has_global_flag = lv_bestiality_disabled
+			has_global_flag = lv_rape_disabled
+		}
+		owner = { 
+			is_ai = no 
+			NOR = {
+				has_authority = auth_hive_mind
+				has_authority = auth_machine_intelligence
+			}
+		}
+		has_modifier = titanic_life
+		NOR = {
+			has_planet_flag = lv_raunchy_titanic_life_contained_1
+			has_planet_flag = lv_raunchy_titanic_life_removal_1
+			has_planet_flag = lv_raunchy_titanic_life_removal_nice_1
+			has_planet_flag = lv_raunchy_titanic_life_removal_mean_1
+			has_planet_flag = lv_titanic_life_active_timeout
+		}
+		num_pops > 0
+		has_planet_flag = lv_titanic_life_active_4
+	}
+	
+	immediate = {
+		set_timed_planet_flag = {
+			flag = lv_titanic_life_active_timeout
+			days = 720
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lv_colony_events.15.a
+		while = {
+			limit = {
+				count_owned_pop = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = lv_xeno_beast_fun
+							has_modifier = lv_xeno_beast_rape
+						}
+					}
+					count < 3
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					NOR = {
+						has_modifier = lv_xeno_beast_fun
+						has_modifier = lv_xeno_beast_rape
+					}
+				}
+				If = {
+					limit = {
+						OR = {
+							pop_has_ethic = ethic_xenophile
+							pop_has_ethic = ethic_fanatic_xenophile
+						}
+					}
+					add_modifier = {
+						modifier = lv_xeno_beast_fun
+						days = 360
+					}
+				}
+				else = {
+					add_modifier = {
+						modifier = lv_xeno_beast_rape
+						days = 360
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			every_owned_pop = {
+				limit = {
+					is_robot_pop = no
+					is_sapient = yes
+				}
+				if = {
+					limit = { has_trait = trait_lv_dominant }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_dominant
+					}
+				}
+				if = {
+					limit = { has_trait = trait_unruly }
+					modify_species = {
+						species = this
+						remove_trait = trait_unruly
+					}
+				}
+				if = {
+					limit = { has_trait = trait_sedentary }
+					modify_species = {
+						species = this
+						remove_trait = trait_sedentary
+					}
+				}
+				if = {
+					limit = { has_trait = trait_deviants }
+					modify_species = {
+						species = this
+						remove_trait = trait_deviants
+					}
+				}
+				if = {
+					limit = { has_trait = trait_decadent }
+					modify_species = {
+						species = this
+						remove_trait = trait_decadent
+					}
+				}
+				if = {
+					limit = { NOT = { has_trait = trait_lv_submissive } }
+					modify_species = {
+						species = this
+						add_trait = trait_lv_submissive
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_sexually_inept }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_sexually_inept
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_large_breasts }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_large_breasts
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_excess_testosterone }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_excess_testosterone
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_small_breasts }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_small_breasts
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_watery_milk }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_watery_milk
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_shapely_ass }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_shapely_ass
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_sexually_repressed }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_sexually_repressed
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_lewd_mind }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_lewd_mind
+					}
+				}
+				if = {
+					limit = { has_trait = trait_conformists }
+					modify_species = {
+						species = this
+						remove_trait = trait_conformists
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_elastic_orifices }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_elastic_orifices
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_huge_breasts }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_huge_breasts
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_highly_nutritious_milk }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_highly_nutritious_milk
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_breeder_hips }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_breeder_hips
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_litters }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_litters
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_sex_crazed }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_sex_crazed
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_sex_crazed }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_sex_crazed
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_all_male }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_all_male
+					}
+				}
+				if = {
+					limit = {
+						NOR = {
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_futanari
+						}
+					}
+					modify_species = {
+						species = this
+						add_trait = trait_lv_all_female
+					}
+				}
+				if = {
+					limit = { NOT = { has_trait = trait_lv_titanic_evolution } }
+					modify_species = {
+						species = this
+						add_trait = trait_lv_titanic_evolution
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = lv_colony_events.15.b
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+		while = {
+			limit = {
+				count_owned_pop = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = lv_xeno_beast_fun
+							has_modifier = lv_xeno_beast_rape
+						}
+					}
+					count < 3
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					NOR = {
+						has_modifier = lv_xeno_beast_fun
+						has_modifier = lv_xeno_beast_rape
+					}
+				}
+				If = {
+					limit = {
+						OR = {
+							pop_has_ethic = ethic_xenophile
+							pop_has_ethic = ethic_fanatic_xenophile
+						}
+					}
+					add_modifier = {
+						modifier = lv_xeno_beast_fun
+						days = 720
+					}
+				}
+				else = {
+					add_modifier = {
+						modifier = lv_xeno_beast_rape
+						days = 180
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			every_owned_pop = {
+				limit = {
+					is_robot_pop = no
+					is_sapient = yes
+				}
+				if = {
+					limit = { has_trait = trait_lv_dominant }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_dominant
+					}
+				}
+				if = {
+					limit = { has_trait = trait_unruly }
+					modify_species = {
+						species = this
+						remove_trait = trait_unruly
+					}
+				}
+				if = {
+					limit = { has_trait = trait_sedentary }
+					modify_species = {
+						species = this
+						remove_trait = trait_sedentary
+					}
+				}
+				if = {
+					limit = { has_trait = trait_deviants }
+					modify_species = {
+						species = this
+						remove_trait = trait_deviants
+					}
+				}
+				if = {
+					limit = { has_trait = trait_decadent }
+					modify_species = {
+						species = this
+						remove_trait = trait_decadent
+					}
+				}
+				if = {
+					limit = { NOT = { has_trait = trait_lv_submissive } }
+					modify_species = {
+						species = this
+						add_trait = trait_lv_submissive
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_sexually_inept }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_sexually_inept
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_large_breasts }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_large_breasts
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_excess_testosterone }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_excess_testosterone
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_small_breasts }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_small_breasts
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_watery_milk }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_watery_milk
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_shapely_ass }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_shapely_ass
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_sexually_repressed }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_sexually_repressed
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_lewd_mind }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_lewd_mind
+					}
+				}
+				if = {
+					limit = { has_trait = trait_conformists }
+					modify_species = {
+						species = this
+						remove_trait = trait_conformists
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_elastic_orifices }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_elastic_orifices
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_huge_breasts }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_huge_breasts
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_highly_nutritious_milk }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_highly_nutritious_milk
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_breeder_hips }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_breeder_hips
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_litters }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_litters
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_sex_crazed }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_sex_crazed
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_sex_crazed }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_sex_crazed
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_all_male }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_all_male
+					}
+				}
+				if = {
+					limit = {
+						NOR = {
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_futanari
+						}
+					}
+					modify_species = {
+						species = this
+						add_trait = trait_lv_all_female
+					}
+				}
+				if = {
+					limit = { NOT = { has_trait = trait_lv_titanic_evolution } }
+					modify_species = {
+						species = this
+						add_trait = trait_lv_titanic_evolution
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = lv_colony_events.15.c
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		while = {
+			limit = {
+				count_owned_pop = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = lv_xeno_beast_fun
+							has_modifier = lv_xeno_beast_rape
+						}
+					}
+					count < 3
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					NOR = {
+						has_modifier = lv_xeno_beast_fun
+						has_modifier = lv_xeno_beast_rape
+					}
+				}
+				If = {
+					limit = {
+						OR = {
+							pop_has_ethic = ethic_xenophile
+							pop_has_ethic = ethic_fanatic_xenophile
+						}
+					}
+					add_modifier = {
+						modifier = lv_xeno_beast_fun
+						days = 180
+					}
+				}
+				else = {
+					add_modifier = {
+						modifier = lv_xeno_beast_rape
+						days = 720
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			every_owned_pop = {
+				limit = {
+					is_robot_pop = no
+					is_sapient = yes
+				}
+				if = {
+					limit = { has_trait = trait_lv_dominant }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_dominant
+					}
+				}
+				if = {
+					limit = { has_trait = trait_unruly }
+					modify_species = {
+						species = this
+						remove_trait = trait_unruly
+					}
+				}
+				if = {
+					limit = { has_trait = trait_sedentary }
+					modify_species = {
+						species = this
+						remove_trait = trait_sedentary
+					}
+				}
+				if = {
+					limit = { has_trait = trait_deviants }
+					modify_species = {
+						species = this
+						remove_trait = trait_deviants
+					}
+				}
+				if = {
+					limit = { has_trait = trait_decadent }
+					modify_species = {
+						species = this
+						remove_trait = trait_decadent
+					}
+				}
+				if = {
+					limit = { NOT = { has_trait = trait_lv_submissive } }
+					modify_species = {
+						species = this
+						add_trait = trait_lv_submissive
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_sexually_inept }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_sexually_inept
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_large_breasts }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_large_breasts
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_excess_testosterone }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_excess_testosterone
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_small_breasts }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_small_breasts
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_watery_milk }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_watery_milk
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_shapely_ass }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_shapely_ass
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_sexually_repressed }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_sexually_repressed
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_lewd_mind }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_lewd_mind
+					}
+				}
+				if = {
+					limit = { has_trait = trait_conformists }
+					modify_species = {
+						species = this
+						remove_trait = trait_conformists
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_elastic_orifices }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_elastic_orifices
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_huge_breasts }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_huge_breasts
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_highly_nutritious_milk }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_highly_nutritious_milk
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_breeder_hips }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_breeder_hips
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_litters }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_litters
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_sex_crazed }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_sex_crazed
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_sex_crazed }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_sex_crazed
+					}
+				}
+				if = {
+					limit = { has_trait = trait_lv_all_male }
+					modify_species = {
+						species = this
+						remove_trait = trait_lv_all_male
+					}
+				}
+				if = {
+					limit = {
+						NOR = {
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_futanari
+						}
+					}
+					modify_species = {
+						species = this
+						add_trait = trait_lv_all_female
+					}
+				}
+				if = {
+					limit = { NOT = { has_trait = trait_lv_titanic_evolution } }
+					modify_species = {
+						species = this
+						add_trait = trait_lv_titanic_evolution
+					}
+				}
+			}
+		}
+	}	
+}
+
+###
+namespace = lv_colony_events_1
+
+# Lusting Plants #
+
+planet_event = {
+	id = lv_colony_events_1.1
+	title = lv_colony_events_1.1.name
+	desc = lv_colony_events_1.1.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_lusting_plants_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lv_events.next
+		hidden_effect = {
+			planet_event = { id = lv_colony_events_1.2 }
+		}
+	}
+}
+
+planet_event = {
+	id = lv_colony_events_1.2
+	title = lv_colony_events_1.2.name
+	desc = lv_colony_events_1.2.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_lusting_plants_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lv_colony_events_1.2.a
+		trigger = {
+			owner = {
+				NOT = {
+					OR = {
+						has_ethic = ethic_xenophile
+						has_ethic = ethic_fanatic_xenophile
+						has_ethic = ethic_pacifist
+						has_ethic = ethic_fanatic_pacifist
+					}
+				}
+			}
+		}
+		
+		remove_modifier = lv_tentacled_lifeforms
+		add_modifier = {
+			modifier = lv_aggressive_tentacled_lifeforms
+			days = 7200
+		}
+	}
+	
+	option = {
+		name = lv_colony_events_1.2.b
+		trigger = {
+			owner = {
+				NOT = {
+					OR = {
+						has_ethic = ethic_xenophobe
+						has_ethic = ethic_fanatic_xenophobe
+					}
+				}
+			}
+		}
+		
+		remove_modifier = lv_tentacled_lifeforms
+		add_modifier = {
+			modifier = lv_coexisting_tentacled_lifeforms
+			days = -1
+		}
+	}
+	
+	option = {
+		name = lv_colony_events_1.2.c
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		
+		remove_modifier = lv_tentacled_lifeforms
+		add_modifier = {
+			modifier = lv_aggressive_tentacled_lifeforms
+			days = 3600
+		}
+	
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier3influencereward
+				min = @tier3influencemin
+				max = @tier3influencemax
+			}
+		}
+	}
+}
+
+# The Tentacled Natives #
+
+planet_event = {
+	id = lv_colony_events_1.3
+	title = lv_colony_events_1.3.name
+	desc = lv_colony_events_1.3.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_tentacled_natives_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lv_events.next
+		hidden_effect = {
+			planet_event = { id = lv_colony_events_1.4 }
+		}
+	}
+}
+
+planet_event = {
+	id = lv_colony_events_1.4
+	title = lv_colony_events_1.4.name
+	desc = lv_colony_events_1.4.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	location = ROOT
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_tentacled_natives_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		create_species = {
+			name = "Tentacle Lifeform"
+			plural = "Tentacle Lifeforms"
+			class = LVPRE_TENTACLE
+			portrait = "lv_tentacle_01"
+			namelist = "LVPRE_TENTACLE"
+			traits = {
+				trait = "trait_lv_targeted_pheromones"
+				trait = "trait_lv_huge_penis"
+				trait = "trait_lv_multiple_penises"
+				trait = "trait_lv_high_volume_ejaculations"
+				trait = "trait_lv_addictive_cum"
+				trait = "trait_lv_dominant"
+				trait = "trait_lv_sex_crazed"
+				trait = "trait_extremely_adaptive"
+				trait = "trait_quick_learners"
+				trait = "trait_decadent"
+				trait = "trait_delicious"
+				trait = "trait_erudite"
+			}
+			effect = {
+				save_event_target_as = lv_presapient_tentacles_species
+			}
+		}
+	}
+	
+	option = {
+		name = lv_colony_events_1.4.a
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+		set_planet_flag = lv_presapient_tentacles_spawned
+		add_deposit = d_lv_tentacles_blocker
+		add_deposit = d_lv_tentacles_blocker
+		while = {
+			count = 2
+			create_pop = {
+				species = event_target:lv_presapient_tentacles_species
+			}
+		}
+	}
+	
+	option = {
+		name = lv_colony_events_1.4.b
+		trigger = {
+			owner = {
+				NOT = {
+					OR = {
+						has_ethic = ethic_xenophobe
+						has_ethic = ethic_fanatic_xenophobe
+					}
+				}
+			}
+		}
+		set_planet_flag = lv_presapient_tentacles_spawned
+		remove_modifier = lv_tentacled_lifeforms
+		add_modifier = {
+			modifier = lv_coexisting_tentacled_lifeforms
+			days = -1
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+		set_planet_flag = lv_presapient_tentacles_spawned		# Redundant
+		add_deposit = d_lv_tentacles_blocker
+		add_deposit = d_lv_tentacles_blocker
+		add_deposit = d_lv_tentacles_blocker	
+		while = {
+			count = 3
+			create_pop = {
+				species = event_target:lv_presapient_tentacles_species
+			}
+		}
+	}
+	
+	option = {
+		name = lv_colony_events_1.4.c
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+		set_planet_flag = lv_presapient_tentacles_spawned
+		remove_modifier = lv_tentacled_lifeforms
+		add_modifier = {
+			modifier = lv_aggressive_tentacled_lifeforms
+			days = -1
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier2influencereward
+				min = @tier2influencemin				
+				max = @tier2influencemax
+			}
+		}
+		set_planet_flag = lv_presapient_tentacles_spawned		# Redundant
+		add_deposit = d_lv_tentacles_blocker
+		while = {
+			count = 1
+			create_pop = {
+				species = event_target:lv_presapient_tentacles_species
+			}
+		}
+	}
+}
+
+# Tentacles Festival #
+
+planet_event = {
+	id = lv_colony_events_1.5
+	title = lv_colony_events_1.5.name
+	desc = lv_colony_events_1.5.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	
+	picture_event_data = {
+		room = evt_lv_tentacle_festival_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		create_species = {
+			name = "Tentacle Lifeform"
+			plural = "Tentacle Lifeforms"
+			class = LVTENTACLE
+			portrait = "lv_tentacle_01"
+			namelist = FUN3
+			traits = {
+				trait = "trait_lv_targeted_pheromones"
+				trait = "trait_lv_huge_penis"
+				trait = "trait_lv_multiple_penises"
+				trait = "trait_lv_high_volume_ejaculations"
+				trait = "trait_lv_addictive_cum"
+				trait = "trait_lv_dominant"
+				trait = "trait_lv_sex_crazed"
+				trait = "trait_extremely_adaptive"
+				trait = "trait_quick_learners"
+				trait = "trait_decadent"
+				trait = "trait_delicious"
+				trait = "trait_erudite"
+			}
+			effect = {
+				save_event_target_as = lv_tentacles_species
+			}
+		}
+	}
+	
+	# Blessing of Offspring
+	option = {
+		name = lv_colony_events_1.5.a
+		custom_tooltip = lv_colony_events_1.5.a.tooltip
+		hidden_effect = {
+			random_owned_pop = {
+				limit = {
+					NOR = {
+						is_robot_pop = yes
+						is_species_class = LVPRE_TENTACLE
+						is_species_class = LVTENTACLE
+					}
+				}
+				kill_pop = yes
+			}
+			while = {
+				count = 1
+				create_pop = {
+					species = event_target:lv_tentacles_species
+				}
+			}
+		}
+	}
+	
+	# Blessing of Bloom
+	option = {
+		name = lv_colony_events_1.5.b
+		custom_tooltip = lv_colony_events_1.5.b.tooltip
+		hidden_effect = {
+			random_owned_pop = {
+				limit = {
+					NOR = {
+						is_robot_pop = yes
+						is_species_class = LVPRE_TENTACLE
+						is_species_class = LVTENTACLE
+					}
+				}
+				kill_pop = yes
+			}
+			every_owned_pop = {
+				limit = {
+					NOR = {
+						is_robot_pop = yes
+						is_species_class = LVPRE_TENTACLE
+						is_species_class = LVTENTACLE
+					}
+				}
+				random_list = {
+					10 = {
+						if = {
+							limit = { pop_has_trait = trait_lv_small_breasts }
+							modify_species = {
+								species = this
+								remove_trait = trait_lv_small_breasts
+								add_trait = trait_lv_large_breasts
+							}
+							break = yes
+						}
+						if = {
+							limit = { pop_has_trait = trait_lv_large_breasts }
+							modify_species = {
+								species = this
+								remove_trait = trait_lv_large_breasts
+								add_trait = trait_lv_huge_breasts
+							}
+							break = yes
+						}
+						if = {
+							limit = { pop_has_trait = trait_lv_large_breasts }
+							modify_species = {
+								species = this
+								add_trait = trait_lv_multiple_breasts
+							}
+						}
+					}
+					10 = {
+						if = {
+							limit = { NOT = { pop_has_trait = trait_lv_all_male } }
+							modify_species = {
+								species = this
+								remove_trait = trait_lv_sexually_inept
+								add_trait = trait_lv_fuckable_nipples
+							}
+						}
+					}
+					10 = {
+						if = {
+							limit = { NOT = { pop_has_trait = trait_lv_all_male } }
+							modify_species = {
+								species = this
+								add_trait = trait_lv_high_volume_lactation
+							}
+						}
+					}
+					10 = {
+						if = {
+							limit = {
+								NOR = {
+									pop_has_trait = trait_lv_all_male
+									pop_has_trait = trait_lv_titanic_evolution
+								}
+							}
+							modify_species = {
+								species = this
+								remove_trait = trait_lv_watery_milk
+								add_trait = trait_lv_high_volume_lactation
+							}
+							break = yes
+						}
+						if = {
+							limit = { pop_has_trait = trait_lv_high_volume_lactation }
+							modify_species = {
+								species = this
+								add_trait = trait_lv_fizzy_milk
+							}
+							break = yes
+						}
+						if = {
+							limit = { pop_has_trait = trait_lv_fizzy_milk }
+							modify_species = {
+								species = this
+								remove_trait = trait_lv_sexually_inept
+								remove_trait = trait_lv_sexually_repressed
+								add_trait = trait_lv_aphrodisiac_milk
+							}
+						}
+					}
+					10 = {
+						if = {
+							limit = { NOT = { pop_has_trait = trait_lv_all_male } }
+							modify_species = {
+								species = this
+								remove_trait = trait_lv_sexually_inept
+								add_trait = trait_lv_drooling_vagina
+							}
+						}
+					}
+					10 = {
+						if = {
+							limit = {
+								NOR = {
+									pop_has_trait = trait_lv_all_male
+									pop_has_trait = trait_lv_titanic_evolution
+								}
+							}
+							modify_species = {
+								species = this
+								remove_trait = trait_lv_sexually_inept
+								add_trait = trait_lv_litters
+							}
+						}
+					}
+					10 = {
+						if = {
+							limit = {
+								NOR = {
+									pop_has_trait = trait_lv_all_male
+									pop_has_trait = trait_lv_titanic_evolution
+									pop_has_trait = trait_lv_breeder_hips
+								}
+							}
+							modify_species = {
+								species = this
+								add_trait = trait_lv_shapely_ass
+							}
+							break = yes
+						}
+						if = {
+							limit = { pop_has_trait = trait_lv_shapely_ass }
+							modify_species = {
+								species = this
+								remove_trait = trait_lv_shapely_ass
+								add_trait = trait_lv_breeder_hips
+							}
+							break = yes
+						}
+						if = {
+							limit = { NOT = { pop_has_trait = trait_fertile } }
+							modify_species = {
+								species = this
+								remove_trait = trait_slow_breeders
+								add_trait = trait_fertile
+							}
+						}
+					}
+					10 = {
+						if = {
+							limit = { NOT = { pop_has_trait = trait_charismatic } }
+							modify_species = {
+								species = this
+								remove_trait = trait_repugnant
+								add_trait = trait_charismatic
+							}
+							break = yes
+						}
+						if = {
+							limit = { NOT = { pop_has_trait = trait_lv_cute } }
+							modify_species = {
+								species = this
+								add_trait = trait_lv_cute
+							}
+						}
+					}
+					10 = {
+						if = {
+							limit = {
+								NOR = {
+									pop_has_trait = trait_lv_elastic_orifices
+									pop_has_trait = trait_lv_perfect_hybrid
+									pop_has_trait = trait_lv_titanic_evolution
+								}
+							}
+							modify_species = {
+								species = this
+								remove_trait = trait_lv_sexually_inept
+								add_trait = trait_lv_elastic_orifices
+							}
+							break = yes
+						}
+						if = {
+							limit = {
+								NOR = {
+									pop_has_trait = trait_lv_natural_anal_lube
+									pop_has_trait = trait_lv_perfect_hybrid
+								}
+							}
+							modify_species = {
+								species = this
+								add_trait = trait_lv_natural_anal_lube
+							}
+							break = yes
+						}
+						if = {
+							limit = { NOT = { pop_has_trait = trait_lv_erogenous_anus } }
+							modify_species = {
+								species = this
+								add_trait = trait_lv_erogenous_anus
+							}
+						}
+					}
+					10 = {
+						if = {
+							limit = { NOT = { pop_has_trait = trait_lv_long_tongues } }
+							modify_species = {
+								species = this
+								add_trait = trait_lv_long_tongues
+							}
+							break = yes
+						}
+						if = {
+							limit = {
+								NOR = {
+									pop_has_trait = trait_lv_neuron_saliva
+									pop_has_trait = trait_lv_perfect_hybrid
+								}
+							}
+							modify_species = {
+								species = this
+								add_trait = trait_lv_neuron_saliva
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	# Blessing of Corruption
+	option = {
+		name = lv_colony_events_1.5.c
+		custom_tooltip = lv_colony_events_1.5.c.tooltip
+		hidden_effect = {
+			random_owned_pop = {
+				limit = {
+					NOR = {
+						is_robot_pop = yes
+						is_species_class = LVPRE_TENTACLE
+						is_species_class = LVTENTACLE
+					}
+				}
+				kill_pop = yes
+			}
+			every_owned_pop = {
+				limit = {
+					NOR = {
+						is_robot_pop = yes
+						is_species_class = LVPRE_TENTACLE
+						is_species_class = LVTENTACLE
+					}
+				}
+				random_list = {
+					25 = {
+						if = {
+							limit = {
+								NOR = {
+									pop_has_trait = trait_lv_sexually_gifted
+									pop_has_trait = trait_lv_perfect_hybrid
+								}
+							}
+							modify_species = {
+								species = this
+								remove_trait = trait_lv_sexually_inept
+								remove_trait = trait_lv_sexually_repressed
+								add_trait = trait_lv_sexually_gifted
+							}
+						}
+					}
+					25 = {
+						if = {
+							limit = { pop_has_trait = trait_lv_dominant }
+							modify_species = {
+								species = this
+								remove_trait = trait_lv_dominant
+							}
+							break = yes
+						}
+						if = {
+							limit = { NOT = { pop_has_trait = trait_lv_submissive } }
+							modify_species = {
+								species = this
+								add_trait = trait_lv_submissive
+							}
+							break = yes
+						}
+						if = {
+							limit = { NOT = { pop_has_trait = trait_lv_masochistic } }
+							modify_species = {
+								species = this
+								add_trait = trait_lv_masochistic
+							}
+						}
+					}
+					25 = {
+						if = {
+							limit = {
+								NOR = {
+									pop_has_trait = trait_lv_nudist
+									pop_has_trait = trait_lv_exhibitionist
+									pop_has_trait = trait_lv_perfect_hybrid
+								}
+							}
+							modify_species = {
+								species = this
+								remove_trait = trait_nonadaptive
+								add_trait = trait_lv_nudist
+							}
+							break = yes
+						}
+						if = {
+							limit = { pop_has_trait = trait_lv_nudist }
+							modify_species = {
+								species = this
+								remove_trait = trait_lv_nudist
+								remove_trait = trait_repugnant
+								remove_trait = trait_lv_sexually_repressed
+								add_trait = trait_lv_exhibitionist
+							}
+						}
+					}
+					25 = {
+						if = {
+							limit = {
+								NOR = {
+									pop_has_trait = trait_lv_lewd_mind
+									pop_has_trait = trait_lv_sex_crazed
+									pop_has_trait = trait_lv_titanic_evolution
+								}
+							}
+							modify_species = {
+								species = this
+								remove_trait = trait_lv_sexually_inept
+								remove_trait = trait_lv_sexually_repressed
+								remove_trait = trait_conformists
+								add_trait = trait_lv_lewd_mind
+							}
+							break = yes
+						}
+						if = {
+							limit = { pop_has_trait = trait_lv_lewd_mind }
+							modify_species = {
+								species = this
+								remove_trait = trait_lv_lewd_mind
+								add_trait = trait_lv_sex_crazed
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	# Blessing of Cleansing
+	option = {
+		name = lv_colony_events_1.5.d
+		custom_tooltip = lv_colony_events_1.5.d.tooltip
+		hidden_effect = {
+			random_owned_pop = {
+				limit = {
+					NOR = {
+						is_robot_pop = yes
+						is_species_class = LVPRE_TENTACLE
+						is_species_class = LVTENTACLE
+					}
+				}
+				kill_pop = yes
+			}
+			every_owned_pop = {
+				limit = {
+					NOR = {
+						is_robot_pop = yes
+						is_species_class = LVPRE_TENTACLE
+						is_species_class = LVTENTACLE
+					}
+				}
+				random_list = {
+					10 = {
+						if = {
+							limit = { pop_has_trait = trait_nonadaptive }
+							modify_species = {
+								species = this
+								remove_trait = trait_nonadaptive
+							}
+						}
+					}
+					9 = {
+						if = {
+							limit = { pop_has_trait = trait_slow_breeders }
+							modify_species = {
+								species = this
+								remove_trait = trait_slow_breeders
+							}
+						}
+					}
+					9 = {
+						if = {
+							limit = { pop_has_trait = trait_slow_learners }
+							modify_species = {
+								species = this
+								remove_trait = trait_slow_learners
+							}
+						}
+					}
+					9 = {
+						if = {
+							limit = { pop_has_trait = trait_quarrelsome }
+							modify_species = {
+								species = this
+								remove_trait = trait_quarrelsome
+							}
+						}
+					}
+					9 = {
+						if = {
+							limit = { pop_has_trait = trait_unruly }
+							modify_species = {
+								species = this
+								remove_trait = trait_unruly
+							}
+						}
+					}
+					9 = {
+						if = {
+							limit = { pop_has_trait = trait_weak }
+							modify_species = {
+								species = this
+								remove_trait = trait_weak
+							}
+						}
+					}
+					9 = {
+						if = {
+							limit = { pop_has_trait = trait_sedentary }
+							modify_species = {
+								species = this
+								remove_trait = trait_sedentary
+							}
+						}
+					}
+					9 = {
+						if = {
+							limit = { pop_has_trait = trait_solitary }
+							modify_species = {
+								species = this
+								remove_trait = trait_solitary
+							}
+						}
+					}
+					9 = {
+						if = {
+							limit = { pop_has_trait = trait_repugnant }
+							modify_species = {
+								species = this
+								remove_trait = trait_repugnant
+							}
+						}
+					}
+					9 = {
+						if = {
+							limit = { pop_has_trait = trait_fleeting }
+							modify_species = {
+								species = this
+								remove_trait = trait_fleeting
+							}
+						}
+						if = {
+							limit = { pop_has_trait = trait_fleeting_lithoid }
+							modify_species = {
+								species = this
+								remove_trait = trait_fleeting_lithoid
+							}
+						}
+					}
+					9 = {
+						if = {
+							limit = { pop_has_trait = trait_wasteful }
+							modify_species = {
+								species = this
+								remove_trait = trait_wasteful
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	# Blessing of Attachment
+	option = {
+		name = lv_colony_events_1.5.e
+		custom_tooltip = lv_colony_events_1.5.e.tooltip
+		hidden_effect = {
+			owner = {
+				ruler = { kill_leader = { show_notification = no } }
+				country_event = { id = lv_colony_events_1.6 }
+			}
+		}
+	}
+	
+	option = {
+		name = lv_colony_events_1.5.f
+		owner = {
+			add_resource = { unity = -50 }
+			add_resource = { influence = -25 }
+		}
+	}
+}
+
+# Leaders Get Tentacle Symbiotes #
+
+country_event = {
+	id = lv_colony_events_1.6
+	title = lv_colony_events_1.6.name
+	desc = lv_colony_events_1.6.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_swarm_started
+	
+	picture_event_data = {
+		room = evt_lv_tentacle_symbiote_1_room
+	}
+	
+	is_triggered_only = yes
+
+	immediate = {
+		every_pool_leader = {
+			if = {
+				limit = {
+					NOR = {
+						has_trait = leader_trait_lv_tentacle_symbiote
+						species = {
+							has_trait = trait_mechanical
+							has_trait = trait_machine_unit
+							is_species_class = ROBOT
+						}
+					}
+				}
+				random_list = {
+					80 = {
+						#Nothing
+					}
+					20 = {
+						add_trait = leader_trait_lv_tentacle_symbiote
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = lv_colony_events_1.6.a
+	}
+}
+
+###
+namespace = lv_colony_war_events
+
+# Fires on on_planet_occupied from on_actions #
+
+country_event = {
+	id = lv_colony_war_events.gate
+	hide_window = yes
+	location = from
+
+	is_triggered_only = yes
+	
+	trigger = {
+		NOR = {
+			has_global_flag = lv_all_disabled
+			has_global_flag = lv_raunchy_titans_disabled
+			has_global_flag = lv_bestiality_disabled
+			has_global_flag = lv_rape_disabled
+		}
+		owner = { NOT = { has_country_flag = lv_pow_rapists_punished } }
+	}
+
+	immediate = {
+		fromfrom = {
+			save_event_target_as = lv_attacked_planet
+		}
+		fromfrom.owner = {
+			save_event_target_as = lv_planet_owner
+		}
+		this.owner = {
+			save_event_target_as = lv_planet_attacker
+			country_event = { id = lv_colony_war_events.1 }
+		}
+	}
+}
+
+# Spoils of War (Attacker) #
+
+country_event = {
+	id = lv_colony_war_events.1
+	title = lv_colony_war_events.1.name
+	desc = lv_colony_war_events.1.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_ground_battle
+	location = event_target:lv_attacked_planet
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_spoils_attacker_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lv_colony_war_events.1.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					event_target:lv_planet_attacker = {
+						OR = {
+							has_ethic = ethic_pacifist
+							has_ethic = ethic_fanatic_pacifist
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 5
+				OR = {
+					event_target:lv_planet_attacker = {
+						OR = {
+							has_ethic = ethic_authoritarian
+							has_ethic = ethic_fanatic_authoritarian
+						}
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			event_target:lv_planet_owner = {
+				country_event = { id = lv_colony_war_events.2 }
+			}
+		}
+	}
+	
+	option = {
+		name = lv_colony_war_events.1.b
+		trigger = {
+			event_target:lv_planet_attacker = {
+				OR = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+		add_resource = { influence = 10 }
+		hidden_effect = {
+			event_target:lv_planet_owner = {
+				country_event = { id = lv_colony_war_events.2 }
+			}
+		}
+	}
+	
+	option = {
+		name = lv_colony_war_events.1.c
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 5
+				OR = {
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_fanatic_egalitarian
+				}
+			}
+		}
+		event_target:lv_planet_attacker = { 
+			country_event = { id = lv_country_events.5 }
+		}
+	}
+}
+
+# Spoils of War (Defender) #
+
+country_event = {
+	id = lv_colony_war_events.2
+	title = lv_colony_war_events.2.name
+	desc = lv_colony_war_events.2.desc
+	diplomatic = yes
+	custom_gui = "lv_h_window"
+	custom_gui_option = "lv_h_option"
+	show_sound = event_ground_battle
+	location = event_target:lv_attacked_planet
+	trackable = yes
+	
+	picture_event_data = {
+		room = evt_lv_spoils_attacker_1_room
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lv_colony_war_events.2.a
+		trigger = {
+			event_target:lv_planet_owner = {
+				NOR = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_fanatic_pacifist
+				}
+			}			
+		}
+	}
+	
+	option = {
+		name = lv_colony_war_events.2.b
+		trigger = {
+			event_target:lv_planet_owner = {
+				OR = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+		add_resource = { influence = -10 }
+	}
+	
+	option = {
+		name = lv_colony_war_events.2.c
+		trigger = {
+			event_target:lv_planet_owner = {
+				OR = {
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_fanatic_pacifist
+				}
+			}
+		}
+		add_resource = { influence = -15 }
+	}
+}
+
+###

@@ -1,0 +1,1830 @@
+#####################################
+###     Biological/Any Traits     ###
+#####################################
+#
+# Note: All traits were made with the intention of adding events/other things relating to them
+# eventually, even if not stated on the traits themselves. Also, all traits can and probably
+# will change again! These are not final effects or values at all.
+#
+# The potential_crossbreeding_chance modifier is used for base game crossbreeding compatibility 
+# only.
+#
+# The following categories are more for organizational purposes than anything else:
+# Psychological  - Mentality or mind altering effects.
+# Physical       - Body parts or other physical attributes.
+#
+###
+
+############
+# Positive #
+############
+
+# Psychological #
+
+# Submissive
+trait_lv_submissive = {
+	cost = {
+		base = 2
+		modifier = {
+			add = -2
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_submissive_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_dominant
+		trait_unruly
+		trait_sedentary
+		trait_deviants
+		trait_decadent
+		trait_hive_mind
+		trait_machine_unit
+	}
+	
+	triggered_pop_modifier = {
+		potential = {
+			exists = planet
+			planet = {
+				any_owned_pop = {
+					pop_has_trait = trait_lv_dominant
+				}
+			}
+		}
+		# Happy to share a planet with doms
+		pop_amenities_usage_mult = -0.05
+		pop_housing_usage_mult = -0.1
+		species_empire_size_mult = -0.25
+	}
+	triggered_pop_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				ruler = {
+					OR = {
+						has_trait = leader_trait_lv_highly_dominant
+						has_trait = leader_trait_lv_highly_dominant_2
+						has_trait = leader_trait_lv_highly_dominant_3
+					}
+				}
+			}
+		}
+		# Adores dominant rulers
+		pop_happiness = 0.15
+		pop_resettlement_cost_mult = -1
+	}
+	
+	modifier = {
+		# Hates being in charge
+		army_morale = -0.75
+		planet_jobs_ruler_produces_mult = -0.05
+		planet_jobs_worker_produces_mult = 0.05
+		planet_jobs_slave_produces_mult = 0.1
+		pop_demotion_time_mult = -0.5
+	}
+
+	slave_cost = {
+		energy = 2000
+	}
+}
+
+# Masochistic
+trait_lv_masochistic = {
+	cost = {
+		base = 3
+		modifier = {
+			add = -3
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_masochistic_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_sadistic
+		trait_lv_sexually_repressed
+	}
+	
+	triggered_pop_modifier = {
+		potential = {
+			exists = planet
+			planet = {
+				any_owned_pop = {
+					pop_has_trait = trait_lv_sadistic
+				}
+			}
+		}
+		# Very rough sex
+		planet_jobs_unity_produces_mult = 0.05
+		pop_amenities_usage_mult = 0.05
+	}
+	
+	triggered_pop_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				ruler = {
+					OR = {
+						has_trait = leader_trait_lv_tormentor
+						has_trait = leader_trait_lv_tormentor_2
+					}
+				}
+			}
+		}
+		# Inspires population to take more risks
+		pop_environment_tolerance = 0.15
+		# Sex Jobs Output +5%
+		pop_job_amenities_mult = 0.05
+		pop_job_trade_mult = 0.05
+		planet_lv_sex_jobs_produces_mult = 0.05
+	}
+	
+	modifier = {
+		# Likes a little pain
+		pop_cat_worker_happiness = 0.05
+		pop_cat_slave_happiness = 0.1
+		# Spank me harder!
+		pop_environment_tolerance = 0.05
+		# Sex Jobs Output +5%
+		pop_job_amenities_mult = 0.05
+		pop_job_trade_mult = 0.05
+		planet_lv_sex_jobs_produces_mult = 0.05
+	}
+	
+	slave_cost = {
+		energy = 1500
+	}
+	
+	assembly_score = {
+		modifier = {
+			add = 1
+			from = { has_designation = col_lv_sex }
+		}
+	}
+}
+
+# Nudist
+trait_lv_nudist = {
+	cost = {
+		base = 1
+		modifier = {
+			add = -1
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_nudist_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_nonadaptive
+		trait_lv_exhibitionist
+		trait_lv_perfect_hybrid
+	}
+	
+	modifier = {
+		# Needs less
+		pop_amenities_usage_mult = -0.05
+		planet_pops_consumer_goods_upkeep_mult = -0.05
+		# All natural lifestyle
+		pop_environment_tolerance = 0.05
+		# Sex Jobs Output +5%
+		pop_job_amenities_mult = 0.05
+		pop_job_trade_mult = 0.05
+		planet_lv_sex_jobs_produces_mult = 0.05
+	}
+	
+	slave_cost = {
+		energy = 50
+	}
+}
+
+# Exhibitionist
+trait_lv_exhibitionist = {
+	cost = {
+		base = 4
+		modifier = {
+			add = -4
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_exhibitionist_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_repugnant
+		trait_nonadaptive
+		trait_lv_nudist
+		trait_lv_sexually_repressed
+		trait_lv_perfect_hybrid
+	}
+	
+	modifier = {
+		# Aroused when naked
+		pop_happiness = 0.05
+		pop_growth_speed = 0.05
+		# Knows how to 'entertain'
+		leader_skill_levels = 1
+		species_leader_exp_gain = 0.1
+		# Sex Jobs Output +15%
+		pop_job_amenities_mult = 0.15
+		pop_job_trade_mult = 0.15
+		planet_lv_sex_jobs_produces_mult = 0.15
+		# Adds 15 opinion with other empires (opinion_modifiers)
+	}
+	
+	slave_cost = {
+		energy = 200
+	}
+}
+
+# Sexually Gifted
+trait_lv_sexually_gifted = {
+	cost = {
+		base = 5
+		modifier = {
+			add = -5
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_sexually_gifted_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_sexually_inept
+		trait_lv_sexually_repressed
+		trait_lv_perfect_hybrid
+	}
+	
+	modifier = {
+		# Handholding experts
+		planet_jobs_unity_produces_mult = 0.05
+		pop_housing_usage_mult = -0.1
+		species_leader_exp_gain = 0.15
+		# Sex Jobs Output +20%
+		pop_job_amenities_mult = 0.2
+		pop_job_trade_mult = 0.2
+		planet_lv_sex_jobs_produces_mult = 0.2
+		# Adds 10 opinion with other empires (opinion_modifiers)
+	}
+	
+	slave_cost = {
+		energy = 250
+	}
+}
+
+# Sexual Pheromones
+trait_lv_sexual_pheromones = {
+	cost = {
+		base = 3
+		modifier = {
+			add = -3
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_sexual_pheromones_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_targeted_pheromones
+		trait_lv_sexually_inept
+		trait_lv_sexually_repressed
+		trait_repugnant
+		trait_lv_perfect_hybrid
+	}
+	
+	modifier = {
+		# Arousing presence
+		pop_growth_speed = 0.05
+		pop_housing_usage_mult = -0.05
+		# Sex Jobs Output +10%
+		pop_job_amenities_mult = 0.1
+		pop_job_trade_mult = 0.1
+		planet_lv_sex_jobs_produces_mult = 0.1
+		# Adds 5 opinion with other empires (opinion_modifiers)
+	}
+	
+	slave_cost = {
+		energy = 150
+	}
+}
+
+# Targeted Pheromones (advanced trait)
+trait_lv_targeted_pheromones = {
+	cost = {
+		base = 6
+		modifier = {
+			add = -6
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	initial = no
+	potential_crossbreeding_chance = 0.5
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_targeted_pheromones_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_sexual_pheromones
+		trait_lv_sexually_inept
+		trait_lv_sexually_repressed
+		trait_repugnant
+		trait_lv_perfect_hybrid
+	}
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				AND = {
+					has_technology = tech_gene_seed_purification
+					has_technology = tech_lv_transformation_candy_apple
+				}
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	modifier = {
+		# Hypnotic presence
+		pop_growth_speed = 0.15
+		pop_growth_from_immigration = 0.1
+		pop_housing_usage_mult = -0.1
+		# Sex Jobs Output +20% (exotic_gases)
+		pop_job_amenities_mult = 0.2
+		pop_job_trade_mult = 0.2
+		planet_lv_sex_jobs_produces_mult = 0.2
+		planet_lv_sex_jobs_exotic_gases_produces_add = 0.1
+		# Adds 10 opinion with other empires (opinion_modifiers)
+	}
+	
+	slave_cost = {
+		energy = 300
+	}
+}
+
+# Physical #
+
+# Cute
+trait_lv_cute = {
+	cost = {
+		base = 3
+		modifier = {
+			add = -3
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_cute_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_repugnant
+		trait_lv_scary
+	}
+	
+	triggered_pop_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				ruler = {
+					OR = {
+						has_trait = leader_trait_lv_monstrous
+						has_trait = leader_trait_lv_monstrous_2
+						has_trait = leader_trait_lv_monstrous_3
+					}
+				}
+			}
+		}
+		# Primal terror
+		pop_happiness = -0.25
+		# Sex Jobs Output +15%
+		pop_job_amenities_mult = 0.15
+		pop_job_trade_mult = 0.15
+		planet_lv_sex_jobs_produces_mult = 0.15
+	}
+	
+	triggered_pop_modifier = {
+		potential = {
+			exists = planet
+			planet = {
+				any_owned_pop = {
+					pop_has_trait = trait_lv_scary
+				}
+			}
+		}
+		# Prey mentality
+		pop_happiness = -0.15
+	}
+	
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			exists = planet
+			planet = {
+				any_owned_pop = {
+					pop_has_trait = trait_lv_scary
+				}
+			}
+		}
+		# Prey mentality
+		pop_growth_speed = 0.15
+	}
+	
+	modifier = {
+		# Snuggle struggle
+		army_attack_morale_mult = -0.15
+		army_morale = -0.15
+		# Cuddle or die!
+		pop_growth_from_immigration = 0.05
+		pop_housing_usage_mult = -0.1
+		species_empire_size_mult = -0.1
+		# Sex Jobs Output +15%
+		pop_job_amenities_mult = 0.15
+		pop_job_trade_mult = 0.15
+		planet_lv_sex_jobs_produces_mult = 0.15
+		# Adds 5 opinion with other empires (opinion_modifiers)
+	}
+	
+	slave_cost = {
+		energy = 1500
+	}
+	
+	assembly_score = {
+		modifier = {
+			add = 1
+			from = { has_designation = col_lv_sex }
+		}
+	}
+}
+
+# Soft
+trait_lv_soft = {
+	cost = {
+		base = 4
+		modifier = {
+			add = -4
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_soft_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_repugnant
+	}
+	
+	modifier = {
+		# Floofy!
+		planet_jobs_consumer_goods_produces_mult = 0.05
+		pop_growth_from_immigration = 0.05
+		pop_housing_usage_mult = -0.15
+		# Sex Jobs Output +5%
+		pop_job_amenities_mult = 0.05
+		pop_job_trade_mult = 0.05
+		planet_lv_sex_jobs_produces_mult = 0.05
+		# Adds 5 opinion with other empires (opinion_modifiers)
+	}
+	
+	slave_cost = {
+		energy = 200
+	}
+}
+
+# Long Tongues
+trait_lv_long_tongues = {
+	cost = {
+		base = 2
+		modifier = {
+			add = -2
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_long_tongues_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	modifier = {
+		# Prehensile tongues
+		planet_jobs_produces_mult = 0.05
+		planet_pops_consumer_goods_upkeep_mult = 0.05
+		# Sex Jobs Output +10%
+		pop_job_amenities_mult = 0.1
+		pop_job_trade_mult = 0.1
+		planet_lv_sex_jobs_produces_mult = 0.1
+	}
+	
+	slave_cost = {
+		energy = 100
+	}
+}
+
+# Neuron Saliva (advanced trait)
+trait_lv_neuron_saliva = {
+	cost = {
+		base = 6
+		modifier = {
+			add = -6
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	initial = no
+	potential_crossbreeding_chance = 0.5
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_neuron_saliva_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_perfect_hybrid
+	}
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				AND = {
+					has_tradition = tr_genetics_resequencing
+					has_technology = tech_lv_transformation_candy_apple
+				}
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	modifier = {
+		# 'Deep' understanding
+		planet_jobs_unity_produces_mult = 0.05
+		species_empire_size_mult = -0.1
+		# Dairy Jobs Output +5% (research)
+		planet_lv_dairy_jobs_produces_mult = 0.05
+		planet_lv_dairy_jobs_physics_research_produces_add = 0.05
+		planet_lv_dairy_jobs_society_research_produces_add = 0.05
+		planet_lv_dairy_jobs_engineering_research_produces_add = 0.05
+		# Sex Jobs Output +5% (research)
+		pop_job_amenities_mult = 0.05
+		planet_lv_sex_jobs_produces_mult = 0.05
+		pop_job_trade_mult = 0.05
+		planet_lv_sex_jobs_physics_research_produces_add = 0.05
+		planet_lv_sex_jobs_society_research_produces_add = 0.05
+		planet_lv_sex_jobs_engineering_research_produces_add = 0.05
+	}
+	
+	slave_cost = {
+		energy = 300
+	}
+}
+
+# Elastic Orifices
+trait_lv_elastic_orifices = {
+	cost = {
+		base = 3
+		modifier = {
+			add = -3
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_elastic_orifices_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_sexually_inept
+		trait_lv_perfect_hybrid
+		trait_lv_titanic_evolution
+	}
+	
+	modifier = {
+		# Fits all sizes
+		pop_happiness = 0.05
+		pop_growth_speed = 0.05
+		pop_growth_from_immigration = 0.1
+		# Sex Jobs Output +10%
+		pop_job_amenities_mult = 0.1
+		pop_job_trade_mult = 0.1
+		planet_lv_sex_jobs_produces_mult = 0.1
+	}
+	
+	slave_cost = {
+		energy = 150
+	}
+}
+
+# Natural Anal Lube
+trait_lv_natural_anal_lube = {
+	cost = {
+		base = 5
+		modifier = {
+			add = -5
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 0.5
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_natural_anal_lube_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_perfect_hybrid
+	}
+	
+	modifier = {
+		# Slick and sticky
+		pop_happiness = 0.05
+		pop_amenities_usage_mult = -0.1
+		# Multi purpose lube
+		planet_jobs_consumer_goods_produces_mult = 0.1
+		planet_jobs_alloys_produces_mult = 0.1
+		# Dairy Jobs Output +5%
+		planet_lv_dairy_jobs_produces_mult = 0.05
+		# Sex Jobs Output +15%
+		pop_job_amenities_mult = 0.15
+		pop_job_trade_mult = 0.15
+		planet_lv_sex_jobs_produces_mult = 0.15
+	}
+	
+	slave_cost = {
+		energy = 250
+	}
+}
+
+# Honey
+trait_lv_honey = {
+	cost = {
+		base = 2
+		modifier = {
+			add = -2
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_honey_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_exotic_honey
+	}
+	
+	modifier = {
+		# Yummy honey
+		planet_jobs_food_produces_mult = 0.1
+		# Wax housing
+		pop_housing_usage_mult = -0.1
+		# Dairy Jobs Output +5%
+		planet_lv_dairy_jobs_produces_mult = 0.05
+		# Sex Jobs Output +5%
+		pop_job_amenities_mult = 0.05
+		pop_job_trade_mult = 0.05
+		planet_lv_sex_jobs_produces_mult = 0.05
+	}
+	
+	slave_cost = {
+		energy = 100
+	}
+}
+
+# Exotic Honey (advanced trait)
+trait_lv_exotic_honey = {
+	cost = {
+		base = 6
+		modifier = {
+			add = -6
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	initial = no
+	potential_crossbreeding_chance = 0.5
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_exotic_honey_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_honey
+	}
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				AND = {
+					has_technology = tech_colonization_3
+					has_technology = tech_lv_transformation_candy_apple
+				}
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	modifier = {
+		# Delicious honey
+		planet_jobs_food_produces_mult = 0.2
+		# Wax infrastructure
+		pop_housing_usage_mult = -0.2
+		pop_environment_tolerance = 0.1
+		# Dairy Jobs Output +10% (volatile_motes)
+		planet_lv_dairy_jobs_produces_mult = 0.1
+		planet_lv_dairy_jobs_volatile_motes_produces_add = 0.05
+		# Sex Jobs Output +10% (volatile_motes)
+		pop_job_amenities_mult = 0.1
+		pop_job_trade_mult = 0.1
+		planet_lv_sex_jobs_produces_mult = 0.1
+		planet_lv_sex_jobs_volatile_motes_produces_add = 0.05
+	}
+	
+	slave_cost = {
+		energy = 300
+	}
+}
+
+# Oviposition
+trait_lv_oviposition = {		
+	cost = {
+		base = 1
+		modifier = {
+			add = -1
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_oviposition_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_brood_parasite
+	}
+	
+	modifier = {
+		# Alternate growth option
+		pop_growth_speed = 0.05
+		planet_pops_consumer_goods_upkeep_mult = 0.05
+		# Excess eggs
+		planet_livestock_food_produces_add = 0.5
+	}
+	
+	slave_cost = {
+		energy = 50
+	}
+}
+
+############
+# Negative #
+############
+
+# Psychological #
+
+# Dominant
+trait_lv_dominant = {
+	cost = {
+		base = -1
+		modifier = {
+			add = 1
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_dominant_effect
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				can_do_advanced_gene_modding = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	opposites = {
+		trait_lv_submissive
+		trait_docile
+		trait_conformists
+		trait_hive_mind
+		trait_machine_unit
+		trait_nerve_stapled
+	}
+	
+	triggered_pop_modifier = {
+		potential = {
+			exists = planet
+			planet = {
+				any_owned_pop = {
+					pop_has_trait = trait_lv_submissive
+				}
+			}
+		}
+		# Happy to share a planet with subs
+		planet_jobs_unity_produces_mult = 0.1
+		# Reduced negatives
+		pop_amenities_usage_mult = -0.05
+		pop_housing_usage_mult = -0.1
+		species_empire_size_mult = -0.1
+	}
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				ruler = {
+					OR = {
+						has_trait = leader_trait_lv_highly_submissive
+						has_trait = leader_trait_lv_highly_submissive_2
+						has_trait = leader_trait_lv_highly_submissive_3
+					}
+				}
+			}
+		}
+		# Likes submissive governors
+		pop_growth_speed = 0.05
+	}
+	triggered_pop_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				ruler = {
+					OR = {
+						has_trait = leader_trait_lv_highly_submissive
+						has_trait = leader_trait_lv_highly_submissive_2
+						has_trait = leader_trait_lv_highly_submissive_3
+					}
+				}
+			}
+		}
+		# Adores submissive rulers
+		pop_happiness = 0.15
+		pop_political_power = 2
+	}
+	
+	modifier = {
+		# Likes being in charge
+		army_damage_mult = 0.25
+		planet_jobs_ruler_produces_mult = 0.1
+		planet_jobs_specialist_produces_mult = 0.05
+		planet_jobs_slave_produces_mult = -0.05
+		pop_demotion_time_mult = 0.25
+		# Demands more
+		pop_amenities_usage_mult = 0.05
+		pop_housing_usage_mult = 0.05
+		species_empire_size_mult = 0.1
+	}
+	
+	slave_cost = {
+		energy = -2000
+	}
+	
+	assembly_score = {
+		modifier = {
+			add = 0.5
+			from = {
+				has_fortress_designation = yes
+			}
+		}
+	}
+}
+
+# Sadistic
+trait_lv_sadistic = {
+	cost = {
+		base = -4
+		modifier = {
+			add = 4
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_sadistic_effect
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				can_do_advanced_gene_modding = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	opposites = {
+		trait_lv_masochistic
+		trait_lv_sexually_repressed
+	}
+	
+	triggered_pop_modifier = {
+		potential = {
+			exists = planet
+			planet = {
+				any_owned_pop = {
+					pop_has_trait = trait_lv_masochistic
+				}
+			}
+		}
+		# Sexual needs satisfied
+		# Sex Jobs Output 10% (cancel out negative)
+		pop_job_amenities_mult = 0.1
+		pop_job_trade_mult = 0.1
+		planet_lv_sex_jobs_produces_mult = 0.1
+	}
+	
+	triggered_pop_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				ruler = {
+					OR = {
+						has_trait = leader_trait_lv_pain_slut
+						has_trait = leader_trait_lv_pain_slut_2
+						has_trait = leader_trait_lv_pain_slut_3
+					}
+				}
+			}
+		}
+		# Enjoys watching
+		pop_happiness = 0.05
+	}
+	
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				ruler = {
+					OR = {
+						has_trait = leader_trait_lv_pain_slut
+						has_trait = leader_trait_lv_pain_slut_2
+						has_trait = leader_trait_lv_pain_slut_3
+					}
+				}
+			}
+		}
+		# Enjoys watching
+		pop_growth_speed = 0.05
+	}
+	
+	modifier = {
+		# Delights in torment
+		army_damage_mult = 0.3
+		army_attack_morale_mult = 0.2
+		army_morale = -0.1
+		# Not good slaves
+		pop_cat_worker_happiness = -0.05
+		pop_cat_slave_happiness = -0.1
+		planet_jobs_slave_produces_mult = -0.1
+		# Sex Jobs Output -10%
+		pop_job_amenities_mult = -0.1
+		pop_job_trade_mult = -0.1
+		planet_lv_sex_jobs_produces_mult = -0.1
+	}
+	
+	slave_cost = {
+		energy = -1500
+	}
+	
+	assembly_score = {
+		modifier = {
+			add = -0.5
+			from = { has_designation = col_lv_sex }
+		}
+	}
+}
+
+# Lewd Mind
+trait_lv_lewd_mind = {
+	cost = {
+		base = -5
+		modifier = {
+			add = 5
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_lewd_mind_effect
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				can_do_advanced_gene_modding = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	opposites = {
+		trait_lv_sex_crazed
+		trait_lv_sexually_inept
+		trait_lv_sexually_repressed
+		trait_conformists
+		trait_lv_titanic_evolution
+	}
+	
+	modifier = {
+		# Usually thinking of kinky sex
+		pop_growth_speed = 0.05
+		planet_jobs_produces_mult = -0.1
+		pop_government_ethic_attraction = -0.25
+		# Sex Jobs Output +10%
+		pop_job_amenities_mult = 0.2
+		pop_job_trade_mult = 0.2
+		planet_lv_sex_jobs_produces_mult = 0.2
+	}
+	
+	slave_cost = {
+		energy = -300
+	}
+}
+
+# Sex Crazed
+trait_lv_sex_crazed = {
+	cost = {
+		base = -7
+		modifier = {
+			add = 7
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_sex_crazed_effect
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				can_do_advanced_gene_modding = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	opposites = {
+		trait_lv_sexually_inept
+		trait_lv_sexually_repressed
+		trait_lv_lewd_mind
+		trait_conformists
+		trait_lv_titanic_evolution
+	}
+	
+	modifier = {
+		# Please fuck me!
+		pop_growth_speed = 0.5
+		planet_jobs_produces_mult = -0.5
+		pop_government_ethic_attraction = -0.5
+		# Sex Jobs Output +50%
+		pop_job_amenities_mult = 1
+		pop_job_trade_mult = 1
+		planet_lv_sex_jobs_produces_mult = 1
+		# Adds 20 opinion with other empires (opinion_modifiers)
+	}
+	
+	slave_cost = {
+		energy = -250
+	}
+}
+
+# Sexually Inept
+trait_lv_sexually_inept = {
+	cost = {
+		base = -6
+		modifier = {
+			add = 6
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_sexually_inept_effect
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				can_do_advanced_gene_modding = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	opposites = {
+		trait_lv_sexual_pheromones
+		trait_lv_targeted_pheromones
+		trait_lv_elastic_orifices
+		trait_lv_sexually_gifted
+		trait_lv_lewd_mind
+		trait_lv_large_breasts
+		trait_lv_huge_breasts
+		trait_lv_multiple_breasts
+		trait_lv_drooling_vagina
+		trait_lv_aphrodisiac_milk
+		trait_lv_fuckable_nipples
+		trait_lv_large_penis
+		trait_lv_huge_penis
+		trait_lv_multiple_penises
+		trait_lv_high_volume_ejaculations
+		trait_lv_aphrodisiac_cum
+		trait_lv_addictive_cum
+		trait_lv_sex_crazed
+#		trait_lv_cybernetic_minifacturing_fabrication_womb
+		trait_lv_perfect_hybrid
+		trait_lv_titanic_evolution
+	}
+	
+	modifier = {
+		# Business before pleasure
+		pop_happiness = -0.1
+		pop_growth_speed = -0.25
+		planet_jobs_produces_mult = 0.1
+		# Sex Jobs Output -50%
+		pop_job_amenities_mult = -0.5
+		pop_job_trade_mult = -0.5
+		planet_lv_sex_jobs_produces_mult = -0.6
+	}
+	
+	slave_cost = {
+		energy = -300
+	}
+}
+
+# Sexually Repressed
+trait_lv_sexually_repressed = {
+	cost = {
+		base = -5
+		modifier = {
+			add = 5
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_sexually_repressed_effect
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				can_do_advanced_gene_modding = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	opposites = {
+		trait_lv_sexual_pheromones
+		trait_lv_targeted_pheromones
+		trait_lv_exhibitionist
+		trait_lv_sadistic
+		trait_lv_masochistic
+		trait_lv_sexually_gifted
+		trait_lv_lewd_mind
+		trait_lv_aphrodisiac_milk
+		trait_lv_aphrodisiac_cum
+		trait_lv_addictive_cum
+		trait_lv_sex_crazed
+		trait_lv_brood_parasite
+		trait_lv_perfect_hybrid
+		trait_lv_titanic_evolution
+	}
+	
+	modifier = {
+		# How lewd!
+		pop_happiness = -0.15
+		pop_growth_speed = -0.1
+		# Sex Jobs Output -25%
+		pop_job_amenities_mult = -0.25
+		pop_job_trade_mult = -0.25
+		planet_lv_sex_jobs_produces_mult = -0.25
+		# Adds -20 opinion with other empires (opinion_modifiers)
+	}
+	
+	slave_cost = {
+		energy = -250
+	}
+}
+
+# Physical #
+
+# Scary
+trait_lv_scary = {
+	cost = {
+		base = -3
+		modifier = {
+			add = -3
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_scary_effect
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_do_advanced_gene_modding = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	opposites = {
+		trait_lv_cute
+	}
+	
+	triggered_pop_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				ruler = {
+					OR = {
+						has_trait = leader_trait_lv_adorable
+						has_trait = leader_trait_lv_adorable_2
+						has_trait = leader_trait_lv_adorable_3
+					}
+				}
+			}
+		}
+		# Primal urge
+		pop_happiness = 0.15
+		planet_jobs_worker_produces_mult = 0.05
+	}
+	
+	triggered_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				ruler = {
+					OR = {
+						has_trait = leader_trait_lv_adorable
+						has_trait = leader_trait_lv_adorable_2
+						has_trait = leader_trait_lv_adorable_3
+					}
+				}
+			}
+		}
+		# Primal urge
+		army_defense_damage_mult = 0.5
+	}
+	
+	triggered_pop_modifier = {
+		potential = {
+			exists = planet
+			planet = {
+				any_owned_pop = {
+					pop_has_trait = trait_lv_cute
+				}
+			}
+		}
+		# Hunter mentality
+		pop_job_amenities_mult = -0.10
+	}
+	
+	triggered_modifier = {
+		potential = {
+			exists = planet
+			planet = {
+				any_owned_pop = {
+					pop_has_trait = trait_lv_cute
+				}
+			}
+		}
+		# Hunter mentality
+		army_damage_mult = 0.25
+	}
+	
+	modifier = {
+		# Terror
+		army_attack_morale_mult = 0.25
+		army_morale = 0.25
+		# Don't get too close
+		pop_growth_from_immigration = -0.05
+		pop_housing_usage_mult = 0.1
+		species_empire_size_mult = 0.1
+		# Sex Jobs Output -15%
+		pop_job_amenities_mult = -0.15
+		pop_job_trade_mult = -0.15
+		planet_lv_sex_jobs_produces_mult = -0.15
+	}
+	
+	slave_cost = {
+		energy = -1500
+	}
+	
+	assembly_score = {
+		modifier = {
+			add = -1
+			from = { has_designation = col_lv_sex }
+		}
+	}
+}
+
+# Erogenous Anus
+trait_lv_erogenous_anus = {
+	cost = {
+		base = -4
+		modifier = {
+			add = 4
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_erogenous_anus_effect
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				can_do_advanced_gene_modding = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	modifier = {
+		# Braille buttplugs
+		pop_happiness = 0.05
+		pop_amenities_usage_mult = 0.05
+		# Prefers anal sex
+		pop_growth_speed = -0.2
+		# Sex Jobs Output +10%
+		pop_job_amenities_mult = 0.1
+		pop_job_trade_mult = 0.1
+		planet_lv_sex_jobs_produces_mult = 0.1
+	}
+	
+	slave_cost = {
+		energy = -200
+	}
+}
+
+# Seasonal Breeders
+trait_lv_seasonal_breeders = {
+	cost = {
+		base = -7
+		modifier = {
+			add = 7
+			has_country_flag = lv_cheat_mode
+		}
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_seasonal_breeders_effect
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				can_do_advanced_gene_modding = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	modifier = {
+		# Hard to adapt
+		pop_growth_speed = -0.4
+		pop_environment_tolerance = -0.2
+		planet_jobs_produces_mult = 0.2
+		# Sex Jobs Output -20%
+		pop_job_amenities_mult = -0.2
+		pop_job_trade_mult = -0.2
+		planet_lv_sex_jobs_produces_mult = -0.4
+	}
+	
+	slave_cost = {
+		energy = -350
+	}
+}
+
+###########
+# Special #
+###########
+
+# Physical #
+
+# Futanari
+trait_lv_futanari = {
+	cost = 0
+	sorting_priority = 15
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_futanari_effect
+	
+	leader_age_min = 16
+	
+	opposites = {
+		trait_lv_all_female
+		trait_lv_all_male
+		trait_lv_androgynous
+	}
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				has_technology = tech_lv_transformation_candy_orange
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				has_global_flag = lv_allow_special_trait_removal
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	modifier = {
+		# Self propagation
+		pop_growth_speed = 0.25
+		planet_pops_consumer_goods_upkeep_mult = 0.1
+		# Sex Jobs Output +5%
+		pop_job_amenities_mult = 0.05
+		pop_job_trade_mult = 0.05
+		planet_lv_sex_jobs_produces_mult = 0.05
+	}
+	
+	ai_weight = {
+		weight = 0.1
+	}
+}
+
+# Androgynous
+trait_lv_androgynous = {
+	cost = 0
+	sorting_priority = 15
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_androgynous_effect
+	
+	leader_age_min = 16
+	
+	opposites = {
+		trait_lv_all_female
+		trait_lv_futanari
+		trait_lv_all_male
+	}
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				has_technology = tech_lv_transformation_candy_orange
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				has_global_flag = lv_allow_special_trait_removal
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	modifier = {
+		# Freedom of choice
+		planet_jobs_unity_produces_mult = 0.15
+	}
+	
+	ai_weight = {
+		weight = 0.1
+	}
+}
+
+# Aggressively Adaptive Reproduction
+trait_lv_aggressively_adaptive_reproduction = {
+	cost = 0
+	sorting_priority = 15
+	initial = no
+	randomized = no
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_lv_aggressively_adaptive_reproduction_effect
+	
+	opposites = {
+		trait_lv_intercompatible_womb
+		trait_lv_intercompatible_sperm
+	}
+	
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_lv_biological_mimicry_m
+				has_technology = tech_lv_hybridization_mastery
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				has_global_flag = lv_allow_special_trait_removal
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	
+	modifier = {
+		# Lustful by nature
+		pop_growth_speed = 0.1
+	}
+}
+
+#########
+# Combo #
+#########
+
+# Perfect Hybrid
+trait_lv_perfect_hybrid = {
+	cost = 0
+	sorting_priority = 18
+	initial = no
+	randomized = no
+#	modification = no
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+	custom_tooltip = trait_lv_perfect_hybrid_effect
+	advanced_trait = yes
+	
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		exists = from
+		from = {
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				has_country_flag = lv_cheat_mode
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	
+	opposites = {
+		trait_lv_targeted_pheromones
+		trait_lv_elastic_orifices
+		trait_lv_exhibitionist
+		trait_lv_sexually_gifted
+		trait_lv_natural_anal_lube
+		trait_lv_neuron_saliva
+		trait_lv_sexual_pheromones
+		trait_lv_sexually_inept
+		trait_lv_sexually_repressed
+		trait_repugnant
+		trait_nonadaptive
+		trait_lv_nudist
+	}
+	
+	modifier = {
+		pop_happiness = 0.15
+		pop_growth_speed = 0.35
+		pop_growth_from_immigration = 0.2
+		planet_jobs_unity_produces_mult = 0.1
+		planet_jobs_consumer_goods_produces_mult = 0.1
+		planet_jobs_alloys_produces_mult = 0.1
+		pop_housing_usage_mult = -0.2
+		pop_amenities_usage_mult = -0.1
+		species_empire_size_mult = -0.1
+		leader_skill_levels = 1
+		species_leader_exp_gain = 0.25
+		# Dairy Jobs Output +10% (research)
+		planet_lv_dairy_jobs_produces_mult = 0.1
+		# Sex Jobs Output +85% (exotic_gases) (research)
+		pop_job_amenities_mult = 0.85
+		pop_job_trade_mult = 0.85
+		planet_lv_sex_jobs_produces_mult = 0.85
+		planet_lv_sex_jobs_exotic_gases_produces_add = 0.1
+		planet_lv_sex_jobs_physics_research_produces_add = 0.05
+		planet_lv_sex_jobs_society_research_produces_add = 0.05
+		planet_lv_sex_jobs_engineering_research_produces_add = 0.05
+		# Adds 35 opinion with other empires (opinion_modifiers)
+	}
+	
+	slave_cost = {
+		energy = 1450
+	}
+}
+
+###

@@ -1,0 +1,389 @@
+##########################
+###     Game Rules     ###
+##########################
+
+#this/root = pop
+#checked if job's possible_precalc = lv_can_fill_dairy_worker_job
+lv_can_fill_dairy_worker_job = {
+	custom_tooltip = WORKER_JOB_TRIGGER
+	hidden_trigger = {
+		exists = owner
+		owner = { is_gestalt = no }
+		is_being_purged = no
+		is_being_assimilated = no
+		OR = {
+			NOT = { has_trait = trait_mechanical }
+			has_trait = trait_lv_synth_breasts
+			has_trait = trait_lv_sex_bots
+			has_trait = trait_lv_sex_bots_o
+			has_trait = trait_lv_synth_penis
+			has_trait = trait_lv_lushtech_omni_seed_fabrication_modules
+		}
+		#OR = {		# To be added when cum studs are made
+		#	NOR = {
+		#		species = { species_gender = male }
+		#		has_trait = trait_lv_all_male
+		#	}
+		#	has_trait = trait_lv_excess_estrogen
+		#}
+		if = {
+			limit = {
+				divinity_right_to_work_job_check_trigger_exempt = no
+			}
+			divinity_right_to_work_job_check_trigger_worker = yes
+		}
+	}
+}
+
+#this/root = pop
+#checked if job's possible_precalc = lv_can_fill_sex_worker_job
+lv_can_fill_sex_worker_job = {
+	custom_tooltip = WORKER_JOB_TRIGGER
+	hidden_trigger = {
+		exists = owner
+		owner = { is_gestalt = no }
+		is_being_purged = no
+		is_being_assimilated = no
+		OR = {
+			NOT = { has_trait = trait_mechanical }
+			has_trait = trait_lv_breast_attachments
+			has_trait = trait_lv_custom_fleshlight_slot
+			has_trait = trait_lv_synth_breasts
+			has_trait = trait_lv_synth_vagina
+			has_trait = trait_lv_custom_dildo_attachment
+			has_trait = trait_lv_synth_penis
+			has_trait = trait_lv_lushtech_omni_seed_fabrication_modules
+			has_trait = trait_lv_lushtech_synthetic_womb
+			has_trait = trait_lv_sex_bots
+			has_trait = trait_lv_sex_bots_o
+		}
+		if = {
+			limit = {
+				divinity_right_to_work_job_check_trigger_exempt = no
+			}
+			divinity_right_to_work_job_check_trigger_worker = yes
+		}
+	}
+}
+
+#this/root = pop
+#checked if job's possible_precalc = lv_can_fill_sexbot_worker_job
+lv_can_fill_sexbot_worker_job = {
+	custom_tooltip = WORKER_JOB_TRIGGER
+	hidden_trigger = {
+		exists = owner
+		owner = { is_gestalt = no }
+		is_being_purged = no
+		is_being_assimilated = no
+		OR = {
+			has_trait = trait_lv_breast_attachments
+			has_trait = trait_lv_custom_fleshlight_slot
+			has_trait = trait_lv_synth_breasts
+			has_trait = trait_lv_synth_vagina
+			has_trait = trait_lv_custom_dildo_attachment
+			has_trait = trait_lv_synth_penis
+			has_trait = trait_lv_lushtech_omni_seed_fabrication_modules
+			has_trait = trait_lv_lushtech_synthetic_womb
+			has_trait = trait_lv_sex_bots
+			has_trait = trait_lv_sex_bots_o
+			has_trait = trait_cybernetic
+		}
+	}
+}
+
+#this/root = pop
+#checked if job's possible_precalc = lv_can_fill_sex_worker_job
+lv_can_fill_psi_sex_worker_job = {
+	custom_tooltip = WORKER_JOB_TRIGGER
+	hidden_trigger = {
+		exists = owner
+		owner = { is_gestalt = no }
+		is_being_purged = no
+		is_being_assimilated = no
+		OR = {
+			has_trait = trait_latent_psionic
+			has_trait = trait_psionic
+		}
+		if = {
+			limit = {
+				divinity_right_to_work_job_check_trigger_exempt = no
+			}
+			divinity_right_to_work_job_check_trigger_worker = yes
+		}
+	}
+}
+
+#this/root = pop
+#checked if job's possible_precalc = lv_can_fill_dairy_specialist_job
+lv_can_fill_dairy_specialist_job = {
+	custom_tooltip = SPECIALIST_JOB_TRIGGER
+	hidden_trigger = {
+		exists = owner
+		owner = { is_gestalt = no }
+		is_being_purged = no
+		is_being_assimilated = no
+		OR = {
+			NOT = { has_trait = trait_mechanical }
+			has_trait = trait_lv_synth_breasts
+			has_trait = trait_lv_sex_bots
+			has_trait = trait_lv_sex_bots_o
+			has_trait = trait_lv_synth_penis
+			has_trait = trait_lv_lushtech_omni_seed_fabrication_modules
+		}
+		#OR = {		# To be added when cum studs are made
+		#	NOR = {
+		#		species = { species_gender = female }
+		#		has_trait = trait_lv_all_female
+		#	}
+		#	has_trait = trait_lv_brood_parasite
+		#}
+		if = {
+			limit = {
+				divinity_right_to_work_job_check_trigger_exempt = no
+			}
+			divinity_right_to_work_job_check_trigger_specialist = yes
+		}
+	}
+}
+
+#this/root = pop
+#checked if job's possible_precalc = lv_can_fill_specialist_job
+lv_can_fill_sex_specialist_job = {
+	custom_tooltip = SPECIALIST_JOB_TRIGGER
+	hidden_trigger = {
+		exists = owner
+		owner = { is_gestalt = no }
+		OR = {
+			is_enslaved = no
+			has_slavery_type = { type = slavery_domestic }
+			has_slavery_type = { type = slavery_indentured }
+		}
+		is_being_purged = no
+		is_being_assimilated = no
+		NOT = { has_trait = trait_syncretic_proles }
+		NOT = { has_trait = trait_nerve_stapled }
+		OR = {
+			NOT = { has_trait = trait_mechanical }
+			has_trait = trait_lv_breast_attachments
+			has_trait = trait_lv_custom_fleshlight_slot
+			has_trait = trait_lv_synth_breasts
+			has_trait = trait_lv_synth_vagina
+			has_trait = trait_lv_custom_dildo_attachment
+			has_trait = trait_lv_synth_penis
+			has_trait = trait_lv_lushtech_omni_seed_fabrication_modules
+			has_trait = trait_lv_lushtech_synthetic_womb
+			has_trait = trait_lv_sex_bots
+			has_trait = trait_lv_sex_bots_o
+		}
+		if = {
+			limit = {
+				divinity_right_to_work_job_check_trigger_exempt = no
+			}
+			divinity_right_to_work_job_check_trigger_specialist = yes
+		}
+	}
+}
+
+#this/root = pop
+#checked if job's possible_precalc = lv_can_fill_breeder_worker_job
+lv_can_fill_breeder_worker_job = {
+	custom_tooltip = WORKER_JOB_TRIGGER
+	hidden_trigger = {
+		exists = owner
+		owner = { is_gestalt = no }
+		OR = {
+			NOT = { has_trait = trait_mechanical }
+			has_trait = trait_lv_lushtech_synthetic_womb
+			has_trait = trait_lv_sex_bots
+			has_trait = trait_lv_sex_bots_o
+			has_trait = trait_lv_lushtech_omni_seed_fabrication_modules
+		}
+		if = {
+			limit = {
+				divinity_right_to_work_job_check_trigger_exempt = no
+			}
+			divinity_right_to_work_job_check_trigger_worker = yes
+		}
+	}
+}
+
+#this/root = pop
+#checked if job's possible_precalc = lv_can_fill_gem_incubator_specialist_job
+lv_can_fill_gem_incubator_specialist_job = {
+	custom_tooltip = SPECIALIST_JOB_TRIGGER
+	hidden_trigger = {
+		exists = owner
+		owner = { is_gestalt = no }
+		is_being_purged = no
+		is_being_assimilated = no
+		OR = {
+			NOT = { has_trait = trait_mechanical }
+			has_trait = trait_lv_lushtech_synthetic_womb
+			has_trait = trait_lv_sex_bots
+			has_trait = trait_lv_sex_bots_o
+			has_trait = trait_lv_lushtech_omni_seed_fabrication_modules
+		}
+		if = {
+			limit = {
+				divinity_right_to_work_job_check_trigger_exempt = no
+			}
+			divinity_right_to_work_job_check_trigger_specialist = yes
+		}
+	}
+}
+
+#this/root = pop
+#checked if job's possible_precalc = can_fill_drone_job
+lv_can_fill_drone_job = {
+	custom_tooltip = DRONE_JOB_TRIGGER
+	hidden_trigger = {
+		exists = owner
+		owner = { is_gestalt = yes }
+		is_being_purged = no
+		is_being_assimilated = no
+		NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+		OR = {
+			NOT = { has_trait = trait_mechanical }
+			has_trait = trait_lv_breast_attachments
+			has_trait = trait_lv_custom_fleshlight_slot
+			has_trait = trait_lv_synth_breasts
+			has_trait = trait_lv_synth_vagina
+			has_trait = trait_lv_custom_dildo_attachment
+			has_trait = trait_lv_synth_penis
+			has_trait = trait_lv_lushtech_omni_seed_fabrication_modules
+			has_trait = trait_lv_lushtech_synthetic_womb
+			has_trait = trait_lv_sex_bots
+			has_trait = trait_lv_sex_bots_o
+		}
+	}
+}
+
+#this/root = pop
+#checked if job's possible_precalc = lv_can_fill_dairy_drone_job
+lv_can_fill_dairy_drone_job = {
+	custom_tooltip = DRONE_JOB_TRIGGER
+	hidden_trigger = {
+		exists = owner
+		owner = { is_gestalt = yes }
+		is_being_purged = no
+		is_being_assimilated = no
+		NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+		OR = {
+			NOT = { has_trait = trait_mechanical }
+			has_trait = trait_lv_synth_breasts
+			has_trait = trait_lv_sex_bots
+			has_trait = trait_lv_sex_bots_o
+			has_trait = trait_lv_synth_penis
+			has_trait = trait_lv_lushtech_omni_seed_fabrication_modules
+		}
+	}
+}
+
+#this/root = pop
+#checked if job's possible_precalc = can_fill_drone_job
+lv_can_fill_pleasure_drone_job = {
+	custom_tooltip = DRONE_JOB_TRIGGER
+	hidden_trigger = {
+		exists = owner
+		owner = { is_gestalt = yes }
+		is_being_purged = no
+		is_being_assimilated = no
+		NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+		OR = {
+			NOT = { has_trait = trait_mechanical }
+			has_trait = trait_lv_breast_attachments
+			has_trait = trait_lv_custom_fleshlight_slot
+			has_trait = trait_lv_synth_breasts
+			has_trait = trait_lv_synth_vagina
+			has_trait = trait_lv_custom_dildo_attachment
+			has_trait = trait_lv_synth_penis
+			has_trait = trait_lv_lushtech_omni_seed_fabrication_modules
+			has_trait = trait_lv_lushtech_synthetic_womb
+			has_trait = trait_lv_sex_bots
+			has_trait = trait_lv_sex_bots_o
+		}
+	}
+}
+
+#this/root = pop
+#checked if job's possible_precalc = can_fill_drone_job
+lv_can_fill_psi_pleasure_drone_job = {
+	custom_tooltip = DRONE_JOB_TRIGGER
+	hidden_trigger = {
+		exists = owner
+		owner = { is_gestalt = yes }
+		is_being_purged = no
+		is_being_assimilated = no
+		NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+		OR = {
+			has_trait = trait_latent_psionic
+			has_trait = trait_psionic
+		}
+	}
+}
+
+#this/root = pop
+#checked if job's possible_precalc = can_fill_drone_job
+lv_can_fill_sexbot_drone_job = {
+	custom_tooltip = DRONE_JOB_TRIGGER
+	hidden_trigger = {
+		exists = owner
+		owner = { is_gestalt = yes }
+		is_being_purged = no
+		is_being_assimilated = no
+		NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+		OR = {
+			has_trait = trait_lv_breast_attachments
+			has_trait = trait_lv_custom_fleshlight_slot
+			has_trait = trait_lv_synth_breasts
+			has_trait = trait_lv_synth_vagina
+			has_trait = trait_lv_custom_dildo_attachment
+			has_trait = trait_lv_synth_penis
+			has_trait = trait_lv_lushtech_omni_seed_fabrication_modules
+			has_trait = trait_lv_lushtech_synthetic_womb
+			has_trait = trait_lv_sex_bots
+			has_trait = trait_lv_sex_bots_o
+			has_trait = trait_cybernetic
+		}
+	}
+}
+
+#this/root = pop
+#checked if job's possible_precalc = lv_can_fill_breeder_drone_job
+lv_can_fill_breeder_drone_job = {
+	custom_tooltip = DRONE_JOB_TRIGGER
+	hidden_trigger = {
+		exists = owner
+		owner = { is_gestalt = yes }
+		NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+		OR = {
+			NOT = { has_trait = trait_mechanical }
+			has_trait = trait_lv_lushtech_synthetic_womb
+			has_trait = trait_lv_sex_bots
+			has_trait = trait_lv_sex_bots_o
+			has_trait = trait_lv_lushtech_omni_seed_fabrication_modules
+		}
+	}
+}
+
+#this/root = pop
+#checked if job's possible_precalc = lv_can_fill_gem_incubator_drone_job
+lv_can_fill_gem_incubator_drone_job = {
+	custom_tooltip = DRONE_JOB_TRIGGER
+	hidden_trigger = {
+		exists = owner
+		owner = { is_gestalt = yes }
+		is_being_purged = no
+		is_being_assimilated = no
+		NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+		OR = {
+			NOT = { has_trait = trait_mechanical }
+			has_trait = trait_lv_lushtech_synthetic_womb
+			has_trait = trait_lv_sex_bots
+			has_trait = trait_lv_sex_bots_o
+			has_trait = trait_lv_lushtech_omni_seed_fabrication_modules
+		}
+	}
+}
+
+###

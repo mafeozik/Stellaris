@@ -1,0 +1,602 @@
+namespace = lv_event_mods
+
+#############################################
+###     Event Modification Assignment     ###
+#############################################
+
+planet_event = {
+	id = lv_event_mods.1
+	hide_window = yes
+	
+	pre_triggers = {
+		has_owner = yes
+		has_ground_combat = no
+		is_occupied_flag = no
+		is_ai = no
+	}
+	
+	is_triggered_only = yes
+	trigger = { exists = owner }
+	
+	immediate = {
+		#change_variable = { which = evaluations value = 1 }
+		owner = {
+			every_owned_pop = {
+				limit = { 
+					planet = { is_same_value = ROOT }
+					is_sapient = yes
+				}
+				pop_event = { id = lv_event_mods.2 }
+			}
+		}
+		planet_event = { id = lv_event_mods.15 days = 10 }
+		
+		#hybrid jobs set default
+		if = {
+			limit = {
+				NOR = {
+					has_planet_flag = lv_gem_incubator_processing_alloys
+					has_planet_flag = lv_gem_incubator_processing_minerals
+				}
+			}
+			set_planet_flag = lv_gem_incubator_processing_balanced
+		}
+		if = {
+			limit = {
+				NOR = {
+					has_planet_flag = lv_sexology_focus_research
+					has_planet_flag = lv_sexology_focus_consumer_goods
+				}
+			}
+			set_planet_flag = lv_sexology_focus_balanced
+		}
+	}
+}
+
+pop_event = {
+	id = lv_event_mods.2
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		
+		# Dom/Sub (f/m)
+		if = {
+			limit = {
+				pop_has_trait = trait_lv_dominant
+				#NOR = {
+				#	pop_has_trait = trait_lv_all_female
+				#	pop_has_trait = trait_lv_all_male
+				#	pop_has_trait = trait_lv_futanari
+				#}
+				planet = {
+					any_owned_pop = {
+						NOT = { is_same_species = root }
+						pop_has_trait = trait_lv_submissive
+						#NOR = {
+						#	pop_has_trait = trait_lv_all_female
+						#	pop_has_trait = trait_lv_all_male
+						#	pop_has_trait = trait_lv_futanari
+						#}
+					}
+				}
+			}
+			planet = {
+				if = {
+					limit = { NOT = { has_planet_flag = lv_com_screen_shown_dom_sub_f_m } }
+					set_planet_flag = lv_com_screen_shown_dom_sub_f_m
+					planet_event = { id = lv_event_popups.100 days = 5 }
+				}
+			}
+		}
+		
+		# Brood parasites
+		if = {
+			limit = {
+				pop_has_trait = trait_lv_brood_parasite
+				has_citizenship_rights = yes
+				planet = {
+					any_owned_pop = {
+						NOT = { is_same_species = root }
+						OR = {
+							is_robot_pop = no
+							pop_has_trait = trait_lv_lushtech_synthetic_womb
+							pop_has_trait = trait_lv_sex_bots
+							pop_has_trait = trait_lv_sex_bots_o
+						}
+						OR = {
+							has_citizenship_rights = no
+							pop_has_trait = trait_hive_mind
+							planet = {
+								any_owned_pop = {
+									is_same_species = root
+									pop_has_ethic = ethic_xenophile
+								}
+							}
+						}
+					}
+				}
+			}
+			planet = {
+				if = {
+					limit = { NOT = { has_planet_flag = lv_com_screen_shown_brood_parasite } }
+					set_planet_flag = lv_com_screen_shown_brood_parasite
+					planet_event = { id = lv_event_popups.1 days = 5 }
+				}
+				if = {
+					limit = {
+						NOR = {
+							has_modifier = lv_brood_parasite_planet_bonus_nh
+							has_modifier = lv_brood_parasite_planet_bonus_h
+						}
+						owner = { is_gestalt = no }
+					}
+					add_modifier = { modifier = lv_brood_parasite_planet_bonus_nh days = -1 }
+				}
+				if = {
+					limit = {
+						NOR = {
+							has_modifier = lv_brood_parasite_planet_bonus_nh
+							has_modifier = lv_brood_parasite_planet_bonus_h
+						}
+						owner = { is_gestalt = yes }
+					}
+					add_modifier = { modifier = lv_brood_parasite_planet_bonus_h days = -1 }
+				}
+			}
+		}
+		
+		# Biomechanical Breeders (does not give a modifier)
+		if = {
+			limit = {
+				pop_has_trait = trait_lv_lushtech_omni_seed_fabrication_modules
+				planet = {
+					any_owned_pop = {
+						pop_has_trait = trait_lv_nano_forge_womb
+					}
+				}
+			}
+			planet = {
+				if = {
+					limit = { NOT = { has_planet_flag = lv_com_screen_shown_biomechanical_breeders } }
+					set_planet_flag = lv_com_screen_shown_biomechanical_breeders
+					planet_event = { id = lv_event_popups.6 days = 5 }
+				}
+			}
+		}
+		
+		# All Female
+		if = {
+			limit = {
+				pop_has_trait = trait_lv_all_female
+				planet = {
+					any_owned_pop = {
+						NOT = { is_same_species = root }
+						OR = {
+							is_robot_pop = no
+							pop_has_trait = trait_lv_lushtech_omni_seed_fabrication_modules
+						}
+					}
+				}
+			}
+			planet = {
+				if = {
+					limit = { NOT = { has_planet_flag = lv_com_screen_shown_all_female } }
+					set_planet_flag = lv_com_screen_shown_all_female
+					planet_event = { id = lv_event_popups.11 days = 5 }
+				}
+				if = {
+					limit = {
+						NOR = {
+							has_modifier = lv_all_female_planet_bonus_nh
+							has_modifier = lv_all_female_planet_bonus_h
+						}
+						owner = { is_gestalt = no }
+					}
+					add_modifier = { modifier = lv_all_female_planet_bonus_nh days = -1 }
+				}
+				if = {
+					limit = {
+						NOR = {
+							has_modifier = lv_all_female_planet_bonus_nh
+							has_modifier = lv_all_female_planet_bonus_h
+						}
+						owner = { is_gestalt = yes }
+					}
+					add_modifier = { modifier = lv_all_female_planet_bonus_h days = -1 }
+				}
+			}
+		}
+		
+		# All Male
+		if = {
+			limit = {
+				pop_has_trait = trait_lv_all_male
+				planet = {
+					any_owned_pop = {
+						NOT = { is_same_species = root }
+						OR = {
+							is_robot_pop = no
+							pop_has_trait = trait_lv_lushtech_synthetic_womb
+							pop_has_trait = trait_lv_sex_bots
+							pop_has_trait = trait_lv_sex_bots_o
+						}
+					}
+				}
+			}
+			planet = {
+				if = {
+					limit = { NOT = { has_planet_flag = lv_com_screen_shown_all_male } }
+					set_planet_flag = lv_com_screen_shown_all_male
+					planet_event = { id = lv_event_popups.16 days = 5 }
+				}
+				if = {
+					limit = {
+						NOR = {
+							has_modifier = lv_all_male_planet_bonus_nh
+							has_modifier = lv_all_male_planet_bonus_h
+						}
+						owner = { is_gestalt = no }
+					}
+					add_modifier = { modifier = lv_all_male_planet_bonus_nh days = -1 }
+				}
+				if = {
+					limit = {
+						NOR = {
+							has_modifier = lv_all_male_planet_bonus_nh
+							has_modifier = lv_all_male_planet_bonus_h
+						}
+						owner = { is_gestalt = yes }
+					}
+					add_modifier = { modifier = lv_all_male_planet_bonus_h days = -1 }
+				}
+			}
+		}
+		
+		# Mono Gender Check
+		if = {
+			limit = {
+				planet = {
+					any_owned_pop = {
+						OR = {
+							pop_has_trait = trait_lv_all_female
+							pop_has_trait = trait_lv_all_male
+							pop_has_trait = trait_lv_futanari
+						}
+					}
+				}
+			}
+			from = { planet_event = { id = lv_trait_cleanup.1 days = 5 } }
+		}
+		
+		# Divine Coupling Building Bonuses
+		if = {
+			limit = {
+				planet = {
+					OR = {
+						has_building = building_temple
+						has_building = building_sacrificial_temple_1
+					}
+					NOR = {
+						has_building = building_holotemple
+						has_building = building_sacred_nexus
+						has_building = building_sacrificial_temple_2
+						has_building = building_sacrificial_temple_3
+						has_building = building_citadel_of_faith
+					}
+				}
+			}
+			planet = {
+				if = {
+					limit = { NOT = { has_modifier = lv_concubine_small_bonus } }
+					add_modifier = { modifier = lv_concubine_small_bonus days = -1 }
+				}
+			}
+		}
+		if = {
+			limit = {
+				planet = {
+					OR = {
+						has_building = building_holotemple
+						has_building = building_sacrificial_temple_2
+					}
+					NOR = {
+						has_building = building_sacred_nexus
+						has_building = building_sacrificial_temple_3
+						has_building = building_citadel_of_faith
+					}
+				}
+			}
+			planet = {
+				if = {
+					limit = { NOT = { has_modifier = lv_concubine_average_bonus } }
+					add_modifier = { modifier = lv_concubine_average_bonus days = -1 }
+				}
+			}
+		}
+		if = {
+			limit = {
+				planet = {
+					OR = {
+						has_building = building_sacred_nexus
+						has_building = building_sacrificial_temple_3
+					}
+					NOT = { has_building = building_citadel_of_faith }
+				}
+			}
+			planet = {
+				if = {
+					limit = { NOT = { has_modifier = lv_concubine_large_bonus } }
+					add_modifier = { modifier = lv_concubine_large_bonus days = -1 }
+				}
+			}
+		}
+		if = {
+			limit = { planet = { has_building = building_citadel_of_faith } }
+			planet = {
+				if = {
+					limit = { NOT = { has_modifier = lv_concubine_huge_bonus } }
+					add_modifier = { modifier = lv_concubine_huge_bonus days = -1 }
+				}
+			}
+		}
+		
+		# Sex Crazed
+		if = {
+			limit = {
+				planet = {
+					has_modifier = lv_fuck_fest
+					any_owned_pop = {
+						NOT = { pop_has_trait = trait_lv_sex_crazed }
+					}
+				}
+			}
+			planet = {
+				if = {
+					limit = { NOT = { has_planet_flag = lv_com_screen_shown_sex_crazed } }
+					set_planet_flag = lv_com_screen_shown_sex_crazed
+					while = {
+						count = 3
+						random_owned_pop = {
+							limit = {
+								NOT = { pop_has_trait = trait_lv_sex_crazed }
+							}
+							modify_species = {
+								species = this
+								add_trait = trait_lv_sex_crazed
+							}
+						}
+					}
+					planet_event = { id = lv_event_popups.26 days = 5 }
+				}
+			}
+		}
+		
+		# Cheat trait removal (redundancy)
+		if = {
+			limit = {
+				planet = {
+					any_owned_pop = {
+						pop_has_trait = trait_lv_cheat_trait
+					}
+				}
+			}
+			from = { planet_event = { id = lv_trait_cleanup.10 days = 10 } }
+		}
+	}
+}
+
+event = {		# Game start and 5 year pulse - evaluate all owned planets in 10 days, just in case of something weird
+	id = lv_event_mods.10
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		every_playable_country = {
+			every_owned_planet = {
+				planet_event = { id = lv_event_mods.1 days = 10 }
+			}
+		}
+	}
+}
+
+pop_event = {		# Planet population changed - evaluate planet in FROM
+	id = lv_event_mods.11
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = {
+			planet_event = { id = lv_event_mods.1 days = 3 }
+			planet_event = { id = lv_trait_cleanup.1 days = 3 }
+		}
+	}
+}
+
+planet_event = {
+	id = lv_event_mods.15
+	hide_window = yes
+	
+	is_triggered_only = yes
+		
+	immediate = {
+		if = {
+			limit = {
+				has_planet_flag = lv_com_screen_shown_brood_parasite
+				NOT = { any_owned_pop = { pop_has_trait = trait_lv_brood_parasite } }
+			}
+			remove_planet_flag = lv_com_screen_shown_brood_parasite
+		}
+		if = {
+			limit = {
+				OR = {
+					has_modifier = lv_brood_parasite_planet_bonus_nh
+					has_modifier = lv_brood_parasite_planet_bonus_h
+				}
+				NOT = { any_owned_pop = { pop_has_trait = trait_lv_brood_parasite } }
+			}
+			remove_modifier = lv_brood_parasite_planet_bonus_nh
+			remove_modifier = lv_brood_parasite_planet_bonus_h
+		}
+		if = {
+			limit = {
+				has_modifier = lv_brood_parasite_planet_bonus_nh
+				owner = { is_gestalt = yes }
+			}
+			remove_modifier = lv_brood_parasite_planet_bonus_nh
+		}
+		if = {
+			limit = {
+				has_modifier = lv_brood_parasite_planet_bonus_h
+				owner = { is_gestalt = no }
+			}
+			remove_modifier = lv_brood_parasite_planet_bonus_h
+		}
+		if = {
+			limit = {
+				has_planet_flag = lv_com_screen_shown_biomechanical_breeders
+				NOT = { any_owned_pop = { pop_has_trait = trait_lv_lushtech_omni_seed_fabrication_modules } }
+			}
+			remove_planet_flag = lv_com_screen_shown_biomechanical_breeders
+		}
+		if = {
+			limit = {
+				has_planet_flag = lv_com_screen_shown_all_female
+				NOT = { any_owned_pop = { pop_has_trait = trait_lv_all_female } }
+			}
+			remove_planet_flag = lv_com_screen_shown_all_female
+		}
+		if = {
+			limit = {
+				OR = {
+					has_modifier = lv_all_female_planet_bonus_nh
+					has_modifier = lv_all_female_planet_bonus_h
+				}
+				NOT = { any_owned_pop = { pop_has_trait = trait_lv_all_female } }
+			}
+			remove_modifier = lv_all_female_planet_bonus_nh
+			remove_modifier = lv_all_female_planet_bonus_h
+		}
+		if = {
+			limit = {
+				has_modifier = lv_all_female_planet_bonus_nh
+				owner = { is_gestalt = yes }
+			}
+			remove_modifier = lv_all_female_planet_bonus_nh
+		}
+		if = {
+			limit = {
+				has_modifier = lv_all_female_planet_bonus_h
+				owner = { is_gestalt = no }
+			}
+			remove_modifier = lv_all_female_planet_bonus_h
+		}
+		if = {
+			limit = {
+				has_planet_flag = lv_com_screen_shown_all_male
+				NOT = { any_owned_pop = { pop_has_trait = trait_lv_all_male } }
+			}
+			remove_planet_flag = lv_com_screen_shown_all_male
+		}
+		if = {
+			limit = {
+				OR = {
+					has_modifier = lv_all_male_planet_bonus_nh
+					has_modifier = lv_all_male_planet_bonus_h
+				}
+				NOT = { any_owned_pop = { pop_has_trait = trait_lv_all_male } }
+			}
+			remove_modifier = lv_all_male_planet_bonus_nh
+			remove_modifier = lv_all_male_planet_bonus_h
+		}
+		if = {
+			limit = {
+				has_modifier = lv_all_male_planet_bonus_nh
+				owner = { is_gestalt = yes }
+			}
+			remove_modifier = lv_all_male_planet_bonus_nh
+		}
+		if = {
+			limit = {
+				has_modifier = lv_all_male_planet_bonus_h
+				owner = { is_gestalt = no }
+			}
+			remove_modifier = lv_all_male_planet_bonus_h
+		}
+		if = {
+			limit = {
+				has_planet_flag = lv_com_screen_shown_dom_sub_f_m
+				NOT = { any_owned_pop = { pop_has_trait = trait_lv_dominant } }
+			}
+			remove_planet_flag = lv_com_screen_shown_dom_sub_f_m
+		}
+		if = {
+			limit = {
+				has_planet_flag = lv_com_screen_shown_sex_crazed 
+				NOT = { has_modifier = lv_fuck_fest }
+			}
+			remove_planet_flag = lv_com_screen_shown_sex_crazed 
+		}
+		if = {
+			limit = {
+				has_modifier = lv_concubine_small_bonus
+				OR = {
+					NOR = {
+						has_building = building_temple
+						has_building = building_sacrificial_temple_1
+					}
+					OR = {
+						has_building = building_holotemple
+						has_building = building_sacred_nexus
+						has_building = building_sacrificial_temple_2
+						has_building = building_sacrificial_temple_3
+						has_building = building_citadel_of_faith
+					}
+				}
+			}
+			remove_modifier = lv_concubine_small_bonus
+		}
+		if = {
+			limit = {
+				has_modifier = lv_concubine_average_bonus
+				OR = {
+					NOR = {
+						has_building = building_holotemple
+						has_building = building_sacrificial_temple_2
+					}
+					OR = {
+						has_building = building_sacred_nexus
+						has_building = building_sacrificial_temple_3
+						has_building = building_citadel_of_faith
+					}
+				}
+			}
+			remove_modifier = lv_concubine_average_bonus
+		}
+		if = {
+			limit = {
+				has_modifier = lv_concubine_large_bonus
+				OR = {
+					NOR = {
+						has_building = building_sacred_nexus
+						has_building = building_sacrificial_temple_3
+					}
+					has_building = building_citadel_of_faith
+				}
+			}
+			remove_modifier = lv_concubine_large_bonus
+		}
+		if = {
+			limit = {
+				has_modifier = lv_concubine_huge_bonus
+				NOT = { has_building = building_citadel_of_faith }
+			}
+			remove_modifier = lv_concubine_huge_bonus
+		}
+	}
+}
+
+###

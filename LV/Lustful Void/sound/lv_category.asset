@@ -1,0 +1,33 @@
+#######################
+###     Effects     ###
+#######################
+
+category = {
+ name = "Effects"
+ soundeffects = {
+	
+	# Events SFX #
+
+	lv_event_alien_nature
+	lv_event_alien_nature_02
+	lv_event_alien_nature_03
+	lv_swarm_crisis_ambient_stage_02
+	lv_swarm_crisis_ambient_stage_final_01
+	lv_event_psionic_03
+
+	# SELECT & ORDER FLEET + POPS #
+	lv_robot_pops_move
+	}
+ 
+ compressor =  {
+ 	enabled = yes
+ 	pregain = 2.0
+ 	postgain = 1.5
+ 	ratio = 10.0
+ 	threshold = -8.0
+ 	attacktime = 0.30
+ 	releasetime = 0.020
+ 	}
+}
+
+###

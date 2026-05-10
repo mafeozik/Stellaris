@@ -1,0 +1,768 @@
+########################
+###     Policies     ###
+########################
+
+########
+# Jobs #
+########
+
+#Milk Cows
+lv_milk_cows_policy = {			# Milk Cow Specialization
+
+	potential = { has_technology = tech_lv_milk_cow_specialization }
+
+	option = {			# No Specialization
+		name = "lv_milk_cows_policy_default"
+		policy_flags = { lv_milk_cows_policy_default }
+		
+		on_enabled = {
+			hidden_effect = {
+				owner = {
+					if = {
+						limit = { NOT = { has_global_flag = lv_events_hidden } }
+						country_event = { id = lv_event_popups.1000 days = 5 random = 5 }
+					}
+				}
+			}
+		}
+		
+		AI_weight = { factor = 1 }
+	}
+
+	option = {			# Maximize Production
+		name = "lv_milk_cows_policy_max_milk"
+		policy_flags = { lv_milk_cows_policy_max_milk }
+		
+		on_enabled = {
+			hidden_effect = {
+				owner = {
+					if = {
+						limit = {
+							NOT = { has_global_flag = lv_events_hidden }
+						}
+						country_event = { id = lv_event_popups.1001 }
+					}
+				}
+			}
+		}
+		
+		ai_weight = {
+			factor = 10
+			modifier = {
+				factor = 0
+				owner = {
+					NOT = { lv_uses_food = yes }
+					NOT = {
+						has_monthly_income = {
+							resource = food
+							value < 1
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {			# Free Use Cows
+		name = "lv_milk_cows_policy_free_use"
+		policy_flags = {lv_milk_cows_policy_free_use}
+		
+		valid = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		
+		on_enabled = {
+			hidden_effect = {
+				owner = {
+					if = {
+						limit = {
+							NOT = { has_global_flag = lv_events_hidden }
+						}
+						country_event = { id = lv_event_popups.1002 }
+					}
+				}
+			}
+		}
+		
+		AI_weight = { factor = 0 }
+	}
+	
+	option = {			# Milk Cow Renting
+		name = "lv_milk_cows_policy_paid_use"
+		policy_flags = { lv_milk_cows_policy_paid_use }
+		
+		on_enabled = {
+			hidden_effect = {
+				owner = {
+					if = {
+						limit = {
+							NOT = { has_global_flag = lv_events_hidden }
+						}
+						country_event = { id = lv_event_popups.1003 }
+					}
+				}
+			}
+		}
+		
+		ai_weight = {
+			factor = 10
+			modifier = {
+				factor = 0
+				owner = {
+					NOT = {
+						has_monthly_income = {
+							resource = energy
+							value < 1
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {			# Milk Cow Breeding
+		name = "lv_milk_cows_policy_breeders"
+		policy_flags = { lv_milk_cows_policy_breeders }
+		
+		on_enabled = {
+			hidden_effect = {
+				owner = {
+					if = {
+						limit = {
+							NOT = { has_global_flag = lv_events_hidden }
+						}
+						country_event = { id = lv_event_popups.1004 }
+					}
+				}
+			}
+		}
+		
+		AI_weight = { factor = 0 }
+	}
+}
+
+#Prostitution (bio)
+lv_prostitution_legislation = {
+	potential = {	
+		OR = {
+			NOT = { has_ethic = ethic_gestalt_consciousness }
+			has_valid_civic = civic_machine_servitor
+		}
+		is_ai = no
+	}
+		
+	#Prohibited 
+	option = {
+		name = "lv_prostitution_prohibited"
+		policy_flags = { lv_prostitution_prohibited }
+		
+		potential = { 
+			NOR = { 
+				has_valid_civic = civic_lv_sex_slaves 
+				has_valid_civic = civic_lv_franchised_prostitution
+			} 
+		}
+		
+		modifier = {
+			planet_crime_add = 10
+			pop_growth_speed = 0.2
+			planet_jobs_produces_mult = 0.05
+		}
+		
+		AI_weight = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					has_ethic = "ethic_materialist"
+					has_ethic = "ethic_fanatic_materialist"
+				}
+			}
+			modifier = {
+				factor = 10
+				OR = {
+					has_ethic = "ethic_spiritualist"
+					has_ethic = "ethic_fanatic_spiritualist"
+				}
+			}
+		}
+	}
+
+	#Prostitution allowed, but unorganized
+	option = {
+		name = "lv_prostitution_authorized"
+		policy_flags = { lv_prostitution_authorized }
+		
+		potential = { 
+			NOR = { 
+				has_valid_civic = civic_lv_sex_slaves 
+				has_valid_civic = civic_lv_franchised_prostitution
+			} 
+		}
+		
+		modifier = {
+			planet_stability_add = 5
+			pop_growth_speed = -0.05
+		}
+		
+		AI_weight = {
+			factor = 2
+			modifier = {
+				factor = 10
+				OR = {
+					has_ethic = "ethic_spiritualist"
+					has_ethic = "ethic_fanatic_spiritualist"
+				}
+			}
+		}
+	}
+	
+	#Sexual release is considered a health need, and a public service is there therefore provided by government
+	option = {
+		name = "lv_prostitution_supported"
+		policy_flags = { lv_prostitution_supported }
+		
+		potential = { 
+			NOT = { has_valid_civic = civic_lv_sex_slaves } 
+		}
+
+		modifier = {
+			planet_stability_add = 10
+			pop_citizen_happiness = 0.05
+			pop_job_trade_mult = -0.1
+			#unity +2									 ## Added to prostitution jobs directly
+			pop_growth_speed = -0.05
+			pop_ethic_egalitarian_attraction_mult = 0.05
+		}
+		
+		AI_weight = {
+			factor = 1
+			modifier = {
+				factor = 5
+				has_ethic = "ethic_egalitarian"
+				has_ethic = "ethic_fanatic_authoritarian"
+				has_ethic = "ethic_pacifist"
+				has_ethic = "ethic_fanatic_pacifist"
+			}
+			modifier = {
+				factor = 10
+				has_ethic = "ethic_fanatic_egalitarian"
+			}
+		}
+	}
+	
+	#Prostitution organized, corporate
+	option = {
+		name = "lv_prostitution_industrialized"
+		policy_flags = { lv_prostitution_industrialized }
+		
+		modifier = {
+			pop_job_trade_mult = 0.2
+			pop_growth_speed = -0.1						## More widespread use of prostitution drops birth rate
+			pop_ethic_materialist_attraction_mult = 0.05
+		}
+		
+		AI_weight = {
+			factor = 1
+			modifier = {
+				factor = 5
+				has_ethic = "ethic_materialist"
+			}
+			modifier = {
+				factor = 10
+				has_ethic = "ethic_fanatic_materialist"
+			}
+		}
+	}
+	
+	#Prostitution using slaves
+	option = {
+		name = "lv_prostitution_slavery"	## While it seems weak on its own, also take into account bonuses from pop modifiers and civics
+		policy_flags = { lv_prostitution_slavery }
+		valid = { allows_slavery = yes }
+		prerequisites = { tech_lv_sex_slavery }
+		
+		modifier = {
+			leader_upkeep_empire_size_mult = -0.1
+			leader_cost_empire_size_mult = -0.1
+			pop_job_trade_mult = 0.1
+			pop_citizen_happiness = 0.05
+			pop_cat_slave_happiness = -0.1
+			country_resettlement_cost_mult = -0.5
+			pop_government_ethic_attraction = 0.1
+		}
+		
+		AI_weight = {
+			factor = 20
+			modifier = {
+				factor = 0
+				has_valid_ai_personality = yes
+				NOT = { has_ai_personality_behaviour = slaver }
+			}
+			modifier = {
+				factor = 0
+				has_valid_ai_personality = no
+				NOR = {
+					#has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+				}
+			}
+		}
+	}
+}
+
+###########
+# Leaders #
+###########
+
+# Gender Leadership
+lv_gender_leadership = {
+	potential = {
+		NOT = { owner = { has_authority = auth_machine_intelligence } }
+		is_ai = no
+	}
+	
+	#Default option
+	option = {
+		name = "lv_gender_leadership_default"
+		policy_flags = { lv_gender_leadership_default }
+	}
+	
+	#Female option
+	option = {
+		name = "lv_gender_leadership_female"
+		policy_flags = { lv_gender_leadership_female }
+		
+		valid = {
+			any_owned_pop  = {
+				NOR = {
+					species = { species_gender = male }
+					has_trait = trait_lv_all_male
+				}
+			}
+		}
+		
+		AI_weight = { factor = 0 }
+	}
+
+	#Male option
+	option = {
+		name = "lv_gender_leadership_male"
+		policy_flags = { lv_gender_leadership_male }
+		
+		valid = {
+			any_owned_pop  = {
+				NOR = {
+					species = { species_gender = female }
+					has_trait = trait_lv_all_female
+					has_trait = trait_lv_futanari
+				}
+			}
+		}
+		
+		AI_weight = { factor = 0 }
+	}	
+}
+
+# Pleasure Suit Legislation
+lv_pleasure_suit_legislation = {
+	potential = {	
+		OR = {
+			NOT = { has_ethic = ethic_gestalt_consciousness }
+			has_valid_civic = civic_machine_servitor
+		}
+		has_technology = tech_lv_mechanized_pleasure_suits
+	}
+
+	# Pleasure Suits Prohibited
+	option = {
+		name = "lv_pleasure_suits_banned"
+		policy_flags = { lv_pleasure_suits_banned }
+		valid = { NOT = { has_valid_civic = civic_lv_pleasure_suits } }
+
+		on_enabled = {
+			custom_tooltip = lv_pleasure_suits_banned_effect
+			hidden_effect = {
+				owner = {
+					country_event = { id = lv_leader_events.105 }
+				}
+			}
+		}
+		
+		modifier = {
+			planet_crime_add = 10
+		}
+		
+		AI_weight = { factor = 0 }
+	}
+
+	# Pleasure Suits Allowed
+	option = {
+		name = "lv_pleasure_suits_authorized" 
+		policy_flags = { lv_pleasure_suits_authorized }
+		
+		modifier = {
+			leaders_cost_mult =  -0.2
+			leaders_upkeep_mult = -0.2
+			pop_happiness = 0.05
+		}
+		
+		AI_weight = { factor = 12 }
+	}
+	
+	# Pleasure Suit Slavery
+	option = {
+		name = "lv_pleasure_suits_slavery"
+		policy_flags = { lv_pleasure_suits_slavery }
+		valid = { allows_slavery = yes }
+		
+		on_enabled = { custom_tooltip = lv_pleasure_suits_slavery_effect }
+
+		modifier = {
+			leaders_cost_mult =  -0.2
+			leaders_upkeep_mult = -0.2
+			pop_happiness = 0.05
+			pop_cat_slave_happiness = 0.1
+			planet_stability_add = 5
+		}
+					
+		AI_weight = {
+			factor = 20
+			modifier = {
+				factor = 0
+				has_valid_ai_personality = yes
+				NOT = { has_ai_personality_behaviour = slaver }
+			}
+			modifier = {
+				factor = 0
+				has_valid_ai_personality = no
+				NOR = {
+					#has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+				}
+			}
+		}
+	}
+}
+
+########
+# Pops #
+########
+
+# Intercompatible Womb - All male conversion
+lv_intercompatible_womb_conversion = {
+	potential = {
+		OR = {
+			has_technology = tech_lv_biological_mimicry_m
+			has_technology = tech_lv_hybridization_mastery
+		}
+	}
+	
+	option = {			# No Valid Pops (default)
+		name = "lv_no_valid_pops_womb"
+		policy_flags = { lv_no_valid_pops_womb }
+	}
+	
+	# No Intervention
+	option = {
+		name = "lv_no_intervention_womb"
+		policy_flags = { lv_no_intervention_womb }
+		valid = { any_owned_pop = { has_trait = trait_lv_intercompatible_womb } }
+		
+		modifier = {
+			pop_growth_speed = 0.1
+		}
+		
+		AI_weight = { factor = 0 }
+	}
+
+	# Preserved
+	option = {
+		name = "lv_preserve_females"
+		policy_flags = { lv_preserve_females }
+		valid = { any_owned_pop = { has_trait = trait_lv_intercompatible_womb } }
+		
+		modifier = { }
+		
+		AI_weight = { factor = 0 }
+	}
+}
+
+# Intercompatible Sperm - All female conversion
+lv_intercompatible_sperm_conversion = {
+	potential = {
+		OR = {
+			has_technology = tech_lv_biological_mimicry_m
+			has_technology = tech_lv_hybridization_mastery
+		}
+	}
+	
+	option = {			# No Valid Pops (default)
+		name = "lv_no_valid_pops_sperm"
+		policy_flags = { lv_no_valid_pops_sperm }
+	}
+	
+	# No Intervention (default)
+	option = {
+		name = "lv_no_intervention_sperm"
+		policy_flags = { lv_no_intervention_sperm }
+		valid = { any_owned_pop = { has_trait = trait_lv_intercompatible_sperm } }
+		
+		modifier = { pop_growth_speed = 0.1 }
+		
+		AI_weight = { factor = 0 }
+	}
+
+	# Preserved
+	option = {
+		name = "lv_preserve_males"
+		policy_flags = { lv_preserve_males }
+		valid = { any_owned_pop = { has_trait = trait_lv_intercompatible_sperm } }
+		
+		modifier = { }
+		
+		AI_weight = { factor = 0 }
+	}
+}
+
+# Aggressive Breeding
+lv_aggressively_adaptive_reproduction = {
+	potential = {	
+		any_owned_pop = {
+			pop_has_trait = trait_lv_aggressively_adaptive_reproduction
+			is_enslaved = no
+			lv_can_pop_procreate = yes
+		}
+		is_ai = no
+	}
+	
+	#Prohibited 
+	option = {
+		name = "lv_aggressively_adaptive_reproduction_stopped"
+		policy_flags = { lv_aggressively_adaptive_reproduction_stopped }
+		
+		valid = { is_ai = no }
+	
+		modifier = {
+			pop_happiness = -0.10
+		}
+		
+#		triggered_pop_modifier = {
+#			potential = {
+#				is_unemployed = yes
+#			}
+#			pop_happiness = -0.20
+#		}
+	
+		AI_weight = {
+			factor = 0
+		}
+	}
+
+	#Consensual Breeding
+	option = {
+		name = "lv_aggressively_adaptive_reproduction_consentual"
+		policy_flags = { lv_aggressively_adaptive_reproduction_consentual }
+		
+		valid = { is_ai = no }
+	
+		modifier = {
+			pop_happiness = -0.05
+		}
+		
+		AI_weight = {
+			factor = 0
+		}
+	}
+	
+	#Let nature take its course
+	option = {
+		name = "lv_aggressively_adaptive_reproduction_normal"
+		policy_flags = { lv_aggressively_adaptive_reproduction_normal }
+		
+		valid = { is_ai = no }
+	
+		modifier = {
+		}
+		
+#		triggered_pop_modifier = {
+#			potential = {
+#				is_unemployed = yes
+#			}
+#			pop_happiness = -0.20
+#		}
+	
+		AI_weight = {
+			factor = 10
+			modifier = {
+				factor = 5
+				has_ethic = "ethic_egalitarian"
+				has_ethic = "ethic_fanatic_authoritarian"
+				has_ethic = "ethic_pacifist"
+				has_ethic = "ethic_fanatic_pacifist"
+			}
+			modifier = {
+				factor = 10
+				has_ethic = "ethic_fanatic_egalitarian"
+			}
+		}
+	}
+	
+	#Aggressive fuckery
+	option = {
+		name = "lv_aggressively_adaptive_reproduction_rape"
+		policy_flags = { lv_aggressively_adaptive_reproduction_rape }
+		
+		valid = { is_ai = no }
+	
+		modifier = {
+			pop_happiness = 0.05
+		}
+		
+		AI_weight = {
+			factor = 0
+		}
+	}
+}
+
+# Feminization Degree
+lv_feminization_degree = {
+	potential = {
+		has_technology = tech_lv_advanced_feminization
+	}
+	
+	option = {			# feminize into fem males (default)
+		name = "lv_feminization_degree_femboy"
+		policy_flags = { lv_feminization_degree_femboy }
+		
+		AI_weight = {
+			factor = 10
+		}
+	}
+
+	option = {			# feminize into females
+		name = "lv_feminization_degree_female"
+		policy_flags = { lv_feminization_degree_female }
+		
+		AI_weight = {
+			factor = 0
+			modifier = {
+				add = 50
+				owner = {
+					AND = {
+						has_trait = trait_lv_all_female
+						has_authority = auth_hive_mind
+						NOT = { has_civic = civic_hive_devouring_swarm }
+					}
+				}
+			}
+			#modifier = {
+			#	add = 200
+			#	owner = {
+			#		OR = {
+			#			has_valid_civic = civic_lvex_ai_bimbo_hive
+			#			has_valid_civic = civic_lvex_ai_bimbo_hive_aggro
+			#		}
+			#	}
+			#}
+		}
+	}
+	
+	option = {			# feminize into futas
+		name = "lv_feminization_degree_futa"
+		policy_flags = { lv_feminization_degree_futa }
+		
+		AI_weight = {
+			factor = 0
+			modifier = {
+				add = 50
+				owner = {
+					AND = {
+						has_trait = trait_lv_futanari
+						has_authority = auth_hive_mind
+						NOT = { has_civic = civic_hive_devouring_swarm }
+					}
+				}
+			}
+		}
+	}
+
+	option = {			# feminize mixed
+		name = "lv_feminization_degree_mixed"
+		policy_flags = { lv_feminization_degree_mixed }
+		
+		AI_weight = {
+			factor = 0
+		}
+	}
+}
+
+# Feminization Range
+lv_feminization_range = {
+	potential = {
+		has_technology = tech_lv_advanced_feminization
+	}
+
+	option = {			# feminize none
+		name = "lv_feminization_range_none"
+		policy_flags = { lv_feminization_range_none }
+		
+		AI_weight = {
+			factor = 10
+		}
+	}
+
+	option = {			# feminize slaves
+		name = "lv_feminization_range_slaves"
+		policy_flags = { lv_feminization_range_slaves }
+		
+		AI_weight = {
+			factor = 0
+		}
+	}
+
+	option = {			# feminize livestock
+		name = "lv_feminization_range_livestock"
+		policy_flags = { lv_feminization_range_livestock }
+		
+		AI_weight = {
+			factor = 0
+		}
+	}
+
+	option = {			# feminize all
+		name = "lv_feminization_range_all"
+		policy_flags = { lv_feminization_range_all }
+		
+		AI_weight = {
+			factor = 0
+			modifier = {
+				add = 50
+				owner = {
+					AND = {
+						OR = {
+							has_trait = trait_lv_all_female
+							has_trait = trait_lv_futanari
+						}
+						has_authority = auth_hive_mind
+						NOT = {
+							has_civic = civic_hive_devouring_swarm
+						}
+					}
+				}
+			}
+			#modifier = {
+			#	add = 200
+			#	owner = {
+			#		OR = {
+			#			has_valid_civic = civic_lvex_ai_bimbo_hive
+			#			has_valid_civic = civic_lvex_ai_bimbo_hive_aggro
+			#		}
+			#	}
+			#}
+		}
+	}
+}
+
+###

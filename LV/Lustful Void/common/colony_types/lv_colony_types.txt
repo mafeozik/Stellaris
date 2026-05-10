@@ -1,0 +1,453 @@
+##################################
+###     Planet Designation     ###
+##################################
+#root = planet
+@small_planet_threshold = 18
+@free_districts_verylow_threshold = 3
+@free_districts_low_threshold = 5
+@free_districts_medium_threshold = 10
+@free_districts_high_threshold = 15
+@built_districts_low_threshold = 3
+@built_districts_medium_threshold = 4
+@built_districts_high_threshold = 8
+@stickiness = 10
+@stickiness_low = 5
+###
+
+# Milking Planet #
+
+col_lv_dairy = {
+	icon = GFX_colony_type_farm
+
+	potential = {
+		exists = owner
+		owner = {
+			country_uses_food = yes
+			has_technology = tech_lv_lactation_drugs
+		}
+	}
+
+	planet_modifier = {
+		planet_stability_add = 5
+		planet_amenities_add = 10
+		planet_lv_milk_cow_produces_mult = 0.35
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+				is_gestalt = no
+			}
+			OR = {
+				is_active_resolution = "resolution_greatergood_five_year_plans"
+				is_active_resolution = "resolution_greatergood_greater_than_ourselves"
+				is_active_resolution = "resolution_greatergood_balance_in_the_middle"
+				is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
+			}
+		}
+		modifier = {
+			planet_jobs_worker_produces_mult = 0.1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+				is_gestalt = yes
+			}
+			OR = {
+				is_active_resolution = "resolution_greatergood_five_year_plans"
+				is_active_resolution = "resolution_greatergood_greater_than_ourselves"
+				is_active_resolution = "resolution_greatergood_balance_in_the_middle"
+				is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
+			}
+		}
+		modifier = {
+			planet_jobs_simple_drone_produces_mult = 0.1
+		}
+	}
+
+	weight_modifier = {
+		modifier = {
+			add = 2
+			has_designation = col_lv_dairy
+		}
+		modifier = {
+			add = 5
+			has_modifier = lush_planet
+		}
+		modifier = {
+			factor = 0.1
+			has_modifier = bleak_planet
+		}
+		modifier = {
+			add = 2
+			has_building = building_lv_sapient_dairy_ranch
+		}
+		modifier = {
+			add = 5
+			num_buildings = { type = building_lv_sapient_dairy_ranch value >= 4 }
+		}
+		modifier = {
+			add = 3
+			has_building = building_lv_sapient_dairy_estates
+		}
+		modifier = {
+			add = 8
+			num_buildings = { type = building_lv_sapient_dairy_estates value >= 2 }
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				num_buildings = { type = building_lv_sapient_dairy_ranch value = 0 }
+				num_buildings = { type = building_lv_sapient_dairy_estates value = 0 }
+			}
+		}
+		modifier = {
+			add = -10
+			OR = {
+				has_modifier = bleak_planet
+				has_modifier = unbalanced_ecosystem
+				has_modifier = irradiated_planet
+			}
+		}
+	}
+}
+
+# Sex World #
+
+col_lv_sex = {
+	icon = GFX_colony_type_generator
+
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				NOT = { has_authority = auth_machine_intelligence }
+				has_civic = civic_machine_assimilator
+				has_civic = civic_machine_servitor				
+			}
+		}
+	}
+
+	planet_modifier = {
+		planet_stability_add = 5
+		planet_amenities_add = 10
+		planet_lv_sex_jobs_produces_mult = 0.35
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+				is_gestalt = no
+			}
+			OR = {
+				is_active_resolution = "resolution_greatergood_five_year_plans"
+				is_active_resolution = "resolution_greatergood_greater_than_ourselves"
+				is_active_resolution = "resolution_greatergood_balance_in_the_middle"
+				is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
+			}
+		}
+		modifier = {
+			planet_jobs_worker_produces_mult = 0.1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+				is_gestalt = yes
+			}
+			OR = {
+				is_active_resolution = "resolution_greatergood_five_year_plans"
+				is_active_resolution = "resolution_greatergood_greater_than_ourselves"
+				is_active_resolution = "resolution_greatergood_balance_in_the_middle"
+				is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
+			}
+		}
+		modifier = {
+			planet_jobs_simple_drone_produces_mult = 0.1
+		}
+	}
+
+	weight_modifier = {
+		modifier = {
+			add = 2
+			has_designation = col_lv_sex
+		}
+		modifier = {
+			add = 5
+			OR = {
+				has_modifier = hazardous_weather
+				has_modifier = strong_magnetic_field
+			}
+		}
+		modifier = {
+			add = 2
+			has_building = building_lv_brothel
+		}
+		modifier = {
+			add = 5
+			num_buildings = { type = building_lv_brothel value >= 4 }
+		}
+		modifier = {
+			add = 3
+			has_building = building_lv_bordello
+		}
+		modifier = {
+			add = 8
+			num_buildings = { type = building_lv_bordello value >= 2 }
+		}
+		modifier = {
+			add = 2
+			has_building = building_lv_sexology_labs
+		}
+		modifier = {
+			add = 5
+			num_buildings = { type = building_lv_sexology_labs value >= 4 }
+		}
+		modifier = {
+			add = 3
+			has_building = building_lv_sexology_complexes
+		}
+		modifier = {
+			add = 8
+			num_buildings = { type = building_lv_sexology_complexes value >= 2 }
+		}
+		modifier = {
+			add = 3
+			has_building = building_lv_advanced_sexology_complexes
+		}
+		modifier = {
+			add = 8
+			num_buildings = { type = building_lv_advanced_sexology_complexes value >= 2 }
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				num_buildings = { type = building_lv_brothel value = 0 }
+				num_buildings = { type = building_lv_bordello value = 0 }
+				num_buildings = { type = building_lv_sexology_labs value = 0 }
+				num_buildings = { type = building_lv_sexology_complexes value = 0 }
+				num_buildings = { type = building_lv_advanced_sexology_complexes value = 0 }
+			}
+		}
+	}
+}
+
+# Sexopolis #
+
+col_lv_sworld_mix = {
+	icon = GFX_colony_type_urban
+
+	potential = {
+		uses_district_set = lv_sworld
+	}
+
+	planet_modifier = {
+		planet_stability_add = 10
+		planet_amenities_add = 10
+		planet_immigration_pull_mult = 0.1
+		trade_value_mult = 0.25
+		species_empire_size_mult = -0.1
+	}
+
+	weight_modifier = {
+		base = 10
+	}
+}
+
+# Sexopolis Research #
+
+col_lv_sworld_research = {
+	icon = GFX_colony_type_research
+
+	potential = {
+		uses_district_set = lv_sworld
+	}
+	
+	planet_modifier = {
+		planet_stability_add = 5
+		planet_amenities_add = 10
+		planet_lv_sexologist_produces_mult = 0.35
+	}
+
+	weight_modifier = {
+		base = 10
+		modifier = {
+			add = 5
+			owner = { has_monthly_income = { resource = physics_research value < 200 } }
+			owner = { has_monthly_income = { resource = society_research value < 200 } }
+			owner = { has_monthly_income = { resource = engineering_research value < 200 } }
+		}
+		modifier = {
+			add = 5
+			has_designation = col_lv_sworld_research
+		}
+		modifier = {
+			add = 1
+			num_buildings = { type = building_research_lab_1 value >= 2 }
+		}
+		modifier = {
+			add = 2
+			num_buildings = { type = building_research_lab_1 value >= 3 }
+		}
+		modifier = {
+			add = 3
+			num_buildings = { type = building_research_lab_1 value >= 4 }
+		}
+		modifier = {
+			add = 4
+			num_buildings = { type = building_research_lab_1 value >= 5 }
+		}
+		modifier = {
+			add = 3
+			num_buildings = { type = building_research_lab_2 value >= 1 }
+		}
+		modifier = {
+			add = 4
+			num_buildings = { type = building_research_lab_2 value >= 2 }
+		}
+		modifier = {
+			add = 5
+			num_buildings = { type = building_research_lab_3 value >= 1 }
+		}
+	}
+}
+
+# Sexopolis Redlight #
+
+col_lv_sworld_redlight = {
+	icon = GFX_colony_type_urban
+
+	potential = {
+		uses_district_set = lv_sworld
+		exists = owner
+		owner = {
+			OR = {
+				is_gestalt = no
+				has_valid_civic = civic_machine_servitor
+			}
+		}
+	}
+	
+	planet_modifier = {
+		planet_stability_add = 5
+		planet_amenities_add = 10
+		pop_happiness = 0.10
+		planet_immigration_pull_mult = 0.2
+		trade_value_mult = 0.4
+	}
+	
+	weight_modifier = {
+		modifier = {
+			add = 100
+			has_designation = col_lv_sworld_redlight
+		}
+		modifier = {
+			add = 200
+			is_capital = no
+			num_districts = { type = district_lv_sworld_red_light value >= 3 }
+		}
+	}
+}
+
+# Pleasure Ringworld #
+
+col_lv_sring_mix = {
+	icon = GFX_colony_type_workers
+
+	potential = {
+		uses_district_set = lv_sring_world
+	}
+
+	planet_modifier = {
+		planet_stability_add = 10
+		planet_amenities_add = 10
+		pop_growth_speed = 0.1
+		planet_pop_assembly_mult = 0.1
+		planet_pop_assembly_organic_mult = 0.1
+	}
+
+	weight_modifier = {
+		base = 100
+	}
+}
+
+# Pleasure Ringworld Research #
+
+col_lv_sring_research = {
+	icon = GFX_colony_type_research
+
+	potential = {
+		uses_district_set = lv_sring_world
+	}
+
+	planet_modifier = {
+		planet_stability_add = 5
+		planet_amenities_add = 10
+		planet_lv_sexologist_produces_mult = 0.25
+	}
+
+	weight_modifier = {
+		modifier = {
+			add = 50
+			owner = { has_monthly_income = { resource = physics_research value < 200 } }
+			owner = { has_monthly_income = { resource = society_research value < 200 } }
+			owner = { has_monthly_income = { resource = engineering_research value < 200 } }
+		}
+		modifier = {
+			add = 100
+			has_designation = col_lv_sring_research
+		}
+		modifier = {
+			add = 200
+			is_capital = no
+			num_districts = { type = district_lv_sringworld_sexology value >= 1 }
+		}
+	}
+}
+
+# Pleasure Ringworld Redlight #
+
+col_lv_sring_red_light = {
+	icon = GFX_colony_type_urban
+
+	potential = {
+		uses_district_set = lv_sring_world
+		exists = owner
+		owner = {
+			OR = {
+				is_gestalt = no
+				has_valid_civic = civic_machine_servitor
+			}
+		}
+	}
+
+	planet_modifier = {
+		planet_stability_add = 5
+		planet_amenities_add = 10
+		pop_happiness = 0.10
+		trade_value_mult = 0.25
+	}
+
+	weight_modifier = {
+		base = 200
+		modifier = {
+			factor = 3
+			has_designation = col_lv_sring_red_light
+		}
+		modifier = {
+			factor = 3
+			num_districts = { type = district_lv_sringworld_red_light value >= 3 }
+		}
+	}
+}
+
+###
