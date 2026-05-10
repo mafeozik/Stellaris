@@ -1,6 +1,1 @@
-furrydickgirl_category = {
-	name = furrydickgirl
-	sets = {
-		furrydickgirl_set
-	}
-}
+# portrait_categories not used — species_class.portraits references portrait_group directly (old system)
