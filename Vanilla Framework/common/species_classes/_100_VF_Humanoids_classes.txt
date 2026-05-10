@@ -3,33 +3,37 @@ HUM = {
 
 	possible = { authority = { NOT = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE } } }
 
-	portraits = {	
-		"Hum01"
-		"Hum02"
-		"Hum03"
-		"Hum04"
-		"Hum05"
-		"Hum06"
-		#space for Protos(very little art available atm)
-		"Hum08"
-		"Hum09"
-		"Hum10"
-		"Hum11"
-		"Hum12"
-		"Hum13"
-		"Hum14"
-		"Hum15"
-		"Hum16"
-		"Hum17"
-		"Hum18"
-		"Hum19"
-		"Hum20"
-		"Hum21"
-		"Hum22"
-		"Hum23"
-		"Hum24"
-		"Hum25"
-}
+	custom_portraits = {
+		randomized = { always = yes }
+		playable = { always = yes }
+		portraits = {
+			"Hum01"
+			"Hum02"
+			"Hum03"
+			"Hum04"
+			"Hum05"
+			"Hum06"
+			#space for Protos(very little art available atm)
+			"Hum08"
+			"Hum09"
+			"Hum10"
+			"Hum11"
+			"Hum12"
+			"Hum13"
+			"Hum14"
+			"Hum15"
+			"Hum16"
+			"Hum17"
+			"Hum18"
+			"Hum19"
+			"Hum20"
+			"Hum21"
+			"Hum22"
+			"Hum23"
+			"Hum24"
+			"Hum25"
+		}
+	}
 
 	custom_portraits = {#event stuff
 		playable = { always = no }

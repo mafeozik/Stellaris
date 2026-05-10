@@ -3,24 +3,28 @@ FUN = {
 
 	possible = { authority = { NOT = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE } } }
 
-	portraits = {
-	#	"fun2"
-	#	"fun4"
-	#	"fun3"
-	#	"fun13"
-	#	"fun12"
-	#	"fun6"
-	#	"fun15"
-	#	"fun7"
-	#	"fun1"
-	#	"fun9"
-	#	"fun11"
-	#	"fun8"
-	#	"fun14"
-	#	"fun10"
-		"Fun01"
-		"Fun02"
-		"Fun03"
+	custom_portraits = {
+		randomized = { always = yes }
+		playable = { always = yes }
+		portraits = {
+		#	"fun2"
+		#	"fun4"
+		#	"fun3"
+		#	"fun13"
+		#	"fun12"
+		#	"fun6"
+		#	"fun15"
+		#	"fun7"
+		#	"fun1"
+		#	"fun9"
+		#	"fun11"
+		#	"fun8"
+		#	"fun14"
+		#	"fun10"
+			"Fun01"
+			"Fun02"
+			"Fun03"
+		}
 	}
 
 	custom_portraits = {#add additional portraits when customizing species

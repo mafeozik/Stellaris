@@ -3,25 +3,29 @@ MOL = {
 
 	possible = { authority = { NOT = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE } } }
 
-	portraits = {
-	#	"mol3"		# Rendered but not saved
-	#	"mol7"
-	#	"mol13"
-	#	"mol2"
-	#	"mol14"
-	#	"mol4"
-	#	"mol8"
-	#	"mol1"
-	#	"mol11"
-	#	"mol12"
-	#	"mol5"
-	#	"mol6"
-	#	"mol15"
-		"Moll01"
-		"Moll02"
-		"Moll03"
-		"Moll04"
-		"Moll05"
+	custom_portraits = {
+		randomized = { always = yes }
+		playable = { always = yes }
+		portraits = {
+		#	"mol3"		# Rendered but not saved
+		#	"mol7"
+		#	"mol13"
+		#	"mol2"
+		#	"mol14"
+		#	"mol4"
+		#	"mol8"
+		#	"mol1"
+		#	"mol11"
+		#	"mol12"
+		#	"mol5"
+		#	"mol6"
+		#	"mol15"
+			"Moll01"
+			"Moll02"
+			"Moll03"
+			"Moll04"
+			"Moll05"
+		}
 	}
 
 	custom_portraits = {#add additional portraits when customizing species

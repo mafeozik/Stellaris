@@ -3,34 +3,38 @@ REP = {
 
 	possible = { authority = { NOT = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE } } }
 
-	portraits = {
-	#	"rep2"
-	#	"rep10"
-	#	"rep14"
-	#	"rep3"
-	#	"rep7"
-	#	"rep12"
-	#	"rep9"
-	#	"rep11"
-	#	"rep6"
-	#	"rep13"
-	#	"rep1"
-	#	"rep8"
-	#	"rep4"
-	#	"rep15"
-	#	"rep5"
-		"Rep01"
-		"Rep02"
-		"Rep03"
-		"Rep04"
-		"Rep05"
-		"Rep06"
-		"Rep07"
-		"Rep08"
-		"Rep09"
-		"Rep10"
-		"Rep11"
-		"Rep12"
+	custom_portraits = {
+		randomized = { always = yes }
+		playable = { always = yes }
+		portraits = {
+		#	"rep2"
+		#	"rep10"
+		#	"rep14"
+		#	"rep3"
+		#	"rep7"
+		#	"rep12"
+		#	"rep9"
+		#	"rep11"
+		#	"rep6"
+		#	"rep13"
+		#	"rep1"
+		#	"rep8"
+		#	"rep4"
+		#	"rep15"
+		#	"rep5"
+			"Rep01"
+			"Rep02"
+			"Rep03"
+			"Rep04"
+			"Rep05"
+			"Rep06"
+			"Rep07"
+			"Rep08"
+			"Rep09"
+			"Rep10"
+			"Rep11"
+			"Rep12"
+		}
 	}
 
 	custom_portraits = {#add additional portraits when customizing species

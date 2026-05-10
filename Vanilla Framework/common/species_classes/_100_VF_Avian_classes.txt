@@ -3,30 +3,34 @@ AVI = {
 
 	possible = { authority = { NOT = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE } } }
 
-	portraits = {
-	#	"avi1"
-	#	"avi8"
-	#	"avi13"
-	#	"avi10"
-	#	"avi15"
-	#	"avi4"
-	#	"avi7"
-	#	"avi5"
-	#	"avi9"
-	#	"avi6"
-	#	"avi11"
-	#	"avi3"
-	#	"avi14"
-	#	"avi2"
-	#	"avi12"
-		"Avi01"
-		"Avi02"
-		"Avi03"
-		"Avi04"
-		"Avi05"
-		"Avi06"
-		"Avi07"
-		"Avi08"
+	custom_portraits = {
+		randomized = { always = yes }
+		playable = { always = yes }
+		portraits = {
+		#	"avi1"
+		#	"avi8"
+		#	"avi13"
+		#	"avi10"
+		#	"avi15"
+		#	"avi4"
+		#	"avi7"
+		#	"avi5"
+		#	"avi9"
+		#	"avi6"
+		#	"avi11"
+		#	"avi3"
+		#	"avi14"
+		#	"avi2"
+		#	"avi12"
+			"Avi01"
+			"Avi02"
+			"Avi03"
+			"Avi04"
+			"Avi05"
+			"Avi06"
+			"Avi07"
+			"Avi08"
+		}
 	}
 	custom_portraits = {#add additional portraits when customizing species
 		playable = { logged_in_to_pdx_account = yes }
