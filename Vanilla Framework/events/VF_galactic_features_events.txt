@@ -1,0 +1,37 @@
+namespace = galactic_features
+
+# Nuclear Wasteland
+ship_event = {
+	id = galactic_features.104
+	title = "anomaly.670.name"
+	desc = "galactic_features.104.desc"
+	picture = GFX_evt_city_ruins
+	location = FROM
+
+	is_triggered_only = yes
+
+	immediate = {
+		create_species = {
+			name = "NAME_Cockroach"
+			plural = "NAME_Cockroach_plural"
+			class = "ART"
+			portrait = "VFroach"
+			traits = {
+				ideal_planet_class = "pc_nuked"
+				trait = trait_adaptive
+				trait = random_presapient_trait
+			}
+			homeworld = FROM
+			sapient = no
+		}
+		FROM = {
+			create_pop = { species = last_created_species }
+			create_pop = { species = last_created_species }
+			create_pop = { species = last_created_species }
+		}
+		owner = { set_country_flag = found_presapients }
+	}
+
+	option = {
+		name = INTERESTING
+	}

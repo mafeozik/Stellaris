@@ -1,0 +1,9 @@
+EDRAC = {
+	draconid = {
+		name = Draconid
+		plural = Draconids
+		home_planet = Primordium
+		home_system = "Eye of Bahamut"
+		name_list = "HUM1"
+	}	
+}

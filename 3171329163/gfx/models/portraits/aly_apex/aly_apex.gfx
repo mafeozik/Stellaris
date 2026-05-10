@@ -1,0 +1,11 @@
+objectTypes = {
+	pdxmesh = {
+		name = "portrait_aly_apex_mesh"
+		file = "gfx/models/portraits/aly_apex/aly_apex_portrait.mesh"
+		animation = { id = "idle1"	type = "aly_apex_portrait_idle1_animation" }
+		animation = { id = "idle2"	type = "aly_apex_portrait_idle2_animation" }
+		animation = { id = "idle3"	type = "aly_apex_portrait_idle3_animation" }
+		animation = { id = "idle4"	type = "aly_apex_portrait_idle4_animation" }
+		scale = 0.9
+	}
+}

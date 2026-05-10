@@ -1,0 +1,566 @@
+
+
+# Checks if Subterraneans (player-only event nation) exists
+# Creates the country and saves it if it does not
+# use in planet scope
+create_subterranean_nation = {
+	optimize_memory
+	if = {
+		limit = {
+			NOT = {
+				any_country = {
+					is_country_type = adversary
+					has_country_flag = $FLAG$
+				}
+			}
+		}
+		create_species = {
+			name = random
+			class = random_non_machine
+			portrait = VFSubter
+			traits = {
+				trait = trait_cave_dweller
+				trait = random_traits
+			}
+			homeworld = root
+		}
+		create_country = {
+			name = "NAME_Subterranean_Nation"
+			species = last_created_species
+			type = adversary
+			ethos = random
+			origin = origin_subterranean
+			auto_delete = no
+			flag = {
+				icon = {
+					category = "zoological"
+					file = "flag_zoological_10.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "new_dawn.dds"
+				}
+				colors={
+					"red"
+					"black"
+					"null"
+					"null"
+				}
+			}
+			effect = {
+				set_relation_flag = {
+					who = root.owner
+					flag = subterror
+				}
+				set_country_flag = $FLAG$
+				establish_contact = { who = event_target:subterranean_planet_owner location = root }
+				establish_communications_no_message = event_target:subterranean_planet_owner
+				save_event_target_as = subterranean_nation
+				owner_species = { save_event_target_as = subterranean_species }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			NOT = { exists = event_target:subterranean_nation }
+		}
+		random_country = {
+			limit = {
+				is_country_type = adversary
+				has_country_flag = $FLAG$
+			}
+			save_event_target_as = subterranean_nation
+		}
+	}
+}
+
+
+ ##create a subspecies with the Intelligent and Fanatically Pacifist traits, and remove Militarist or Fanatically Militarist
+make_unleashed_messenger = {
+	if = {
+		limit = { root = { is_species_class = ART } }
+		if = {
+			limit = { NOT = { root = { species_portrait = Art02 } } }
+			modify_species = { portrait = Art02 }
+		}
+		else = { modify_species = { portrait = Art02 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = MAM } }
+		if = {
+			limit = { NOT = { root = { species_portrait = Mam09 } } }
+			modify_species = { portrait = Mam09 }
+		}
+		else = { modify_species = { portrait = Mam09 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = FUN } }
+		if = {
+			limit = { NOT = { root = { species_portrait = Fun03 } } }
+			modify_species = { portrait = Fun03 }
+		}
+		else = { modify_species = { portrait = Fun03 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = HUM } }
+		if = {
+			limit = { NOT = { root = { species_portrait = Hum15 } } }
+			modify_species = { portrait = Hum15 }
+		}
+		else = { modify_species = { portrait = Hum15 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = MOL } }
+		if = {
+			limit = { NOT = { root = { species_portrait = Moll03 } } }
+			modify_species = { portrait = Moll03 }
+		}
+		else = { modify_species = { portrait = Moll03 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = PLANT } }
+		if = {
+			limit = { NOT = { root = { species_portrait = Pla04 } } }
+			modify_species = { portrait = Pla04 }
+		}
+		else = { modify_species = { portrait = Pla04 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = REP } }
+		if = {
+			limit = { NOT = { root = { species_portrait = Rep05 } } }
+			modify_species = { portrait = Rep05 }
+		}
+		else = { modify_species = { portrait = Rep05 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = AVI } }
+		if = {
+			limit = { NOT = { root = { species_portrait = Avi05 } } }
+			modify_species = { portrait = Avi05 }
+		}
+		else = { modify_species = { portrait = Avi05 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = LITHOID } }
+		if = {
+			limit = { NOT = { root = { species_portrait = Lith02 } } }
+			modify_species = { portrait = Lith02 }
+		}
+		else = { modify_species = { portrait = Lith02 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = NECROID } }
+		if = {
+			limit = { NOT = { root = { species_portrait = Nec07 } } }
+			modify_species = { portrait = Nec07 }
+		}
+		else = { modify_species = { portrait = Nec07 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = AQUATIC } }
+		if = {
+			limit = { NOT = { root = { species_portrait = Aqua03 } } }
+			modify_species = { portrait = Aqua03 }
+		}
+		else = { modify_species = { portrait = Aqua03 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = TOX } }
+		if = {
+			limit = { NOT = { root = { species_portrait = Tox06 } } }
+			modify_species = { portrait = Tox06 }
+		}
+		else = { modify_species = { portrait = Tox06 } }
+	}
+}
+
+make_leashed_messenger = {
+	if = {
+		limit = { root = { is_species_class = ART } }
+		if = {
+			limit = { NOT = { root = { species_portrait = Art02 } } }
+			modify_species = { portrait = Art02 }
+		}
+		else = { modify_species = { portrait = Art02 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = MAM } }
+		if = {
+			limit = { NOT = { root = { species_portrait = Mam09 } } }
+			modify_species = { portrait = Mam09 }
+		}
+		else = { modify_species = { portrait = Mam09 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = FUN } }
+		if = {
+			limit = { NOT = { root = { species_portrait = Fun03 } } }
+			modify_species = { portrait = Fun03 }
+		}
+		else = { modify_species = { portrait = Fun03 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = HUM } }
+		if = {
+			limit = { NOT = { root = { species_portrait = Hum15 } } }
+			modify_species = { portrait = Hum15 }
+		}
+		else = { modify_species = { portrait = Hum15 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = MOL } }
+		if = {
+			limit = { NOT = { root = { species_portrait = Moll03 } } }
+			modify_species = { portrait = Moll03 }
+		}
+		else = { modify_species = { portrait = Moll03 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = PLANT } }
+		if = {
+			limit = { NOT = { root = { species_portrait = Pla04 } } }
+			modify_species = { portrait = Pla04 }
+		}
+		else = { modify_species = { portrait = Pla04 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = REP } }
+		if = {
+			limit = { NOT = { root = { species_portrait = Rep05 } } }
+			modify_species = { portrait = Rep05 }
+		}
+		else = { modify_species = { portrait = Rep05 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = AVI } }
+		if = {
+			limit = { NOT = { root = { species_portrait = Avi05 } } }
+			modify_species = { portrait = Avi05 }
+		}
+		else = { modify_species = { portrait = Avi05 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = LITHOID } }
+		if = {
+			limit = { NOT = { root = { species_portrait = Lith02 } } }
+			modify_species = { portrait = Lith02 }
+		}
+		else = { modify_species = { portrait = Lith02 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = NECROID } }
+		if = {
+			limit = { NOT = { root = { species_portrait = Nec07 } } }
+			modify_species = { portrait = Nec07 }
+		}
+		else = { modify_species = { portrait = Nec07 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = AQUATIC } }
+		if = {
+			limit = { NOT = { root = { species_portrait = Aqua03 } } }
+			modify_species = { portrait = Aqua03 }
+		}
+		else = { modify_species = { portrait = Aqua03 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = TOX } }
+		if = {
+			limit = { NOT = { root = { species_portrait = Tox06 } } }
+			modify_species = { portrait = Tox06 }
+		}
+		else = { modify_species = { portrait = Tox06 } }
+	}
+}
+
+
+
+create_nivlac_effect = {
+	if = {
+		limit = {
+			host_has_dlc = "Plantoids Species Pack"
+		}
+		create_species = {
+			name = "NAME_Nivlac"
+			plural = "NAME_Nivlacs"
+			class = FUN
+			portrait = "VFnivlac"
+			namelist = "FUN4"
+			extra_trait_points = 2
+			traits = {
+				trait = "trait_nivlac"
+				trait = "trait_plantoid_radiotrophic"
+				trait = "trait_quick_learners"
+			}
+			homeworld = event_target:nivlac_joint_planet
+			effect = {
+				save_global_event_target_as = nivlac_species
+			}
+		}
+	}
+
+	else = {
+		create_species = {
+			name = "NAME_Nivlac"
+			plural = "NAME_Nivlacs"
+			class = FUN
+			portrait = "VFnivlac"
+			namelist = "FUN4"
+			traits = {
+				trait = "trait_nivlac"
+				trait = "trait_quick_learners"
+			}
+			homeworld = event_target:nivlac_joint_planet
+			effect = {
+				save_global_event_target_as = nivlac_species
+			}
+		}
+	}
+}
+
+create_nu_baol_effect = {
+	if = {
+		limit = {
+			host_has_dlc = "Plantoids Species Pack"
+		}
+		create_species = {
+			name = "NAME_Nu_Baol"
+			plural = "NAME_Nu_Baol"
+			class = "PLANT"
+			portrait = pla16_baol
+			namelist = "PLANT2"
+			extra_trait_points = 4
+			traits = {
+				trait = "trait_plantoid_phototrophic"
+				trait = "trait_agrarian"
+				trait = "trait_communal"
+				trait = "trait_venerable"
+				trait = "trait_delicious"
+				trait = "trait_slow_breeders"
+				trait = "trait_pc_gaia_preference"
+			}
+			effect = {
+				save_global_event_target_as = nu_baol_species
+			}
+		}
+	}
+
+	else = {
+		create_species = {
+			name = "NAME_Nu_Baol"
+			plural = "NAME_Nu_Baol"
+			class = "PLANT"
+			portrait = pla16_baol
+			namelist = "PLANT2"
+			extra_trait_points = 4
+			traits = {
+				trait = "trait_agrarian"
+				trait = "trait_communal"
+				trait = "trait_venerable"
+				trait = "trait_delicious"
+				trait = "trait_slow_breeders"
+				trait = "trait_pc_gaia_preference"
+			}
+			effect = {
+				save_global_event_target_as = nu_baol_species
+			}
+		}
+	}
+}
+
+create_hive_nu_baol_effect = {
+	if = {
+		limit = {
+			host_has_dlc = "Plantoids Species Pack"
+		}
+		create_species = {
+			name = "NAME_Nu_Baol"
+			plural = "NAME_Nu_Baol"
+			class = "PLANT"
+			portrait = pla16_baol
+			namelist = "PLANT2"
+			extra_trait_points = 4
+			traits = {
+				trait = "trait_hive_mind"
+				trait = "trait_plantoid_phototrophic"
+				trait = "trait_agrarian"
+				trait = "trait_communal"
+				trait = "trait_venerable"
+				trait = "trait_delicious"
+				trait = "trait_slow_breeders"
+				trait = "trait_pc_gaia_preference"
+			}
+			effect = {
+				save_global_event_target_as = nu_baol_species
+			}
+		}
+	}
+
+	else = {
+		create_species = {
+			name = "NAME_Nu_Baol"
+			plural = "NAME_Nu_Baol"
+			class = "PLANT"
+			portrait = pla16_baol
+			namelist = "PLANT2"
+			extra_trait_points = 4
+			traits = {
+				trait = "trait_hive_mind"
+				trait = "trait_agrarian"
+				trait = "trait_communal"
+				trait = "trait_venerable"
+				trait = "trait_delicious"
+				trait = "trait_slow_breeders"
+				trait = "trait_pc_gaia_preference"
+			}
+			effect = {
+				save_global_event_target_as = nu_baol_species
+			}
+		}
+	}
+}
+
+
+central_crystal_country_spawn_effect = {
+	create_species = {
+		name = "NAME_Central_Crystal_Species"
+		plural = "NAME_Central_Crystal_Species"
+		class = PRE_ART
+		portrait = Art03
+		namelist = "ART4"
+		traits = {
+			trait = trait_pc_habitat_preference
+			trait = trait_void_dweller_1
+			trait = trait_intelligent
+			trait = trait_docile
+		}
+		homeworld = this
+
+		effect = {
+			save_global_event_target_as = crystalline_empire_species
+		}
+	}
+
+	create_country = {
+		name = "NAME_Central_Crystal_Country"
+		type = enclave
+		authority = auth_imperial
+		civics = {
+			civic = civic_imperial_cult
+			civic = civic_aristocratic_elite
+		}
+		species = last_created_species
+		ethos = {
+			ethic = "ethic_authoritarian"
+			ethic = "ethic_pacifist"
+			ethic = "ethic_spiritualist"
+		}
+		flag = {
+			icon = {
+				file = "flag_spherical_5.dds"
+				category = spherical
+			}
+			background = {
+				category = "backgrounds"
+				file = "00_solid.dds"
+			}
+			colors ={
+				"blue"
+				"blue"
+				"null"
+				"null"
+			}
+		}
+
+		ignore_initial_colony_error = yes
+
+		effect = {
+			create_leader = {
+				class = ruler
+				species = this
+				name = random
+				skill = 5
+				immortal = yes
+			}
+			set_leader = last_created_leader
+		}
+	}
+	last_created_country = {
+		save_global_event_target_as = central_crystal_empire
+		set_country_flag = central_crystal_country
+
+		set_graphical_culture = mammalian_01
+
+		set_male_ruler_title = "Commander"
+		set_female_ruler_title = "Commander"
+
+		create_fleet = {
+			name = "NAME_Central_Crystal_Enclave"
+			settings = { spawn_debris = no }
+			effect = {
+				set_owner = prev
+				create_ship = {
+					name = random
+					design = "NAME_Central_Crystal_Station"
+					graphical_culture = prev
+				}
+				set_location = {
+					target = prevprev
+					angle = random
+					distance = 100
+				}
+				save_event_target_as = CustomCapital
+				prev = {
+					set_custom_capital_location = event_target:CustomCapital
+				}
+			}
+		}
+	}
+	solar_system = {
+		save_global_event_target_as = the_outer_gate
+	}
+}
+
+create_demon_species_effect = {
+	if = {
+		limit = {
+			has_humanoids = yes
+			NOT = { species_portrait = humanoid_hp_01 }
+		}
+		create_species = {
+			name = "NAME_Demon_Refugees"
+			plural = "NAME_Demon_Refugee_pl"
+			class = NEC
+			namelist = random_class
+			portrait = "Nec06"
+			traits = {
+				trait = "trait_pc_nuked_preference"
+				trait = "trait_psionic"
+				trait = "trait_repugnant"
+				trait = "trait_robust"
+				trait = "trait_deviants"
+				trait = "trait_very_strong"
+				trait = "trait_slow_breeders"
+			}
+		}
+	}
+	else = {
+		create_species = {
+			name = "NAME_Demon_Refugees"
+			plural = "NAME_Demon_Refugee_pl"
+			class = NEC
+			namelist = random_class
+			portrait = VFDemon
+			traits = {
+				trait = "trait_pc_nuked_preference"
+				trait = "trait_psionic"
+				trait = "trait_repugnant"
+				trait = "trait_robust"
+				trait = "trait_deviants"
+				trait = "trait_very_strong"
+				trait = "trait_slow_breeders"
+			}
+		}
+	}
+}

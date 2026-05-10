@@ -1,0 +1,200 @@
+##############################################################
+###	PORTRAITS SETTINGS
+###
+### Which portraits are used is set in 
+### common\species_classes\00_species_classes.txt
+###
+###	This file configures how portraits and planet backgrounds are built.
+###	Default position orientation is lower left.
+##############################################################
+portraits = {
+#lykos female
+#black muscle
+	elykos_female_01 = {
+		entity = "portrait_elykos_female_01_entity" clothes_selector = "elykos_female_clothes_01" attachment_selector = "elykos_female_hair_01" greeting_sound = "mammalian_01_greetings"
+		character_textures = {
+			"gfx/models/portraits/Etiluos Body Pile/elybf11-lyi201.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf11-lyi202.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf11-lyi203.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf11-lyi204.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf11-lyi205.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf11-lyi206.dds"
+		}
+		custom_attachment_label = "HAIR_STYLE"
+	}
+# gray muscles
+	elykos_female_02 = {
+		entity = "portrait_elykos_female_01_entity" clothes_selector = "elykos_female_clothes_01" attachment_selector = "elykos_female_hair_02" greeting_sound = "mammalian_01_greetings"
+		character_textures = {
+			"gfx/models/portraits/Etiluos Body Pile/elybf12-lyi201.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf12-lyi202.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf12-lyi203.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf12-lyi204.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf12-lyi205.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf12-lyi206.dds"
+		}
+		custom_attachment_label = "HAIR_STYLE"
+	}
+#forest muscles
+	elykos_female_03 = {
+		entity = "portrait_elykos_female_01_entity" clothes_selector = "elykos_female_clothes_01" attachment_selector = "elykos_female_hair_03" greeting_sound = "mammalian_01_greetings"
+		character_textures = {
+			"gfx/models/portraits/Etiluos Body Pile/elybf13-lyi201.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf13-lyi202.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf13-lyi203.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf13-lyi204.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf13-lyi205.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf13-lyi206.dds"
+		}
+		custom_attachment_label = "HAIR_STYLE"
+	}
+# winter muscle
+	elykos_female_04 = {
+		entity = "portrait_elykos_female_01_entity" clothes_selector = "elykos_female_clothes_01" attachment_selector = "elykos_female_hair_04" greeting_sound = "mammalian_01_greetings"
+		character_textures = {
+			"gfx/models/portraits/Etiluos Body Pile/elybf14-lyi201.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf14-lyi202.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf14-lyi203.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf14-lyi204.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf14-lyi205.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf14-lyi206.dds"
+		}
+		custom_attachment_label = "HAIR_STYLE"
+	}
+#black slim
+	elykos_female_05 = {
+		entity = "portrait_elykos_female_02_entity" clothes_selector = "elykos_female_clothes_02" attachment_selector = "elykos_female_hair_01" greeting_sound = "mammalian_01_greetings"
+		character_textures = {
+			"gfx/models/portraits/Etiluos Body Pile/elybf21-lyi201.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf21-lyi202.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf21-lyi203.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf21-lyi204.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf21-lyi205.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf21-lyi206.dds"
+		}
+		custom_attachment_label = "HAIR_STYLE"
+	}
+# gray slim
+	elykos_female_06 = {
+		entity = "portrait_elykos_female_02_entity" clothes_selector = "elykos_female_clothes_02" attachment_selector = "elykos_female_hair_02" greeting_sound = "mammalian_01_greetings"
+		character_textures = {
+			"gfx/models/portraits/Etiluos Body Pile/elybf22-lyi201.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf22-lyi202.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf22-lyi203.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf22-lyi204.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf22-lyi205.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf22-lyi206.dds"
+		}
+		custom_attachment_label = "HAIR_STYLE"
+	}
+#forest slim
+	elykos_female_07 = {
+		entity = "portrait_elykos_female_02_entity" clothes_selector = "elykos_female_clothes_02" attachment_selector = "elykos_female_hair_03" greeting_sound = "mammalian_01_greetings"
+		character_textures = {
+			"gfx/models/portraits/Etiluos Body Pile/elybf23-lyi201.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf23-lyi202.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf23-lyi203.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf23-lyi204.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf23-lyi205.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf23-lyi206.dds"
+		}
+		custom_attachment_label = "HAIR_STYLE"
+	}
+# winter slim
+	elykos_female_08 = {
+		entity = "portrait_elykos_female_02_entity" clothes_selector = "elykos_female_clothes_02" attachment_selector = "elykos_female_hair_04" greeting_sound = "mammalian_01_greetings"
+		character_textures = {
+			"gfx/models/portraits/Etiluos Body Pile/elybf24-lyi201.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf24-lyi202.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf24-lyi203.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf24-lyi204.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf24-lyi205.dds"
+			"gfx/models/portraits/Etiluos Body Pile/elybf24-lyi206.dds"
+		}
+		custom_attachment_label = "HAIR_STYLE"
+	}
+}
+portrait_groups = {
+	lykos = {
+		default = elykos_female_01
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					elykos_female_01
+					elykos_female_02
+					elykos_female_03
+					elykos_female_04
+					elykos_female_05
+					elykos_female_06
+					elykos_female_07
+					elykos_female_08
+				}
+			}
+			#set = {
+			#	trigger = { ... }
+			#	portraits = { ... }
+			#	#using "set =" instead of "add" will first clear any portraits already added
+			#}
+		}		
+		#species scope
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					elykos_female_01
+					elykos_female_02
+					elykos_female_03
+					elykos_female_04
+					elykos_female_05
+					elykos_female_06
+					elykos_female_07
+					elykos_female_08
+				}
+			}
+		}		
+		#pop scope
+		pop_group = { #for a specific pop
+			add = {
+				portraits = {
+					elykos_female_01
+					elykos_female_02
+					elykos_female_03
+					elykos_female_04
+					elykos_female_05
+					elykos_female_06
+					elykos_female_07
+					elykos_female_08
+				}
+			}
+		}
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = {
+				portraits = {
+					elykos_female_01
+					elykos_female_02
+					elykos_female_03
+					elykos_female_04
+					elykos_female_05
+					elykos_female_06
+					elykos_female_07
+					elykos_female_08
+				}
+			}
+		}
+		#leader scope 
+		ruler = {
+			add = {
+				portraits = {
+					elykos_female_01
+					elykos_female_02
+					elykos_female_03
+					elykos_female_04
+					elykos_female_05
+					elykos_female_06
+					elykos_female_07
+					elykos_female_08
+				}
+			}
+		}
+	}
+}

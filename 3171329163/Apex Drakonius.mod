@@ -1,0 +1,17 @@
+version="1"
+tags={
+	"Species"
+	"Gameplay"
+	"Leaders"
+	"Lizard"
+	"Reptile"
+	"Dragon"
+	"Anthro"
+	"Furry"
+	"Machine"
+}
+name="Apex Drakonius"
+picture="thumbnail.png"
+supported_version="v4.0.*"
+path="C:/Users/caioa/OneDrive/Documentos/Paradox Interactive/Stellaris/mod/Apex Lizardmen"
+remote_file_id="3171329163"

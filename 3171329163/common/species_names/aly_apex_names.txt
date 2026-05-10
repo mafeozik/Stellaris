@@ -1,0 +1,9 @@
+Aly_Apex_Lizardmen = {
+    1 = {
+        name = Aly_Apex_Lizardmen_name
+        plural = Aly_Apex_Lizardmen_name_plural
+        home_planet = Aly_Apex_Lizardmen_name_home_planet
+        home_system = Aly_Apex_Lizardmen_name_home_system
+        name_list = "REP1"
+    }
+}

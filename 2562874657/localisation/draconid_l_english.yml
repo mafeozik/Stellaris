@@ -1,0 +1,22 @@
+﻿l_english:
+
+####################################
+# Species Classes
+####################################
+
+EDRAC:0 "Draconid"
+EDRAC_desc:1 "Species Class has no effect on your Empire, but Draconid species may consider other Draconids to be less alien than other Species Classes."
+EDRAC_plural:0 "Draconids"
+EDRAC_insult_01:0 "beast"
+EDRAC_insult_plural_01:0 "beasts"
+EDRAC_compliment_01:0 "angel"
+EDRAC_compliment_plural_01:0 "angels"
+EDRAC_spawn:0 "maiden"
+EDRAC_spawn_plural:0 "maidens"
+EDRAC_sound_01:0 "growling"
+EDRAC_sound_02:0 "grunting"
+EDRAC_sound_03:0 "yapping"
+EDRAC_sound_04:0 "yowling"
+EDRAC_sound_05:0 "mewling"
+EDRAC_organ:0 "stomach"
+EDRAC_mouth:0 "mouth"

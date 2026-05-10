@@ -1,0 +1,55 @@
+	
+	#FEMALE
+	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	
+	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#
+
+	animation = {
+		name = "kitsune_female_01_happy_animation"
+		file = "kitsune_female_01_portrait_happy.anim"
+	}
+
+	animation = {
+		name = "kitsune_female_01_happy_2_animation"
+		file = "kitsune_female_01_portrait_happy_2.anim"
+	}
+	
+	animation = {
+		name = "kitsune_female_01_sad_animation"
+		file = "kitsune_female_01_portrait_sad.anim"
+	}
+	
+	
+	animation = {
+		name = "kitsune_female_01_sad_2_animation"
+		file = "kitsune_female_01_portrait_sad_2.anim"
+	}
+	
+	
+	
+	#MALE
+	
+	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	
+	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#
+	
+	animation = {
+		name = "kitsune_male_01_happy_animation"
+		file = "kitsune_male_01_portrait_happy.anim"
+	}
+
+	animation = {
+		name = "kitsune_male_01_happy_2_animation"
+		file = "kitsune_male_01_portrait_happy_2.anim"
+	}
+	
+	animation = {
+		name = "kitsune_male_01_sad_animation"
+		file = "kitsune_male_01_portrait_sad.anim"
+	}
+	
+	
+	animation = {
+		name = "kitsune_male_01_sad_2_animation"
+		file = "kitsune_male_01_portrait_sad_2.anim"
+	}
+
+	

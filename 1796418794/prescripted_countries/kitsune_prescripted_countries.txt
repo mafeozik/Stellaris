@@ -1,0 +1,161 @@
+"Sacred Kitsune Council"=
+{
+	key="Sacred Kitsune Council"
+	ship_prefix=
+	{
+		key="KHE"
+		literal=yes
+	}
+	species=
+	{
+		class="MAM"
+		portrait="kitsune"
+		species_name=
+		{
+			key="Kitsune"
+			literal=yes
+		}
+		species_plural=
+		{
+			key="Kitsunes"
+			literal=yes
+		}
+		species_adjective=
+		{
+			key="Kitsune"
+			literal=yes
+		}
+		species_bio="In Japanese folklore, kitsune are foxes that possess paranormal abilities that increase as they get older and wiser. According to folklore, the kitsune-foxes (or perhaps the \"fox spirits\") can bewitch people, just like the tanuki, they have the ability to shapeshift into human or other forms to trick or fool human beings. While some folktales speak of kitsune employing this ability to trick others -as foxes in folklore often do- other stories portray them as faithful guardians, friends, and lovers.
+
+Foxes and humans lived close together in ancient Japan this companionship gave rise to legends about the creatures. Kitsune have become closely associated with Inari, a Shinto kami or spirit, and serve as its messengers. This role has reinforced the fox's supernatural significance. The more tails a kitsune has -they may have as many as nine- the older, wiser, and more powerful it is. Because of their potential power and influence, some people make sacrifices to them as to a diety."
+		name_list="MAM3"
+		gender=not_set
+		trait="trait_venerable"
+		trait="trait_slow_breeders"
+		trait="trait_unruly"
+		trait="trait_intelligent"
+	}
+	name=
+	{
+		key="%ADJ%"
+		variables=
+		{
+			
+			{
+				key="1"
+				value=
+				{
+					key="Sacred"
+					variables=
+					{
+						
+						{
+							key="1"
+							value=
+							{
+								key="%ADJ%"
+								variables=
+								{
+									
+									{
+										key="1"
+										value=
+										{
+											key="Kitsune"
+											variables=
+											{
+												
+												{
+													key="1"
+													value=
+													{
+														key="Council"
+													}
+												}
+ 
+											}
+										}
+									}
+ 
+								}
+							}
+						}
+ 
+					}
+				}
+			}
+ 
+		}
+	}
+	adjective=
+	{
+		key="Kitsune"
+	}
+	authority="auth_oligarchic"
+	government="gov_holy_tribunal"
+	planet_name=
+	{
+		key="Chikyuu"
+		literal=yes
+	}
+	planet_class="pc_continental"
+	system_name=
+	{
+		key="Taiyou"
+		literal=yes
+	}
+	initializer=""
+	graphical_culture="avian_01"
+	city_graphical_culture="mammalian_01"
+	empire_flag=
+	{
+		icon=
+		{
+			category="spherical"
+			file="flag_spherical_15.dds"
+		}
+		background=
+		{
+			category="backgrounds"
+			file="circle.dds"
+		}
+		colors=
+		{
+			"red"
+			"white"
+			"black"
+			"null"
+		}
+	}
+	ruler=
+	{
+		gender=female
+		name=
+		{
+			full_names=
+			{
+				key="Mino Kitsune"
+				literal=yes
+			}
+		}
+		portrait="kitsune_female_13"
+		texture=8
+		evolution_mask=0
+		attachment=0
+		clothes=0
+		trait="trait_ruler_eye_for_talent"
+		leader_class="commander"
+	}
+	spawn_as_fallen=no
+	ignore_portrait_duplication=no
+	room="default_room"
+	spawn_enabled=yes
+	ethic="ethic_xenophile"
+	ethic="ethic_fanatic_spiritualist"
+	civics=
+	{
+		"civic_exalted_priesthood"
+		"civic_ascensionists"
+	}
+	origin="origin_default"
+}

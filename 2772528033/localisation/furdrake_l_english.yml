@@ -1,0 +1,22 @@
+﻿l_english:
+
+####################################
+# Species Classes
+####################################
+
+EFURD:0 "Furdrake"
+EFURD_desc:1 "Species Class has no effect on your Empire, but Furdrake species may consider other Furdrake to be less alien than other Species Classes."
+EFURD_plural:0 "Furdrake"
+EFURD_insult_01:0 "beast"
+EFURD_insult_plural_01:0 "beasts"
+EFURD_compliment_01:0 "angel"
+EFURD_compliment_plural_01:0 "angels"
+EFURD_spawn:0 "maiden"
+EFURD_spawn_plural:0 "maidens"
+EFURD_sound_01:0 "growling"
+EFURD_sound_02:0 "grunting"
+EFURD_sound_03:0 "yapping"
+EFURD_sound_04:0 "yowling"
+EFURD_sound_05:0 "mewling"
+EFURD_organ:0 "stomach"
+EFURD_mouth:0 "mouth"

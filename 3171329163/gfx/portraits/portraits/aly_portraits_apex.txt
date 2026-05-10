@@ -1,0 +1,156 @@
+##############################################################
+###	PORTRAITS SETTINGS
+###
+### Which portraits are used is set in
+### common\species_classes\00_species_classes.txt
+###
+###	This file configures how portraits and planet backgrounds are built.
+###	Default position orientation is lower left.
+##############################################################
+
+############################
+portraits = {
+	
+	aly_apex_male = {	entity = "portrait_aly_apex_entity" clothes_selector = "aly_apex_clothes_male" attachment_selector = "no_texture"	greeting_sound = "reptilian_01_greetings"
+		character_textures = {
+            "gfx/models/portraits/aly_apex/aly_apex_dragon_green.dds"
+            "gfx/models/portraits/aly_apex/aly_apex_dragon_orange.dds"
+            "gfx/models/portraits/aly_apex/aly_apex_dragon_red.dds"
+			"gfx/models/portraits/aly_apex/aly_apex_dragon_black.dds"
+		}
+	}
+	aly_apex_female = {	entity = "portrait_aly_apex_entity" clothes_selector = "aly_apex_clothes_female" attachment_selector = "no_texture"	greeting_sound = "reptilian_01_greetings"
+		character_textures = {
+			"gfx/models/portraits/aly_apex/aly_apex_dragon_female_green.dds"
+			"gfx/models/portraits/aly_apex/aly_apex_dragon_female_yellow.dds"
+			"gfx/models/portraits/aly_apex/aly_apex_dragon_female_red.dds"
+			"gfx/models/portraits/aly_apex/aly_apex_dragon_female_black.dds"
+		}
+	}
+}
+
+portrait_groups = {
+	aly_apex = {
+		default = aly_apex_male
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				trigger = {
+					ruler = {
+						OR = {
+							gender = male
+							gender = indeterminable
+						}
+					}
+				}
+				portraits = {
+					aly_apex_male
+				}
+			}
+			add = {
+				trigger = {
+					ruler = {
+						OR = {
+							gender = female
+							gender = indeterminable
+						}
+					}
+				}
+				portraits = {
+					aly_apex_female
+				}
+			}
+		}
+
+		leader = {
+			add = {
+				trigger = {
+					OR = {
+						gender = male
+						gender = indeterminable
+					}
+				}
+				portraits = {
+					aly_apex_male
+				}
+			}
+			add = {
+				trigger = {
+					OR = {
+						gender = female
+						gender = indeterminable
+					}
+				}
+				portraits = {
+					aly_apex_female
+				}
+			}
+		}
+
+		ruler = {
+			add = {
+				trigger = {
+					OR = {
+						gender = male
+						gender = indeterminable
+					}
+				}
+				portraits = {
+					aly_apex_male
+				}
+			}
+			add = {
+				trigger = {
+					OR = {
+						gender = female
+						gender = indeterminable
+					}
+				}
+				portraits = {
+					aly_apex_female
+				}
+			}
+		}
+
+		#species scope
+		species = { #generic portrait for a species
+			add = {
+				trigger = {
+					exists = species
+					NOT = { species = { species_gender = male } }
+				}
+				portraits = {
+					aly_apex_female
+				}
+			}
+			add = {
+				trigger = {
+					exists = species
+					NOT = { species = { species_gender = female } }
+				}
+				portraits = {
+					aly_apex_male
+				}
+			}
+		}
+
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				trigger = {
+					NOT = { species = { species_gender = male } }
+				}
+				portraits = {
+					aly_apex_female
+				}
+			}
+			add = {
+				trigger = {
+					NOT = { species = { species_gender = female } }
+				}
+				portraits = {
+					aly_apex_male
+				}
+			}
+		}
+	}
+}

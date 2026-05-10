@@ -1,0 +1,287 @@
+namespace = toxoids
+
+## First Quest
+situation_event = {
+	id = toxoids.7005
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = { #create and exile a leader to get a name for the knight
+		owner = {
+			save_event_target_as = owner
+			create_leader = {
+				class = commander
+				species = owner_main_species
+				name = random
+			}
+			last_created_leader = {
+				exile_leader_as = questing_knight_1
+				save_event_target_as = questing_knight_1
+			}
+			#also the squire
+			create_leader = {
+				class = commander
+				species = owner_main_species
+				name = random
+			}
+			last_created_leader = {
+				exile_leader_as = questing_knight_2
+				save_event_target_as = questing_knight_2
+				set_immortal = yes
+				save_global_event_target_as = questing_knight_2_@event_target:owner #@root.owner is ambiguous!
+			}
+			#also Sinople
+			create_species = {
+				name = NAME_Sinople
+				plural = NAME_Sinople
+				class = MACHINE
+				portrait = "VFsinople"
+				effect = {
+					save_event_target_as = species_sinople
+				}
+			}
+			create_leader = {
+				class = commander
+				species = event_target:species_sinople
+				name = NAME_Sinople
+			}
+			last_created_leader = {
+				exile_leader_as = sinople
+				save_event_target_as = sinople
+			}
+		}
+	}
+
+	after = {
+		owner = {
+			country_event = { id = toxoids.7006 }
+		}
+	}
+}
+
+#The Deal
+#Find out what Shroud1 is
+country_event = {
+	id = toxoids.7055
+	title = toxoids.7055.name
+	desc = toxoids.7055.desc
+	diplomatic = yes
+	diplomatic_title = utopia.3000.name
+	picture_event_data = {
+		portrait = shroud1
+		room = shroud_room
+	}
+	is_triggered_only = yes
+
+	immediate = {
+		create_leader = {
+			class = commander
+			species = owner_main_species
+			name = random
+		}
+		last_created_leader = {
+			exile_leader_as = questing_knight_X
+			save_event_target_as = questing_knight_X
+			set_immortal = yes
+			save_global_event_target_as = questing_knight_X_@root
+		}
+	}
+
+	option = { #Yes
+		name = toxoids.7055.A
+		hidden_effect = {
+			owner = {
+				country_event = { id = toxoids.7060 }
+			}
+		}
+	}
+	option = { #No
+		name = toxoids.7055.B
+		hidden_effect = {
+			owner = {
+				country_event = { id = toxoids.7065 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = toxoids.7115
+	title = TRANSMISSION
+	desc = toxoids.7115.desc
+	diplomatic = yes
+	diplomatic_title = toxoids.7115.name
+	picture_event_data = {
+		portrait = "VFsinople"
+		room = toxoids_room
+	}
+	is_triggered_only = yes
+
+	option = {
+		name = toxoids.7115.A
+		hidden_effect = { set_country_flag = temp_tox7115_A }
+	}
+	option = {
+		name = toxoids.7115.B
+		hidden_effect = { set_country_flag = temp_tox7115_B }
+	}
+	option = {
+		name = toxoids.7115.C
+	}
+	after = {
+		hidden_effect = {
+			country_event = { id = toxoids.7120 }
+		}
+	}
+}
+
+country_event = {
+	id = toxoids.7120
+	title = TRANSMISSION
+	desc = toxoids.7120.desc
+	diplomatic = yes
+	diplomatic_title = toxoids.7115.name
+	picture_event_data = {
+		portrait = "VFsinople"
+		room = toxoids_room
+	}
+	is_triggered_only = yes
+
+	option = {
+		name = toxoids.7120.A
+		hidden_effect = { set_country_flag = temp_tox7120_A }
+	}
+	option = {
+		name = {
+			text = toxoids.7120.B1
+			trigger = { has_country_flag = temp_tox7115_A }
+		}
+		name = {
+			text = toxoids.7120.B2
+			trigger = { has_country_flag = temp_tox7115_B }
+		}
+		trigger = {
+			OR = {
+				has_country_flag = temp_tox7115_A
+				has_country_flag = temp_tox7115_B
+			}
+		}
+		hidden_effect = { set_country_flag = temp_tox7120_B }
+	}
+	option = {
+		name = toxoids.7120.C
+		hidden_effect = { set_country_flag = temp_tox7120_C }
+	}
+	after = {
+		hidden_effect = {
+			remove_country_flag = temp_tox7115_A
+			remove_country_flag = temp_tox7115_B
+			country_event = { id = toxoids.7125 }
+		}
+	}
+}
+
+country_event = {
+	id = toxoids.7125
+	title = TRANSMISSION
+	desc = {
+		text = toxoids.7125.desc1
+		trigger = { has_country_flag = temp_tox7120_A }
+	}
+	desc = {
+		text = toxoids.7125.desc2
+		trigger = { has_country_flag = temp_tox7120_B }
+	}
+	desc = {
+		text = toxoids.7125.desc3
+		trigger = { has_country_flag = temp_tox7120_C }
+	}
+	diplomatic = yes
+	diplomatic_title = toxoids.7115.name
+	picture_event_data = {
+		portrait = "VFsinople"
+		room = toxoids_room
+	}
+	is_triggered_only = yes
+
+	option = {
+		name = toxoids.7125.A
+		if = {
+			limit = { has_country_flag = temp_tox7120_C }
+			add_monthly_resource_mult = {
+				resource = unity
+				value = @tier1unityreward
+				min = @tier1unitymin
+				max = @tier1unitymax
+			}
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			remove_country_flag = temp_tox7120_A
+			remove_country_flag = temp_tox7120_B
+			remove_country_flag = temp_tox7120_C
+			country_event = { id = toxoids.7130 days = 10 random = 10 }
+		}
+	}
+}
+
+country_event = { #Diplo. Dialogue with a trickster who tried to get you to fight for them
+	id = toxoids.7150
+	title = "toxoids.7150"
+	desc = "toxoids.7150.desc"
+	show_sound = evn_tox_knights_of_the_toxic_god
+	diplomatic = yes
+	diplomatic_title = BLANK_STRING
+	picture_event_data = {
+		portrait = "VShroudwalker"
+		room = extradimensional_green_room
+	}
+
+	is_triggered_only = yes
+
+	option = { #KnowMore
+		name = toxoids.7150.a
+		custom_tooltip = toxoids.7150.a.tooltip
+		trigger = {
+			NOT = { has_country_flag = quest_six_enough }
+		}
+		hidden_effect = {
+			country_event = { id = toxoids.7155 }
+		}
+	}
+
+	option = { #Accept
+		name = toxoids.7150.b
+		custom_tooltip = toxoids.7150.b.tooltip
+		hidden_effect = {
+			country_event = { id = toxoids.7160 days = 5 }
+		}
+	}
+
+	option = { #Refuse
+		name = toxoids.7150.c
+		custom_tooltip = toxoids.7150.c.tooltip
+		hidden_effect = {
+			country_event = { id = toxoids.7164 }
+		}
+	}
+
+	option = { #If psionic yourself, see through the lies
+		name = toxoids.7150.d
+		trigger = {
+			has_ascension_perk = ap_mind_over_matter
+		}
+		custom_tooltip = toxoids.7150.d.tooltip
+		icon = {
+			icon = GFX_psionic
+			text = toxoids.7150.d.psionic
+		}
+		hidden_effect = {
+			country_event = { id = toxoids.7164 }
+			set_country_flag = quest_six_liar
+		}
+	}
+}

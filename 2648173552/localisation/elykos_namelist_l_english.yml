@@ -1,0 +1,17 @@
+﻿l_english:
+ ####################################
+ # Misc
+ ####################################
+ name_list_ELYKO:0 "Lykos"
+ name_list_ELYKO_desc:0 " "
+ELYKO_xxFrontierOutpost_ORD:0 "$ORD$ Frontier Outpost"
+ELYKO_xxFleet_ORD:0 "$ORD$ Pack"
+ELYKO_xxMaidenGuard_ORD:0 "$ORD$ Maiden Guard"
+ELYKO_xxMaidenAssaultForce_ORD:0 "$ORD$ Maiden Assault Force"
+ELYKO_xxServentInfantry_ORD:0 "$ORD$ Servent Infantry"
+ELYKO_xxCloneArmy_ORD:0 "$ORD$ Clone Army"
+ELYKO_xxCyborgForce_ORD:0 "$ORD$ Cyborg Force"
+ELYKO_xxSyntheticRangers_ORD:0 "$ORD$ Synthetic Rangers"
+ELYKO_xxOrder_ORD:0 "$ORD$ Order"
+ELYKO_xxBio-WarfareDivision_ORD:0 "$ORD$ Bio-Warfare Division"
+ELYKO_xxMutantCommandos_ORD:0 "$ORD$ Mutant Commandos"

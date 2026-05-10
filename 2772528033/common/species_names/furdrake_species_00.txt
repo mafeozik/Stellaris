@@ -1,0 +1,9 @@
+EFURD = {
+	furdrake = {
+		name = Furdrake
+		plural = Furdrake
+		home_planet = ILIAD
+		home_system = Syronox
+		name_list = "REP3"
+	}	
+}

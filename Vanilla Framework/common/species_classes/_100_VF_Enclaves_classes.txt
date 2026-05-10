@@ -1,0 +1,28 @@
+# Enclaves
+SALVAGER = {
+	archetype = BIOLOGICAL
+	playable = { always = no }
+	randomized = no
+	gender = no
+
+	portraits = {
+		"VSalvager"
+	}
+
+	graphical_culture = mammalian_01
+	move_pop_sound_effect = "moving_pop_confirmation"
+}
+
+SHROUDWALKER = {
+	archetype = BIOLOGICAL
+	playable = { always = no }
+	randomized = no
+	gender = no
+
+	portraits = {
+		"VShroudwalker"
+	}
+
+	graphical_culture = mammalian_01
+	move_pop_sound_effect = "moving_pop_confirmation"
+}

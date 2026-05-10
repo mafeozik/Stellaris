@@ -1,0 +1,7 @@
+aly_apex_category = {
+	name = Aly_Apex_Lizardmen
+
+	sets = {
+		aly_apex_set
+	}
+}

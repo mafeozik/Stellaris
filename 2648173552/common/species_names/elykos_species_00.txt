@@ -1,0 +1,9 @@
+ELYKO = {
+	lykos = {
+		name = Lykos
+		plural = Lykos
+		home_planet = Sanctuary
+		home_system = Tyx
+		name_list = "ELYKO"
+	}	
+}

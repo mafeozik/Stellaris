@@ -1,0 +1,14 @@
+reptilians = { #Portrait name for simplicity
+	name = REP	#Species Class Name here ( For No Loc changes needed)
+
+	sets = {
+	draconid #Portrait name for simplicity
+	}
+}
+humanoids = { #Portrait name for simplicity
+	name = HUM	#Species Class Name here ( For No Loc changes needed)
+
+	sets = {
+	draconid2 #Portrait name for simplicity
+	}
+}
