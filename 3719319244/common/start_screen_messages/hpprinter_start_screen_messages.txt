@@ -1,0 +1,9 @@
+# HP DeskJet 2630 Wireless All-in-One Printers
+part = {
+	location = 0
+	localization = "START_SCREEN_HP"
+	
+	trigger = {
+		species_portrait = HPPrinter
+	}
+}

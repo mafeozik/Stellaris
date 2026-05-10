@@ -1,0 +1,9 @@
+HPPrinter = {
+	species_class = MACHINE
+
+	
+	portraits = { 
+	
+		"HPPrinter"
+	}	
+}

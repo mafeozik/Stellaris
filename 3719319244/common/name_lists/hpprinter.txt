@@ -1,0 +1,246 @@
+
+HPPrinter = {
+	should_name_home_system_planets = no
+	
+	ship_names = {
+
+		generic = {
+			Inkjet Multifunction All-in-One Dot-Matrix Impact Daisy-Wheel Drum Line Chain Band Photocopier Solid-Ink Dye-Sublimation 
+		}
+
+		corvette = {
+			Inkjet Multifunction All-in-One Dot-Matrix Impact Daisy-Wheel Drum Line Chain Band Photocopier Solid-Ink Dye-Sublimation 
+		}
+		
+		destroyer = {
+			Inkjet Multifunction All-in-One Dot-Matrix Impact Daisy-Wheel Drum Line Chain Band Photocopier Solid-Ink Dye-Sublimation 		
+		}
+		
+		cruiser = {
+			Inkjet Multifunction All-in-One Dot-Matrix Impact Daisy-Wheel Drum Line Chain Band Photocopier Solid-Ink Dye-Sublimation 		
+		}
+		
+		battleship = {
+			Inkjet Multifunction All-in-One Dot-Matrix Impact Daisy-Wheel Drum Line Chain Band Photocopier Solid-Ink Dye-Sublimation 		
+		}
+
+		titan = {
+			Inkjet Multifunction All-in-One Dot-Matrix Impact Daisy-Wheel Drum Line Chain Band Photocopier Solid-Ink Dye-Sublimation 		
+		}
+
+		colossus = {
+			Inkjet Multifunction All-in-One Dot-Matrix Impact Daisy-Wheel Drum Line Chain Band Photocopier Solid-Ink Dye-Sublimation 		
+		}
+		
+		science = {
+			Surveyor Investigator Examiner Elucidator Voyager Scholar Analyst
+		}
+		
+		colonizer = {
+			Replicator Founder Spawner Seeder Inductor Developer
+		}
+		
+		constructor = {
+			HP-Assembler HP-Fabricator HP-Compiler
+		}
+
+		transport = {
+			Typewriter Teletypewriter
+		}
+	
+		military_station_small = {
+			Protector
+		}
+
+		ion_cannon = {
+			Peacekeeper
+		}
+
+		### For Fallen Empires
+		small_ship_fallen_empire = {
+			Inkjet Multifunction All-in-One Dot-Matrix Impact Daisy-Wheel Drum Line Chain Band 		
+		}
+		large_ship_fallen_empire = {
+			Inkjet Multifunction All-in-One Dot-Matrix Impact Daisy-Wheel Drum Line Chain Band 		
+		}
+		massive_ship_fallen_empire = {
+			Inkjet Multifunction All-in-One Dot-Matrix Impact Daisy-Wheel Drum Line Chain Band 		
+		}
+	}
+
+	fleet_names = {
+		random_names = {
+			"PaperJam Squadron" "Toner Cartridge Fleet" "A3 Squadron" "A2 Squadron" "A1 Squadron" "A4 Squadron" "A5 Squadron" "B1 Squadron" "Ink Cartridge Squadron" "The Inkjets" "The Out of Paper Team" 
+		}
+		sequential_name = "hpprinter_sequential"
+	}
+	
+	army_names = {
+		
+		machine_assault_1 = {
+			sequential_name = "hpprinter_machineassault"
+		}
+
+		machine_defense = {
+			sequential_name = "hpprinter_machinedefense"
+		}
+		
+		machine_assault_2 = {
+			sequential_name = "hpprinter_machineassault2"
+		}
+	
+		machine_assault_3 = {
+			sequential_name = "hpprinter_machineassault3"
+		}
+	
+		defense_army = {
+			sequential_name = "hpprinter_defensearmy"
+		}
+			
+		assault_army = {
+			sequential_name = "hpprinter_assaultarmy"
+		}
+		
+		clone_army = {
+			sequential_name = "hpprinter_clonearmy"
+		}
+
+		machine_occupation_army = {
+			sequential_name = "hpprinter_occupationarmy"
+		}
+
+		primitive_army = {
+			sequential_name = "hpprinter_primitivearmy"
+		}
+		industrial_army = {
+			sequential_name = "hpprinter_industrialarmy"
+		}
+		postatomic_army = {
+			sequential_name = "hpprinter_postatomicarmy"
+		}
+	}
+		
+
+	### PLANETS
+
+	planet_names = {
+
+		generic = {
+			names = { 
+				Printer-Core Printer-Kernal Printer-Network Printer-Kernal Printer-Core Printer-Source Printer-Conbine Printer-Locus Printer-Cynosure Printer-Omphalos Printer-Nucleus Printer-Axis Printer-Crux Printer-Terminus Printer-Server Printer-Chassis
+			}
+		}
+		
+		pc_desert = {
+			names = { 
+				"Scorched Inkjet" "Scorched Band" "Scorched Dot-Matrix" "Sand Paper" "Deserted Ink" "Deserted PaperJam" "Sandy Jam" "Scorched Multiservice" "Scorched Plotter" "Scorched Solid-Ink" "Scorched Monochrome" "Scorched Line" "Scorched Typewriter" "Scorched Business Model" 
+			}
+		}
+		
+		pc_tropical = {
+			names = { 
+				"Verdant Inkjet" "Verdant Band" "Verdant Dot-Matrix" "High Page Yield" "Verdant Ink" "Verdant PaperJam" "Verdant Jam" "Verdant Multiservice" "Verdant Plotter" "Verdant Solid-Ink" "SVerdant Monochrome" "Verdant Line" "Verdant Typewriter" "Verdant Business Model" 
+				
+			}
+		}
+		
+		pc_arid = {
+			names = { 
+				"Desiccant Nexus" "Desiccant Hub" "Desiccant Bridge" "Desiccant Matrix" "Desiccant Network" "Desiccant Core" "Desiccant Kernel" "Desiccant Source" "Desiccant Combine" "Desiccant Locus" "Desiccant Cynosure" "Desiccant Omphalos" "Desiccant Nucleus" "Desiccant Axis" "Desiccant Crux" "Desiccant Terminus" "Desiccant Server" "Desiccant Chassis"
+			}
+		}
+		
+		pc_continental = {
+			names = { 
+				"Terrene Nexus" "Terrene Hub" "Terrene Bridge" "Terrene Matrix" "Terrene Network" "Terrene Core" "Terrene Kernel" "Terrene Source" "Terrene Combine" "Terrene Locus" "Terrene Cynosure" "Terrene Omphalos" "Terrene Nucleus" "Terrene Axis" "Terrene Crux" "Terrene Terminus" "Terrene Server" "Terrene Chassis"
+			}
+		}
+		
+		pc_ocean = {
+			names = { 
+				"Fluid Nexus" "Fluid Hub" "Fluid Bridge" "Fluid Matrix" "Fluid Network" "Fluid Core" "Fluid Kernel" "Fluid Source" "Fluid Combine" "Fluid Locus" "Fluid Cynosure" "Fluid Omphalos" "Liquid Nucleus" "Fluid Axis" "Fluid Crux" "Liquid Terminus" "Fluid Server" "Liquid Chassis"
+			}
+		}
+		
+		pc_tundra = {
+			names = { 
+				"Polar Nexus" "Polar Hub" "Polar Bridge" "Polar Matrix" "Polar Network" "Polar Core" "Polar Kernel" "Polar Source" "Polar Combine" "Polar Locus" "Polar Cynosure" "Polar Omphalos" "Polar Nucleus" "Polar Axis" "Polar Crux" "Polar Terminus" "Polar Server" "Polar Chassis"
+			}
+		}
+		
+		pc_arctic = {
+			names = { 
+				"Cryo Nexus" "Cryo Hub" "Frozen Bridge" "Cryo Matrix" "Frozen Network" "Cryo Core" "Frozen Kernel" "Cryo Source" "Cryo Combine" "Frozen Locus" "Frozen Cynosure" "Frozen Omphalos" "Cryo Nucleus" "Frozen Axis" "Cryo Crux" "Cryo Terminus" "Cryo Server" "Cryo Chassis"
+			}
+		}
+
+		pc_savannah = {
+			names = { 
+				"Veldt Nexus" "Veldt Hub" "Veldt Bridge" "Veldt Matrix" "Veldt Network" "Veldt Core" "Veldt Kernel" "Veldt Source" "Veldt Combine" "Veldt Locus" "Veldt Cynosure" "Veldt Omphalos" "Veldt Nucleus" "Veldt Axis" "Veldt Crux" "Veldt Terminus" "Veldt Server" "Veldt Chassis"
+			}
+		}
+
+		pc_alpine = {
+			names = { 
+				"Tor Nexus" "Tor Hub" "Tor Bridge" "Tor Matrix" "Tor Network" "Tor Core" "Tor Kernel" "Tor Source" "Tor Combine" "Tor Locus" "Tor Cynosure" "Tor Omphalos" "Tor Nucleus" "Tor Axis" "Tor Crux" "Tor Terminus" "Tor Server" "Tor Chassis"
+			}
+		}
+
+		pc_nuked = {
+			names = { 
+				"Grim Nexus" "Grim Hub" "Grim Bridge" "Grim Matrix" "Grim Network" "Grim Core" "Grim Kernel" "Grim Source" "Grim Combine" "Grim Locus" "Grim Cynosure" "Grim Omphalos" "Grim Nucleus" "Grim Axis" "Grim Crux" "Grim Terminus" "Grim Server" "Grim Chassis"
+			}
+		}
+		
+	}
+
+	character_names = {
+		default = {
+			# A complete name
+			full_names = { 
+				"HP 2000" "HP 2001" "HP 2002" "HP 2003" "HP 2004" "HP 2005" "HP 2006" "HP 2007" "HP 2008" 
+				"HP 2017" "HP 2016" "HP 2015" "HP 2014" "HP 2013" "HP 2012" "HP 2011" "HP 2010" "HP 2009" 
+				"HP 2018" "HP 2019" "HP 2020" "HP 2021" "HP 2022" "HP 2023" "HP 2024" "HP 2025" "HP 2026" 
+				"HP 2035" "HP 2034" "HP 2033" "HP 2032" "HP 2031" "HP 2030" "HP 2029" "HP 2028" "HP 2027" 
+				"HP 2036" "HP 2037" "HP 2038" "HP 2039" "HP 2040" "HP 2041" "HP 2042" "HP 2043" "HP 2044" 
+				"HP 2053" "HP 2052" "HP 2051" "HP 2050" "HP 2049" "HP 2048" "HP 2047" "HP 2046" "HP 2045" 
+				"HP 2054" "HP 2055" "HP 2056" "HP 2057" "HP 2058" "HP 2059" "HP 2060" "HP 2061" "HP 2062" 
+				"HP 2071" "HP 2070" "HP 2069" "HP 2068" "HP 2067" "HP 2066" "HP 2065" "HP 2064" "HP 2063" 
+				"HP 2072" "HP 2073" "HP 2074" "HP 2075" "HP 2076" "HP 2077" "HP 2078" "HP 2079" "HP 2080" 
+				"HP 2089" "HP 2088" "HP 2087" "HP 2086" "HP 2085" "HP 2084" "HP 2083" "HP 2082" "HP 2081" 
+				"HP 2090" "HP 2091" "HP 2092" "HP 2093" "HP 2094" "HP 2095" "HP 2096" "HP 2097" "HP 2098" 
+				"HP 2107" "HP 2106" "HP 2105" "HP 2104" "HP 2103" "HP 2102" "HP 2101" "HP 2100" "HP 2099" 
+				"HP 2108" "HP 2109" "HP 2110" "HP 2111" "HP 2112" "HP 2113" "HP 2114" "HP 2115" "HP 2116" 
+				"HP 2125" "HP 2124" "HP 2123" "HP 2122" "HP 2121" "HP 2120" "HP 2119" "HP 2118" "HP 2117" 
+				"HP 2126" "HP 2127" "HP 2128" "HP 2129" "HP 2130" "HP 2131" "HP 2132" "HP 2133" "HP 2134" 
+				"HP 2143" "HP 2142" "HP 2141" "HP 2140" "HP 2139" "HP 2138" "HP 2137" "HP 2136" "HP 2135" 
+				"HP 2144" "HP 2145" "HP 2146" "HP 2146" "HP 2147" "HP 2148" "HP 2149" "HP 2150" "HP 2151" 
+				"HP 2160" "HP 2159" "HP 2158" "HP 2157" "HP 2156" "HP 2155" "HP 2154" "HP 2153" "HP 2152" 
+				"HP 2161" "HP 2162" "HP 2163" "HP 2164" "HP 2165" "HP 2166" "HP 2167" "HP 2168" "HP 2169" 
+				"HP 2178" "HP 2177" "HP 2176" "HP 2175" "HP 2174" "HP 2173" "HP 2172" "HP 2171" "HP 2170" 
+			}
+			
+			# Always combined with a second name
+			first_names = {
+			}
+			
+			# Always combined with a first name
+			second_names = {
+			}
+			
+			regnal_first_names = {
+			}
+			
+			regnal_second_names = {
+			}
+		}
+	}
+
+	ruler_names = {
+		default = {
+			full_names = {
+				HP-Printer-Alpha HP-Printer-Mainframe HP-Printer-Mainframe HP-Printer-Mutex HP-Printer-Server
+			}
+		}
+	}
+}

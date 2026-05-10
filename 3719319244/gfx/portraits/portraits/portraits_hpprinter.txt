@@ -1,0 +1,50 @@
+portraits = {
+HPPrinter ={ texturefile = "gfx/models/portraits/hpprinter/hpprinter.dds" }
+
+}
+
+portrait_groups = {
+    HPPrinter = {
+	  default = HPPrinter
+	  game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					HPPrinter
+					
+				}
+			}
+		}
+		#species scope
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					HPPrinter
+				}
+			}
+		}
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {			             	
+					HPPrinter
+   				}
+			}
+		}
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = {
+				portraits = {
+					HPPrinter
+				}
+			}
+		}
+		#leader scope 
+		ruler = {
+			add = {
+				portraits = {
+					HPPrinter
+				}
+			}
+		}
+	}
+}
