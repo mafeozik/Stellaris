@@ -1,0 +1,19 @@
+fd_empire = {
+    key = "FD_EMPIRE"
+    species = {
+        class = "furrydickgirl"
+        portrait = "fd1"
+        name = "Lycan"
+        plural = "Lycans"
+        home_planet = "Lycanos"
+        home_system = "Lyra"
+        name_list = "HUM1"
+    }
+    name = "Lycan Empire"
+    adjective = "Lycan"
+    authority = "auth_democratic"
+    civics = { civic_environmentalist civic_meritocracy }
+    origin = "origin_prosperous_unification"
+    ethics = { ethic_xenophile ethic_egalitarian ethic_pacifist }
+    flag = { ... }
+}

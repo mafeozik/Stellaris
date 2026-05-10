@@ -1,0 +1,7 @@
+fdgirl_set = {	
+        species_class = HUM
+	spawn_enabled = yes	
+	portraits = {
+		"furrydickgirl"
+	}
+}

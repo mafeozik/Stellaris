@@ -1,0 +1,9 @@
+FDGIRL = {
+	Lycan = {
+		name = "Lycan"
+		plural = "Lycan"
+		home_planet = "Lycanos"
+		home_system = "Lyra"
+		name_list = "HUM1"
+}
+}

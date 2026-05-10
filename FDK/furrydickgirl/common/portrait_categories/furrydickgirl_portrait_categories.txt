@@ -1,0 +1,6 @@
+humanoids = {
+	name = HUM
+	sets = {
+        fdgirl_set
+	}
+}
