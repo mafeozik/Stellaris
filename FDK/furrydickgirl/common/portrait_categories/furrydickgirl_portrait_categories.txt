@@ -1,6 +1,6 @@
-humanoids = {
-	name = HUM
+fdgirl_category = {
+	name = furrydickgirl
 	sets = {
-        fdgirl_set
+		fdgirl_set
 	}
 }

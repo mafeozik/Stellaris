@@ -102,9 +102,8 @@ portraits = {
 }                    
 
 portrait_groups = {
-    mammalian = {
-    #furrydickgirl = {
-	  #default = fd1
+    furrydickgirl = {
+	  default = fd1
         	  game_setup = { 
            	add = {
                 	portraits = {
