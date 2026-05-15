@@ -1,0 +1,74 @@
+{
+  "config": {
+    "seed": 42,
+    "n_samples": 80000,
+    "device": "cpu",
+    "mlp_hidden": [
+      256,
+      128,
+      64
+    ],
+    "mlp_dropout": 0.2,
+    "mlp_lr": 0.001,
+    "mlp_batch_size": 256,
+    "mlp_weight_decay": 1e-05,
+    "test_ratio": 0.2,
+    "val_ratio_of_train": 0.1,
+    "n_features_after_ohe": 27
+  },
+  "train_sizes": {
+    "train": 57600,
+    "val": 6400,
+    "test": 16000
+  },
+  "per_target": {
+    "ctr": {
+      "rmse_lr": 0.03323184862147944,
+      "rmse_mlp": 0.017424342330181544,
+      "mae_lr": 0.022014264985411428,
+      "mae_mlp": 0.011136913732194269,
+      "rmse_reduction_pct": 47.56733817512432,
+      "rmse_lr_logscale": 0.028326262425216665,
+      "rmse_mlp_logscale": 0.01487058635338281,
+      "rmse_reduction_pct_logscale": 47.50247454048357
+    },
+    "cr": {
+      "rmse_lr": 0.01819028317725459,
+      "rmse_mlp": 0.010444976971674453,
+      "mae_lr": 0.012843871854256693,
+      "mae_mlp": 0.006695481081147939,
+      "rmse_reduction_pct": 42.57935791495214,
+      "rmse_lr_logscale": 0.01691415888399531,
+      "rmse_mlp_logscale": 0.009635835672878339,
+      "rmse_reduction_pct_logscale": 43.03094721248284
+    },
+    "cpc": {
+      "rmse_lr": 830.82800293656,
+      "rmse_mlp": 83.49672525190503,
+      "mae_lr": 56.713170362752905,
+      "mae_mlp": 36.425864122677126,
+      "rmse_reduction_pct": 89.95017922389647,
+      "rmse_lr_logscale": 0.3284556234376128,
+      "rmse_mlp_logscale": 0.2596271071877385,
+      "rmse_reduction_pct_logscale": 20.955194896638965
+    }
+  },
+  "hypothesis": {
+    "threshold_pct": 15.0,
+    "avg_rmse_reduction_pct_logscale": 37.16287221653513,
+    "confirmed": true
+  },
+  "training_history": {
+    "best_epoch": 33,
+    "best_val_loss": 0.08162041008472443,
+    "total_epochs": 49
+  },
+  "recommender_demo": {
+    "sample_predicted_metrics": {
+      "ctr": 0.054903753101825714,
+      "cr": 0.07028014212846756,
+      "cpc": 150.1412353515625
+    },
+    "recommendations_text": "Все метрики в пределах нормы. Рекомендаций нет."
+  }
+}
