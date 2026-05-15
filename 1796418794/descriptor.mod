@@ -1,8 +1,0 @@
-version="3.11.*"
-name="Animated Kitsune Species"
-tags={
-	"Species"
-}
-picture="thumbnail.png"
-supported_version="3.11.*"
-remote_file_id="1796418794"

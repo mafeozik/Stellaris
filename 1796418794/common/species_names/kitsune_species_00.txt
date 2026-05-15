@@ -1,9 +1,0 @@
-EKITS = {
-	kitsune = {
-		name = Kitsune
-		plural = Kitsunes
-		home_planet = Chikyuu
-		home_system = Taiyou
-		name_list = "HUM1"
-	}	
-}

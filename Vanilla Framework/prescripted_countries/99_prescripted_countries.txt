@@ -1,3 +1,0 @@
-#delete or remane this file to bring back vanilla prescripted countries.
-#Note: these countries do not use the new portraits and may cause minor issues
-

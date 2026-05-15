@@ -1,4 +1,0 @@
-NGameplay = {
-	GOVERNMENT_CIVIC_POINTS_BASE		= 4	# Number of civics you can choose.
-	ETHOS_MAX_POINTS			= 4	# Number of points which you can spend on ethics.
-	}
